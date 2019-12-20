@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>OS Class - 30th Nov | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">OS Class - 30th Nov</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 30, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            FileSystems
+-----------
+
+Ext2
+- Groups - How Big?
+  8192 blocks
+- Index - 12 direct
+        - 1 Single
+        - 1 Double 
+        - 1 Triple 
+- Filenames - Directory entries, variable size, 255 chars
+
+Ext3
+- Compatible W/Ext2
+- Journaling/Logging
+
+Journal
+  | Earliest
+  | 
+  | Latest
+
+1) Journal - Everything to Journal
+     - Slow
+2) Ordered - Log Metadata to Jounal metadata written after data.
+
+3) Writeback - Log metadata to journal but no ordering.
+
+
+What about new devices which are available in the market today called SSD (Solid State devices).
+- Which are a bunch of chips and we can use electrons to get the data as compared to a mechanical movement of the hard disks.
+Our assumptions like Random Access or Seeks are expensive does not apply here.
+Also there are other things like Writes are really really slow.
+Linux has a bunch of file systems catering to SSDs for e.g. JFFS
+
+Virtual File System - VFS (Unix and Linux)
+File System - fs
+fs.h - /include/linux (this file has definitions for important file table structures).
+super operations are performed on Super Block.
+Super block is a key aspect of the file system.
+
+struct inode (619 line) - inode numbers, uid, gid
+inode_operations - Standard file system, system calls. for each specific file systems we would implement the functions for the new filesystems.
+
+file_operations is also linked from inode and also from file too. for e.g. Mmap(fs.h #1225)
+VFS is an independent structure 
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

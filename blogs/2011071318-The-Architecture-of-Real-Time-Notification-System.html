@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>The Architecture of Real-Time Notification System | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">The Architecture of Real-Time Notification System</h1>
+          <p class="lead">
+            Wei An
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 13, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            As a member of Vialogues team, I am more than happy to see the release of the new Vialogues. Many thanks to everyone who help us in developing this new version!
+
+I am working with Pranav on the notification system of Vialogues. In this version, new notices occur when the page is reloaded. For next version, we will enable <b>real-time</b> notification so that users no longer need to reload the page. This real-time technology can also be used in other scenarios of our products, e.g. the real-time update of Vialogues' comment list, making our system more interactive. 
+
+In this blog, I will briefly introduce the architecture and related technologies of the system.
+
+1. Introduction
+
+Real-time notification system enable the user to receive notices simultaneously when certain event occurs. To implement this functionality, we need to maintain a connection between server and each client. The server will use these connections to push notices to the clients immediately when the event occurs. 
+
+2. Technologies
+
+ Our system is based on Node.js for both the server side and the client side. We chose this framework because it is simple and provides abundant modules to support all the functionalities we anticipated.
+
+The Node.js modules we may use include: Socket IO, connect, nodejitsu/node-http-proxy, node-mysql, and node-websocket-server.
+
+ The most interesting module is Socket IO. It enables user to define a socket without caring about browser support and HTML version. The API is neat and seamlessly embedded in Node.js structure.
+
+ The Node.js server is isolated from existing server Apache. We can either use proxy (node-http-proxy) to direct http and ws requests to different ports, or simply construct Node.js on another IP address.
+
+3. Structure
+
+In this section, I will introduce the new server and client of this real-time notification system.
+
+    1) Server
+
+The server maintains a connection with each authenticated client, and a connection table for each connected user. A connection is set up when a webpage is initialized, and destroyed when a web page is closed.
+
+The server monitors the notice table of the database. Whenever a new notice is added to that table, the server will check the connection table to see if there are connections for each receiver (receiver of the new notice). If so, an alert will be sent through each connection. For now, this alert only indicates that number of new notices, and we may put more information into it in future.
+
+  2) Client
+
+Each client maintains a connection with the server. The connection is set for receiving alerts of new notices. When a new alert arrives, the client will update the number of new notices on the header of the page, or even make an ajax call to the server to fetch the details of the notice.
+
+ The connection request is sent when an authenticated user opens a new page. When the connection is set up, it is maintained until the page is destroyed.
+<hr></hr>
+
+Thank you for your interest in real-time notification system. If you have any questions or comments, please contact Pranav or Me.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

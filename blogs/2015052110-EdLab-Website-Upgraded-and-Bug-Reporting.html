@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>EdLab Website Upgraded and Bug Reporting | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">EdLab Website Upgraded and Bug Reporting</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 21, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hello EdLabbers and Friends,
+
+Welcome to the upgraded EdLab website! Thanks to the support from Hui Soo and D&R colleagues, we finally made it migrating the EdLab website from TC to AWS (in April), upgrading the Drupal CMS from v.4.6.4 to 6.35, and moving from the Windows server to Linux server! To me the biggest challenge was making the new website look as close as possible to the old one given the barriers of: 1) The old website altered the source code of Drupal to achieve some functionalities, which is not honored by Drupal development protocols and has to be revamped in the standard way; 2) A few plugins used in the old website which had played a core role (e.g. Events, Publications, Projects) are discontinued by the developer. So I have to find alternative ways to enable these node types and migrate the data over.
+
+Due to the factors above, there are things different in the new website which I cannot avoid. And there are intentional changes too for good. Below is a summary of the major differences (appearance & functionality) in the new website:
+
+1) The new webpage frame is wider so as to look better in modern computer screens, and to avoid embedded Vialogues from overlapping the sidebar.
+
+2) Improved/slightly different fonts and styles.
+
+3) Some different options for publishing, especially for the administrator accounts. E.g.
+
+a) Javascript date picker for event times (in comparison to text inputs).
+<img src="http://edlab.tc.columbia.edu/sites/default/files/Screen Shot 2015-05-21 at 10.01.44 AM.png" width="500" />
+
+b) Projects have a new “thumbnail” field. A circled picture should be uploaded as the thumbnail of the project.
+<span style="display: inline-block"><img src="http://edlab.tc.columbia.edu/sites/default/files/Screen Shot 2015-05-21 at 10.03.44 AM.png" width="350" /></span><span style="display:inline-block; border-left: solid 1px #999; padding-left: 20px;"><img src="http://edlab.tc.columbia.edu/files/nlt.png" /></span>
+
+4) Adopted localized timezone settings such as America/New_York instead of the ETC timezones. The difference is the former has daylight saving built in, while the latter doesn’t. So from now on we don’t have to switch the timezone from ETC -4 to -5 (but to be honest we never seem to care about this) while creating future events.
+
+5) Finally on the technical side:
+
+a) Drupal v.4.6.4 upgraded to 6.35. We are not upgraded to the latest Drupal version at this time because more plugins are discontinued in Drupal 7 and 8. We have to perform further upgrading at a later step.
+
+b) Server is migrated from Windows Server 2008 to Ubuntu 14 with Nginx (more secure, more stable) and RDS MySQL database.
+
+c) The theme codes are revamped so that the Drupal core is no longer hacked. This way it’ll be very easy for us to upgrade to higher Drupal versions.
+
+d) Re-written theme stylesheets using <a href="http://lesscss.org/" target=”_blank”>LESS</a>.
+
+Future works:
+
+1) A WYSIWYG editor. Currently Markdown is being seriously considered. Please refer to my <a href="http://edlab.tc.columbia.edu/index.php?q=node/12062">earlier post</a> and provide your vote.
+
+2) Upgrade Drupal to the latest version.
+
+3) Improve the theme codes and use mobile-friendly responsive webframe.
+
+I am sure there are bugs after the upgrade. Please reply to this post with any bug you find and I’ll fix it. Thank you!
+
+-----------------------------------------------------------------
+
+P.S.
+
+While publishing a post in the future, if your account allows you to choose "Publishing options", please do not check "Sticky at top of lists" unless you feel absolutely sure. If that option is checked, your post will always stay on top of newer posts. Thank you.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

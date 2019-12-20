@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>From College Admissions and Marriage Stability to Reciprocal Recommenders | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">From College Admissions and Marriage Stability to Reciprocal Recommenders</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 29, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/mix_rr_67ac7af46ae24c178981a2a0effaad56.png" width="90%">
+While re-studying <b>Reciprocal Recommenders</b>, I found one of the references particularly fascinating.  It's an old paper in this stream of literature, <a href="http://www.jstor.org/stable/2312726 ">College Admissions and the Stability of Marriage</a>. It's interesting to explain complex real-world problems (reciprocal recommender algorithms) to simple number pairings in math. 
+
+<b>Admission Problem</b>: A college is considering a set of <i>n</i> applicants and can only admit a quota of <i>q</i>. 
+
+But there are several uncertainties and rules to solving this assignment problem mathematically, i.e. (a) whether a given applicant has also applied elsewhere (b) how she/he ranks the colleges to which they have applied and (c) which of the other colleges will offer to admit him.
+
+In admission ecosystem, we also introduce the <b>waiting list</b> mechanism, which results in introducing new problems. i.e. Suppose one is accepted by a college and placed on the waiting list of another that he prefers. Should he </i>play safe</i> by accepting the first or <i>take a chance</i> that the second will admit him later? Is it ethical to accept the first without informing the second and then withdraw his acceptance if the second later admits him? Therefore, this kind of math problem is unstable.
+
+The authors explained such a phenomenon and provided the optimal solution by using a real-world case,<b>marriage stability</b>. Assuming each guy proposes to his favorite girl and each girl receives >= 1 proposal and rejects all but her favorite from among those who have proposed to her. However, she does not accept him yet, but keeps him in line to allow for the possibility that someone better may come along later. Those guys who were rejected now propose to their second choices and keep this procedure iterating. Eventually every girl will have received a proposal. Mathematically, (at most n^2-2n +2 iterations), we all get a proposal.  (Science is so awesome! Have everything worked out â˜º)  
+
+<blockquote>
+Suppose John and Mary are not married to each other but John prefers Mary to his own wife. Then John must have proposed to Mary at some stage and subsequently been rejected in favor of someone that Mary liked better. It is now clear that Mary must prefer her husband to John and there is no instability.
+</blockquote>
+
+So it's clear that, in the entire pairing procedures, we need the <b>rejection</b> concept, which is the <b>deferred-acceptance</b> concept in admission. So the pairing procedure can eventually be terminated when every applicant is either on a waiting list or has been rejected by every college to which he is willing and permitted to apply. (only rejects applicants from colleges which they could not possibly be admitted to in any stable assignment. The assignment will result in optimal (<b>stable!!! Voila~</b>).
+
+Haha…don't you just love science?  â˜º 
+Why is it related to Reciprocal Recommenders? It's been applied in online dating, recruiting systems, to facilitate pairing process, by getting on the waiting lists & getting rejecting and rejected. 
+
+For more reciprocal recommenders references: 
+1. <a href="http://edlab.tc.columbia.edu/index.php?q=node/6093">http://edlab.tc.columbia.edu/index.php?q=node/6093</a>
+2. <a href="http://edlab.tc.columbia.edu/index.php?q=node/8309">http://edlab.tc.columbia.edu/index.php?q=node/8309</a>
+3. L. Pizzato, T. Rej, T. Chung, I. Koprinska, and J. Kay. Recon: a reciprocal recommender for online dating. In Proc. of Recommender Systems, pages 207—214. ACM, 2010.
+4. Lei Li,Tao Li (2012) MEET: a generalized framework for reciprocal recommender systems. CIKM 2012, pp 35-44
+5. email me â˜º
+
+College Admissions and the Stability of Marriage (1962) D. Gale and L. S. Shapley The American Mathematical Monthly, Vol. 69, No. 1 (Jan., 1962), pp. 9-15, Mathematical Association of America http://www.jstor.org/stable/2312726 .
+
+image credit to: http://www.engineering.uiowa.edu & http://roomfordebate.blogs.nytimes.com/
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

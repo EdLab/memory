@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>PyGotham session: Machine Learning and Web Developing | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">PyGotham session: Machine Learning and Web Developing</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 17, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Machine learning package
+
+Download and install package:
+* libyaml (on Ubuntu you need libyaml and libyaml-dev)
+
+*Download the code:
+* git clone https://www.github.com/thatdatabaseguy/ml4webdevs.git
+* cd ml4webdevs/setup
+* ./bootstrap.sh
+
+Why you should care
+* Ever wanted to give your users meaningful recommendations?
+* How about finding similar documents?
+* detecting spam/fraudulent transactions?
+
+<digression>
+What machine learning is NOT?
+* re.compile('<\s*h1[^>]...)
+* ETL/ data cleansing
+* twitter_id2facebook_id OMG I <3 #mashup!
+* Big Data or using a NoS?QL data store
+* Full-text search
+*Reporting and/or data visualization
+
+This IS rocket science (sort of)
+* We will use convenient abstractions and vanilla algorithms for today's class
+* BUT, more advanced machine learning algorithms require strong understanding of linear algebra
+
+Some bubble-bursting
+* the following does not exist:
+&nbsp;&nbsp;* import machine_learning
+&nbsp;&nbsp;* learn(my_data)
+&nbsp;&nbsp;* predict(my_new_data)
+</digression>
+
+What does exist
+* Lots of cool open-source libraries
+&nbsp;&nbsp;* nltk (highly recommended for NLP as well)
+&nbsp;&nbsp;* scikits.learn (fast, uses scipy)
+&nbsp;&nbsp;* pybrain
+&nbsp;&nbsp;* pattern
+&nbsp;&nbsp;* pyml
+
+Supervised learning
+* have some known, correctly labeled data
+* extract some features from the data, forming a set of training tuples
+* use an algorithm (there are several) to learn from the data and produce a model
+* the model can be used in the prediction of labels from unseen instances
+
+Feature extraction
+* this is the most important part you need to think about in supervised learning models
+* denormalize object graph or relations into a tuple of binary attributes or real numbers* single features can be complex(contains synonym for "jell: after synonym for "peanut butter')
+* stored in a dictionary or a vector
+
+Regression
+* predicted value is continuous
+* very applicable in the financial sector (eg predicting risk of an asset)
+* ALSO very applicable to system s administration (how many users should I expect on-sites? Given the load on my databases, how much latency should this be?)
+
+Classification
+* predicted value is discrete
+* discrete value can mean:
+&nbsp;&nbsp;* binary values (eg spam/not spam)
+&nbsp;&nbsp;* most likely category
+&nbsp;&nbsp;* probability distribution over categories
+
+example case: 
+Classifying political tweets
+* two top political hashtags on twitter:
+&nbsp;&nbsp;* #o2 (progressives 2.0)
+&nbsp;&nbsp;* #tcot (Top Conservatives on Twitter)
+* Train model with tweets for these hashtags
+* Classify new tweets as learning material
+
+What about intersection of A and B?
+* indeed, intersection is ambiguous
+* user set complements (A-B and B-A)
+
+Old Man Bayes' Law
+* Promised to stay light on the notation but 
+a naive bayes classifier
+* hellow world of supervies learning
+* single classification (maximum likelihood)
+* "naive" - assumes features are independent
+* very efficient to train (multiply probabilities)
+
+commands
+from classifier import PartisantweetClassifier
+classifier = PartisanTweetClassifier()
+classifier.fetch_twitter()
+
+classifier.train_model()
+classifier.accuracy()
+
+
+This is fine in the shell, but I promised to talk about web applications
+
+saving the model
+* Two methods that worked for me:
+* stuff it in the cache (for small models) and keep a copy on disk
+* for larger models, just put it on disk on the datamine box and write a simple RESTful service for classification
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

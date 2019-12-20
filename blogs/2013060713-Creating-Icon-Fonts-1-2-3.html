@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Creating Icon Fonts 1-2-3 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Creating Icon Fonts 1-2-3</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 7, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>When Nara reported what she learned in theÂ <a href="http://edlab.tc.columbia.edu/index.php?q=node/9491/15626">Fluent Conf 2013</a>Â she discussed the benefits of using web icon fonts instead of image sprites. I was very interested in this new technique so gave it a try. The result was quite satisfying because with web icon fonts we can reduce download size of Vialogues Player by 15%.</p>
+<p>The benefits of using web icon fonts instead of image sprites:</p>
+<ol>
+  <li>
+    <p>Reduce download size. Icon fonts are vectors. So they are potentially smaller than images if you have lots of them.</p>
+  </li>
+  <li>
+    <p>Easier to change. It is well admitted modifying image sprites is a huge headache because you may have to re-calibrate all other sprite icons every time you revise the size, location, or number of the sprites. Icon fonts, however, are relatively easier to modify -- not in terms of modifying the icon per se but other icons will not be affected.</p>
+  </li>
+  <li>
+    <p>Better display quality on hi-res displays such as Retina iPad. Because icon fonts are vectors, your icons will be always sharp and clear no matter where or how large you display them.</p>
+  </li>
+  <li>
+    <p>Customization. You can easily modify the icon size, color, background color, border, etc. by just changing the stylesheet without having to revising the physical font file.</p>
+  </li>
+</ol>
+<p>Concerns:</p>
+<ol>
+  <li>
+    <p>With icon fonts you cannot have larger or more complicated icons.</p>
+  </li>
+  <li>
+    <p>You must check across browsers because different browsers may display fonts slightly different.</p>
+  </li>
+</ol>
+<p>In case anyone would like to use icon fonts in any of our other project, I am writing this guideline for how to implement icon fonts.</p>
+<h3>Step 1</h3>
+<p>Create the icon fonts in all required formats for different browsers: .eot (older IE), .ttf (legacy font face supported by major browsers), .svg (legacy font face supported by some browsers), and .woff (currentÂ <a href="http://www.w3.org/Fonts/WOFF-FAQ/">W3C</a>Â standard supported by all latest browsers). SeeÂ <a href="http://www.w3schools.com/css3/css3_fonts.asp">reference</a>.</p>
+<p>Honestly I did not take the trouble to create the icon fonts by myself. But I foundÂ <a href="http://www.webdesignerdepot.com/2013/04/how-to-turn-your-icons-into-a-web-font/">this tutorial</a>Â that should be able to get you started.</p>
+<p>Instead of creating the fonts from scratch, you can check out the following websites on open-source icon fonts:</p>
+<p><a href="http://fontello.com/">Fontello</a></p>
+<p><a href="http://icomoon.io/app/">Icomoon</a></p>
+<p>I used Fontello. After customizing the font collection, download the package that contains the font source files, stylesheets, and examples. We will start from here.</p>
+<p><img alt="Fontello" src="http://edlab.tc.columbia.edu/files/icon-fonts-01.png"  width="450" /></p>
+<h3>Step 2</h3>
+<p>Once the fonts are downloaded, extract them. Copy the .eot, .svg, .ttf, and .woff files in the &quot;font&quot; folder to your web server.</p>
+<p><img alt="Extract Fontello Download" src="http://edlab.tc.columbia.edu/files/icon-fonts-02.png" /></p>
+<h3>Step 3</h3>
+<p>Create the stylesheet for the icon fonts. The class names and styles for each font can be found in css/YOUR-FONT-NAME.css. For example:</p>
+<p><img alt="Font Classes" src="http://edlab.tc.columbia.edu/files/icon-fonts-03.png" width="400" /></p>
+<p>If you want to use the Facebook icon, for example, your stylesheet will look something like below:</p>
+<h4>Part 1: Import Icon Fonts</h4>
+<p>(import only once for all icon font classes at the beginning of your stylesheet)</p>
+<div>
+<a href="http://edlab.tc.columbia.edu/files/icon-fonts-css-1.png"><img src="http://edlab.tc.columbia.edu/files/icon-fonts-css-1.png" width="450" /></a>
+</div>
+<p>(you can find the import code in css/YOUR-FONT-NAME.css)</p>
+<h4>Part 2: Define Each Icon Font Class</h4>
+<div>
+<a href="http://edlab.tc.columbia.edu/files/icon-fonts-css-2.png"><img src="http://edlab.tc.columbia.edu/files/icon-fonts-css-2.png" width="450" /></a>
+</div>
+<h4>Part 3: Write the HTML Element</h4>
+<p>&lt;span class="icon-facebook">&lt;/span&gt;</p>
+<p>Your Facebook icon now looks like below:</p>
+<p><img alt="Facebook Icon 1" src="http://edlab.tc.columbia.edu/files/icon-fonts-04.png" /></p>
+<p>You can easily make it look like the official Facebook icon by defining the font color and background color in the &quot;:before&quot; style:</p>
+<div>
+<a href="http://edlab.tc.columbia.edu/files/icon-fonts-css-3.png"><img src="http://edlab.tc.columbia.edu/files/icon-fonts-css-3.png" width="500" /></a>
+</div>
+<p>Now your icon looks like:</p>
+<p><img alt="Facebook Icon 1" src="http://edlab.tc.columbia.edu/files/icon-fonts-05.png" /></p>
+<b>hint: you can use CSS selector to define the base style shared across all icon font classes by calling their prefix</b>
+<p>e.g.</p>
+<div>
+<a href="http://edlab.tc.columbia.edu/files/icon-fonts-css-4.png"><img src="http://edlab.tc.columbia.edu/files/icon-fonts-css-4.png" width="300" /></a>
+</div>
+<h3>Additional Resources</h3>
+<p><a href="https://bitbucket.org/edlab/vialogues-player-standalone/wiki/fontello-cfde0384.zip">Customized Font Package From Fontello</a></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

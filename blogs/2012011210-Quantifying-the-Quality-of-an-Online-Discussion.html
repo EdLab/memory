@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Quantifying the Quality of an Online Discussion | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Quantifying the Quality of an Online Discussion</h1>
+          <p class="lead">
+            Manav Malhotra
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 12, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I've been doing some reading on the types of quantitative analyses we can do on some of our Vialogues discussion data and I wanted to share some resources. What we are hoping to do is to come up with a grading system for the quality of a discussion. For the first pass at this model, we've chosen to focus on:
+<ul>
+<li>The number and type of topics per discussion</li>
+<li>Time between posts</li>
+<li>The distribution of posts among discussion participants</li>
+<li>The type of post (question, answer, option, elaboration, etc.)</li>
+</ul>
+
+We are planning to include other things like moderator influence as well, but we are figuring out how to put these factors together first, mainly using Latent Semantic Analysis, exponential fitting, and some text parsing. Below are some papers on LSA, categorization of discussion posts, and various work in the field. I didn't have enough attachment space so only the LSA resource is attached, but the rest are linked. I'll be squeezing ideas out of you all to help us develop this model at next week's D&R meeting, but these might be good papers to look at beforehand if you get the chance. Please let me know if you have any thoughts!
+
+Landauer, T. K., Foltz, P. W., & Laham, D. (1998). An introduction to latent semantic analysis. Discourse Processes, 25(2-3), 259—284. 
+
+<a href="http://sci2s.ugr.es/keel/pdf/specific/articulo/dringusarticle.pdf">Dringus, L. P., & Ellis, T. (2005). Using data mining as a strategy for assessing asynchronous discussion forums. Computers & Education, 45(1), 141—160. </a>
+
+<a href="http://iisit.org/Vol6/IISITv6p087-099Saade675.pdf">SaadÃ©, R. (2009). Meaningful learning in discussion forums: Towards discourse analysis. Issues in Informing Science and Information Technology, Vol 6</a>
+
+<a href="http://dl.acm.org/citation.cfm?id=584829">Brants, T., & Chen, F. (2002). Topic-based document segmentation with probabilistic latent semantic analysis. In Proceedings of the eleventh …. Presented at the Proceedings of the eleventh ….</a>
+
+<a href="http://aclweb.org/anthology/I/I11/I11-1100.pdf">Foster, J., et all. From News to Comment: Resources and Benchmarks for Parsing the Language of Web 2.0.</a>
+
+<a href="http://educationaldatamining.org/EDM2011/wp-content/uploads/proc/edm2011_paper21_short_Cobo.pdf">COBO, G., GARCÃA, D., SANTAMARÃA, E., & MORÃN, J. (n.d.). Modeling students' activity in online discussion forums: a strategy based on time series and agglomerative hierarchical clustering. </a>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

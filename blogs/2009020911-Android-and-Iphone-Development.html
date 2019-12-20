@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Android and Iphone Development | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Android and Iphone Development</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 9, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Daniel Switkin from Google came in today to talk about android application development. 
+
+Ebay, Shopsavvy made applications which use bar code scanning using smartphones.
+
+Android is open source platform (based on Linux kernel) and not a phone but just a platform.  It has drivers for camera, bluetooth, flash memory driver, binder(IPC), USB, Keybad, WiFi, and Audio Drivers.
+
+Libraries: Surface manager, media framework, SQLite, OpenGL|ES , FreeType, Webkit, SGL , SSL , libc
+
+Android Runtime: Core Libraries, Dalvik Virutal Machine
+Application Framework: Activity Manager, Window Manager, Package Manager, etc.
+
+Dynamic Layout of screens using XML where coordinates are given for putting the window on the screen. Two ways to create GUIs: in XML or in Code.
+GUI code is placed in res/layout, res/values
+@id/name_for_component gives handles for referencing XML declarations in code.
+
+Views: are building blocks. Examples can be: textview, edittext or listview, WebView, MapView, ImageView. Views provide graphic layout, its a rectangle layout.
+
+widget adds a specific addition to the function of a scroll, etc.
+
+Layouts: controls how views are laid out
+1) Frame Layout: 
+2) Absolute Layout - fixed coordinates.
+3) Layouts are customizable (portrait to landscape) using XML
+res/layout/share.xml (portrait)
+res/layout-land/share.xml (Landscape)
+..
+..
+
+Basic Components : - Applications
+1) Activities - UI Component typically corresponding to one screen.[MOST IMPORTANT]. They can 1) be Faceless 2) be in Floating window 3) return a value
+2) Broadcast Receivers - Respond to broadcast Intents
+  (respond to broadcast Intents). Applications can invent and broadcast their own Intents as well.
+3) Services : Faceless Tasks that run in the background. (Music Player running in the background). using gps, acceloremeter,etc.
+4) ContentProviders: Enable Application to share data. 
+   Provides uniform APIs for sharing content.
+
+Intents: They are verb, URL , data which express what the user wants. ex. - VIEW, CALL , PLAY. System matches Intent with Activity that can best provide that service.
+
+Activities and BroadcastReceivers describe what Intents they can service in their IntentFilters (via AndroidManifest.xml)
+
+The system helps in finding the application handler for a specific set of activity.
+
+Storage and Persistence
+------------------
+1) Preferences
+2) Flat File
+3) SQLite
+4) ContentProvider
+Only your application can read your data as it's signed but if there is only one key then apps can share the data.
+
+Packaging
+----------------
+1) .apk files as Android Packages
+2) much like .zip file
+
+Resources
+---------------
+1) res/layout - declarative layout files
+2) res/drawable - intended for drawing
+3) res/anim - bitmaps, animations for transitions
+..
+..
+
+Assets
+---------
+1) Similar to resources.
+2) Read Only
+3) Input Stream access to Assets/
+
+Android Application Lifecycle: documentation at android.app.Activity
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

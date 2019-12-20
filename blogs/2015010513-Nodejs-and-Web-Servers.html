@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Node.js and Web Servers | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Node.js and Web Servers</h1>
+          <p class="lead">
+            tzaffi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 5, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            For our <a href="http://mschool.tc.columbia.edu/">mSchool</a> project, we have been using Node.js as our back-end framework and web server. In this post I'll be explaining the reasoning for using Node.js as opposed to older technologies.
+
+<b>Node.js - Still a Tiny Player on the Web Server Market</b>
+
+Consider the following data of web server usage which recently gathered by w3techs.com:
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/webserverpopularity01jan2015_034277d651974969976d87217d897113.png" width="90%>
+(Source: http://w3techs.com/technologies/overview/web_server/all )
+
+We see that almost 3 in every 5 web servers run on Apache, around 1 in 5 run Nginx, and way down on the list at number 11 and a 0.1% market share is Node.js. Why would we choose to use a web server which is running on only 1 in every 1000 servers world-wide for an important project such as mSchool? Being at a forward looking entity such as EdLab allows us to experiment with new technologies and frees us from the shackles of conformity. But why go with Node.js rather than Nginx, IIS, or Tengine for that matter?
+There are several reasons for the choice including:
+<ul>
+<li>cost is totally free and open source (as opposed to Microsoft's IIS)
+<li>ability to employ a single programming language (Javascript) both for front and back-end development
+<li>a huge open source community which contribute a constantly growing pool of plug-ins to solve many problems
+<li>a highly performant engine that is written in C (even though it is accessed through Javascript)
+<li>an Event Loop model which gives a much more efficient way of handling multi-tasking than traditional approaches
+</ul>
+
+Technologically, the last point is really what distinguishes programming in Node.js from programming in the major frameworks that came before it. This multi-tasking approach is what I would like to explain in detail.
+
+<b>Why Multi-Task?</b>
+
+Multi-tasking is a fundamental activity that any viable web-server needs to do. Imagine we have a really popular blog site such as the fictional “BadMorning.com” where content creators write entries describing their horrible morning experiences and surfers are consoled by seeing people who had worse mornings than they did. Being a really popular and well designed web site, the BadMorning.com web server receives around 10 hits per second while taking only 0.01 seconds on average to respond to each web-page request. However, some of our bloggers don't follow our “KISS” recommendation (“Keep It Simple Stupid”) and have super-complicated posts with ridiculously large media files: One particularly heinous “vomit in the moving toilet” game comes to mind. Such pages might take up to 2 seconds to load. If our web-server doesn't know how to multi-task, what will happen when one person loads the “bad” 2-second vomit page? It means that every page request that comes in for 2 seconds after the bad vomit page request will ALSO have to wait until the vomit page finishes loading. Since 10 requests come in every second, 20 innocent non-vomit interested people will have to wait much longer than they would have normally had to wait. So instead of 1 annoyed web user -who probably figured out that the slowness was due to the stupidity of the vomit page, you have 20 disgruntled surfers that waited an average of 1 second for no apparent reason. So we've needlessly grown our disaffected users by a factor of 20. Prospects for the monetization of BadMorning.com have declined significantly! 
+
+Multi-tasking solves this problem by allowing for the simultaneous handling of requests. Instead of working on one page request at a time, we could allow working on a “pool” of 4 requests at a time -say. Then the web server switches from one request in the pool to the next at regular intervals making sure not to get stuck on any single request. When a request is completed, it frees up a spot in the pool which we replace with the next new request. In our example, if we make sure to work at most 0.2 seconds on any particular request then almost every request will be completed at first try since it only takes 0.01 seconds. On the other hand, when we encounter the bad vomit page, we'll only get stuck for 0.2 seconds at a time before going on to the next request in the pool. Eventually we do serve up the bad vomit page, but it takes 10-revisits to the task before the request is complete. As a consequence of this approach, simple pages get loaded in at most 0.24 seconds, while the bad vomit page takes around 2.3 seconds to load. Now performance is acceptable for all the non-offending pages.
+
+The approach described at BadMorning.com is the typical approach of most web-servers including Apache. Basically you have a request-pool, and then you visit each request for a pre-determined amount of time making sure not to get stuck on any one request for too long. This works quite well in most situations and helps explain why the market sticks with Apache. However, there are still some inefficiencies and a better way to multi-task is described below.
+
+<b>The Event Loop vs. Apache Style Multi-Threading</b>
+
+If it ain't broke, why fix it? If all your web-traffic can be serviced efficiently by one Apache machine, then admittedly there really isn't a good reason to switch to other server software. But what if BadMorning.com got super popular after Beyonce tweeted about it and now you have a pool of 100 web servers on the cloud for which you're paying $10,000 a month for? Even a modest 20% improvement in efficiency will bring down your cost by $2,000 per month! So now, we see how the choice of a web-server can truly impact the bottom line!
+
+Node.js handles multi-tasking by using an “Event Loop” instead of multi-threading. An Event Loop consists of a forever running loop (cf. http://en.wikipedia.org/wiki/Control_flow#Loops) which considers each task in the order that it comes in. At first, it sounds like we're just throwing away all multi-tasking. For simple tasks, this is true. But the crucial difference is that for complicated tasks, the programmer is entrusted with breaking the task into two pieces: a “now” sub-task and a “later” sub-task which executes after a certain “event” has occurred. The “now” sub-task is a portion of code that Node.js will have no problem executing in the moment without delay. The “later” sub-task is another portion of code that can't be executed right away but will be put on the event loop when the awaited “event” has occurred. 
+
+Going back to our BadMorning.com example, simple blog posts would just be simple tasks handled by the Event Loop immediately. However, a clever programmer will break down the bad vomit page request into several tasks which can be handled in turn and don't affect other page requests. For example, the bad vomit page could be broken down into three sub-tasks:
+<ol>
+<li>Load the blog page text
+<li>Load the images and video needed to play the vomit game
+<li>Load the game playing logic (probably Javascript)
+</ol>
+
+Programmatically, the page request code would look like this:
+<blockquote>
+<b>NOW:</b> 	Send the blog page text to web browser that is requesting them
+<b>EVENT:</b> 	Image and video files were loaded from disk
+<b>LATER:</b> 	Do the following:
+<blockquote>
+<b>NOW: </b>Send the images and video to the web browser that is requesting them
+<b>EVENT:</b> Game playing logic files were loaded from disk
+<b>LATER:</b> Send the game playing logic to the browser that is requesting them
+</blockquote>
+</blockquote>
+Notice that the second “NOW”, is really only occurring “LATER”, after the image and video files were loaded from disk, which happened after the blog page text was served up. Breaking up the task in this way wasn't an arbitrary choice. The natural break point was interacting with the server's disk. This is an example of an I/O (input-output) intensive operation which is typically very slow but which can be offloaded to a different unit of the web-server computer in a way that doesn't slow down the serving of other web pages. By using this approach, all the good pages will be served in the time they should (about 0.01 seconds) while the bad vomit page will take around its expected 2 seconds to load.
+
+<b>A Thought Experiment. Abby vs. Nora with robots Bertrand and Connie</b>
+
+To finish the discussion, let's explain the difference between Apache style multi-threading and Node's Event Loop by way of a thought experiment. Consider an office downtown. Mel (aka Microsoft), the former boss has just been fired because he wasn't very good at delegating and consequently was always late and over-budget. The search committee interviews two possible replacements: Abby (aka Apache) and Nora (aka Node.js). They are presented with the following scenario:
+<blockquote><i>
+Bertrand is our office supplies purchaser robot while Connie is our office supplies distributor robot. Bertrand receives purchase requests, goes to the office supplies store, buys what we ask him to buy, brings it back, and loads our office supplies cabinet. Connie receives distribution requests, goes to the office supplies cabinet, and distributes the supplies around the office as she was requested. The robots are autonomous when they are just waiting around and can signal when they need attention, but they have to be actively controlled when they are doing something non-trivial such as looking for supplies, paying at the register, and placing supplies.
+
+Currently many cubicles are missing staplers, while most of our printers our out of ink. Bertrand and Connie each has two tasks.
+
+<b>Bertrand's Tasks</b>:
+Go to the store and find the staplers (30 seconds). Wait in line to pay (60 seconds). Pay and put staplers in the cabinet (30 seconds).
+Go to the store and find the ink (60 seconds). Wait in line to pay (120 seconds). Pay and put ink in the cabinet (60 seconds).
+
+<b>Connie's Tasks:</b>
+Distribute the staplers (90 seconds). 
+Distribute the printer ink (60 seconds). 
+</i>
+</blockquote>
+
+There was a bit of arbitrariness in the above (in particular how long Bertrand had to wait in line, and the fact that he doesn't buy staplers at the same time as he buys ink). However, this doesn't detract from the <i>comparative</i> analysis as Abby and Nora have to handle the same situation.
+
+How does Abby handle the scenario? At fixed intervals -say every 60 seconds- she alternates driving Bertrand and Connie remotely. The figure below represents how the actions proceed. The numbers indicated the minutes that have passed. When a line segment is green, it is under Abby's control. For Bertrand, a fat green segment indicates picking up office supplies while a thin green segment indicates paying for the supplies and bringing them to the supply cabinet. For Connie, a thin green line indicates distributing the office supplies. For both, a dotted green line indicates being forced to wait while under Abby's control (it is these forced waits that are the wasted moments for Abby as well as Apache). Dashed black segments indicate waiting while not under Abby's control. We can see that Bertrand begins by picking up staplers for the first 30 seconds, then is forced to wait idly in line for 30 seconds while under Abby's control. After a minute, Abby switches to Connie, but is forced to do nothing for a minute as there are no staplers in the supply cabinet. After 2 minutes, Bertrand has waited in line for more than 60 so is ready to pay and bring the staplers for 30 seconds followed by shopping for printer ink for 30 seconds. After 3 minutes, Abby switches back to Connie, who now can spend 60 seconds distributing staplers. This continues in a similar fashion and only ends after 10 minutes, with Connie distributing printer ink during the final 60 seconds.
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/abby_a32b807cee4543afbfc03feac74fb7b7.png" width="100%">
+
+How does the scenario proceed with Nora in control? The following figure uses a similar notation scheme as the first figure. The only differences are the blue and green diamonds: these indicate “call-back” requests and response for subtasks, so that Nora's Event Loop should consider the next available task. A green diamond indicates the requesting of a call-back task. So we again start with Bertrand gathering staplers for 30 seconds. But when this task is complete, he request a call-back for when the line to pay is gone. But Nora notices that there are no staplers in the closet, so she issues a request for a call-back to Connie when those staplers become available. Between 30 and 90 seconds we are stuck waiting for Bertrand's line to empty but then receive a callback at which point Bertrand pays up and fills the supply cabinet by minute 2. This activates the call-back to have Nora distribute the staplers between minute 2 and minute 3.5. With Connie's task completed, Nora can consider the next task: getting Bertrand to collect printer ink. This whole procedure continues similarly and ends after 8 minutes instead of 10 minutes as it did with Abby. 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/nora_0b57787a0f4d45b4a6dfcc53c2b17a80.png" width="83%">
+
+The analysis above is for a single much simplified example, but it really give the gist of how Nora and Node.js can handle multi-tasking in a much more efficient manner than Abby and Apache. It's also the reason why there is a move away towards Node.js and other Event Loop based platforms.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

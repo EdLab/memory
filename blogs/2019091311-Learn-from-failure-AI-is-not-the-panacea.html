@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Learn from failure: AI is not the panacea | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Learn from failure: AI is not the panacea</h1>
+          <p class="lead">
+            Yi-Chen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 13, 2019
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>Artificial Intelligence (AI) is rapidly infiltrating every aspect of society. In this blog, I want to share some takeaways from <a href="https://vergil.registrar.columbia.edu/#/courses/APPLIED%20DEEP%20LEARNING" target="_blank">applied deep learning (COMSW4995)</a> by professor Josh Gordon.</p><p><br /></p><p><strong>How AI can be wrong (examples from deep learning)</strong></p><ul><li><strong>The Echos of </strong><a href="https://en.wikipedia.org/wiki/Phrenology" target="_blank"><strong>phrenology</strong></a><strong> and </strong><a href="https://en.wikipedia.org/wiki/Physiognomy" target="_blank"><strong>physiognomy</strong></a><strong> are sadly back</strong></li></ul><p><a href="https://psyarxiv.com/hv28a/" target="_blank">Wang and Kosinski (2017)</a> <span style="color:rgb(28, 30, 41);background-color:transparent"> from Stanford University applied a neural network to extract features from 35,326 facial images. The goal of this project is to classify sexual orientation. The result shows: a classifier could correctly distinguish between gay and heterosexual in 81% of cases for the man (human testing is 61%), and 71% (human testing is 54%). Then, they claim "those findings advance our understanding of the origins of sexual orientation and the limits of human perception." This research became the cover of the </span><em style="color:rgb(28, 30, 41);background-color:transparent">economist </em><span style="color:rgb(28, 30, 41);background-color:transparent">(9/9/2017) with the title "Nowhere to hide -- what machines can tell from your face."</span></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913103335-wx20190913_103321_png_fb193c635f99782e78b46e68307f78ca.png" /></p><p><br /></p><p><span style="background-color:transparent">It is true that deep learning has a better ability in classification, but does this means that machine can advance our understanding of the origins of sexual orientation? From a rebuttal, </span><a href="https://medium.com/@blaisea/do-algorithms-reveal-sexual-orientation-or-just-expose-our-stereotypes-d998fafdf477" target="_blank" style="color:rgb(74, 110, 224)">Blaise</a><span style="background-color:transparent"> tries to explore more detail in data and figure out how the machine learn. By combining all the 35,326 facial images based on four classes, we can find the difference between these composite faces. For example, the heterosexual male has a beard while the gay male is more likely to wear glasses. The most critical variables that AI learn from these training data are makeup, eyeshadow, facial hair, glasses, selfie angle, and amount of sun exposure.</span></p><p><span style="background-color:transparent">Moreover, if you use this information to redo the classification with some traditional machine learning algorithms (e.g., random forest), the accuracy is almost the same. In other word, what machine did is no more than checking whether someone is wearing glasses. The phrenological analyses produce no statistically significant or meaningful effects.</span></p><p><br /></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913104411-wx20190913_095449_png_be905f119a757c1ca16cfb9e76a96a0c.png" /></p><p><br /></p><p><br /></p><p><span style="color:rgb(28, 30, 41);background-color:transparent">However, this is just an example of phrenology in the 21 century (</span><a href="https://www.sciencedirect.com/science/article/pii/S0010945218301436?via%3Dihub#!" target="_blank" style="color:rgb(74, 110, 224)">Jones, Alfaro-Almagro, and Jbabdi, 2018</a><span style="color:rgb(28, 30, 41);background-color:transparent">). Wearing new clothes (AI), physiognomy is sadly coming back (</span><a href="https://medium.com/@blaisea/physiognomys-new-clothes-f2d4b59fdd6a" target="_blank" style="color:rgb(74, 110, 224)">Blaise, 2017</a><span style="color:rgb(28, 30, 41);background-color:transparent">).</span></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913103707-wx20190913_095436_png_34ff8e86f05d424c77f01cb2353f91e2.png" /></p><p><br /></p><ul><li><strong>Automated Inference on Criminality using Face Images</strong></li></ul><p><a href="https://arxiv.org/pdf/1611.04135v2.pdf" target="_blank" style="color:rgb(74, 110, 224)">Wu and Zhang (2016)</a><span style="background-color:transparent"> claim that "We study, for the first time, automated inference on criminality based solely on still face images, </span>which is free of any biases of subjective judgments of human observers<span style="background-color:transparent">. Via supervised machine learning; we build four classifiers (logistic regression, KNN, SVM, CNN) using facial images of 1856 real persons controlled for race, gender, age, and facial expressions, nearly half of whom were convicted criminals, for discriminating between criminals and noncriminals."</span></p><p><br /></p><p><span style="background-color:transparent">However, when we look at the image that they used for deep learning. We can find the difference between the top row of images (criminals) and the bottom row of images (not criminals): smiling or frowning. Will it be very annoying that you will be classified as criminal with 95% of confidence by a super-powerful deep learning algorithm just because you are frowning?</span></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913110155-wx20190913_095544_png_2f1b7a549ae2f18322e39911689e8a60.png" /></p><p><br /></p><ul><li><strong>Intersectional accuracy disparities in commercial gender classification </strong></li></ul><p><span style="background-color:transparent">The misuse of AI is not just happening in the Academy. According to </span><a href="http://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf" target="_blank" style="color:rgb(74, 110, 224)">Buolamwini and Gebru (2018)</a><span style="background-color:transparent">, "the substantial disparities in the accuracy of classifying darker females, lighter females, darker males, and lighter males in gender classification systems require urgent attention if commercial companies are to build genuinely fair, transparent and accountable facial analysis algorithms."</span></p><p><br /></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913110657-wx20190913_095357_png_e58cff77f2d9b4e33d8a1651e966eb19.png" /></p><p><span style="background-color:transparent">Note, the number indicates the prediction accuracy.</span></p><p><br /></p><p><span style="background-color:transparent">The main reason for this gap, however, can be straightforward: unbalanced data source. There are much lighter male images than darker female images used in these algorithms.</span></p><p><br /></p><ul><li><strong>Tay. ai</strong></li></ul><p><span style="color:rgb(28, 30, 41);background-color:transparent">Another example is the application of deep learning in NLP. </span><a href="https://en.wikipedia.org/wiki/Tay_(bot)" target="_blank" style="color:rgb(74, 110, 224)">Tay</a><span style="color:rgb(28, 30, 41);background-color:transparent"> was a chatterbot released by Microsoft via Twitter. However, the first release only lasted 16 hours because Tay started post inflammatory and offensive tweets which it learned from other posts from the human. One week later, Microsoft shut down the Tay since it post some drug-related tweets after the second release.</span></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913111259-wx20190913_095555_png_99675fe89544a4f29c9b7ec5846527a1.png" /></p><p><br /></p><p><strong style="color:rgb(28, 30, 41);background-color:transparent">Takeaways</strong></p><blockquote>If I’ve learned <span class="hljs-literal">one</span> thing, <span class="hljs-keyword">it</span>’s that technology doesn’t change who we are, <span class="hljs-keyword">it</span> magnifies who we are, <span class="hljs-keyword">the</span> good <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> bad. <span class="hljs-comment">-- Tim Cook</span></blockquote><p><br /></p><p><span style="background-color:transparent">AI is powerful but not the panacea.</span></p><ol><li><span style="background-color:transparent">When </span><em style="background-color:transparent">all</em><span style="background-color:transparent"> you have is a hammer, everything looks like a nail. Keep a cautious, humble, and critical attitude towards modern technology. More critical thing than developing and applying the techniques is using it in the right way.</span></li><li><span style="background-color:transparent">Human society is much more complicated, pluralistic, and dynamic that what we can describe just using coding and algorithm. That is why data science is not just about techniques; it is about how we look at the world. Collaborative efforts from engineers, statisticians, educators, social scientists, journalists, and all area of study are required.</span></li><li><span style="background-color:transparent">Data, data, data. All the examples that we showed, to some extent, have the problem of data. Incomplete, misleading, and uncontrollable data source leads to a failed result, which seems to be perfect. Some people may claim all we need is to collect more high-quality data! It will be very challenging. Besides, can we uncover the truth of society just by doing complicated algorithms, even the data is perfect? This logic of "statistics imperialism" probably only shows nothing more than the ignorance. From my perspective, data and techniques are always a useful tool for learning. However, to find the truth, we need much more.</span></li><li><span style="background-color:transparent">Bias always exists. Bias can be hidden in the algorithm. For example, almost all recommendation system aims at improving the traffic from the user (more click, more shopping, or longer watching duration). This idea is used in model fitting, evaluation, and optimization. However, when we apply the same algorithm in the education context, a biased and unrealistic assumption is created: more traffic means more learning, more improvement in performance, and a brighter future.</span></li></ol><p><br /></p><p><span style="background-color:transparent">Further Informations: </span></p><p><br /></p><p><span style="background-color:transparent">﻿My study note for paper </span><a href="https://arxiv.org/abs/1801.00631" target="_blank" style="background-color:transparent">Deep Learning: A Critical Appraisal</a>.</p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913163555-wx20190913_163539_png_14166bcaa74b0613f71c70c5b97168ce.png" /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

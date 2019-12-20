@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>How about Free, Portable and Light Weight Virtual Machines for Our Development and Testing | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">How about Free, Portable and Light Weight Virtual Machines for Our Development and Testing</h1>
+          <p class="lead">
+            avichalbadaya
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 1, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I recently came across an awesome tool called Vagrant. It can be used to quickly build and run virtual machines for development and testing purpose . Vagrant is based on Oracle's Virtualbox (similar to VMWare). Here are few quick steps to make your own virtual machine:
+
+What you need:
+1. <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a> and <a href="http://downloads.vagrantup.com/tags/v1.0.5">Vagrant</a> installed on your system.
+
+Running virtual machine using vagrant:
+
+1. Download the vagrant box (which is nothing but the Virtual machine package .box file). You can use this <a href="http://www.vagrantbox.es/">link</a> and download a box of your choice.
+
+2. Import the vagrant box in your local inventory:
+"vagrant box add lucid32 your.box/url location"
+
+3. Create new instance via vagrant image from inventor.
+"mkdir test"
+"cd test"
+"vagrant init lucid32"
+
+A sample Vagrantfile is created in this directory. This file serves as the config pointer for vagrant to interface with this VM instance.  All vagrant command must be executed within the same directory where the Vagrantfile is located.
+
+4. start the vm,run
+"vagrant up"
+
+To ssh into the vm ,run 
+"vagrant ssh"
+
+stop VM -
+"vagrant halt"
+
+You can also tweak with network configurations like port forwarding etc. in Vagrantfile.
+
+Sample Vagrantfile:
+
+Vagrant::Config.run do |config|
+  config.vm.box = "lucid32"
+  config.ssh.port = 30012
+  config.vm.forward_port 22, 30012
+  config.vm.forward_port 1521, 30013
+  config.vm.share_folder "share",
+/home/vagrant/share", "./share", :create=>true
+end
+
+Advantages of using vagrant:
+<ol>
+<li>Its free :). Using amazon VMs is expensive.
+<li>Its quite fast as compared to creating your own environment from scratch.
+<li>You can have multiple vagrant VMs running on single machine and each having their own environment.
+<li>We can develop an automated system where if someone checks in the code to trunk, we pull up an vagrant virtual machine, deploy the code, run the test and then destroy the VM. 
+<li>You can create your own customized box with all your software installed and distribute it when required, pull it up for testing purpose and then destroy the VM when your job is done.
+</ol>
+
+<a href="http://docs.vagrantup.com/v2">Reference link</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

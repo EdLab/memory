@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Issues of using HTML5 videos in Vialogues | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Issues of using HTML5 videos in Vialogues</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 21, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I encountered a great report, <a href="http://www.longtailvideo.com/html5/" target="_blank">The State of HTML5 Video,</a> which investigates the readiness of the market to adopt HTML5 videos. The report was written by LongTail Video, the creator of the JWPlayer (a Flash video player widely adopted worldwide).
+
+A couple of colleagues had asked me why we still use Flash as the primary player in Vialogues. You will be able find out a large part of the answer from the LongTail Video report mentioned above.
+
+But the above report doesn't cover one practical and serious concern that most video sharing and distribution websites have: the intellectual property (IP) of videos.
+
+You may have noticed after a brief existence of the HTML5 video player on the native Youtube site (they even once made HTML5 the primary player), all HTML5 videos had been disabled a few months ago. I believe the reason for Youtube to shutdonw HTML5 is it's too easy to download videos in HTML5. In HTML5, you can simply right click the video and choose "Save Video As". It's how HTML5 is made.
+
+There are attempts to make it harder to download HTML5 videos. Youtube's approach is to adding an html overlay on top of their iFrame player (used to embed videos on external sites such as Vialogues) so that people cannot right click directly on the video. This strategy is not very effective because people can still find the physical video url in the webpage source code. 
+
+Another approach many people do is to make the URL for downloading the video expire very frequently (namely a video URL will only be valid for a few minutes and then expire if not being used). This approach cannot prevent individuals from downloading videos if they figure out the url by themselves. But it can prevent the url from serving as a stable download link in case it's posted online and appear in search engines.
+
+There doesn't seem to be an effective way to solve the IP issue of HTML5 videos. But people still want HTML5 video because Apple uses it. Should we blame Apple for adopting HTML5 too early, or blame HTML5 for its own problems?
+
+More readings:
+
+<a href="http://www.pseudocoder.com/blog/why-html5-video-wont-replace-flash">Why HTML5 Video Won't Replace Flash</a>
+
+<a href="http://chrismorris.co/2012/02/08/why-youtubes-html5-player-sucks/">Why Youtube's HTML5 Player Sucks</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

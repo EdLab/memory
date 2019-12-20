@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Modularization In Recent Front End Developing | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Modularization In Recent Front End Developing</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 18, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Vialogues provides a growing number of UI utilities with each of its new releases. One of the important rules we are following in developing these utilities is modularization. Just as we use Django as backend to ensure apps can be easily reused between websites, we do frontend modularization to ensure utilities can be shared between webpages and websites. 
+
+In modularizing, we decouple the data and methods of an upcoming functionality from its context page. The utility's definition is enclosed in a javascript class and data is fed from the page to the utility's instances via the constructor's argument list. Thus the utility can be easily migrated to other context simply by adjusting the arguments. What's more, we assign a namespace to each utility so that utilities can be reused in other websites with no need to worry about name conflicts.
+
+A few reusable tools developed so far include tooltip, scrollable slide show, item paginator, scrollbar and videoJS.
+
+The paginator tools has been successfully migrated from Vialogues to the Events Calendar project. Hopefully it will be used in the Pundit project as well.
+
+The scrollbar utility is currently used for displaying comments on the embed Vialogues page. It simulates the effect of a browser scroll bar and also (what's not supported by other plugin) supports fully customized styling and item highlighting. In the future, we can easily have the same plugin work on other websites.
+
+The tooltip plugin is made so flexible that it allows multiple instances to work simultaneously and can take user-defined styling.
+
+The videoJS is a video player handler that is able to take care of multiple modes of video playback and supports easy setup and control.
+
+I would suggest that EdLab developers or researchers could reuse these modules to save their time and based on them, create even more powerful UI tools.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

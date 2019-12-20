@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Text mining for scholarly resources | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Text mining for scholarly resources</h1>
+          <p class="lead">
+            Yi-Chen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 19, 2019
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p><span style="background-color:transparent">As part of the research for Search and Recommendation System in the research team, finding an efficient, legal, and dynamic technique for obtaining the metadata of scholarly resource plays an essential role. In this blog, we will provide some useful resources about t</span>ext mining for scholarly resources. Additionally, we will discuss the text mining project in EdLab.</p><p><br /></p><p><strong style="background-color:transparent">Resources that may be helpful </strong></p><p><span style="background-color:transparent">Please check out this </span><a href="https://libraries.mit.edu/scholarly/publishing/apis-for-scholarly-resources/" target="_blank" style="color:rgb(74, 110, 224)">summary</a><span style="background-color:transparent"> from MIT libraries about the application programming inference (API) for scholarly resources. Among all of these APIs, we want to emphasis </span><a href="https://www.crossref.org/services/metadata-delivery/rest-api/" target="_blank" style="color:rgb(74, 110, 224)">CrossRef</a>.<span style="background-color:transparent"> MIT libraries also provide a summary of other </span><a href="https://libraries.mit.edu/scholarly/publishing/text-and-data-mining-at-mit/" target="_blank" style="color:rgb(74, 110, 224)">text and data mining (TDM) corpora</a><span style="background-color:transparent">. Among these, we also want to emphasis </span><a href="https://developers.google.com/books/" target="_blank" style="color:rgb(74, 110, 224)">Google Book API</a><span style="background-color:transparent">.</span></p><p><br /></p><p><span style="background-color:transparent">Before text mining, researchers should also follow the license agreement for different library resources and scrape responsibly. Check out this </span><a href="https://update.lib.berkeley.edu/2017/01/06/where-to-find-the-texts-for-text-mining/" target="_blank" style="color:rgb(74, 110, 224)">guide</a><span style="background-color:transparent"> from UC Berkley Library (other </span><a href="http://guides.lib.berkeley.edu/text-mining" target="_blank" style="color:rgb(74, 110, 224)">sources</a><span style="background-color:transparent"> about text mining are also available)</span></p><p><br /></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190919153236-0_8gb5ir_2roqne0wn_jpeg_fec73e878b7177aa37dc5e1d22faa2f7.jpeg" /></p><p><strong style="background-color:transparent">APIs for Search &amp; recommendation system projects in EdLab</strong></p><p><span style="background-color:transparent">Based on the URL in EZProxy logs (04/19/2018-07/21/2019), 347232 links are captured. The top vendors include: Proquest (81006, 23.33%), Ebscohost (70551, 20.31%), Gale (49851,14.35%), SAGE (39009, 11.23%), Taylor &amp; Francis (22887, 6.15%), JSTOR (16408,4.73%), and PsycNET (11336, 3.26%). Among all the URLs, 60110 (17.31%) links are in </span><a href="https://en.wikipedia.org/wiki/OpenURL" target="_blank" style="color:rgb(74, 110, 224)">OpenURL</a><span style="background-color:transparent"> format and links that provide doi is 77937 (22.44%). Here is a summary of our current solution for these links:</span></p><ul><li><span style="background-color:transparent">OpenURL: try to use CrossRef API to obtain the metadata first. If not available, we directly obtain the main information that contains in the URL link.</span></li><li><span style="background-color:transparent">DOI: use of CrossRef API</span></li><li><span style="background-color:transparent">Proquest (contains EbookCentral): if the link cannot be handled by doi or OpenURL, we can obtain the metadata by web scraping.</span></li><li><span style="background-color:transparent">Other prominent vendors that we have web-scraping solutions: Sage, Ebscohost, Gale, and JSTOR.</span></li><li><span style="background-color:transparent">Most search behavior related URL: we can directly obtain the query keywords from URL.</span></li><li><span style="background-color:transparent">Most junk links (e.g., "</span><a href="http://menu" target="_blank" style="color:rgb(74, 110, 224)">http:///menu</a><span style="background-color:transparent">" has no real meaning) from the most prominent vendors are discard.</span></li></ul><p><br /></p><p><span style="background-color:transparent">For all URL links, web-scraping solutions are </span><strong style="background-color:transparent">not</strong><span style="background-color:transparent"> recommended because:</span></p><ul><li><span style="background-color:transparent">Usually, there are no standardized patterns,</span></li><li><span style="background-color:transparent">according to the license agreement from a different vendor, large scale text mining may be rejected and illegal.</span></li></ul><p><br /></p><p><span style="background-color:transparent">Currently, we are focusing on the prominent vendors. Now, we are only updating the metadata which can be obtained without web-scraping and bulk download. We are also finding other content provider's in-platform tools. </span></p><p><br /></p><p><span style="background-color:transparent">There are many vendors may willing to provide a resource based on their contractual agreement. If you know any, please contact us. </span></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

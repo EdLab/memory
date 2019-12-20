@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>“Can’t my Pressible site be a more customizable CMS?” | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">“Can’t my Pressible site be a more customizable CMS?”</h1>
+          <p class="lead">
+             2hughes
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 22, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Patrick, Eric, and i just had a great talk about this question. It arose (again) from an example case: the user that has a bunch of content (say, 100 posts), and a clear idea of how they should be interconnected. Now, it's not that Pressible doesn't already have a solution for that – we've got <em>Topics</em>, <em>Tags</em>, and <em>Contributors</em> that all act as interrelated metadata – but what if a user wants even more? For example, what if I want to not only give a set of posts a Topic description, but include HTML in it? Pressible doesn't allow that: Topic descriptions are plaintext only.
+
+Such matters give rise to existential crises.
+
+Hence, with some trepidation (and some fear), we talked our way through this problem from two directions:
+<ol>
+	<li>Technically, putting HTML into Topic descriptions breaks the WordPress framework. Now, this isn't awful, but it feels wonky – after all, why should this "brief introduction" to a set of posts carry the burden of linking out to other pages, posts, etc.?</li>
+	<li>Should Pressible support some kind of "page hierarchy" to allow for more static content, even though this contradicts the major design theory of <em>How</em> and <em>Why</em> Pressible leads users to create great (read: active) sites? That is, we pondered whether or not there should be a more robust (if traditional) structure living beside the recency-based, dynamic structure of a Pressible site.</li>
+</ol>
+This led us to a two-part answer:
+<ol>
+	<li>The solution is already built into Pressible: When users have an idea about how their content could be viewed in a <em>structured</em> way, they should create <strong>one</strong> page that introduced a visitor to this structure (and only if the "About" page is not already sufficient).</li>
+	<li>On such a page, they could call out specific Topics (and link to them). They could also, of course, describe the Topics with whatever additional links are needed (Pages allow full HTML). Plus, to round out this strategy, Topic descriptions could include a call-out to the Page ("For more on this Topic, see the 'About' page above").</li>
+</ol>
+Overall, this feels like a lightweight (and sufficient!) answer to the problem. We'll see how it works in practice, and if Pressible users respond to this kind of simplicity... or yearn for something more structured and complex.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

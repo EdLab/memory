@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Vialogues users&#39; behavior patterns - initial findings of the clustering analysis | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Vialogues users&#39; behavior patterns - initial findings of the clustering analysis</h1>
+          <p class="lead">
+            SeungYeon.Lee
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 18, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>As I mentioned in my previous blog posts, I have been working on identifying different users' behavior patterns in their usage of Vialogues. <span style="font-size:0.875rem;">Here I'd like to share my preliminary findings. </span></p><p><br /></p><p>I particularly analyzed users' action data; we have been using Piwik to track users' click activities (video watch for 10 seconds, video watch for 50%, post comments, expand replies, open Vialogues tab, etc.) to understand users' behavior on a Vialogues page. For this analysis, I used data from the month of September 2017. After the data cleaning step, the total number of cases were 4,316. Here the cases were defined as the unique Vialogue pages within a unique session. For example, if a user visited 3 different Vialogue pages in one session and 2 Vialogue pages in another session, 5 separate cases were considered for that user.</p><p><br /></p><p>For the method, I used Ward's hierarchical clustering approach. The diagram below describes each cluster's characteristics (sorry for the bad resolution!). First, when we divide users into four different clusters, the four clusters can be defined C1, C2, C3 and C4 as in the diagram below. In circles, I listed the top 10 most frequent actions of the cases that were classified to that particular cluster. The number in the red box indicates the cluster size (number of cases assigned to that cluster). </p><p><br /></p><p>The four clusters, based on the frequent actions, can be described as follows:</p><p><br /></p><p>C1: Watch the first part of the video &amp; post comments - Mix of video watching and commenting </p><p>C2: Content explorers - Explore video information and manage contents</p><p>C3: Active repliers &amp; opinion seekers - Most interactions involve replies</p><p>C4: Pure video watchers - Focus mostly on watching a video</p><p><br /></p><p>Additional point of interest is that when we attempt to specify 5 clusters (vs. 4 clusters), C1 was further broken down in 2 separate clusters (C1.A and C1.B). By the same token, when we specify 6 clusters (vs. 5 clusters), C1.A was broken out to C1.A.a and C1.A.b; and with 7 clusters, C1.B was further broken out into C1.B.a and C1.B.b. </p><p><br /></p><p>In summary, clusters are as follows depending on the number of clusters defined / specified (Please refer to the diagram below. Again, sorry for the bad resolution!)</p><p><br /></p><p>4 Clusters: C1, C2, C3, C4</p><p>5 Clusters: C1.A, C1.B, C2, C3, C4</p><p>6 Clusters: C1.A.a, C1.A.b, C1.B, C2, C3, C4</p><p>7 Clusters: C1.A.a, C1.A.b, C1.B.a, C1.B.b, C2, C3, C4</p><p><br /></p><p>Interestingly, even when we defined the most number of clusters (in this case, 7 distinct clusters), C1 (Watch the first part of video &amp; post comments), and not C2, C3, or C4, was broken out in 4 separate clusters, with enough meaningful differences between them. Each of those 4 sub-clusters describes unique interaction pattern with both &quot;watching video&quot; and &quot;discussion&quot;. <span style="font-size:0.875rem;"> </span></p><p><span style="font-size:0.875rem;"><br /></span></p><p>Again, the data used for the purpose of this analysis was of September 2017, which was the beginning of the semester. As a potential next step, I am planning to explore the behavior pattern for November 2017 to see if the clusters and the pattern we observed in September differ from those found in November's analysis.</p><p><br /></p><p><img src="https://img.tc-library.org/w750/EdLab-blog/20171218162059-screen_shot_2017_12_18_at_4_20_29_pm_png_a1a7573bfe85d9a1b8e75b8dd1d0b7bf.png" style="width:100%;" /><br /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

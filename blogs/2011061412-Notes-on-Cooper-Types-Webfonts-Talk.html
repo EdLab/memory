@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Notes on Cooper Type&#39;s Webfonts Talk | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Notes on Cooper Type&#39;s Webfonts Talk</h1>
+          <p class="lead">
+            Amelia Grohman
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 14, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I attended last night's talk on webfonts hosted by Cooper Union's Type Design program, and wanted to share some of my notes with anyone who may be interested in this subject.
+
+Tim Brown from <a href="http://typekit.com/">Typekit</a> and Nick Sherman from <a href="http://www.webtype.com">Webtype</a> represented their webfont hosting and distribution services. Scott Kellum represented <a href="http://treesaver.net/">Treesaver</a>, which is an HTML5 in-browser app designed for publishers to create typographically sophisticated reading experiences for multiple platforms and devices simultaneously. All of their sites are great starting points for learning about webfonts and improving readability and design on the web.
+<!--break-->
+They discussed the <a href="http://www.w3.org/TR/WOFF/">WOFF</a> font packaging format, which is a compression wrapper that adds XML metadata to a font file. This enables more portability of webfonts while adding protection from unauthorized use. 
+
+There was also much talk about hinting, which is the obscure and expensive art of determining how vectors translate into pixels in Windows systems, and notorious for making type appear awful if done poorly. Webtype's RE typefaces and Microsoft's latest wave of screen fonts were designed to be readable on Windows and can be studied for comparison. There are a number of applications such as Adobe Browser lab that can be used to see this in action.
+
+Both Typekit and Webtype offer 30 day free trial periods to test fonts before purchase, and many free (some of dubious quality) fonts are available through <a href="www.google.com/webfonts">Google Fonts</a>. The takeaway seems to be that there will be a great proliferation of webfonts available, but that building a truly useful, robust typeface will, for the time being, continue to be a slow, expensive undertaking and labor of love by extremely skilled professionals whose critical work should be valued and supported.
+
+A few more resources for finessing webfonts in action: <a href="http://letteringjs.com/">lettering.js</a> and <a href="http://www.kernjs.com/">kern.js</a> are jQuery plugins that enable designers to tweak spacing between pairs of letters as they would in a desktop environment. Webfont developers are still working on enabling OpenType features and individual instances of contextual alternates, which are difficult problems to solve.
+
+Typekit's <a href="http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/">font events</a>, aka Google's <a href="http://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> are JavaScript libraries intended to allow more control over transitional states when using Webfonts. There has been improvement lately, but you may be familiar with the Flash of Unstyled Text (FOUT) phenomenon, in which type reverts to a web default face until it finishes loading (often in FF). This is especially problematic when the design calls for condensed typefaces, which have no spatial equivalent in web defaults.
+
+Lest the print designers of the world get overzealous and try to destroy the web with their desire for control, the major takeaway from the event is that all web presentation is optional and separate from content. It is critical that design be effective, beautiful and a great enhancement to the user's experience, or it risks being stripped away. This moment in history is a perfect opportunity for web developers to fall in love with typography, and for typographers to fall in love with web technology.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

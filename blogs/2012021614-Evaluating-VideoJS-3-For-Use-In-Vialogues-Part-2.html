@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Evaluating VideoJS 3 For Use In Vialogues :: Part 2 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Evaluating VideoJS 3 For Use In Vialogues :: Part 2</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 16, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            This is the second part of the evaluation on VideoJS 3 that we will potentially upgrade to in the video player for Vialogues. See <a href="http://edlab.tc.columbia.edu/index.php?q=node/7290">my previous post</a> on the background information on the video player technology used in Vialogues.
+
+My plan has two steps. Firstly I will implement a minimal setup for both VideoJS 2.0.2 (the version used in the current Vialogues player) and 3.1.0 (the latest VideoJS release), and compare their performance and cross-platform compatibility for HTML5 video playback (Flash video is not supported in v.2 so we cannot compare). Secondly I will implement a minimal setup for VideoJS 3.0 and Flowplayer 3.2.6, and compare their performance and cross-platform compatibility for Flash video playback. The results from the first step will tell us if it is worth considering upgrading to VideoJS 3, while the second step will tell us if we want to replace Flowplayer with the integrated Flash component in VideoJS 3.
+
+<!--break-->
+I am using MacBook Pro 2009 with 2.53GHz Intel Core 2 Duo processor, 4 GB memory, and Mac OS X 10.6.8 in this test.
+
+Step 1: Comparing VideoJS 2.0.2 and 3.1.0
+
+I installed VideoJS 2.0.2 and 3.1.0 in minimal setup and run on a local server. All files including the Javascript plugins, stylesheets, and Flash player are stored on the local file system so as to avoid the interference of unstable net connections. I then ran the two setups in Firefox and monitored the Network status in Firebug.
+
+Chart 1: Initial loading of the players without playing the video:
+
+<a href="http://edlab.tc.columbia.edu/files/2.0.2-2.png"><img src="http://edlab.tc.columbia.edu/files/2.0.2-2.png" width="500" /></a>
+2.0.2
+
+<a href="http://edlab.tc.columbia.edu/files/3.1.0-2.png"><img src="http://edlab.tc.columbia.edu/files/3.1.0-2.png" width="500" /></a>
+3.1.0
+
+Chart 2: After the video finishes playing:
+
+<a href="http://edlab.tc.columbia.edu/files/2.0.2-3.png"><img src="http://edlab.tc.columbia.edu/files/2.0.2-3.png" width="500" /></a>
+2.0.2
+
+<a href="http://edlab.tc.columbia.edu/files/3.1.0-3.png"><img src="http://edlab.tc.columbia.edu/files/3.1.0-3.png" width="500" /></a>
+3.1.0
+
+From the comparisons we can see before playing the video, VideoJS 3.1.0 download size is about 25% more than 2.0.2. And 3.1.0's onload time (the time the browser takes to load static content of a webpage including HTML codes, Javascripts, images, etc.) is also slightly more. This is normal because 3.1.0 has more codes to handle Flash videos. And after the scripts are minified, this difference should become minimal.
+
+The big difference occurred after starting the video. Different web browsers support different video formats (e.g. MP4, WEBM and OGV). In VideoJS one can supply multiple video formats and VideoJS will automatically choose the suitable format to play based the order defined. In my cases Firefox should choose WEBM format to play, which both 2.0.2 and 3.1.0 did. But the problem is 2.0.2 not only tried to download WEBM but also the OGV format so the total download size is a lot more than necessary. This is definitely a big improvement in 3.1.0 since it saves the bandwidth for both the video server and the clients.
+
+Cross-platform playback experience is identical for both versions, with the exception of full screen support. Full screen in 2.0.2 in Firefox and Chrome (Mac only) is not true full screen because the video is only maximized within the browser. In 3.1.0 it's true full screen and video can take up the whole computer screen. However, switching between normal and full screen in 3.1.0 is jaggy and buggy, and often breaks the player. In 2.0.2 it's a lot smoother when switching.
+
+Step 2: Comparing Flowplayer 3.2.6 and VideoJS 3.1.0 for Flash Video Playback
+
+Chart 3: Initial loading of the players without playing the video:
+
+<a href="http://edlab.tc.columbia.edu/files/videojs-1.png"><img src="http://edlab.tc.columbia.edu/files/videojs-1.png" width="500" /></a>
+VideoJS 3.1.0
+
+ 
+<a href="http://edlab.tc.columbia.edu/files/flowplayer-1.png"><img src="http://edlab.tc.columbia.edu/files/flowplayer-1.png" width="500" /></a>
+Flowplayer 3.2.6
+
+Chart 4: After the video finishes playing:
+
+<a href="http://edlab.tc.columbia.edu/files/videojs-2.png"><img src="http://edlab.tc.columbia.edu/files/videojs-2.png" width="500" /></a> 
+VideoJS 3.1.0
+
+<a href="http://edlab.tc.columbia.edu/files/flowplayer-2.png"><img src="http://edlab.tc.columbia.edu/files/flowplayer-2.png" width="500" /></a>
+Flowplayer 3.2.6
+
+Before video starts playing, VideoJS not only downloads the static webpage files but also establishes web connections to the video, while Flowplayer does not preload the video (this behavior can be changed in Flowplayer settings). By preloading the video, the initial loading of the webpage may be slower but the video will start playing faster once the play button is pressed. However since video preloading can be enabled in Flowplayer, this is not a privilege of VideoJS over Flowplayer.
+
+After the video finishes playing, the problem of VideoJS became apparent: it tries to download the same file multiple times. From the screen capture we can see there were a couple of attempts to download oceans-clip.mp4. In total the download size of VideoJS doubles that of Flowplayer. I believe this is because both the HTML5 and Flash components in VideoJS tried to establish web connection with the video file so some parts of the video are downloaded more than once. VideoJS definitely needs to fix this problem.
+
+Conclusion:
+
+Although VideoJS 3 was redesigned with significant improvements over 2, it is not there yet to enable satisfactory user experience especially if Flash video is a primary concern. It is not the best time to upgrade the Vialogues player to VideoJS 3 but we hope the VideoJS team will come up with some major improvements to address the problems in full screen and Flash support.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

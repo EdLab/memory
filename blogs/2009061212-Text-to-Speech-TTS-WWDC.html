@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Text to Speech (TTS)  WWDC | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Text to Speech (TTS)  WWDC</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 12, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Putting Alex on a Diet 
+-----------------------
+Wall E - was one of the movie which used Apple Developer Tool
+MAC OS X UI
+- K-12 Education (Used for teaching kids e.g. - spelling, )
+   # speak selected text when the key is pressed
+- A background operation needs help
+- When not attending to the screen
+- Proofing messages before sending them 
+  #saves embarrassment, kids homework
+- Reading PDFs, web pages and email messages
+   #Multitasking, "aging eyes"
+- Language Learners
+   #how is that word Pronounced?
+
+Improvements of Alex
+- Intonation
+- improved pronunciation
+- reduction of dropouts, etc.
+
+<b>Improved Speech Synthesis</b>
+Acapela group
+CereProc
+
+Speech Synthesis API- So how do I get Started?
+
+Kevin Aitken (Senior Software Engineer)
+Spoken Language Technologies
+
+Text to Speech Programming Basics
+- Same API for Apple and third party synthesizers
+- Voice determines language and synthesizer
+- Accepts any string to speak by special commands can be embedded
+- options for rate, volume, pitch, creating audio files
+- Naturally asynchronous
+
+AppleScript
+- If an application can run an AppleScript it can speak
+- Integrates well with speech recognition
+- Allows specifying with voice, saving audio to a file and more
+- see "StandardAdditions.osax" dictionary 
+ <b>  say</b> "More Driver to Apple"
+Command line tool
+"Say" Command
+- Waits until speaking is finished
+- Allows specifying the voice and reading from a file
+- Felxibule support for saving audio to a file
+"man say" for documentation
+
+say -v
+say -f ATaleofTwoCities.txt -o erfgw.txt
+xcodebuild;say "build complete!"
+
+Cocoa and CF-Based APIs
+- Fiull access to synthesizers
+- Direct setting/getting of synthesizer properties
+- support for notification types such as
+   # speacking compeleted
+  #word and phenomne
+
+NSSpeechSynthesizer
+
+NSSpeechSynthesizer *synthesizer = [NSSpeechSynthesizer new]
+[NSSpeechSynthesizer setDelegate:self];
+[synthesizer startSpeakingString@"Don't object to my string"];
+- Getting information about a voice
+NSDictionary *VoiceInfo
+
+For C and C++ Application: 
+CF-Based Speech Synthesis API
+(SpeechChannel *chan;
+err-NewSpeechChannel(Null,&chan);
+CFNumberRef callback= CFNumberCreate(NULL, kCFNumberLongType,HighlighrtSpokenWord);
+
+Handling Callbacks
+- Callback 
+
+Ruby, Python, Lua
+synthesizer = OSX:NSSpeechSynthesizer.new
+synthesizer.startSpeaking "Start here"
+
+Speech Synthesizer is added into the Resources Folder of our Application.
+Bundling a Synthesizer into Application - Register the synthesizer 
+
+Examples:
+/Developer/Examples/Speech
+
+<b> Audio Output </b>
+Matthias Neeracher
+
+Say it:-
+Speak to default sound output devoice
+- SpeakCFString(channel,CFStr("hi"),null)
+- say
+
+Save it
+- Speak to AIFF file
+SetSpeechProperty
+say-o hi.aif "hi"
+
+Process It
+- Feed into AudioUnits
+(for making a hall effect on the sound)
+# AudioComponentDescription
+# AudioComponenetInstanceNew
+#AudioUnitGetProperty
+# say -n: -f Moby_Dick.txt
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

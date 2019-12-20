@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Fluent 2013 session - Implementing Hypermedia Clients: It’s Not Rocket Science | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Fluent 2013 session - Implementing Hypermedia Clients: It’s Not Rocket Science</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 3, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            This was a very impressive session because it dealt with a generic concept - hypermedia client. The most common hypermedia form that we have known is web pages and the client for it is actually a web browser.  However, there exists many other types of hypermedia and their corresponding clients. Specific types of hypermedia differ from each other in three aspects - structure semantics, protocol semantics and application semantics. 
+
+A web page is an XML in terms of structure semantics. It's transmitted using HTTP in terms of protocol semantics. And it uses CSS in terms of application semantics. Alternative hypermedia structures include CSV, JSON, YAML, etc. Alternative hypermedia protocols include WebSockets, XMPP, etc. Alternative application semantics include XSD, JSON-Schema, etc. All three of semantics are needed for any successful communication between client and server. This threesome (S-P-A) forms the essentials of communication over distributed networks.
+
+Given the existence of various of forms of hyperdia transportation, it's pretty attractive to develop a generic hypermedia client that is capable of accepting, processing and responding to multiple types. Such a client is represented with a combination of H Factors. The H Factor of a media-type is a measurement of the level of hypermedia support and sophistication of a media-type. H Factor values can be used to compare and contrast media types in order to aid in selecting the proper media-type(s) for implementation.
+
+H Factors in an HTML:
+<code>
+LE
+Support for embedded links (HTTP GET)
+
+    &lt;img src=&quot;http://www.example.org/images/logo&quot; title=&quot;company logo&quot; /&gt;
+
+LO
+Support for out-bound navigational links (HTTP GET)
+
+    &lt;a href=&quot;http://www.example.org/search&quot; title=&quot;view search page&quot;&gt;Search&lt;/a&gt;
+
+LT
+Support for templated queries (HTTP GET)
+
+
+    &lt;form method=&quot;get&quot;&gt;<br/>      &lt;label&gt;Search term:&lt;/label&gt;<br/>      &lt;input name=&quot;query&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;<br/>      &lt;input type=&quot;submit&quot; /&gt;<br/>    &lt;/form&gt;
+
+</code>
+
+ The speak person described two types of hypermedia clients, human client and non-human client. Below are the pros and cons of both.
+
+Advantages of hypermedia clients for humans
+flexibility to support a wide range of non-breaking domain-level changes
+- adding new display & input fields
+- adding new resources/pages
+- adding new link and form options (not new protocol options)
+- changes in access control rules is “automatic” no access?no controls
+- ability to separate “parsing” from “display”
+- Most hypermedia tuypes keep clear separation bet
+
+Drawbacks of hypermedia clients for humans
+SoC can mean extra work for clients
+Possibility of changes in server can limit UI opitons
+Anything short of FHC risks client adaptability
+-If client determines what to display, new fields will not appear.
+- If client determines what transitions to support and in what order they appear, changes( add/move forms & links) may break the clients.
+If the message format is unstable (breaking changes occurring), FHCs have no real advantage over one-off client coding.
+
+
+Advantages of hypermedia clients for machines
+- ability to hand off tedious work to “smart” machine
+- Using “generic” media types makes it possible to use the same client code for several different tasks/projects
+- Coding new tasks gets faster over time since the baseline code already exists
+- Simple modifications in the server (order
+
+
+Drawbacks of hypermedia clients for machines
+- Making machines “smart” takes time, esp. for non-trivial tasks
+- Some changes in message can brak clients (missing transitions, new fields, etc.)
+- Some unsafe operations (POST/PUT/DELETE) may need human intervention anyways.
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

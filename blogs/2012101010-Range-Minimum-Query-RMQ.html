@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Range Minimum Query (RMQ) | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Range Minimum Query (RMQ)</h1>
+          <p class="lead">
+            kiraluo163
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 10, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            This past Monday, I presented the "range minimum query" (RMQ) at a workshop. It is a very interesting topic, and can be implemented in the data tracking of EdLab products. "Range Minimum Query" is a classic algorithm question, and it's variations will lead to other practical problem solving. 
+
+<b>First, what is "Range Minimum Query(RMQ)"?</b>
+
+Given an array A[1,n] of objects taken from a well-ordered set (such as numbers), a  RMQ asks for the position of a minimum element in the sub-array A[i,j]. For example, when A[0,5,2,5,4,3,1,6,3], then the answer to the range minimum query for the A[3,8] =[2,5,4,3,1,6] is 6, as A[6]=1. RMQs can be used to solve the lowest common ancestor problem, and is used as a tool for many tasks in exact and approximate string matching. In terms of the data tracking of EdLab products, it can be used to solve getting time period for the most shared articles within that period, or getting the range of age of users who are interested in watching one specific Vialogue.  
+
+How to solve that problem?
+
+<b>1. Dynamic programming</b>
+Using dynamic programming to preprocess the problem, and using query to get the solution. The preprocessing time will be O(n^2), and query time is O(1), so the overall time complexity is O(n^2). 
+
+<b>2. Segment tree</b>
+For solving the RMQ problem we can also use segment trees. A segment tree is a heap-like data structure that can be used for making update/query operations upon array intervals in logarithmical time. We define the segment tree for the interval [i, j] in the following recursive manner:
+<ul>
+<li>a the first node will hold the information for the interval [i, j]</li>
+<li>b if i[<j] the left and right sign will hold the information for the intervals [i, (i+j)/2] and [(i+j)/2+1, j]</li>
+</ul>
+
+By using a segment tree, the time complexity to build the segment tree is O(nlogn), and the query time will only take O(logn) . So the time complexity decreases a lot compared to the first solution.  Segment tree is a powerful tool, and can be implemented in various places. I will strongly recommend Sharath Gururaj to give us a lecture about that topic.
+
+For more detail of the RMQ problem, you can go to this <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=lowestCommonAncestor">link</a>.
+
+
+Hope this helps!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

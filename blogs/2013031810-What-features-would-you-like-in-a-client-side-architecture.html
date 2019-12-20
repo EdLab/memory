@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>What features would you like in a client side architecture | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">What features would you like in a client side architecture</h1>
+          <p class="lead">
+            Sharath Gururaj
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 18, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            private please
+
+In this blog, I'd like to discuss the features that makes a good architecture for client side code(i.e., the code that runs in the browser).
+
+<ul>
+<li>Whatever framework we use should not be verbose. i.e., there should be very little boilerplate code that would need to be written to achieve a functionality. One good measure of this is, how much code do we need to write a
+standard functionality, say the login screen. We can use this as one criterion to evaluate different ways of organizing code.
+</ul>
+<ul>
+<li>all javascript code should be well commented and linted according to an agreed upon style guide. It is worth the effort to configure our respective IDEs to do this automatically. 
+</li>
+<li>It should be possible to organize source code into separate files for better readability. The separation would have a twofold advantage:
+<ul><li>Given a functionality on the UI, for example a button press, It should be possible immediately, due to convention, to tell what files are involved. i.e., where is the source file for the button code, which source file has the handler for the button click etc.</li><li>Each file would be testable separately.</li></ul>
+</li>
+<li>All dependencies and paths should be normalized. i.e., It should not change from machine to machine, or even from development mode to production mode.
+</li>
+</ul>
+
+There should be two "modes" of running the code: a development mode and a production mode.
+
+<ul><li>The behaviour of development and production code should be identical</li></ul>
+
+For development mode:
+<ol>
+<li>It should be possible to develop in a full IDE like eclipse ec, with debugging cababilities (like breakpoints etc), without having to resort to in-browser debugging like firebug etc.
+<li>Developers should be able to see the effects of changes they are making in realtime, either in the form of unit tests or the browser refreshing itself on every save </li>
+<li>One should be able to run all (or at least one particular) unit test on every save, so that developers have instant feedback on whether the test is breaking or not. This will allow true test driven development, which also makes up for a lack of compiler. 
+<li>The code should  be organized such that no intermediate steps are required between changing the code and seeing the change on the browser. A browser refresh should be enough.
+<li>In most cases, It should be possible to do "view source", save the source to disk and view the saved file in a browser without having to modify paths. i.e., all the image paths etc should "just work" when saved to disk.
+<li>exceptions should show a correct stack trace with line numbers to original source, and should print out local variable information
+</ol>
+
+Production mode
+<ul>
+<li>The code should be minified. Is it required to combine all files to a single file?
+<li> explore if it is possible to use "real" source lines for exceptions that might occur in production code.
+<li> explore if we can transmit client side exceptions to the server for later debugging.
+
+Please suggest other features/changes that would make for a truly pleasant and fast development experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Why my Vialogues video doesn&#39;t play on iPhone? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Why my Vialogues video doesn&#39;t play on iPhone?</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 15, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="http://edlab.tc.columbia.edu/files/Screen Shot 2012-06-15 at 10.51.55 AM.png" width="350" />
+
+**Keep Private
+
+Many of you may have noticed some (well, I have to admit <i>most</i> is a more accurate word but that's rather embarrassing...) Vialogues videos that are non-Youtube don't play on iOS devices. We have HTML5 support and the videos play perfectly on computers that don't have Adobe Flash. What's wrong with iPhones and iPads?
+
+The short answer is our videos are too big. The longer answer is we do not encode the videos in different resolutions and formats so as to support various OS (i.e. computers, iPhone, iPad, Android, etc.), browsers (i.e. Chrome, Firefox, Safari, IE, etc.), and platforms (i.e. Flash and HTML5).
+
+iOS don't play Vialogues videos because they require the videos to be no more than 640x480 with H.264 encoding at 30 fps, and audio rate no more than 48kHz. Currently when videos are uploaded to the Vialogues server we retain their original resolutions. Given the fact that the majority of video capturing devices nowadays are at least 720p, very few uploaded videos will be able to play on iDevices.
+
+In addition, you may also notice even on computers, HTML5 videos don't play in Firefox. That's because the only video format we have is MP4, which is not supported by Firefox. We have to force Firefox users to install Adobe Flash Player in order to play Vialogues, OR we have to encode our videos in additional formats that Firefox supports (e.g. OGG).
+
+The common way that video streaming websites are doing is to encode videos in at least two formats (MP4 and OGG) and in three or more resolutions (original, for computers, for mobiles) so as to cover 99% users. Based on the platforms they use and possibly their bandwidths, the video player client will choose the best format and resolution to play. I feel this is a task Vialogues must take on ASAP so that we can ensure the NLT videos will play on iOS devices.
+
+I've been working on the Vialogues Player (current and next versions) in the past two years. As I read more and more about encoding and streaming videos to different platforms, I increasingly realize it's a complicated topic that needs years of work to do it well and in the right way. I'd be glad to discuss this topic with anyone who is interested.
+
+References:
+
+<a href="http://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/CreatingVideoforSafarioniPhone/CreatingVideoforSafarioniPhone.html#//apple_ref/doc/uid/TP40006514-SW4" target="_blank">Encoding Video for Wi-Fi, 3G, and EDGE</a> in Safari Web Content Guide by Apple
+
+<a href="https://app.zencoder.com/docs/guides/encoding-settings/ios-and-mobile" target="_blank">iOS/Mobile Encoding</a> by Zencoder
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

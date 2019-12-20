@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Cloud Security with Big Data Republic | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Cloud Security with Big Data Republic</h1>
+          <p class="lead">
+            Josh Lopez
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 8, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>Today Yudan and I participated in a live radio chat at <a href=”http://www.bigdatarepublic.com/radio.asp?doc_id=255986&cid=email_BDR_ND_radio_010813_b&piddl_promo=1141&elq=f387638699584dc1a59f94f2ee2a1021”>Big Data Republic</a> called “Locking Up Your Cloud: Security in the Ether”. The focus of the conversation was (as the name suggests) on best security practices to observe when migrating data to the cloud. The conversation did not provide any life changing revelations; it was mostly a checklist of what to consider when migrating to the clout. But there were several points that were brought up which we should keep in mind as we continue moving our data into the cloud. Here's the highlights.</p>
+<!--break-->
+<p><h3>Vulnerability</h3>One of points that was repeatedly stressed was how much more vulnerable data becomes once it's stored in the cloud. The kinds of apis and interfaces a provider makes available, as well all every piece of our code that is going to interact with these interfaces, all have to be considered, and possibly reworked, when migrating. Managing permissions also becomes a much more crucial issue. The example that came up in the discussion involved a user who had some higher privileges on a single app, using these privileges to gain access to all the data across every app on the server just because a simple reconfiguration of privileges had been neglected.</p>
+<p><h3>Provider's Security</h3>Storing data on someone else servers also means that our data is really only as secure as they are. Building concrete walls around all our interfaces and posting armed guards at every submit button will be a effective as this little guy if the provider's servers are compromised.
+
+<img src=”http://cdn.memegenerator.net/instances/400x/24672441.jpg” /a>
+
+The takeaway here is that we need to know and trust our provider's security because there are situations where it will be the only thing protecting our data.</p>
+<p><h3>Areas of security</h3>
+The two important areas of security which we need to consider when moving into the could are:
+<ol><li>Examine the security provider — What kind of security tools does our provider supply and are they the kind of tools we should be using. The idea of what we “should” be using is obviously open to discussion, but we should at least make sure our own ideas of security match up with the methods of our provider.</li><li>Understand your usage model — This seems like a no brainer, but it could also be the kind of thing that doesn't really get the attention it should. How are we going to use cloud storage in our apps, and how are we going to build it in? This shouldn't just be something that gets discussed once and then forgotten for the rest of the process.</li></ol>
+During the migration process it's likely we're going to have to update several components of our sites. 
+</p>
+<p><h3>Reenforce the basics</h3>
+Not all of our apps were created with the cloud in mind and insecure code which might not create an issue with locally hosted data could become the skeleton key to a cloud database. To keep these issues from becoming security holes, we need to go back to the basics of security and consider how our apps are handling basic data security concepts like backup and recover functionality, data integrity, responses to potentially malicious requests, and maintaining confidentiality. It's also important to know when data has been compromised. Not even <a href=”http://cdn.memegenerator.net/instances/400x/24672441.jpg”>Great And All Knowing Internet Archive</a> can help us if we don't know there's an issue. Obviously we'll also need to know how someone got in, what they did, and how to fix it. One good practice suggested in the talk is to treat every application that could be moved to the cloud as if it's already there.</p>
+<p><h3>Figure out what's appropriate for the business</h3>
+According to one of the experts in the conversation, there will be “ninjas jumping out of black helicopters to get at your data”, so we need to figure out how much trouble these ninjas are willing to go to for a peek at our data. It's not safe to assume that our provider is going to protect us. We need our own Edlab Ninja security to keep our data safe.</p>
+<p><h3>Determining the differences</h3>
+Not all providers are created equal and we need to know exactly what we're getting into with ours. There are going to be differences between our own security and whatever is offered in the cloud. The difference might be that we have security, but our cloud provider doesn't. According to today's talk, the founder of OpenStack has gone on record saying there isn't much security built in to their product. This isn't necessarily a bad thing but it's up to us, as the client, to determine how to protect our data in an environment where there is no protection. We should also keep in mind what capabilities for data management are provided to us. Can we make our own backups easily? Can we add additional security or modify the existing (if any) security methods in the cloud. If we're just subscribing to cloud hosting we're pretty much going to have to do everything, but if it's more of a SoS situation, there probably will be less control. It's on us to determine which is better, why, and how we're going to use it.</p>
+<p><h3>Who do you blame</h3></p>
+So the cloud hosting is up and running and everything has the best protection you can think of, but someone found the super-secret-super-tiny-hard-to-find-and-harder-to-open-but-still-lets-you-inside-eventually-back-door and now everything is foo.bar(ed). Who's fault is it? Is it ours for trusting an insecure provider? Is it the provider's for allowing a breach? The answer is that there is no answer. While there are efforts to define the boundaries of responsibility, there is no accepted precedent for who is ultimately responsibility for a security breach. This basically means we need to be ready and capable of handing the entire situation, blame and recovery, ourselves. This means maintaining our own backups as a last fallback.</p>
+<p><h3>Mistakes</h3>
+When asked what the most common mistakes people make the responses were:
+<ol><li>Assuming providers have security solutions — This is just reenforcing the items which were discussed throughout the talk, but it also seems like the kind of thing that can't be repeated too much.</li><li>Do security assessment before migrating — We need to know what our vulnerabilities are before we move. Who has rights and privileges to what data? Does this provide any back doors (or more likely, what back doors are provided)? These questions need to be answered and resolved before the migration begins, not after.</li></ol>
+<p>Overall, the discussion was more about what could go wrong, and less about how to fix it. There weren't any substantive solutions for how to secure data or resolve any of the issues that might occur, except for a brief and vague mention of possibly encrypting data which seemed more of an afterthought. But it's still a great place to start from in terms of preparing for our own migration to cloud severs</p>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

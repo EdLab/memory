@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Let&#39;s Make NLT Better | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Let&#39;s Make NLT Better</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 20, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            This was originally going to be a reply to Zhou Zhou's post about W3C testing of NLT. But I'm doing a separate posting here as I thought it could actually be a good place to mention some of our findings in NLT mobile developing and our approaches to address existing issues.
+
+Thanks Zhou Zhou for finding W3C tool for mobile app performance testing. From the results, we see there's a big room for NLT mobile to be improved. 
+
+NLT is our first attempt in developing HTML5 mobile apps. Many parts of it were designed and developed using our existing web developing experience. Indeed, we experimented and adopted many new mobile-specific techniques but there are a lot more we need to use.
+
+According to W3C's testing results for other popular sites, it can be seen W3C considers a good mobile app should be developed using a very different set of standards and tool set compared to web apps.
+
+NLT uses one single backend to serve its two frontends. One possible optimization approach we can take is to use a more mobile-oriented backend for the mobile frontend. That will typically reduces SOAP connections and increases REST connections and thus increasing loading speed. The widely use of AJAX on the frontend also requires the backend to be able to serve light-weighted response for multiple purposes, which is featured by REST framework.
+
+For the UI developing, we have been adopting a more mobile-specific approach. We have been boldly using JQuery Mobile framework. It proved successful in emulating some of the mobile page transition effects. And it's also been successful in handling some mobile-exclusive events, like rotating and swiping detecting.
+
+However, we do face 2 major issues on the UI part. The first is efficiency. We have seen lags on some of the pages. This happens mostly in page loading and page swiping. We're going to address this issue by optimizing and simplifying the existing code. We are going to reorganize some of the existing objects and functions to make sure less redundant information is loaded in page accesses. 
+
+To further enhance the performance, we're going to use more pre-fetching and caching techniques, which will speed up page loading. 
+
+The second major issue is compatibility. NLT app doesn't work as good on Android phones as on iPhone. This is partially because most of the UI developing was done against iPhone and iPhone simulator. Our previous assumption was that significant difference might only happen when a different browser was used. However, it turns out mobile Safari browsers behave very differently between iPhone and Android. In future, we are going to do better testing by using Android or Android Emulators.
+
+Thank all again for finding bugs and giving suggestions during yesterday's seminar. We're going to fix all the bugs asap and carry out more new features.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

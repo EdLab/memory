@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>D&amp;R 2017/01/17: Elasticsearch (EdLab Super Search) | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">D&amp;R 2017/01/17: Elasticsearch (EdLab Super Search)</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 17, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Today Xiang and I will give an update about the D&R's latest work on Elasticsearch (tentative name: EdLab Super Search). Below are the bullet points we will be covering.
+
+<h2>Why do we conduct this project?</h2>
+
+<ul>
+<li>Need to better understand the relations of our data across all products</li>
+<li>Need to better understand the user experience across all products</li>
+<li>Research how to enhance the user experience by providing cross-domain, contextualized, and personalized learning resources</li>
+</ul>
+
+<h2>How EdLab Super Search can help us?</h2>
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/screen-shot-2017-01-17-at-85722-am_c77db6002b7e42289fb3679c58b9e6cd.png" width=550 />
+<!--break-->
+<ul>
+<li>Data ingestion</li>
+<li>Data reorganization and mapping</li>
+<li>Data discovery and visualization</li>
+<li>Data-driven decision making on how to elevate our products and services
+</ul>
+
+<h2>Sneak peek into EdLab Super Search</h2>
+
+1. Elasticsearch (data ingestion and reorganization)
+
+<hr />
+Search all (nlt, blog, story, and journal_entry) articles that contain "machine" "learning"
+http://search.tc-library.org:9200/article/_search?q=machine+learning
+<hr />
+Search nlt articles that contain "machine" "learning"
+http://search.tc-library.org:9200/article/nlt/_search?q=machine+learning
+<hr />
+Search edlab blog articles that contain "machine" "learning"
+http://search.tc-library.org:9200/article/blog/_search?q=machine+learning
+<hr />
+Search edlab seminar events that contain "matt" "taylor"
+http://search.tc-library.org:9200/article/story/_search?q=matt+taylor
+or
+http://search.tc-library.org:9200/article/_search?q=type:story+matt+taylor
+<hr />
+Search edlab projects
+http://search.tc-library.org:9200/article/_search?q=type:journal_entry
+<hr />
+
+2. Kibana (Data discovery and visualization)
+
+<b>Number of articles published per week by authors</b>
+
+(note: the following interactive chart is only visible in the Columbia network)
+
+<iframe src="http://search.tc-library.org/app/kibana#/visualize/edit/Number-of-articles-published-per-week-by-authors?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-6M,mode:quick,to:now))&_a=(filters:!(),linked:!f,query:(query_string:(analyze_wildcard:!t,query:'*')),uiState:(),vis:(aggs:!((enabled:!t,id:'1',params:(customLabel:'Number+of+published+articles',field:id),schema:metric,type:cardinality),(enabled:!t,id:'2',params:(customInterval:'2h',extended_bounds:(),field:time_published,interval:w,min_doc_count:1),schema:segment,type:date_histogram),(enabled:!t,id:'3',params:(field:author.keyword,order:desc,orderBy:'1',size:3),schema:group,type:terms),(enabled:!t,id:'4',params:(field:_type,order:desc,orderBy:'1',row:!t,size:3),schema:split,type:terms)),listeners:(),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,defaultYExtents:!f,drawLinesBetweenPoints:!t,interpolate:linear,legendPosition:right,radiusRatio:9,scale:linear,setYExtents:!f,shareYAxis:!t,showCircles:!t,smoothLines:!f,times:!(),yAxis:()),title:'Number+of+articles+published+per+week+by+authors',type:line))" height="420" width="550"></iframe>
+
+<a href="http://search.tc-library.org/app/kibana#/visualize/edit/Number-of-articles-published-per-week-by-authors?_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3Anow-6M%2Cmode%3Aquick%2Cto%3Anow))" target="_blank">LINK</a>
+
+<h2>Activities</h2>
+
+1. Each group creates at least 1 data visualization in Kibana (10 min)
+
+Please share your datavis using the "embed" feature to this post.
+
+2. Brainstorming ideas how we can elevate our products and services using EdLab Super Search (15 min discussion + 10 min share with the crowd)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

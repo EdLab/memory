@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Mapping Tool | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Mapping Tool</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 22, 2007
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hopefully this week will begin the discussion of a new visual mapping/browsing tool.  The browsing tool will be for traversing data in a network structure similar to the <a href="http://jamison.tc-library.org/dan">Education Map</a> we made some time ago.  At the Doc.Life seminar I passed out a quick document to introduce the idea.  For those of you who didn't get it, <a href="/files/vtool.doc">here it is</a>.  And for those of you who got the file but didn't "get it," I apologize for not taking more time to explain myself.
+
+The document suggests that there is a need to re-think browsing/searching tools.  To illustrate why, lets follow a hypothetical situation: So imagine I want to find something new to read.  I like John Maynard Smith so I'll Google him.  Hmmm, Wikipedia has some stuff about him and his publications, Edge Magazine seems to have an interview with him, FindArticles.com found some of his publications, etc.  But really I'm feeling very disconected.  I know Maynard Smith published with other people, I know he must have worked in some sort of field, but where is he?  Not only do I want a better sense of where in the world of academic he lies, I want to see a bit about the people he works with.  What did they publish?  In short, I'd like to see the name of the field he worked in (Evolutionary Biology).  Oh, some of the terms which describe his work; it is a big field (game theory, genetics, language, psychology).  Some of the names that he corresponded with (Ernst Mayr, Steven Pinker).  Oh wait, who are those people?  I better see some of their publications too!
+
+So I asked about Maynard Smith not because I was looking for his biography, but because I wanted to explore some information and begin a journey of self-directed learning.  And along the way I realized I needed to see the topic (Maynard Smith) in the context which it exists (field name and keywords, other authors) and it's implications (his publications).  And if I can see all of this at once I'm golden, right?
+
+So what we're describing is the viewing of many relationships at once (ISA evolutionary biologist, PUBLISHED these papers, WORKED_WITH these folks, etc.).  Amazon does something similar: you search and it returns the results for the TEXT_LOOKS_LIKE relationship.  It additionally returns results from the ALSO_BOUGHT relationship (a list of items purchased by users who also bought this book) when you're viewing a single item.
+
+The only change we're making here is the suggestion that all of this information should be immediately available.  If I search Maynard Smith then I should find books he's written and (denoted separately) books purchased by folks who bought his books.  And maybe some other highlighted authors.  
+
+We suggest that the best means of displaying this content is some sort of nodal map like the Education Map I've linked earlier.  But perhaps it isn't.  I've been intentionally vague thus far because YOU may have a better idea for representation.
+
+Just to give you some food for thought, we plan on using this for Doc.Life.  Ideally users will be able to browse various content this way:
+<ol>
+<li>Research methodologies, corresponding publications, examples of use across fields</li>
+<li>Various fields of study, the most prominent researchers, and seminal papers</li>
+<li>Plenty more.  Let us know if you have some ideas for topics to explore.</li>
+</ol>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

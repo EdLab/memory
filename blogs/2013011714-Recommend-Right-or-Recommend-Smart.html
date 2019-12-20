@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Recommend Right or Recommend Smart? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Recommend Right or Recommend Smart?</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 17, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="http://3.bp.blogspot.com/-X-c5rO2rM5s/TtfHDAH99wI/AAAAAAAAAno/hkLJleXKqwg/s1600/recommend.png" width="70%">
+I believe that we are all more or less familiar with the recommendation mechanism.
+We often find it on e-commerce websites (i.e. amazon.com). (If you liked product A, you might also like product B), but there's a big challenge in recommender field, which is, the recommendation precision. Reasons are varied. People change their tastes from time to time; Not enough <i>similar</i> people like you or items to recommend to you, etc. 
+
+This new study propose a very interesting approach and proved to increase the recommendation accuracy and diversity. <b><a href="http://arxiv.org/pdf/1301.1887v1.pdf">Crowd Avoidance and Diversity in Socio-Economic Systems and Recommendation</a></b>
+
+What is <b>crowd avoidance</b> recommendation?
+It states there are occupancy constraints on individual objects, or in other words, assuming object utility decays with the number of users sharing it. The idea is borrowed from Physics, the particles occupy their favorable states. i.e. fermions, bosons. 
+
+Think about it:
+<blockquote>You probably want to go to the top ranked restaurant, but it might be awfully crowded, because there are simply not enough tables to fit all the people. Therefore, the long wait for the table might actually ruin your dining experience. Another example, a quiet cafe can be recommended as a place to work, but it ends up becoming a noisy tourist spot. 
+</blockquote>
+
+The authors did an empirical study on DVD renting by introducing crowd avoidance in the recommendation process and resulted in the recommendation accuracy increase. Although, arguably, there shouldn't be a limit for DVD copies for rent, but adding the factor of <i>occupancy</i> reduces bias that when an unlimited number of people can access.
+
+The approach might be useful for Pundit. It's probably a safe bet to recommend the most popular course. But a course simply can't accommodate all the students (unless it's an online course, that's another issue). Then maybe avoid the crowd, may not only introduce the diversity into play, but also just a more strategically, economically smart thing to do? 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

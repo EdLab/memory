@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Piwik and the Data D_________ | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Piwik and the Data D_________</h1>
+          <p class="lead">
+            Manav Malhotra
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 28, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            After months of fighting the various browsers (mostly Internet Explorer), Josh and I are ready to put up the tracking and aggregation scripts for the data depot/depository/destiny/feel free to pick any other d word you like, but only d words, since dd is all over the code already. DD was designed to be our central intelligence system, allowing us to track individual learners/users as they use our applications. Essentially, it's Google Analytics with infinite variables, individual identification, and server-side tracking (not part of the scripts of course, but pulled by the DD server). We will be putting the scripts up on Vialogues first before moving to New Learning Times (NLT), Survey Sidekick, and Research Broker.
+
+In addition to algorithm development, we want to use the data for business intelligence, which means we need a good way of reporting/displaying in a dashboard. We are looking at <a href="http://piwik.org/">Piwik</a> (pronounced Pea-wick), a free, self-hosted, and open source web analytics software. Its open sourciness allows us to customize it however we please. (This begs the question of why we didn't use this in the first place for all the tracking. Well, for one, it is still only front-end tracking, and two, we didn't know about it then.) At the very least, we want to use the front-end of Piwik to display the data we collect. It's similar to Google Analytics, but feels cleaner. You can check out a demo <a href="http://demo.piwik.org/index.php?module=CoreHome&action=index&idSite=7&period=day&date=yesterday#module=Dashboard&action=embeddedIndex&idSite=7&period=day&date=yesterday&idDashboard=1">here</a>.
+
+If Piwik's documentation is any indication, it has a great plug-in architecture and its features around mobile tracking seem to be pretty nice as well. In addition to the Javascript API, there is a REST API for tracking. Should Piwik's features prove to be robust (more so than ours at least),  we might use it for our front-end tracking in the future and augment the data with our back-end tracking before pushing it into the customized Piwik front-end. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

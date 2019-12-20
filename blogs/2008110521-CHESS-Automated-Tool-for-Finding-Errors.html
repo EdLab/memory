@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CHESS:  Automated Tool for Finding Errors | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">CHESS:  Automated Tool for Finding Errors</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 5, 2008
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I attended a seminar today which i found interesting. Till now I used to think that whatever programs I wrote was bug free but now I realise that it was my perception of thinking of it running sequentially and not concurrently which could lead to lot of runtime errors which i hadn't thought about at all. Here is the gist of what i found and from my understanding summarizing the seminar on "CHESS a tool used for detecting concurrent bugs" inside programs. 
+
+Background:
+ 
+Having multiple processors on a single chip a.ka. dual-core, quad-core had brought in new ways of speeding up the program execution where by a program having multiple threads can run it on different cores or CPUs.
+With power you get more responsibility but with this enhanced power of better program execution time for a program new issues related to concurrent execution of threads which cause deadlocks, atomicity problems crop up.
+
+Why not get rid of them: 
+Fixing them is next to impossible as reproducing them is difficult as it not only depends on the thread schedule but also depends upon when the thread switched and what other thread ran to modify the shared global variable which should not have been modified had the program ran sequentially. Tools and testing methodologies currently used by testers like stress testing(running multiple programs for a long time) or running the program iteratively hoping that a thread schedule happens which can cause the concurrency bug are not efficient ways for testing of these problems. These issues or bugs with the software  is generally named heisenbug (http://en.wikipedia.org/wiki/Unusual_software_bug).
+
+So what's the solution:
+To augment helping in finding these bugs model checking verification techniques can be used but it quickly leads to state explosion and therefore these are not scalable for large programs. So how to do we solve them? Microsoft Research lab has been working on a tool called CHESS (http://research.microsoft.com/projects/CHESS/) which uses partial order reduction techniques to reduce the number of states and limits the thread context switches to an upper bound thereby checking all the possible interleavings between threads which can extract the thread interleaving which caused the concurrent problem, so if we can find the thread schedule and thereby the thread stack we would be able to find out the offending code in the software which if fixed can remove the concurrency problem.
+Chess for its ease of development comes integrated with Visual Studio and can be incorporated in the application for checking by simple library calls and thus help in making better programs which are free of concurrent errors.
+
+Future Work: 
+Scale CHESS on to distributed computers so that CHESS can use the power of distributed computers to check concurrency errors in large thread based programs which is right now limited to 256 threads.
+
+
+Note: Concurrency means the execution of two or more active threads or processes in parallel. On a uniprocessor apparent concurrence is accomplished by rapidly switching between threads. On a multiprocessor system true parallel execution can be achieved. 
+Model checking is a formal verification technique that compares the implementation of a design to a set of user-specified properties. Determines whether a set of properties hold true for the given implementation of a design. If the property is false, a counter-example is produced. Also referred to as property checking.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Operating Systems at CU | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Operating Systems at CU</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 16, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            OS is a resource manager providing services using system calls.
+
+CPU mode has two modes
+1) User Mode
+2) Kernel Mode
+
+Some of the system calls are for
+1) Processes - fork()
+ fork creates a process and returns after the fork completes (
+main()
+{
+  pid = fork();
+  if (pid == 0)
+  { 
+   fork();
+  }
+while(1);
+}
+
+creates three processes instead of 4 as only the child process creates.
+
+unistd.h <gives the system calls)
+
+
+2) File
+system calls - create, open
+->read, write
+->close
+
+ex. open("/usr/foo/dus.txt",O_RDONLY) returns file descriptor is a handle returned by a file.
+a file descriptor is just an integer and every time you open it's just an integer(refer a way which file). FD is local reference to the file.
+nice page on the file descriptor
+http://www.cs.utk.edu/~plank/plank/classes/cs360/360/notes/Syscall-Intro/lecture.html
+
+
+#bytes read = read(FD, buffer, size)
+write (FD, buffer,size)
+buffer should be allocated.
+
+malloc, calloc , alloc are memory management functions used for managing it.
+
+narrow down (<a href= "http://forums.soe.ucsc.edu/viewtopic.php?f=14&t=5428">segmentation fault</a>)
+
+Is the leaked memory clear once the process exits?
+Can a program be going to two cpu's for instruction. like a webserver.
+
+<b> Interrupts </b>
+OS checks for interrupts between execution of the scheduled processes.
+Interrupts could be from Discs, Keyboard, Network - There is a interrupt handlers.
+
+These interrupt handlers are nothing but operating system code and causes the switch from user mode to kernel mode and then switch it back from kernel mode to user mode. Interrupts are not buffered but devices have their own buffered. How to differentiate between different lines as the CPU knows there is an interrupt but not what type of it? It would serially check for all the interrupts.
+
+why is there a lag sometimes between a keyboard press and the response from the OS?
+
+two modes of protection
+1) CPU mode - kernel mode and user mode.
+2) Timer interrupts - gives the OS a chance to gain back the control of the system.
+
+Interrupt handler are written in assembly language, so that there is maximum performance gained by leveraging the hardware. There is a priority associated with the Interrupts.
+
+disabling interrupts is called masking.
+ - If you are in the middle of an interrupt and there is an interrupt which comes up  you want to disable the interrupt.
+ - the cpu stops checking if there is a signal happened for an interrupt.
+- we can disable certain types of interrupts.
+
+and enabling interrupts is called unmasking
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

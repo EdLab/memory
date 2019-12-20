@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Speeding Up the Library Website | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Speeding Up the Library Website</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 7, 2006
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            To continue my technology blog, I'll address an old problem this morning.  
+
+For a while we've noticed that the library website loads very slowly off campus.  The first fix we tried was caching some dynamic page content we retrieved from other servers.  This significantly improved performance (as well as having many other benefits: less strain on those other servers & cached data can be accessed even if one of the other servers goes down), but the page itself is still slow overall.
+
+So, try this <a href="http://edlab.tc.columbia.edu/library_test">TC Library site</a>!  (We'll call it "the test site" henceforth.)  The front page seems to load much much faster!  The difference?  Technically there are two differences:
+
+1.  The two library sites are on difference servers in different rooms.  If this is the cause of the problem, there is something going on with the network setup. But this is a big deal because it means all of the servers in the room with the original library server will be slow to access from the outside.  And of course, it just happens that this is the part of the network where we've put all our new servers!
+
+2.  The test site server uses PHP4, not PHP5.  PHP5 has a more complex object model which is slightly slower.  It is also newer and much more prone to undetected bugs and hiccups.  It's possible the expanded object model or an undocumented problem is causing PHP5 to run much more slowly on the new site.  However, this level of inefficiency is unlikely, and no one has noticed this level of problem before.  Additionally, the library site is very simple - overhead issues shouldn't arise.  
+
+So how to determine what's happening?  The easiest way to gauge the effect of the PHP version is to remove the PHP.  So I went to the site (in Firefox!) and copied the HTML source code the browser receives.  I've put that into two pages:
+<a href="http://library.tc.columbia.edu/static.php">On the original server</a>
+<a href="http://edlab.tc.columbia.edu/library_test/static.php">Test server running PHP4</a>
+
+If you've looked closely, I haven't removed all the PHP; I'm still using PHP to set a header to disable some caching.  However, because of the high number of images, it's necessary to clear your cache manually everytime. 
+
+Inspecting this manually through my webbrowser, the static page is much smoother on the test site.  Although the static page seems to load better than the original PHP page.  
+
+Because the static page (remember, it's not running any PHP code) seem to load more quickly on the test server, I'm pretty convinced at this point that there is a server discrepancy causing much of our problem.  With the two servers in different rooms, it might be a network issue but we won't know more until we learn about the network setup (you can't do anything alone right?).  So the next step is to contact the folks running the network and see if there are any differences in the setup which could be causing the problem.
+
+But consider the difference in load time between the PHP page and the static page - call it dT.  If dT from the original server is larger than dT on our test server then we may still worry about a PHP version issue (see how we're controlling for the possible server discrepancies).  I think I've seen this pattern, but it's too hard to tell through a browser.  We need software to get a precise reading.
+
+We need a server stress test program.  Writing one myself with my favorite spidering language (Perl) is possible, but there is plenty of prepackaged software out there.  All of our work systems are Window's, so I use WAPT.  I don't have an install at home, so I'll wait until I get to work, and compare the values discussed here.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

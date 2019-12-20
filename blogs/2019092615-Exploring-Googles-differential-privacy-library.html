@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Exploring Google&#39;s differential privacy library  | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Exploring Google&#39;s differential privacy library </h1>
+          <p class="lead">
+            Yi-Chen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 26, 2019
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p><span style="background-color:transparent">Data privacy or information privacy is a branch of data security concerned with the proper handling of data – consent, notice, and regulatory obligations. To protect data privacy, companies are now required to determine what data privacy acts and laws affect their users. For instance, we must know where the data originated (country and state), what personally identifiable information it might contain and usage methodology. The data privacy regulations include </span><a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation" target="_blank" style="color:rgb(74, 110, 224)">GDPR (General Data Protection Regulation)</a><span style="background-color:transparent">, </span><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html" target="_blank" style="color:rgb(74, 110, 224)">HIPAA (Health Information Privacy and Portability Act)</a><span style="background-color:transparent">, </span><a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/gramm-leach-bliley-act" target="_blank" style="color:rgb(74, 110, 224)">GLBA (Gramm-leach-Bliley Act)</a><span style="background-color:transparent">, and </span><a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act" target="_blank" style="color:rgb(74, 110, 224)">CCPA (California Consumer Privacy Act)</a><span style="background-color:transparent">.</span></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190926171627-https___blogs_images_forbes_com_forbestechcouncil_files_2018_12_canva_photo_editor_3_9_png_4c2dcb08e6d356c0d497d5f47046719b.png" width="230" height="230" style="display:block;margin:auto" data-align="center" /></p><p><span style="background-color:transparent">Instead of regulations, technologies can be applied to avoid the disclosure of individual information. Google recently </span><a href="https://developers.googleblog.com/2019/09/enabling-developers-and-organizations.html" target="_blank" style="color:rgb(74, 110, 224)">announced</a><span style="background-color:transparent"> the open-source differential privacy library. This library contains a C++ library of </span><a href="https://en.wikipedia.org/wiki/Differential_privacy" target="_blank" style="color:rgb(74, 110, 224)">ε-differential privacy</a><span style="background-color:transparent">. The </span><a href="https://github.com/google/differential-privacy" target="_blank" style="color:rgb(74, 110, 224)">Github repository</a><span style="background-color:transparent"> keeps updating and more improvement.</span></p><p><br /></p><p><span style="background-color:transparent">In the repository, Google also provides a use case story.</span></p><p><br /></p><p><span style="background-color:transparent">There are around 200 animals at Farmer Fred's zoo. Every day, Farmer Fred feeds the animals as many carrots as they desire. The animals record how many carrots they have eaten per day. At the end of each day, Farmer Fred often asks an aggregate question about how many carrots everyone ate. For example, he wants to know how many carrots are eaten each day, so he knows how many to order the next day. The input data set looks like this: {'Aardvark':1, 'Albatross': 88, 'Alligator': 35, ...} (animal names and carrot consumption). </span></p><p><br /></p><p><span style="background-color:transparent">The animals are fearful that Fred will use the data against their best interest. For example, Fred could get rid of the animals who eat the most carrots! To protect themselves, animals decide to use the Differential Privacy (DP) library to aggregate their data before reporting it to Fred. This way, the animals can control the risk that Fred will identify individuals' data while maintaining an adequate level of accuracy so that Fred can continue to run the zoo effectively.</span></p><p><br /></p><p><span style="background-color:transparent">It is a new day. Farmer Fred is ready to ask the animals about their carrot consumption. Farmer Fred asks the animals how many whole carrots they have eaten. The animals know the exact sum but report the differentially private sum to Farmer Fred. However, first, they ensure that Farmer Fred still has the privacy budget left.</span></p><p><br /></p><pre class="ql-syntax" spellcheck="false"><span class="hljs-string">Privacy</span> <span class="hljs-string">budget</span> <span class="hljs-attr">remaining:</span> <span class="hljs-number">1.00</span>
+<span class="hljs-literal">True</span> <span class="hljs-attr">sum:</span> <span class="hljs-number">9649</span>
+<span class="hljs-string">DP</span> <span class="hljs-attr">sum:</span> <span class="hljs-number">9984</span>
+</pre><p><br /></p><p><span style="background-color:transparent">Farmer Fred catches on that the animals are giving him DP results. He asks for the mean number of carrots eaten, but this time, he wants some additional accuracy information to build his intuition.</span></p><p><br /></p><pre class="ql-syntax" spellcheck="false">Privacy budget remaining: <span class="hljs-number">0.75</span>
+True mean: <span class="hljs-number">53.02</span>
+DP mean output:
+elements { value { <span class="hljs-built_in">float</span>_value: <span class="hljs-number">60.088888888888889</span> }}
+error_report { bounding_report { lower_bound { <span class="hljs-built_in">int</span>_value: <span class="hljs-number">32</span> }
+  upper_bound { <span class="hljs-built_in">int</span>_value: <span class="hljs-number">128</span> }
+  num_inputs: <span class="hljs-number">164</span>
+  num_outside: <span class="hljs-number">36</span> }}
+</pre><p><br /></p><p><span style="background-color:transparent">The animals help Fred interpret the results. 60.09 is the DP mean. Since no bounds were set for the DP mean algorithm, bounds on the input data were automatically determined. Most of the data fell between [32, 128]. Thus, these bounds were used to determine clamping and global sensitivity. Besides, around 164 input values fell inside of these bounds, and around 36 inputs fell outside of these bounds. num_inputs and num_outside are themselves DP counts.</span></p><p><br /></p><p><span style="background-color:transparent">Fred wonders how many gluttons are in his zoo. How many animals ate over 90 carrots? Moreover, how accurate is the result?</span></p><pre class="ql-syntax" spellcheck="false">
+<span class="hljs-string">Privacy</span> <span class="hljs-string">budget</span> <span class="hljs-attr">remaining:</span> <span class="hljs-number">0.50</span>
+<span class="hljs-literal">True</span> <span class="hljs-attr">count:</span> <span class="hljs-number">21</span>
+<span class="hljs-string">DP</span> <span class="hljs-string">count</span> <span class="hljs-attr">output:</span>
+<span class="hljs-string">elements</span> <span class="hljs-string">{</span> <span class="hljs-string">value</span> <span class="hljs-string">{</span> <span class="hljs-attr">int_value:</span> <span class="hljs-number">19</span> <span class="hljs-string">}}</span>
+<span class="hljs-string">error_report</span> <span class="hljs-string">{</span> <span class="hljs-string">noise_confidence_interval</span> <span class="hljs-string">{</span> <span class="hljs-attr">upper_bound:</span> <span class="hljs-number">2.7268330278608408</span>
+  <span class="hljs-attr">lower_bound:</span> <span class="hljs-bullet">-2.7268330278608408</span>
+  <span class="hljs-attr">confidence_level:</span> <span class="hljs-number">0.95</span> <span class="hljs-string">}}</span>
+</pre><p><br /></p><p><span style="background-color:transparent">The animals tell Fred that 19 is the DP count. [-2.73, 2.73] is the 0.95 confidence interval of the noise added to the count.</span></p><p><br /></p><p><span style="background-color:transparent">'And how gluttonous is the biggest glutton of them all?' Fred exclaims. He asks for the maximum number of carrots any animal has eaten.</span></p><p><br /></p><pre class="ql-syntax" spellcheck="false"><span class="hljs-string">Privacy</span> <span class="hljs-string">budget</span> <span class="hljs-attr">remaining:</span> <span class="hljs-number">0.25</span>
+<span class="hljs-literal">True</span> <span class="hljs-attr">max:</span> <span class="hljs-number">100</span>
+<span class="hljs-string">DP</span> <span class="hljs-attr">max:</span> <span class="hljs-number">70</span>
+</pre><p><br /></p><p><span style="background-color:transparent">Fred also wonders how many animals are not eating any carrots at all.</span></p><p><br /></p><pre class="ql-syntax" spellcheck="false">Privacy budget remaining: 0.00
+</pre><p><span style="background-color:transparent">Error querying for the count: Not enough privacy budget.</span></p><p><span style="background-color:transparent">The animals notice that the privacy budget is depleted. They refuse to answer any more of Fred's questions for risk of violating privacy.</span></p><p><br /></p><p><span style="background-color:transparent">So far, there are some main characteristics of DP :</span></p><ol><li><span style="background-color:transparent">The user cannot query unlimited time. The number of the query is based on the privacy budget and the type of query.</span></li><li><span style="background-color:transparent">The result of DP is not the real value, but it is close, and sometimes it can provide a confidence interval.</span></li><li><span style="background-color:transparent">The developer can set the boundary of output value.</span></li></ol><p><span style="background-color:transparent">These features allow developers to control how the aggregate data (group patterns) is obtained flexibly. However, the application of this technique is more focus on group pattern recognization. How we can use a similar idea to protect the individual information when more accurate result and personalized information is required (e.g., recommendation system)? How can we use the differential privacy library in EdLab?</span></p><p><br /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

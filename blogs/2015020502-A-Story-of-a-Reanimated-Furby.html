@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>A Story of a Reanimated Furby | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">A Story of a Reanimated Furby</h1>
+          <p class="lead">
+            Panisuan Chasinga
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 5, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="http://i.imgur.com/V2GPOgT.jpg" title="source: imgur.com" />
+
+As an interaction designer, my main goal has always been to experiment with different mode of user interactions beyond the web. One project which I found much educating and fulfilling was reanimating a 1998 Tiger Electronics' Furby named Tilbert.
+
+<b>Background</b>
+Tilbert was adopted broken during my time at Soulify, a small interactive consultancy and media studio I found with another partner in Bangkok. We took him apart in our spare times and talked about hacking him back to life, but we were busy meeting ends and working on clients' projects that we did not do anything more to him.
+
+During my last days in Bangkok packing for New York, I decided to take Tilbert with me for some supernatural reason. Not until three months later did I decide to start working on him. My plan was nothing more than to see him alive and well.
+
+Tilbert came with a set of connected plastic gears run by a single 5V toy motor controlling his limbs and ears, a tilt switch, electret microphone, piezo speaker, IR sensors and a few more switches in his stomach and his back. His CPU board and voice unit were too complex for me to even consider studying. The only option was to remove his "brain", replace it with a new one and make use of his old parts as much as possible.
+
+<b>(Not) a Mind of Its Own</b>
+As I have always been a web person, I thought I could add a "cloud" twist to Tilbert. I decided that he would be "possessed" and controlled by some users over the internet instead of being a smart creature in his own right, more specifically via a chat application. Tilbert would, in his odd voice, speak what users type online, moving and wiggling ears at the same time. He would react to a poke in his stomach, pad on his back, loud noise and being tilted as well as send emotional messages back to the chat.
+
+<img src="http://i.imgur.com/Jor3tpP.jpg?1" title="source: imgur.com" />
+
+<b>The stack</b>
+A Spark core was used as the main controller and EMIC2 text-to-speech module for parsing byte streams sent over the internet to speech. Node.js and Socket.io were used for real-time client-server communications and making API requests to Spark's cloud. Cloud code for controlling the controller was written in Arduino, and later shifted to C++. I used Bootstrap and a little JQuery for the chat room. The application is currently hosted in a small Amazon EC2 instance.
+
+<b>Lessons Learned</b>
+What I have learned first-handedly during the duration of a month was invaluable. Before Tilbert, I had barely scraped the surface of Node.js and never knew Socket.io. I was also hitting a dead end with an Arduino Uno when Apon introduced me to Spark core and lent me one. I was picking up things at a greater speed than I ever had before. At one point three weeks into the project, I was stuck with the cloud code. It went on for two days until I decided to spend the third night away from the computer and rewrote everything in pseudocode on paper. The next morning, after little modifications, it just worked. Lesson learned--tools are just tools. Intention is what matters.
+
+Tilbert is currently decommissioned, awaiting a new Spark core. You can visit the web chat at <a href="http://frbchat.net">frbchat.net</a> or see his demo video <a href="http://vimeo.com/106770438">here</a>.
+
+
+
+
+
+ 
+
+
+
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

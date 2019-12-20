@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Building and Maintaining Scalable Products on AWS | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Building and Maintaining Scalable Products on AWS</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 14, 2014
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            The AWS Summit last week introduced to us some great tools for creating and maintaining scalable cloud-based products on AWS. In building scalable products on cloud, developers are faced with a few challenges that are insignificant when working with single-instance servers. These challenges include quick configuration of multiple servers, quick codebase deployment, performance monitoring, autoscaling, etc. 
+
+The three most relevant tools introduced were CloudFormation, Elastic BeanStalk and OpsWorks. All of them belong to the Deployment & Management section of AWS. They are tools for developers to allocate, organize, monitor and control AWS resources like EC2, RDS, S3, Elastic IP, Load Balancer, etc. Clients are charged for the usage of these resources instead of the tools themselves.
+
+CloudFormation is a tool to specify and maintain server architecture. It provides several templates for popular architectures. The architecture configured with CloudFormation is abstract in that it does not involve the provisioning of any real hardwares and softwares. It serves as a guide for other services that do work on server allocation and maintenance.
+
+OpsWorks is a service that provides a more specific operation on server resources in a project. A complete setup procedure using OpsWorks contains 4 steps. First, it requires the client to define one or more stacks using CloudFormation. Each stack stands for a set of servers that work for the same purpose (eg. We can have a production stack and a development stack, each containing a number of servers). Second, for each stack, the client is guided to pick one or several layers. A layer stands for a development environment. For example, it can be a node.js layer, a php layer, a database layer or a cache system layer. Third, the client need to add a number of instances to each of the stack, depending needs. Fourth, the client uploads a working project and let OpsWorks deploy it into the cloud. We can see that OpsWorks gives clients a multi-layer view of the products they are building with cloud resources. It then helps clients to define products with a coarse-to-fine approach.
+
+Elastic Beanstalk (EB) is a tool focused on deployment and autoscaling. Although it works on the same set of resources as the above tools, it provides a different high-level view to clients and gives its unique functionalities. First, it provides a command line program which allows developers to push their finished work directly from the local terminal. Second, its online console allows to you define 'environments'. An environment is set of resources that are necessary for launching a web service. A minimum environment contains an EC2 instance, an elastic IP, an s3 bucket and an RDS instance. Usually clients will allocate a lot more than this. Third, EB provides autoscaling service. Clients define the minimum and maximum number of EC2 instances allocable and the metrics used as autoscaling criteria. Last but not least, EB provides monitoring services on multiple parameters like CPU usage, network in and network out. 
+
+There are also other tools and services available for maintaining cloud resources which will largely facilitate the building of scalable products. Developers who want to use them need to study carefully about them and choose the ones that work best for their situation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

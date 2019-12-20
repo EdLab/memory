@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Building Localized Mac and iPhone Applications | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Building Localized Mac and iPhone Applications</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 12, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Lee Collins
+----------
+
+iPhone ships in more than 80 countries
+App Store available in 77 countries
+iPhone localized in 30 languages
+Mac is localized in 18 languages
+
+International Text Content
+- Create, search, browse, etc.
+
+Single binary should support (Multiple localizations and any language content)
+
+Internationalization
+- Prepare software once and then usd in different languages and locales
+- support for content
+
+Localization
+- Add Data for specific languages and locales
+
+Code you should'nt have to write
+- UI for selecting language
+- Mechanism for getting language localized strings, dat-time, number format, etc.
+- different binary for each language
+
+Unicode is used for providing simultaneous support for all the worlds language.
+
+Unicode is not 16-bit Ascii
+- Far more complicated (UT-f8, 16,32)
+- Key Features
+  #Three encoding forms
+  # byte-order mark
+  #Four(five) normalization forms
+  # Grapheme clusters (several unicode characters representing a semantic cluster)
+  # Any many more
+
+Text Directions can vary
+ - Text Direction varities
+  # left to right (hello)
+   #right to left (arabic)
+   #mixed
+
+Character, Glyph, Grapheme
+- Character is not equal to gyph
+  (ligature) 
+  (grapheme) 
+  (Surrogate)
+- Don't assume that unicode is simple
+  # you cannot break between arbitrary unichars
+  # character with different lengths cannot be added
+
+The NSString Class
+- Core class for representing text
+- toll-free bridges with he CFStringRef opaque type
+- Isolates one from complexities of unicode text
+- Interconvert with dozens of text encoding
+- Related Classes
+  # NSMutableString 
+    (OFr string that need to manipulated on the fly)
+
+Creating NSString
+- @"Use string constants with care"
+- Not for localized strings
++(id) stringWithCharacters :(const unichar *)chars length:(NSUInteger)length;
+
+Formatting Strings - stringWithFormat 
+%@ is used to include Objective-C objects in the format
+
+Localized String
+- Stored in .strings file
+# Use UTF-16 for the encoding
+- Stored as key/value pairs
+ #"Key="Value"
+-Acccessed through
+#NSLocalizedString(@"Key",@"Localization hint");
+#Strings come from the "Localizable.strings" file
+
+Localized String Formatting(Wrong Way)
+- The wrong way
+  sentence = [NSString stringWithFormat :2"%@ %@ %@ %@",name, NSLocalizedString(@"wa firstclimedon",@""),[self/...]);
+
+Localized String Formatting(Correct way)
+- Separate format from items being displayed
+- format in .strings file
+
+Common NSString operations
+- Casing - uppercasestring
+- Comparison - localizedstandardcomapre
+-Substrings - substringwithrange, substringfromindex,
+-Graphemes
+
+Other classes
+- CFStringTokenizer  : Tokenization
+- NumberFormatting - NSNumberFormatter
+- DateTimeFormatting-NSDateFormatter
+<b>
+-Identifying linguistic content : NSOrthography
+- Transliteration between scripts - CFStringtTransform
+</b>
+
+<b>genstrings  </b>
+- tool to scan code and produce an appropriate
+ # .strings file template
+- inserts comment found in the code as clues to the localizer
+- run the tool over your *.m files
+ # the tool defaults are usually the best settings
+
+Using Bundles
+- Bundles are special folder
+ #usually seen by the user as a single object
+#have an identifier
+# have a standard but flexible structure
+#Localizations live inside *.lproj folder
+- Frameworks, applications are bundles
+- Nibs can be bundlled
+ #nibs contain UI elements
+ # nibs are created
+.lproj folder are names for the language they cover
+- BCP47 is used for language IDs
+# en.lproj for english
+
+NSBundle Class
+- basic class to represent a class
+- Not toll-free bridges with the CFBundleRef opaque type
+- Getting and using bundles
+ +(NSBundle *)mainbundle
+ # if you're an application
+-(NSString*)pathForResource
+
+Using Locales
+- Objects acorresponding to a particular "place"
+ # region and language are set separately
+- A locacle defines a default set of values and way of doing things
+ #date and time formats
+ #local currency
+#calendar to use
+- Common Locale Data Repository (CLDR)
+ # Source for iPhone and Mac
+
+NSLocale Class
+- Core Class used to represent a locale object
+- Toll-free bridged with the CFLocaleRef opaque type
+- Current locale assumed for many operations
++(NSLocale*) autoupdatingCurrentLocale - the locale at application launch
++(NSLocale*) localeWithIdentifier - locale with an arbitrary identifier in standard form
+
+
+
+Locale vs. Languages
+- NSLocale
+  +(id) currentLocale
+ #Date, time and other settinggs
++(NSArray *) preferred languages
+
+Localization Process
+- Preparing your file for localization
+
+Translation process : two approaches
+- Manual : translation and UI done directly in Xcode and IB
+- AppleGlot
+  #multiple file types - .strings , .plist, .nib/.xib, .xml
+  # All localizable text extracted into one document
+  # supports language glossaries
+  #leverages from previous localizations
+   ## string matching
+  ## UI layout adjustments carryover
+
+AppleGlot usage
+ % ./appleglot -h
+% ./appleglot -d <path> create (create subfolder, glossaries, etc)
+% ./appleglot -d <path> setlangs er fr  (define source and target languages)
+% ./appleglot -x -d <path> populate
+
+Relayout of the UI may be necessary
+for change of the language by the user. This can be done from Interface builder or from custom code building
+
+Localization - Design tips
+- Allow 25% space around UI elements for text growth
+- Index variables ("%1$@",etc) to make reordering easy
+- use graphics and icons instead of text, wherever possible.
+- verify your strings files' integrity using xmllint or plutil
+
+things to avoid
+- Don't conatenate strings atruntime
+NSMutableString *result = @"Do you really want to ";
+[result appendString:action];
+[result 
+
+-use distinct strings or StringWithFormat
+NSString *formatString=NSLocalizedString(@"ConfirmationString",@"Comment");
+
+- Don't assume gender or number (" Your %@" have been saved")
+use your preferences have been saved
+
+Localization and App Store submission:
+-If your app supports multiple languages provide a primary language and add additional languages in Itunes connect
+- Provide localized metadata (product description with Images)
+
+Best Practices: 
+- Don't use hard coded to show to the users
+- test it using changing it to the desired language
+- make a single binary
+- unicode is to be used for the internalization text
+
+Documentation:
+1) http://developer.apple.com/developer
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

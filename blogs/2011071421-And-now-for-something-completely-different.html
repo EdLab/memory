@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>And now for something completely different... | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">And now for something completely different...</h1>
+          <p class="lead">
+            Stephen Pratt
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 14, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Just something I thought you guys might appreciate. Capturing guitar string oscillations with an iPhone 4:
+
+<iframe width="425" height="349" src="http://www.youtube.com/embed/TKF6nFzpHBU" frameborder="0" allowfullscreen></iframe>
+
+Those interested can read on for an explanation.
+
+<!--break-->
+
+From what I understand the effect is a product of the camera's framerate. The camera on the iPhone records at 30Hz, or 30 frames per second. Middle C is about 260Hz, or 260 vibrations a second. If you sample a wave oscillating 260 times a second with a 30 frame per second camera, you're going to end up with a very different representation of the wave. This is known as aliasing.
+
+<img width="450" src="http://edlab.tc.columbia.edu/files/675px-AliasingSines.svg.png">
+
+The cool thing is, that even though this video doesn't reflect what we SEE when we look at the guitar (for the record, we see a blurred string because our brain mashes images together) it is an accurate representation of what we HEAR. The actual sound is a harmonic of the aliased pattern relative to the frame rate. This means a whole number of the actual sound waveforms will fit into one iteration of the aliased waveform (notice how in the above diagram the peaks and troughs align). Because of this, we can reproduce the waveform we see in the video by zooming in sufficiently close on a section of the actual waveform in sound editing software. The following image is courtesy of a remarkably helpful redditor.
+
+<img width="450" src="http://edlab.tc.columbia.edu/files/against_audio_software.png">
+
+The above is just a summary of what I got from a little bit of internet research. Unfortunately, I can't make any guarantees to its correctness, but if anyone can, please feel free to verify (or correct) in the comments.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Evaluating VideoJS 3 For Use In Vialogues | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Evaluating VideoJS 3 For Use In Vialogues</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 16, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            This is the first part of my investigation on the newly released VideoJS 3 plugin. VideoJS is a popular open source Javascript plugin for using HTML5 videos on the webpage. We have used VideoJS v. 2.0.2 as a component in the video player for Vialogues.
+
+<img src="https://vialogues.com/static/lib/images/base_new/vialogues_logo.png" />
+
+The goals for this investigation are: 1) Explore the benefits and tradeoffs of upgrading to VideoJS 3 on Vialogues; and 2) Evaluate the functionality and compatibility of VideoJS 3 compared to 2. However, instead of just heading to the evaluation, I will first give some background information about the video player technology used in Vialogues. It will be helpful later in understanding the evaluation procedures and results. It can also be a good reference for future EdLab projects involving web videos.<!--break-->
+
+VideoJS 3.1.0 was release just earlier this month. The release notes highlight a few significant improvements compared to 2:
+
+1) The HTML/CSS as well as the API now work for both the HTML5 and Flash videos. 
+
+VideoJS is self-defined as a HTML5 player. But since version 2 it also had the capability of falling back to Flash from HTML5 if client's browser does not support HTML5. Unfortunately, although Flash fallback was supported in version 2, the API commands and user-defined styles only applied to the HTML5 version. In other words, if we want to support both Flash and HTML5 with VideoJS, we have to customize the user interfaces and make sure the player controls (e.g. play, pause, rewind, volume, time display, etc.) work for both versions. This doubles the workload.
+
+To resolve this problem, we have developed a higher-order JQuery plugin called VialoguesPlayer to wrap the HTML5 and Flash components so that we can control both versions more conveniently (well, VialoguesPlayer has some other features such as playing Youtube videos through the Youtube API). To play HTML5 videos, we use VideoJS. And to play Flash videos, we use Flowplayer.
+
+<table width="450"><tr><td width="220"><img src="http://www2.videojs.com/img/video-js-html5-video-player.png" /></td><td><span style="color:#900;font-size:x-large;font-weight:bold;">VS</span></td><td><img src="http://flowplayer.org/media/img/logo/logo_100x100.png" width="100" /></td></tr></table>
+
+The VideoJS team obviously realized the same problem that we (and many other users) had faced. So in version 3 they added a Flash component that can be controlled with the same API commands as the HTML5 version. This in theory will tremendously simplify the developers' work who use VideoJS but also want to support Flash.
+
+2) Developers can conveniently control what technologies to use for clients using different platforms. For example, we can make HTML5 video the first choice for clients. If their platform does not support HTML5, use Flash instead. And if even Flash is not supported, display a prompt to use a HTML5-compatible platform or install Flash. 
+
+When redesigning Vialogues in 2011, we decided to use Flash as the first choice and fall forward to HTML5 if Flash is not supported. However this had not been smooth in implementation because Flash was not an integral part in VideoJS 2. In order to synchronize the Flash video with the Vialogues discussions, we need a flexible, rock-solid Flash player that has interfaces open to Javascript so as to control the video dynamically. We eventually chose to use Flowplayer because we had been using it since 2009 and it is still one of the best Flash players.
+
+But it isn't convenient to use Flowplayer with VideoJS because we have to do dual setups of the players. Firstly we need to setup VideoJS. Then when VideoJS found Flash is supported, it will install Flowplayer. The client will need to load the Javascript library, the user interface, and the stylesheets for both VideoJS and Flowplayer. VideoJS 3 attempts to resolve this issue too by introducing the Flash component which is an integral part in VideoJS so we don't have to use Flowplayer and the clients don't have to download two sets of players.
+
+Well, the potential benefits described above are all theories. I have great expectations for VideoJS 3, hoping it can make our work easier and also reduce the download size for Vialogues users. Let's see my next posts about the actual testing how VideoJS3 performs.
+
+<hr />
+
+<i>UPDATE: The second part of this analysis can be found <a href="http://edlab.tc.columbia.edu/index.php?q=node/7292">HERE</a></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

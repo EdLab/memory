@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>User Experience and Artificial Intelligence | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">User Experience and Artificial Intelligence</h1>
+          <p class="lead">
+            Nara Kasbergen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 17, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Yesterday afternoon, Manav and I attended a talk at the Columbia Journalism school entitled "User Experience and Artificial Intelligence" by Aria Haghighi of <a href="http://getprismatic.com/" target="_blank">Prismatic</a>. We hoped the talk would be relevant to our goals for mSchool and that we would walk away with some new ideas for how to harness machine learning to help make the product better. While I'm not sure how many concrete ideas the talk inspired, we did both feel that it was a good talk and worthwhile.
+
+Here is my Twitter liveblog of the event, and some of the most memorable quotes:
+
+<a class="twitter-timeline" href="https://twitter.com/search?q=xiehan+%40aria42" data-widget-id="324511719391109120">Tweets about "xiehan @aria42"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+Here is a brief summary of what Aria talked about and some of my key takeaways:
+
+<ul><li>When talking about his own background (a BS in Math, followed by a PhD in Machine Learning), Aria explained that he'd never be able to do the work that he's doing if it wasn't for his PhD, and he said that that experience was totally worthwhile. This was very refreshing to hear in a time when it seems like article after article has been coming out in The Economist, NYTimes, etc. saying that it's a total waste of time and money to pursue a PhD anymore. Aria said he actually prefers hiring people with PhDs because they're self-directed in their work, aren't afraid of uncertainty and taking chances, and of course are used to painfully long hours.</li>
+
+<li>There were a few 'best practices' for AI, or AI tips, mostly related to Aria's assertion that "Good AI doesn't draw attention to itself". In other words, there might be a really clever algorithm running in the background curating the content that you're looking at, but in general, the less you're aware of that, the better. Facebook's Newsfeed is a pretty good example of this. However, Aria did caution us to "beware the black box"; sometimes you do want to explain to a user why something happened, even if it's a fairly blatant lie. The example he gave was Netflix; when Netflix recommends a movie to you, it always tells you "Recommended to you because you liked [Movie 1], [Movie 2] and [Movie 3]" or "Recommended to you because of your interest in [genre]." This is pretty much a lie because Netflix's recommendation engine actually takes a LOT more factors into consideration, but this much more dumbed-down explanation is a lot more reassuring to users.</li>
+
+<li>Aria explained AI's role in UX as "AI estimates user intent and response for better experience", and he posited that AI is relevant to UX/HCI research because AI works to maximize some sort of utility function, which is consistent with goals to improve user experience and human-computer interaction. One of the examples he gave that he spent a fair amount of time on was the presence of dynamic key-target resizing on the iPhone, which is where your phone makes a prediction about which character you are most likely to want to type next, and it makes the target area for that character larger (not the key on the virtual keyboard itself, but the area you have to tap in order to make that character come up). He said that most people working in AI/ML would not consider this AI, but he argued that it was because of the attempt to maximize environmental utility. He argued that this was also a much better application of AI technology than SIRI.</li>
+
+<li>Aria argued that good applications of machine learning will make all the difference in which products and companies will succeed in the years to come; as he put it, "every billion-dollar company that's going to be built in the next few years" will be built by people who understand how to really harness ML technology. However, he also cautioned us that ML's reputation is currently in serious danger because so many companies have over-promised and under-delivered on how they're going to revolutionize everything using ML in the last several years.</li>
+
+<li>Both in his own product (Prismatic) and the majority of web apps, the best place for AI is related to increasing user engagement with specific parts of the product. He's found that some of the most useful metrics are dwell time, likes/upvotes, and shares/recommendations; those will give you the strongest indication that a user enjoyed a piece of content or a part of the product, and the goal of your ML algorithm then is to give them more like it (though he also argued that in fact it's better to give users something that's similar but different; if you give them too much of the same, it's actually likely to decrease their engagement over time). He also went into a bit of a rant saying he's not fond of this movement toward companies just collecting every bit of user data that they can; he is of the belief that you should stop and think about what you actually want to learn from the data first.</li>
+
+<li>Another AI UX tip that he gave us was to focus on natural data, and learn from organic actions a user might normally do. The really good example that he gave was Pandora's thumbs-up/thumbs-down buttons. He said that those really aren't as effective as a traditional play-pause-skip interface, where a skip implies that you probably dislike the song. When you're asking the user to explicitly decide whether to upvote/downvote a song, it also forces them to stop and think about whether they truly like what they're listening to, and potentially also to wonder what upvoting this Justin Bieber song (for example) might say about them. Just hitting 'skip' or continuining to play the song is a much more organic action that will yield much more realistic data.</li>
+
+<li>Finally, Aria went into a long rant that was close to my heart about what he sees as the failure of computer science programs at universities. He argued that in order to be successful, CS grads should be capable of thinking critically about the products that they're working on; as he put it, the majority of them will go into software, and the majority of software will be used by a lot of people, so CS grads should be capable of thinking about people and products, and not just optimizing algorithms and writing elegant code. I completely agree with him 110%; in the recent interviews I've been a part of here at EdLab, I always find myself looking for technical candidates who show they can think critically about products, and often finding myself sadly disappointed. But, I also recognize that this is less the fault of the individuals and more of the education system for not preparing them for this. Aria's proposed solution is to have CS students taking mandatory product design classes, and the creation of more interdisciplinary programs like, for example, 'technological product design'.</li>
+</ul>
+
+To me, those were some key points from the talk. I'll comment later with what I think are our key take-aways specifically in the context of mSchool -- I need a little bit more time to digest and think about it myself!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

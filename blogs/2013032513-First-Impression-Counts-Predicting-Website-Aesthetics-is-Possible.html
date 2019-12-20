@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>First Impression Counts! Predicting Website Aesthetics is Possible | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">First Impression Counts! Predicting Website Aesthetics is Possible</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 25, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            It's common that we make judgement of a website's appeal in a split second. And such first impressions can be influential for the website's trust and usability. In the past, the research mainly concerns the qualitative guidelines to improve the perception of appeal. This soon-to-be-published paper in international conference of Computer Human Interaction 2013, titled: <a href="http://www.eecs.harvard.edu/~kgajos/papers/2013/reinecke13aesthetics.pdf">Predicting Users' First Impressions of Website Aesthetics With a Quantification of Perceived Visual Complexity and Colorfulness </a> by K. Reinecke (Harvard Univ., USA), T. Yeh, L. Miratrix, Y. Zhao, R. Mardiko, J. Liu, K. Gajos. reports a quantitative model to predict website aesthetics by perceived visual complexity and colorfulness.
+
+Websites were decomposed into image metrics. i.e. hue, saturation etc. 
+Based on literature (Zheng et al. correlating image statistics with users' rapid aesthetic and affective judgement of webpages, 2009), researchers are able to find the correlations between image metrics and human ratings on specific aesthetics. But the perceived level of complexity that leads a user to like it was not inferred. 450 websites were collected from a wide variety and not yet exposed to public (350 English sites and 60 foreign language sites, 20 English sites were transformed into grey scales, 20 <a href="http://en.wikipedia.org/wiki/Webby_Award">Webby Award</a> nominated sites). A random 30 websites will be selected for each of the 242 volunteers to evaluate. The integration model of colorfulness and visual complexity which ended up significantly explain 65% of the instances. 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/predict-aesthetic_5f66c2cc6f51440e80918bdd2d6da479.png" width="90%">
+By looking at the examples from the figure, I personally think the model <i>looks</i> pretty accurate. Left 1 is less colorful than Left 2, but it's predicted higher. It's visually more appealing, even it's less colorful.  
+
+Click <a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/predict-aesthetic_5f66c2cc6f51440e80918bdd2d6da479.png">here</a> for larger view of the image.
+
+Findings: 
+<blockquote>
+<ul>
+<li>Ratings of appeal are significantly negatively affected by an increase in visual complexity.  (the more complicated the website is, the worse the people perceived it's attractive)</li>
+<li>Age contributes to a significant main effect on the appeal rating predictive model. but not Education or Gender. Native language also has significant main effect on appeal, but it won't improve the model fit, so it was removed from the model in the final model.</li> 
+<li>There's an interaction effect of education level with colorfulness. Participants with a PhD were most negatively affected by a high colorfulness. With a high school education preferred websites with a similarly low colorfulness.</li>
+<li>The interaction between some of the demographic variables and colorfulness/complexity showed aesthetic preferences at first sight differ even for supposedly well-designed websites.</li>
+</blockquote>
+
+This paper inspires me to think. Can we replicate the idea and predict the aesthetics at the first moment when we see a data visualization? Complexity may not be the key role anymore. The model should be able to detect the correctness and healthiness of the data analysis.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

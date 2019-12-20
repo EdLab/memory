@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Client Side Architecture, Where Javascript is King | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Client Side Architecture, Where Javascript is King</h1>
+          <p class="lead">
+            Sharath Gururaj
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 15, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            ***<b>Private Please</b>
+
+Given that we've decided to be systematic about our client side, (i.e., we'll have to use the whole shebang--framework, build tools, testing tools) to the point that perhaps the django-python layer will be very thin, it is worthwhile to explore the javascript -- the language itself (without getting bogged down by the DOM, browser etc)
+
+1. Javascript is a <i>functional</i> language. Functions are first class objects, they can be tossed around like any lowly int
+
+2. Everything is an object, including primitives like int and even functions. It is possible to define member variables for functions! 
+
+3. But Javascript is <i>not</i> object oriented. It has zero support for classes, inheritence, polymorphism, type inference etc.
+
+4. Which means that an object is just a hash of key/value pairs. keys are strings, values are <i>anything</i>: fucntions, objects, primitives etc
+
+5. Javascript is single threaded. At first sight, this is at odds with the fact that a lot of Javascript code is asynchronous, and thus event driven. Worth getting to know better!
+
+6. Its <i>quit</i> fast. On the server side, with Node.js for javascript vs HotSpot for java, the speeds are comparable, with javascript around half as slow as java
+On the browser, my estimate is that the V8 is almost as fast as python.
+
+7. Crazy things are possible. Two of my favorite is: toString() on a function gives you the function definition as a string! eval() lets you interpret a string as javascript code at runtime! NOT for the faint hearted!
+
+A good reference for javascript is the book Javascript for Ninjas, written by the author of juery, John Resig available in the edlab office. 
+
+Given the power and flexibility, it is exceedingly clear that without proper testing, writing/maintaining any non trivial code is going to be futile.  A compiler cannot replace test cases, but a good set of  test cases can make up for a lack of compiler.
+
+There is also another flavor of java called coffeescript, which compiles to javascript and is much more  simpler. What are your thoughts and opinions about javascript? How would you rate your experience with it?
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

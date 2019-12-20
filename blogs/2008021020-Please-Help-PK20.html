@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Please Help PK2.0 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Please Help PK2.0</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 10, 2008
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            The next version of PK 2.0 will attempt to provide users with more ways to discover relevant content.  Part of this will be via an improved search tool.  But we feel search will have limited success in an archive (see the end of this blog for my claim as to why).
+
+Intersections were seen as a possible solution, but they have proved cumbersome to use and often unhelpful.  It terms out that other companies (such as Amazon) have found similar problems with comparable technologies.  They describe the results as either too broad or too narrow.  For example, intersection style suggestions tend to simply return that which is most popular (too broad) or those items with exactly the same meta data (too narrow; e.g. returning a list of items by the same author).  
+
+So now we're playing with something called "collaborative filtering."  It's a long story as to what this is, and it's an incredibly complex technology to scale to millions of files as PK2.0 apparently needs.  However, I'm presenting a first step and would GREATLY appreciate some feedback.
+
+If you log into PK with the username "pk2tester" and the password "password" you'll find a special treat.  Anytime you view the browse page when files are listed (e.g. click "TC Library Archive", search for a keyword, etc.) as well as anytime you view a file, you'll see a magic box.  Inside this box of magic is a list of 10 "related" files.  I say "related" because it's not perfect.  But I'd like to see what you all think of the initial configuration.  This is the kind of thing that is difficult to assess for quality, but such testing must be part of our process.  So please, please, please check it out and let us know what you think.
+
+If you have ideas regarding how we can test this further, or what our process should be, please feel free to share those thoughts as well.
+
+Also, note that for now, the "relatedness" is only calculated for items uploaded before Sunday, Feb. 10th around 4pm-ish.  I may have the script handle items uploaded after this, but for now, I just want to see what we have.
+
+---------------------
+Why Searching Archives Doesn't Work (BlAppendix?):
+
+Search operates over keyword matching.  Unfortunately, language offers us many ways to describe similar ideas.  This potentially leaves us in a situation where many documents describe the same idea but fail to use the same keywords entered in the search.  
+
+Internet search engines have found a way past this by utilizing links.  Pages that link to each other likely contain similar information, even if they contain different keywords (synonyms or otherwise).  Users also utilize links in ways to ameliorate this problem.  Often, when I search Google, I don't find what I'm looking for in the actual search results (especially if I'm looking for something well outside the scope of the net's popular pages).  However, I often find that one of the first ten pages which Google finds contains a link to a page which I find useful.  Both the user and the search engine utilize the structure of the internet to find results.
+
+Sadly, archives have no such structure.  Archive items cannot point to each other in any meaningful way, which leaves search as stupid as possible.  It can match keywords and no more.
+
+
+------------------------
+Moving Beyond Search:
+
+If search is bad, what else can we use to help users find content?  I think the better way to think about this, is to envision PK as a "guiding learning tool" which harnesses the knowledge of the content in the archive.  This highlights the need to move beyond simple keyword matching and doing something innovative.  Three possibilities are: intersections, collaborative filtering, and semantic matching.  I won't outline the approaches here, but I plan to share a document which does later this month.
+
+Of course, if YOU have additional ideas of how to guide learning in an archive, or you have criticisms of this view, please let me know.  I'd be delighted to hear from both sides of the aisle.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

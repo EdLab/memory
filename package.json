@@ -1,0 +1,30 @@
+{
+  "name": "edlab",
+  "version": "1.0.0",
+  "description": "The memory of the sinking ship. It is an honor for us to be a part of it.",
+  "main": "index.js",
+  "scripts": {
+    "blog": "node scripts/blogs && node scripts/blog_index",
+    "events": "node scripts/events && node scripts/event_index",
+    "profiles": "node scripts/profiles && node scripts/profile_index",
+    "projects": "node scripts/projects && node scripts/project_index",
+    "build": "npm run blog && npm run events && npm run profiles && npm run projects"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdLab/edlab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdLab/edlab/issues"
+  },
+  "homepage": "https://github.com/EdLab/edlab#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "ejs": "^3.0.1",
+    "moment": "^2.24.0",
+    "p-queue": "^6.2.1",
+    "voca": "^1.4.0"
+  }
+}

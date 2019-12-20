@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Cheers! From Amateurs to Connoisseurs: Modeling Expertise and Experience in Recommender Systems | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Cheers! From Amateurs to Connoisseurs: Modeling Expertise and Experience in Recommender Systems</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 15, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/malheur-copy_ef1b870b7ad344888c7749e1af16c336.jpg" width="50%">
+Not long ago, I talked about a recommender vs. users tastes and diversity: should we <a href="http://edlab.tc.columbia.edu/index.php?q=node/8731">recommend right or recommend smart</a>? Now, here's a new paper with an innovative recommendation model that considers tastes and evolution. 
+
+Julian McAuley, Jure Leskovec (2013) <a href="http://i.stanford.edu/~julian/pdfs/www13.pdf">From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise through Online Reviews</a> 22nd international WWW Conference, May13-17, 2013.
+
+The authors developed a latent factor recommendation system that explicitly accounts for each user's level of experience. They studied a novel dataset of 15M beer, wine, food, and movie reviews. Basically, the algorithm proposed an approach of pandora for beer. Instead of suggesting the beer you would like to enjoy at that moment, it acknowledges that our tastes may change over time, and may change again in the future. Such model considers users' personal evolution (experience), helps to discover <b>acquired tastes</b> in product rating systems and also allow us to discover when do we acquire them. 
+
+Some interesting findings:
+<blockquote>
+A strong correlation between the overall popularity of a product and how much it is preferred by experienced users. (experts tend to give the harshest ratings to the lowest-rated products, while they give the most generous ratings to the highest rated products)
+
+So, Bud Light is disliked by everybody, it is most disliked by experts; one of the most popular beers in the entire corpus, Firestone XV, is liked by everybody, and is particularly most liked by experts.
+</blockquote>
+
+And such observations are quite general across many datasets. In other words, we can pretty much judge whether you are an amateur or connoisseur by your favorite kind of drink. Very interesting, isn't it?
+
+Dataset is available from <a href="http://snap.stanford.edu/index.html">Stanford Network Analysis Project (SNAP)</a> research group.
+
+I think the findings are not the only interesting thing about this study. The approach to incorporate <i>time</i> is really inspiring and pushes further to ask whether and when users will become experts? It's exactly what we want to do in education: to have an intelligent almighty recommender that could almost precisely demonstrate the learners' evolution of knowledge acquisition by the resources they are taking in as they consume knowledge as products. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

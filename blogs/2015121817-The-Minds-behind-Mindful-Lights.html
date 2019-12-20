@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>The Minds behind Mindful Lights | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">The Minds behind Mindful Lights</h1>
+          <p class="lead">
+            ZKL
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 18, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            {{unknown}}<br />
+
+{{unknown}}<br />
+
+{{unknown}}<br />
+
+{{unknown}}<br />
+
+{{unknown}}<br />
+
+<h3>An inside look at the interactive installation at Offit Gallery with EdLab Design Team.</h3>
+<span style="font-weight: 400"><strong>Mindful Lights</strong> is an interactive installation exploring how light and material can create a space for students to experience a moment of mindfulness.</span>
+
+<img class=" wp-image-23304 alignright" src="https://img.tc-library.org/pressible/267/files/2015/12/image04-1024x804.jpg" alt="image04" width="409" height="321" />
+
+<span style="font-weight: 400">EdLab designers Veronica Black, Min Sung Kwak, Seungkyun Lee, and Jackie “Neon” Simon, examine the uses of LED (light-emitting diode) lighting and mixed materials to create a visual and spatial experience. The installation responds to movement with subtle color changes, signalling the viewer to slow down, reflect and find stillness in the midst of a busy and stressful time.</span>
+
+&nbsp;
+
+&nbsp;
+<h2>The Construction</h2>
+<span style="font-weight: 400">Waterfall was the primary inspiration for the formal design of Mindful Lights. We wanted to create an experience where the viewer felt like a gentle flow of water was washing over him/her. Acrylic tubings were arranged in a vertical manner to visually mimic a waterfall. Small pieces of acrylic rod were used to hold the tubes together, and 3D printed parts to prop up the whole structure. Thin strips of copper tape were used to connect the LED strips instead of regular wires for aesthetic purposes. </span>
+
+<img class="alignnone size-full wp-image-23324" src="http://gottesman.pressible.org/files/2015/12/image11.jpg" alt="image11" width="776" height="1021" />
+
+<a href="http://gottesman.pressible.org/files/2015/12/image07.jpg"><img class=" size-medium wp-image-23321 alignleft" src="http://gottesman.pressible.org/files/2015/12/image07-300x224.jpg" alt="image07" width="300" height="224" /></a> <a href="http://gottesman.pressible.org/files/2015/12/image041.jpg"><img class=" wp-image-23322  alignleft" src="http://gottesman.pressible.org/files/2015/12/image041-e1450474650621-300x243.jpg" alt="image04" width="277" height="224" /></a>Designers created prototypes and mock-ups for weeks before the final version was built.
+
+&nbsp;
+
+&nbsp;
+<h2> The Electronics</h2>
+<a href="http://gottesman.pressible.org/files/2015/12/image02.png"><img class="alignnone wp-image-23302" src="http://gottesman.pressible.org/files/2015/12/image02-1024x680.png" alt="image02" width="700" height="465" /></a>
+
+<span style="font-weight: 400">The program that is controlling the LED (Light Emitting Diode) lights is written with <a href="https://processing.org/" target="_blank">Processing</a>, which is software designed specifically for visual arts. The Processing sketch is used to speak to a an LED controller called a <a href="https://www.adafruit.com/products/1689" target="_blank">FadeCandy</a>. We used FadeCandy because it is hardware and software that make LED art projects easier to build.  In order to incorporate a sensor to detect when a person is in front of the sculpture we included a sensor called an <a href="https://www.sparkfun.com/products/9494" target="_blank">Ultrasonic Range Finder</a> connected to a micro controller called <a href="https://www.arduino.cc/" target="_blank">Arduino</a>.  The Arduino connects to Processing and tells Processing if the Ultrasonic Range Finder has detected a person. If a person is standing in front of the sculpture the lights move slower and change to a different color.  We used a <a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a> to cut down on the visible computing for the project because the Raspberry Pi is much smaller (and less expensive) than a normal computer or even a MacMini.</span>
+
+For a step-by-step explanation of the Mindful Lights Raspberry Pi programming process and the tutorials we used, download this <a href="http://gottesman.pressible.org/files/2015/12/SettingupRaspberryPiforMindfulLights.pdf">PDF</a>.
+<h2>Meet the Design Team</h2>
+<dl id="" class="wp-caption alignleft"><dt class="wp-caption-dt"><a href="http://edlab.tc.columbia.edu/index.php?q=user/8102"><img class="" src="http://edlab.tc.columbia.edu/sites/default/files/pictures/picture-8102.png" alt="" width="125" height="125" /></a></dt><dd class="wp-caption-dd">Jackie</dd></dl><dl id="" class="wp-caption alignleft"><dt class="wp-caption-dt"><a href="http://edlab.tc.columbia.edu/index.php?q=user/7081"><img class="" src="http://edlab.tc.columbia.edu/sites/default/files/pictures/picture-7081.png" alt="" width="125" height="125" /></a></dt><dd class="wp-caption-dd">Seungkyun</dd></dl><dl id="" class="wp-caption alignleft"><dt class="wp-caption-dt"><a href="http://edlab.tc.columbia.edu/index.php?q=user/7082"><img class="" src="http://edlab.tc.columbia.edu/sites/default/files/pictures/picture-7082.png" alt="" width="125" height="125" /></a></dt><dd class="wp-caption-dd">Veronica</dd></dl>The EdLab Design team worked together for all of the design, fabrication, programming, electronics, installation and supporting material for the installation which will be up until mid-January.
+@LibraryTC #MindfulLights
+
+&nbsp;
+<h2>Want to build your own interactive project?</h2>
+All of the interactive electronics and programming kits (including Arduino) pictured below are available to be borrowed at TC's <a href="http://library.tc.columbia.edu" target="_blank">Gottesman Librar</a>y!
+
+<a href="https://vialogues.com/vialogues/play/19095/" target="_blank"><img class="aligncenter wp-image-23295" src="http://gottesman.pressible.org/files/2015/12/all.jpg" alt="all" width="600" height="565" /></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

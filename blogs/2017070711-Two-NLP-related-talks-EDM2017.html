@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Two NLP-related talks @EDM2017 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Two NLP-related talks @EDM2017</h1>
+          <p class="lead">
+            xk2120
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 7, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>I went to China last month for 2017 International Educational Data Mining conference, where I met some interesting researchers and learned a lot of wonderful techniques and ideas from these new friends. </p><p><br /></p><p>According to my notes, I went to 25 talks in total, and 21 of them had been published in either full, short or industry papers in the EDM2017 proceedings. I took the introduction, method and discussion parts of the articles for topic model analysis, using my notes for topic verification/ manual coding. </p><p><br /></p><p>After perplexity and entropy measurement of various topic number models, three topics might be the optimal choice for the topic number selection. Please see the Figure 1 for the words with the highest frequency in each topic, which suggested the topic of each cluster of papers: &quot;adaptive learning system, learning behavior and natural language processing (NLP)&quot;. I would focus on two NLP related talks in this blog.<br /><img src="https://img.tc-library.org/w750/EdLab-blog/20170707121203-top_terms_png_37423d319cc4cae9b04512099eadd262.png" style /></p><p>Figure 1. The top terms in each LDA topic of 21 talks I went to in EDM2017. </p><p><br /></p><p><span style="font-size: 0.875rem;"><b><a href="http://educationaldatamining.org/EDM2017/proc_files/papers/paper_87.pdf" target="_blank">Epistemic Network Analysis and Topic Modeling for Chat Data from Collaborative Learning Environment </a></b></span><span style="font-size: 0.875rem;"><b><br /></b></span></p><p><span style="font-size: 0.875rem;">The first author, Dr. Cai, is a software engineer and a poet in fact. He developed an NLP tool for dialogue analysis which involved topic modeling and epistemic network analysis (ENA). I explained topic modeling in <a href="https://edlab.tc.columbia.edu/blog/13139-Topic-Modeling-with-LDA-in-NLP-data-mining-in-Pressible" target="_blank">my previous blog post</a> and would like to talk about ENA in this one. </span></p><p><span style="font-size: 0.875rem;"><br /></span></p><blockquote style="margin-bottom: 1em; color: rgb(53, 49, 41); font-family: Verdana; font-size: 12px;"><p>&quot;Epistemic Network Analysis (ENA) is a method of identifying and quantifying connections among elements in coded data and representing them in dynamic network models. A key feature of the ENA tool is that it enables researchers compare different networks, both visually and through summary statistics that reflect the weighted structure of connections. The interface allows users to see the original data that contributed to each of the connections in the network representation. ENA can thus be used to address a wide range of qualitative and quantitative research questions. Researchers have used ENA to analyze and visualize a wide range of phenomena.&quot;</p><p>                                                                                                                   ---www.epistemicnetwork.org</p></blockquote><p>In this paper, Dr. Cai and his colleagues applied ENA and topic modeling as the combination to analyze chat data to detect the differences of content connections between two student groups (high/low learning gain). ENA allows researchers to compare the mean network graph in ENA space between two different groups of students. The result indicated that the low learning gain students had the stronger connection with the &quot;people/social&quot; topic, which was the off-task topic. While the high learning gain students had the stronger connections with the topics of &quot;psychology, health care, biology, illness, and education&quot;, which were the on-task topics (Figure 2). This result suggested that the high learning gain students were more likely to focus on the targeting learning materials in chats than that of the low learning gain students.</p><p><img src="https://img.tc-library.org/w750/EdLab-blog/20170710102752-paper_87_pdf__page_6_of_8__2017_07_10_10_27_02_png_7d2b1e6501c20f0309ab0cad5bcb8389.png" style /></p><p>Figure 2 (graphic illustration adaptive from the <a href="http://educationaldatamining.org/EDM2017/proc_files/papers/paper_87.pdf" target="_blank">paper</a>).  Mean discourse networks for students with low gain scores (left, red), students with high gain scores (right, blue), and a difference network graph (center)<br /><br /></p><p><b style="font-size: 0.875rem;"><a href="http://educationaldatamining.org/EDM2017/proc_files/papers/paper_33.pdf" target="_blank">Linking Language to Math Success in an On-Line Course</a></b><br /></p><p>We were so lucky to have the PI of this project, Dr. <span style="font-size: 0.875rem;">Danielle S. McNamara, to present this study. She was so charming and funny in all her talks, and she was also one of the panelists in the Ethical and Policy Issues in EDM where she gave very impressive and strong opinions about the student data usages. </span></p><p><br /></p><p>Dr. <span style="font-size: 0.875rem;">McNamara's lab, Science of Learning and Educational Technology (SoLET), is focused on the cognitive processes in comprehension, writing and learning by the development of educational technologies for cognitive measurement and NLP. There were 3 papers from her lab got accepted in EDM2017, and they were all related to NLP. </span></p><p><span style="font-size: 0.875rem;"><br /></span></p><p><span style="font-size: 0.875rem;">This blog would focus on their techniques used to measure the linguistic features of math discussion. They used several NLP tools to measure the linguistic features:<br /><br /></span></p><p><span style="font-size: 0.875rem;">1. Automatic Analysis of Lexical Sophistication (word and multiple-word-unit level)</span></p><ul><li><span style="font-size: 0.875rem;">This tool analyzes the lexical frequency, range, psycholinguistic word information, and academic language. </span></li></ul><p><span style="font-size: 0.875rem;">2. Automatic Analysis of Cohesion (sentence and paragraph level)</span></p><ul><li><span style="font-size: 0.875rem;">This tool utilizes a part of speech tagger and synonym sets from the WordNet lexical database</span></li><li><span style="font-size: 0.875rem;">It counts the sentence and paragraph markers of cohesion and incorporations.  </span></li><li><span style="font-size: 0.875rem;">It calculates the global cohesion, the logical connectives, and the sentence linking connectives. </span></li></ul><p><span style="font-size: 0.875rem;">3. Automatic Analysis of Syntactic Sophistication and Complexity (construction level)</span></p><ul><li><span style="font-size: 0.875rem;">This tool measures grained clausal (31), phrasal (132), and usage-based (190) syntactic complexity and sophistication. </span></li><li>It measures the association strengths for verb-argument construction in the text. </li></ul><p><span style="font-size: 0.875rem;">4. Sentiment Analysis and Cognitive Engine (emotion level)</span></p><ul><li><span style="font-size: 0.875rem;">This tool analyzes the sentiment of the text through the pre-developed word vectors of social positioning, cognition dictionaries.<br /><br /><br /></span></li></ul><p><br /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

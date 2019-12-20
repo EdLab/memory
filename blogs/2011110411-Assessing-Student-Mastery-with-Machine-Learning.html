@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Assessing Student Mastery with Machine Learning | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Assessing Student Mastery with Machine Learning</h1>
+          <p class="lead">
+            Stephen Pratt
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 4, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            In their campaign to become the dominant force in online math learning environments, Khan Academy has recently announced some sweeping changes to the way they evaluate student mastery. Fundamental as it may seem, the simple act of identifying when a student has gained a complete understanding of a given concept has proven to be something of a subtle art. I would personally go so far as to argue that no learning app that I've used (in my admittedly meager experience) has ever really exhibited any real capacity to judge student mastery. However, the ability to make a binary decision regarding whether or not a student has mastered a lesson will almost certainly become a cardinal feature of any modern learning app.
+
+Previously, Khan Academy worked with a Streak-based mastery model. Users would answer questions about a concept until they got ten in a row right. When their streak hit ten, they were considered to have mastered the concept. This model was terrible. A simple typo could take you from a streak of nine right answers all the way down to zero, complete ignorance of the concept in the eyes of the application. It felt mechanical, rote, and downright annoying, completely betraying the "artificialness" of the user's judge. Worse still, it FELT dumb. When users entrust a piece of software with their education, they'd like to be able to believe that the software is smarter than they are, at least in its own domain of operation. With a transparent mastery scheme like "get ten right to move on" the user quickly realizes that they're a better judge of their mastery than the software, defeating the point of having the mastery metric in the first place.
+
+Khan Academy has wisely recognized this weakness as one of the most immediate flaws to their model. <a href="http://david-hu.com/2011/11/02/how-khan-academy-is-using-machine-learning-to-assess-student-mastery.html"> This article </a> explains Khan Academy's new evaluation system in gory detail. When selecting this system, developers formed a pool of multiple different decision algorithms and parameters, and then ran statistical tests on the models generated to decide which maximized the value of their central mastery metric: the probability that the user gets the next question right, given that they have mastered the concept.  One might even say that they used machine learning to learn their learning algorithm. For those who are statistically inclined, the champion model is based on logistic regression. Their testing so far indicates that the new model is far and away superior to the old. Keep an eye on Khan Academy in the upcoming weeks, if they weren't ready for primetime before, they're certainly one step closer now.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

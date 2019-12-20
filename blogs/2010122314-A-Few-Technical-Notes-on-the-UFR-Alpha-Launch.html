@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>A Few Technical Notes on the UFR Alpha Launch | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">A Few Technical Notes on the UFR Alpha Launch</h1>
+          <p class="lead">
+            Eric Buth
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 23, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <b>HTML5</b>
+
+The new theme is written as HTML5. The validation spec is something of a moving target, but we've made every effort to hit the provisional requirements. Our primary reason for selecting HTML5 was not, as it sometimes is, the video and audio capabilities of the language but rather its semantic features. With it we've been able to more easily let the markup function as a data organization tool rather than as a method for specifying style and interactivity. This paradigm has positive implications for accessibility, syndication, and ease of coding further down the line.
+
+<b>WordPress</b>
+
+With this project we are still working with WordPress as a base platform, but we are making strides towards abstracting it's functionality to fit our own ideas about web publishing. To put it simply: we are waging war against the dashboard. Out of the box, WordPress (and every other publishing platform I can think of) depends heavily on a stylistically and functionally distinct “back-end” interface that is used to control the input of content viewed on the “front-end.” From our point of view, this splits the site in two and creates a host of new complications that work against our efforts at user involvement and understanding.
+
+In the UFR alpha release, all user management and content creation is controlled via panels and shadow boxes that are integrated directly with the front-end site. We selectively expose the underlying functionality of WordPress when and where it's appropriate without troubling the user with an “all-options” dashboard.
+
+Along those lines, we've also completely removed the concept of “commenting,” favoring instead a system where everything is a post. We've added the ability for posts to have parents and for parent posts to specify whether or not they will allow responses. The responses in this system have all the functionality of posts while they can also function as comments in certain contexts.
+
+<b>Google Charts API</b>
+
+Another user-visible feature that was important to us in this release was creating easy to understand metrics to help both teachers and students understand how they are impacting the site. The Google Charts API has been a big help in visualizing some of this information in that it requires us to write minimal code ourselves while still iterating through a pretty wide set of possibilities.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

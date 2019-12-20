@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Session Notes: Amazon Web Services - Managed Database Solutions | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Session Notes: Amazon Web Services - Managed Database Solutions</h1>
+          <p class="lead">
+            tzaffi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 10, 2014
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            My second session at the AWS Summit highlighted the impressive database capabilities of AWS. There are four different database solutions: DynamoDB, RDS, Elasticache, and Redshift. The biggest pitch was for DynamoDB - a NoSQL solution. They even gave out $25 cards to try it out -which apparently should be good for a decent sized proof of concept. The other database solutions were described as well.
+
+Another big theme was that costs keep on going down. This (partially) explains why I didn't write down the cost structures of the various DB solutions.
+
+See below for all the details:
+
+Session: Introduction to Database SErvices
+Brian Rice, Product Marketing Manager - Amazon RDS
+
+Horizontal Comparison of AWS Services
+
+Agenda:
+* Why managed DB services? - ECC
+* Non-relational 
+* Relational
+* In-memory cache
+* Data warehouse
+* What next?
+
+At some point as a DB analyst at another firm, it hit Brian: there are big swaths of his job that no one ever notices, unless he messes up!!! Got to keep servers running, fix em when they brake, duty rotation, spare parts bank, backups are really important. No one ever notices unless they LOSE the data, and then did your database backup actually work?
+
+Some things are really interesting/exciting: performance tuning, scaling. A ton of work. And probably have 3 or 4 other jobs too. Wouldn't it be cool if you could hand off part of your work to someone else? That's the AWS Manged DB and EC2 biz model.
+
+YOU are responsible for:
+App optimization
+
+Amazon managed DB service:
+Scaling
+High availability
+… some more …
+
+EC2:
+OS installation
+Server maintenace
+Rack & stack
+Power, HVAC, net
+
+Not encouraging to go to a managed DB solution BLINDLY… but:
+Argument for: no need to worry about upgrades, backups, failover, security, db configuration, DB security, etc…
+
+Customers still responsible for the Application Layer Security.
+
+Think of Managed DB Services as an appliance - like a microwave. Could go into the microwave and hack it, but probably not a good idea.
+
+Failover is delivered as a packaged service.
+
+4 major DB Services, 1 for each type:
+*DynamoDB - NoSQL / Key-Value
+*RDS: SQL
+*ElastiCache - in memory cache
+*Redshift - warehouse
+
+DynamoDB: a key-value store (similar to a hash table)
+A persistent associative array. Incredible easy to turn it on.
+Key hallmark of NoSQL - unlimited scaling. (Scales to million of IOPS). This actually happened, not just a motto.
+Scaling is built in. Nothing needs to be done. Just keep throwing data at database, and determine which level of IOPS [1 IOP = 1 Input/Output operation per second] you want. 
+Built on SSD's.
+What if have to look by value instead of key? Can set up indices.
+
+DynamoDB customer example: SmugMug - photo sharing and production. 
+
+Components:
+Schema-less database. Sometimes you don't need integrity checks!!! Trade semantic protections of the schema in exchange for rapid scalability and performance. Each object as a hash key. Often in NoSQL: It's up to you to make sure that the hash keys are uniformly spread. But this is not an issue with DynamoDB. It will spread out data if a hot-spot occurs. However, if you md5 hash the keys, the hot spots will be avoided which will reduce the work that DynamoDB need to manage load. 
+Range Key - give you a way to search by similar values.
+LSI Key - ways to have additional range keys.
+Global Secondary Indexes - Pivot Charts for your table. 
+Because schema-less, can search on attributes that aren't present in all objects.
+
+Performance: tunable. Write capacity units, and read capacity units. These are determined/payed by you.
+1 capacity unit = the right to do 1 1KB write per second (or 1 4KB read per second)
+
+DynamoDB is a RESTful API.
+Not ideal: Query and Scan
+
+Sebastian Dahlgren - wrote an open source software that let's you scale DyamoDB automatically (“Dynamic DynamoDB”)
+
+Web ID Federation - can get an AWS credential using Facebook / Google etc. credentials.
+Provides a serverless app architecture.
+
+Amazon Cognito built on top of DynamoDB. Supporting mobile off-line operation and sync data when the client is back in coverage.
+
+RDS; a managed SQL service.
+Choose between: MySQL, PostreSQL, Oracle, SQL Server. Real software from real vendor.
+Special sauce: make it easy to scale, replicated, etc.
+
+Customer example: Flipboard - an online mag with millions of users and billions of “flips” per month. Use RDS and “Multi-AZ”
+
+Key thing to know: if you want to be able to dial in a particular performance level. 
+Provisioned IOPS is recommended in production: un to 3TB storage and 30,000 IOPS per database instance.
+
+Automated backups (by DEFAULT - though can turn off). Takes a snapshot once a day. Can tune that.
+Manual snapshot: initiated by you and persisted on S3 at $.08 per GB per month.
+
+Multi-AZ - multiple availability zones - available for all 4 db engines. Failovers typically take under 2 minutes. Helpful for planned maintenance. 
+
+Read Replicas for greater scalability. Abstracted this and made it a push button operation.
+
+Disasters: can copy an instance across regions with a single button click. 
+Can have a read replica across regions (for RDS)
+
+Scale:
+*instance type
+*amount of storage
+*cache in from if want
+*Sharding - takes some of the pain out of
+
+NoSQL or SQL? Which to choose?
+Simplest possible management - NoSQL
+HUGE scaling? - NoSQL
+Need SQL like features? SQL
+SQL Exptertise? SQL
+
+In Memory Caching solution (as opposed to Redis and MemCache).
+ElastiCache uses Redis or MemCache - you choose vendor just as RDS lets you choose SQL vendor.
+
+All you need to implement elastic ache is to specify to try the cache first and the time to live.
+Billing: nodes * hours.
+
+Redshift - different from all the rest. Data Warehouse - but technically it's a **Columnar Stored DB**. Each field is stored contiguously. Optimized for analytical operations. 
+E.g. find the min and max.
+Very inexpensive (relative most business solutions). About $1000 per TB per year.
+
+Customer story: Foursqure. 
+
+From the outside, it looks like PostresSQL. So if you get your app working for Postgres, you can get it running on RedShift. 
+
+AWS Data Pipeline: special app (faster than SSH) for getting data from your machine to EC2 RedShift.
+
+Billing: very similar to Elasticache.
+
+New announcement: free trial program. Over and above free tier. 
+
+All 4 services have the following in common:
+fully managed by Amazon
+easy to scale
+Pay as you go
+designed to plug in with other AWS services
+
+Free tiers available. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

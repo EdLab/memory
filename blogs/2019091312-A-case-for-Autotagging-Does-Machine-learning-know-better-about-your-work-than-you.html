@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>A case for Autotagging - Does Machine learning know better about your work than you? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">A case for Autotagging - Does Machine learning know better about your work than you?</h1>
+          <p class="lead">
+            ameya.karnad
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 13, 2019
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>As part of my review research for my first project on Fall 2019, "Auto-tagging of TCR records", I began to find a distinct pattern in the papers that I read. Most of the papers <em>hinted </em>that the machine learning algorithms that they developed to tag blogs, research papers, news links and other textual data performed better than the tags provided by the authors of those documents. I am writing this blog post to explain about document tagging, autotagging and how claim mentioned above might be true in a sense</p><p><br /></p><p><br /></p><h2>Tagging</h2><p><br /></p><p>Wikipedia [1] defines tagging as a keyword or term assigned to a piece of information which helps describe the item . Tags are being excessively used today especially while storing digital information. Tagging serves many purposes.  </p><p><br /></p><ul><li>Describe about the content </li><li>Organise and manage one's own content</li><li>Searching content that others have shared  </li><li>Easy Navigation </li><li>Recommendation of resources that a person may like</li></ul><p><br /></p><h3>What happens if a resource does not have a tag?</h3><p><br /></p><p>Today, the tags on a digital resource serve as a very key component in the search and recommendation systems. When a resource does not have a tag, it becomes <em>unsearchable </em>is being refered to as an orphan resources[2] - or I like to call it, a dangling resource (In memory of pointers[3,4]). I recall the development team summer intern Bingjun Li present a similar case in his seminar in July.</p><p><br /></p><p><br /></p><h2>Autotagging</h2><p><br /></p><p>Due to the high volume of documents with no tags, researchers have been working on methods to Autotag (Automatically tag) the document so that they may be more accessible and organised. Though there are 100s of research papers written on this topic (and more!), I will explain a method proposed by Brooks and Montanez[5]. The researchers use the blogs data from Technorati [6], a popular blogging site of that time. The researchers are trying to forms a hierarchy of tags to create better tags</p><p><br /></p><h3>Summary</h3><p><br /></p><ul><li>First, they test the similarity of articles that contained similar keywords. by using a NLP approach called TFIDF [8] on the content of the articles. As part of this, they randomly selected 250 of the top 1000 tags from Technorati. For each tag, they collected 20 blog articles and  these articles form a tag cluster: a cluster of articles whose content is assumed to be similar.</li><li>After they found that there was overlap in tag usage among similar articles (that is, the tags could be grouped onto categories), they tried to determine if a hierarchical structure for tags could be found. This was done using a process called agglomerative clustering[9]. </li><li>In Agglomerative clustering, they compared each tag cluster to every other tag cluster, using a cosine similarity metric[10]. Then the two closest-similarity clusters from our list of tag clusters are removed and are replaced with a new abstract tag cluster, which contains all of the articles in each original cluster. This cluster is assigned an abstract tag, which is the common tags among all the tags for each cluster. They continue this process till they are left with one single global cluster that contains all of the articles (Figure 1)</li></ul><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20190913112855-screen_shot_2019_09_13_at_11_28_14_am_png_2578cdcae6e287db51dd6b41c0ef1d3a.png" style="display:block;margin:auto" width="636" /></p><p>Figure 1: Sample of hierarchical tags cluster created [5]</p><p><br /></p><p><br /></p><p>Now let us look at the question that we wanted to answer, Does Machine learning know better about your work than you?</p><p><br /></p><p>The studies that I have read claim (especially [2]) that their model of autotagging was better recieved by a sample population than the tags created by the authors themselves. </p><p><br /></p><p>Tags assigned by the author of the documents can be inconsistent and idiosyncratic, both due to users' personal terminology as well as due to the different purposes tags fulfil [11,12] . Also, the tags given by the author may be sometime clouded and biased by their own fields of interest and study. For example, a "data science and education" paper written by a data scientist would possible have a more data science related keywords, while one written by an educator may have more education related keywords.</p><p><br /></p><p>Autotagging, if performed properly, would create tags and keywords which are free of these baises. This can also help in assigning tags to content that have not been assigned tags yet ( refered to as 'cold start problem' in most of the studies [13]). A uniformity in tags can lead to better search and recommendation, ability to group together similar content, easy navigation and content management. </p><p><br /></p><p>We also have to leep in mind that autotagging may be ineffective in creating tags for novel content and while creating tags for specific content, it might still be the best chance for us to categorize the document into broader categories. </p><p><br /></p><p>The debate still continues..... </p><p><br /></p><p>As part of our research, we are trying to come up with an algorithm that can autotag the content present in TCR.  </p><p><br /></p><h2>References/Clarifications</h2><h2><br /></h2><p>1 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Tag_(metadata)" target="_blank">https://en.wikipedia.org/wiki/Tag_(metadata)</a></p><p>2 - Unsupervised Auto-tagging for Learning Object Enrichment - <a href="https://link.springer.com/chapter/10.1007/978-3-642-23985-4_8" target="_blank">https://link.springer.com/chapter/10.1007/978-3-642-23985-4_8</a>  </p><p>3 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)" target="_blank">https://en.wikipedia.org/wiki/Pointer_(computer_programming)</a></p><p>4 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Dangling_pointer" target="_blank">https://en.wikipedia.org/wiki/Dangling_pointer</a></p><p>5 - Improved Annotation of the Blogosphere via Autotagging and Hierarchical Clustering - <a href="http://www2006.org/programme/files/pdf/583.pdf" target="_blank">http://www2006.org/programme/files/pdf/583.pdf</a></p><p>6 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Technorati" target="_blank">https://en.wikipedia.org/wiki/Technorati</a></p><p>7 - Technorati - <a href="https://technorati.com" target="_blank">https://technorati.com/</a></p><p>8 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf" target="_blank">https://en.wikipedia.org/wiki/Tf%E2%80%93idf</a></p><p>9 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Hierarchical_clustering#Agglomerative_clustering_example" target="_blank">https://en.wikipedia.org/wiki/Hierarchical_clustering#Agglomerative_clustering_example</a> </p><p>10 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Cosine_similarity" target="_blank">https://en.wikipedia.org/wiki/Cosine_similarity</a></p><p>11- Usage patterns of collaborative tagging systems -<a href="https://journals.sagepub.com/doi/pdf/10.1177/0165551506062337" target="_blank">https://journals.sagepub.com/doi/pdf/10.1177/0165551506062337</a></p><p>12 - Tag Recommendation using Probablistic Topic Models - <a href="https://pdfs.semanticscholar.org/0284/11180e1cd67849c9e1218bf69de6f9a8d5f7.pdf" target="_blank">https://pdfs.semanticscholar.org/0284/11180e1cd67849c9e1218bf69de6f9a8d5f7.pdf</a></p><p>13 - LDA for On-the-Fly Autotagging - <a href="https://dl.acm.org/citation.cfm?id=1864774" target="_blank">https://dl.acm.org/citation.cfm?id=1864774</a></p><p><br /></p><p><br /></p><p><br /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

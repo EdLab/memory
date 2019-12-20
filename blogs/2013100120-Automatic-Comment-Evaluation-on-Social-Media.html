@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Automatic Comment Evaluation on Social Media | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Automatic Comment Evaluation on Social Media</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 1, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img class='nlt-image' src="https://cdn.tc-library.org/NewLearningTimes/comment_31ef8d25735b454fa65ddad5c4f73dda.jpg" alt='article.title'><br />
+
+<p><b>Title:</b> Identification of Useful User Comments in Social Media: A Case Study on Flickr Commons (2013)</p>
+<p><b>Authors:</b> Elaheh Momeni, Ke Tao, Bernhard Haslhofer, & Geert-Jan Houben</p>
+<p><b>Source:</b> <a href="http://dl.acm.org/citation.cfm?id=2467711">JCDL '13 Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries</a></p>
+
+<p><b>Research Question:</b>
+How can we identify useful user comments in social media?</p>
+
+<p><b>Study Design:</b>
+Social repositories like Flickr and YouTube are increasingly used to store and share digital objects. These sites attract a great deal of activity and users often want to view the most appropriate and useful comments first, but sorting comments accurately often relies on the work of human judges. <a href="http://dl.acm.org/citation.cfm?id=2467711">Identification of Useful User Comments in Social Media: A Case Study on Flickr Commons</a> sought to investigate the possibilities for automated filtering of useful social media comments. Research has been done on techniques to automatically estimate the usefulness of user-generated meta content like tags, tweets, and product reviews, but because each type of content has different characteristics, the definition of usefulness varies. Some content types should be objective and informative and others benefited from user opinion. Because comments have many purposes and audiences, the authors could not do a content-specific study and had to consider a diverse pool of useful comments.</p> 
+
+<p>The authors began by collecting 32,132 image comments from Flickr Commons. The comments were not selected randomly, but specifically chosen for activity with particular emphasis on interactions with established cultural institutions (for example, a "thank you" response from the Library of Congress would mark a comment for inclusion.) The authors used CrowdFlower.com to crowdsource value judgments from human participants. The comments were assessed for several characteristics including punctuation, evidence of linking, inclusion of name entities, sentiment polarity, user activity, and subjectivity tone.  The authors then built a classifier to evaluate comments for usefulness based on the extracted features and compared their model’s performance to four other algorithms.</p>
+
+<p><b>Findings:</b>
+The results indicated that the model built by the authors could predict the usefulness of comments with 89% accuracy. Immediately apparent text features like length and punctuation did not appear to be the most important features for identifying usefulness and comments that included the emotions or affective processes of the author (with high scores in sentiment polarity, anger, or sadness) were more likely to be classified as non-useful. The authors also found that topic areas had an influence on the classification of a comment as useful. The human judges used different criteria to evaluate comments relating to people and events than they used to evaluate comments relating to places.</p>
+
+<p><b>Moving Forward:</b>
+This paper illustrates that sentiment analysis for reviews and comments is a viable endeavor and may change the way we interact online in the future. These techniques are still in their infancy and this study gives a glimpse into the complexities of human value judgment and the challenges of building automatic evaluation. With this data and further research on this topic we may be able to design a smart commenting system that will prompt users for valuable comments and discourage non-useful contributions. These smart comments would be particularly useful in online learning. We could also use these machine evaluations to add an additional layer of meaning to digital objects like academic publications and go beyond impact factors and citations to evaluate the true value of these objects. Further research on this topic will help determine a more standard framework for quality assurance in text mining and will help inform future machine evaluation projects.</p>
+
+<i>Image:</i> comment - A FAVE  by Leo Reynolds via <a href="http://www.flickr.com/photos/49968232@N00/3327803867/">Flickr</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

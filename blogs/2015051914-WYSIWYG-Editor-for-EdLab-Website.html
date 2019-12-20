@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>WYSIWYG Editor for EdLab Website | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">WYSIWYG Editor for EdLab Website</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 19, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            --- keep private ---
+
+As I mentioned to Dr. Brian Hughes we are going to upgrade the EdLab website from the broken Drupal 4.6.4 to 6.35 tomorrow (yes, tomorrow May 20, 2015), he asked if we will have a What You See Is What You Get (WYSIWYG) editor. I think it's a great idea but I don't have time to research the best WYSIWYG for our needs and install/test it before tomorrow. How disappointing.
+
+However, over my lunch today I did look around for the few options we could have which we can use at a later time. And I'd like to know what people at the EdLab like.
+
+<h3>Candidate 1: Markdown</h3>
+
+This is my personal favorite. It indeed will take a few days for people to get good at. But once you do I bet you will never miss plain or rich HTML editors. Basically Markdown allows one to write clean, structured HTML with simple syntax in plain text. It's been there for a while, most popular among programmers and professional web writer, but increasingly popular these days. The EdLab D&R has been using <a href="https://bitbucket.org" target="_blank">BitBucket</a> for years which uses Markdown.
+
+Some exemplary markdowns are:
+
+<pre>
+# Heading 1
+## Heading 2
+### Heading 3
+*italic*
+**bold**
+***bold-italic***
+[edlab](http&#58;&#47;&#47;edlab.tc.columbia.edu)
+![edlab logo](http&#58;&#47;&#47;edlab.tc.columbia.edu&#47;
+files&#47;images&#47;edlab_logo.png)
+</pre>
+
+These will be converted to HTML:
+
+<pre>
+&#60;h1&#62;Heading 1&#60;/h1&#62;
+&#60;h2&#62;Heading 2&#60;/h2&#62;
+&#60;h3&#62;Header 3&#60;/h3&#62;
+&#60;i&#62;italic&#60;/i&#62;
+&#60;b&#62;bold&#60;/b&#62;
+&#60;i&#62;&#60;b>bold-italic&#60;/b>&#60;/i>
+&#60;a href="http&#58;&#47;&#47;edlab.tc.columbia.edu"&#62;edlab&#60;/a&#62;
+&#60;img src="http&#58;&#47;&#47;edlab.tc.columbia.edu/
+files/images/edlab_logo.png" alt="edlab logo" /&#62;
+</pre>
+
+And for people who really love clicking buttons, yes you still have the buttons (but only those 99% people will ever need)! Note the <img src="http://edlab.tc.columbia.edu/files/Screen Shot 2015-05-19 at 3.42.07 PM.png"  /> sign in the screenshot below. It will display a live preview of your markdowns!
+
+<img src="http://edlab.tc.columbia.edu/files/Screen Shot 2015-05-19 at 3.19.58 PM.png" width="550" />
+
+For a complete guide into Markown, read <a href="http://blog.ghost.org/markdown/" target="_blank">this article</a>.
+
+<h3>Candidate 2: Rich HTML Editors</h3>
+
+These include the the traditional WYSIWYG editors including <a href="http://www.tinymce.com/" target="_blank">TinyMCE</a>, <a href="http://ckeditor.com/" target="_blank">CKEditor</a>, <a href="http://nicedit.com/" target="_blank">NicEdit</a>, and so on.
+
+There is no learning curve for rich HTML editors because it's just how one writes Word and Google Docs.
+The reasons why I vote down this option are: 1) My writing flow is frequently disturbed because I have to leave the keyboard and click the mouse. 2) If the HTML I write is ill-formatted it may break the whole page. 3) The more features, the buggier.
+
+<img src="http://edlab.tc.columbia.edu/files/Screen Shot 2015-05-19 at 3.39.56 PM.png" width="550" />
+
+<img src="http://edlab.tc.columbia.edu/files/Screen Shot 2015-05-19 at 3.40.18 PM.png" width="550" />
+
+<img src="http://edlab.tc.columbia.edu/files/Screen Shot 2015-05-19 at 3.39.29 PM.png" />
+
+<h3>Candidate 3: Keep Using the Plain Text Editor</h3>
+
+-- Some people may prefer continuing to use the current plain text editor. If you think this way please also let me know.
+
+So, what do you like?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Citation Parser for LIVE syllabus | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Citation Parser for LIVE syllabus</h1>
+          <p class="lead">
+            Huning Dai
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 17, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            In LIVE syllabus, one of the major features is to help the lecturer upload their reading list easier than the way provided by Docdel. Now by using Docdel, the lecturer has to manually input each fields (Title, Author, Year, Pages, etc.) of the reading. While the LIVE syllabus' approach is to have the lecturer upload a MS word document, then the system will analyze the uploaded file, take out each field and filled the form automatically. 
+
+Earlier this week, I manage to write a prototype website to implement this kind of idea. However, it requires strict formatting of the citation that you wrote in the word document. <a href="http://watchmen/live/search.php">Feel free to try it.</a>
+ 
+
+Notice that the system can only support one citation at one time.
+
+As the system should accept all types of format of the citation and should be able to separate each fields of the citation, I did some research on “reference parser” and “citation parser” on the internet.
+
+I was very surprised when I realized this job isn't easy as I thought it was going to be fairly easy. Many colleges and universities started projects on related topics since 1998, and they had made lots of progress in this. There are two main kinds of ideas to achieve citation parsing. One is using an external database storing the information of all the papers, journals and books. Here by saying information actually I'm not including the content of the citation, but rather the title, authors, the year and other kinds of general information. So it won't require a huge database, however it won't be small neither. The citation uses the information the user provides to generate a query in the database. Sounds really intuitive and highly effective, right? It also has a good performance in accuracy. I believe that Google is using now for citation counting in Google scholar.
+
+The most successful production of this idea in academia is <a href="http://citeseerx.ist.psu.edu/">
+CiteseerX</a>.
+
+The other one uses a technology in information processing called Sequence Alignment Technique. Due to my understanding of this technology, it uses the special pattern of the citation to recognize each field of it. This idea will not require external database, therefore by sacrificing quite a little accuracy (according to the paper, the test result is only 1-2% lower than citeseerX), the system becomes simpler. 
+
+For example: 
+See the attachment.
+
+However, I didn't find any production of this kind of idea. Maybe it is because the paper was published in late 2008, and they are still working on it. 
+
+After reading about all this, I am trying to find a way to use both kinds of ideas in LIVE syllabus, as I am now working on producing an intelligent parser for DocDel. If anyone has any great ideas to share with me, it will be really appreciated.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

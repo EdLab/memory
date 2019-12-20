@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Embedding maps in iPhone Applications (WWDC) | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Embedding maps in iPhone Applications (WWDC)</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 11, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            SDK for mapping
+---------------
+
+MapKit
+- New framework in 3.0
+- Allows you to embed a map in app
+ - google for map data
+ - responds to panning and zooming gestures
+ - supports annotating
+
+Reverse Geocoding
+ - turns a coordinate into an address using MKReverseGeocoder
+- address can be turned into a contact address
+
+MKMapView Regions
+- region property controls map
+  # position and zoom level
+- regions are like rects
+- Animatable
+
+typedef struct {
+CLLOcationCorordinate2D center;
+MKCoordinateSpan span;
+} MKCooddinateRegion
+
+MKCoordinateRegion region;
+refion.center.latitye-37.118;
+region.center.longitude-022.3242;
+region.span.latitudeDelta = 0.023;
+region.span.longitudeDelta -0.03;
+set the delta // for setting the zoom
+mapView.region=region;
+
+- Map uses zoom levels
+Map goes to the zoom level that best fits the region that is set
+
+regionThatFits: Computer sets the span
+
+:centerCoordinate property controls the map without changing the zoom level
+= Animatable
+
+shouldAutoRotate - allows from protrait to landscape
+
+Annotations - Decorate the Mapview with our own views
+- Custom and built-in views are supported
+- annotations correspond to coordinates on the map
+
+Anootations
+ - Please use annotations
+- Do not add subviews directly to MKMapView
+- View hierarchy 
+- for large data sets, add subsets of annotations on region changes (starbuck database in the whole US should be added in parts)
+
+MKAnnotation
+ - It's a protocol
+- Model objects conform to MKAnnotation
+- App adds and removes them from MKAnnotation
+
+MKAnnotationView can be subclassed, like UITableViewCell views are reusable
+
+MKMapviews asks delegate for a MKAnnotationView for each MKAnnotation model object
+- if no view is provided, a pin view is created
+- MKMapView positions each view
+
+Step1 ) Application - Annotation
+Step2 ) Delegate mapview:wiewForAnnotation
+Step 4) MKMapView positions the annotations
+Step5) Delegate is told about all the recently added anotaion views
+Step 6) mapView:didAddAnnotationViews: for animation
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

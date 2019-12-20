@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>“Towards Machines that Perceive and Communicate” by Kevin Murphy | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">“Towards Machines that Perceive and Communicate” by Kevin Murphy</h1>
+          <p class="lead">
+            SeungYeon.Lee
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 5, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p class="p1"><span class="s1">I participated in Kevin Murphy’s talk at Data Science Institute (DSI) - <a href="http://datascience.columbia.edu/events/calendar">http://datascience.columbia.edu/events/calendar</a> on September 5th. Kevin Murphy is a renowned machine learning researcher and currently serves as a Research Scientist at Google.</span></p><p class="p1"><span class="s1"><br /></span><span style="font-size: 0.875rem;">In his talk, he introduced some recent work related to image and text analysis. As the title of his seminar, “Towards Machines that Perceive and Communicate”, implies, he discussed some machine learning techniques his Google research team has been employing to perceive images and to communicate with images and texts. He discussed (1) for perception, their approaches for image understanding methods; and (2) for communication, introduced methods for description (image to text) and for comprehension (text to image).</span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span><span style="font-size: 0.875rem;">The talk in general was very technical and this note is just a brief summary of what I understood from the talk.</span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span><span style="font-size: 0.875rem;">The first part was about methods for “Image Understanding”. Basically, he explained (1) how to recognize stuff, (2) how to detect objects, and (3) how to detect people and estimate people’s pose. In order to recognize stuff, “Semantic Segmentation” is used. The idea of semantic segmentation is that we label each pixel with a class of objects and eventually perform automatic differentiation. He described specific methods including a CNN for pixel classification (U-Nets) for a standard approach and a trous (Dilated) convolution as an alternative. Next, to detect objects, the method called “Instance Segmentation” can be used.</span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span></p><p class="p1"><img src="https://img.tc-library.org/w750/EdLab-blog/20170905172316-segmentation_png_3822f19eb9e49320c7c459cf1392baed.png" style /><span style="font-size: 0.875rem;"><br /></span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span><span style="font-size: 0.875rem;">The figure above (source: Nathan Silberman) shows the difference between Semantic Segmentation (second one) and Instance Segmentation (fourth one). Methods including SSD, Faster R-CNN, R-FCN were mentioned. In addition to these image segmentation methods, people’s 2D pose can be estimated. Once people (objects) are detected, for each person we find key points and create heat maps, and then their pose can be estimated by using a deep part-based model (related to R-CNN and similar to mixture regression?).</span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span><span style="font-size: 0.875rem;">The second part was about methods for “Image Captioning”, which indicates image to text. The basic idea is that we take features from the image using Vision Deep CNN and then use Language Generating RNN to create captions describing the image. Some more advanced topics related to image captioning were discussed, e.g., evaluation of image captioning (they proposed using referring expressions), discriminative image captioning, and optimization of the semantic metrics.  </span></p><p class="p2"><span class="s1"></span></p><p class="p2"><span class="s1"></span><br /></p><p class="p1"><span class="s1">The third part was about “Generative Model”. The purpose of research on generative models is to find underlying context (which is latent) based on images and texts so we can generate images based on text query (which corresponds to inference). This is their ongoing project, and the basic idea for the method is to use Joint Variational Autoencoder (JVAE). The method called “triple ELBO” was discussed for inference.</span></p><p class="p1"><span class="s1"><br /></span><span style="font-size: 0.875rem;">Kevin mentioned they will extend the methods for video beyond static images. I really enjoyed Kevin’s talk and found it very interesting and useful in practice (I recently found Google’s image search feature and it is really cool!). I think such methods have a lot potentials to be applied to educational research, particularly in context of online learning that use materials of images and videos. What do you think about potential application of those methods in education?</span></p><p class="p1"><span style="font-size: 0.875rem;"><br /></span><span style="font-size: 0.875rem;">As mentioned previously, this note is based on my understanding of Kevin’s seminar, so I’d appreciate any feedback, comments and correction if you notice something. Thanks!</span></p><p class="p2"><span class="s1"></span></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Automating Wednesday Seminar Vialogues | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Automating Wednesday Seminar Vialogues</h1>
+          <p class="lead">
+            Stephen Pratt
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 22, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I'm sure everyone here at the lab knows that Wednesday is the best day of the week. What could be better than getting a chance to listen to inspired speakers while enjoying a tasty lunch? Well seminars are about to get just a little bit better. As you all know, we timestamp our comments on the blog during the seminar so that we can post them to Vialogues later on. This process is pretty generally established as being something of a huge pain, so I made us something to make it easier. "Wednesday the Robot" is a script I wrote to scrape the comments of the EdLab blog for all your timestamped remarks, then posts them automatically to Vialogues. Unfortunately, as of today, she's just a baby robot, so she doesn't know how to use Vialogues. She will, however, give you a cleanly formatted list of all your timestamped comments so that you can post them to Vialogues yourself without too much hassle. I expect to have the automatic Vialogues posting done by next week's seminar.
+
+<!--break-->
+
+So how do you use Wednesday? Simple.
+
+1. Download the files here: <a href="http://www.filedropper.com/wednesdayrobot"> http://www.filedropper.com/wednesdayrobot</a>
+
+2. Decompress the zip file
+
+3. Double click the file named "runme.command" (Yes, you want to run it even though it came from the big bad internet)
+
+4. The program will then ask you for your blog username and password. Enter these.
+
+5. Finally, you'll be prompted for the comments url. To get this, just copy the text you see in your address bar when you click "view comments" on a blog post. <a href="http://edlab.tc.columbia.edu/index.php?q=node/5898">Last week's 300+ comment seminar.</a> 
+
+Now, a couple of caveats. Much of this was written after midnight last night in a time when I was feeling tired, but strangely productive. I'm releasing it now to test, even though it's not near what I would call complete. Therefore, I can make no guarantee that this will work as intended. The best I can offer is a cautious optimism.
+
+Let me know how everything goes! 
+
+EDIT: I've just discovered that blog usernames are case insensitive. The script, however, is case sensitive. This means that when you enter your username, it should be properly cased (e.g. Stephen Pratt, not stephen pratt). Also, recall that the script is looking for Vialogues style timestamping. If your comments don't begin with an '@', it won't find them just yet. These are both issues I'll be working out by next week if we haven't put a better solution in place.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

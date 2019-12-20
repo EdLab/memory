@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Reading and Learning Effects of Computer Text Line Lengths | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Reading and Learning Effects of Computer Text Line Lengths</h1>
+          <p class="lead">
+            Nabeel Ahmad
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 7, 2007
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Do you ever wonder why books are more or less the same physical dimensions?  It primarily has to do with the way the eye is accustomed to lines of text (and, yes, also for handling convenience); we can read best when reading shorter lines of text.  But how does that translate into the realm of electronic text on various devices and do we employ these approaches?
+
+IBM Research has created a technology called <a href="http://www.almaden.ibm.com/cs/projects/eyegaze/">Eye Gaze</a> allowing them to track the movement of the eye and analyze the effects of reading text of various line lengths.  Two experiments were performed: one with subjects reading wide paragraphs that consume 80% of the screen width (~9 inches) and the other with narrow paragraphs using 40% of the screen width (~4.5 inches) (the same text was used).  Two features were recorded; <i>return sweep</i> - the reposition of the eye to the beginning of the next line, and <i>regression</i> - slight backward movements while reading a line if there is difficulty understanding the text.  Post-tests were conducted for retention rates.
+
+Results:
+
+<li>Subjects reading narrow paragraphs read slightly faster than those reading wide paragraphs</li>
+<li>Return sweeps in wide paragraphs took more time than narrow paragraphs</li>
+<li>Narrow (thus vertically longer) paragraphs required a greater number of line sweeps</li>
+<li>Subjects reading wide paragraphs had a far higher rate of regression</li>
+<li>***Retention rate when reading narrow paragraphs is higher than wide paragraphs</li>
+
+<u>So, what does this mean for the library?</u>
+
+Various websites utilize one of two approaches to their site design in terms of width: absolute or relative size.  Absolute size websites (e.g. <a href="http://library.tc.columbia.edu">TC Library</a>) are designed in such a fashion that the width is consistent no matter the screen you are viewing the website on.  Relative size websites (e.g. <a href="http://www.tc.edu">TC Homepage</a>) are defined to consume a proportion of a screen's width (e.g. 80%) and thus the amount of text per line can vary depending on screen and browser size.
+
+Aside from websites, other library services such as email newsletters can have the same effect on the retention rate of our readers.  The advent of larger monitors (e.g. library kiosks and workstations) in recent years allow for a greater amount of text to be displayed but could be a detractor to retention if the websites and other electronic services one is viewing are not designed to account for these reading and retention variabilities.
+
+Have we taken these factors into account for our projects?  As the article suggests, the solution is relatively easy to implement (add a style attribute in the cascading style sheet file to set maximum line length) and can have a profound effect on the retention rate of our readers.  Collaboration among the various groups and disciplines (e.g. instructional design and graphic design) at the EdLab on topics like these can help us take this into consideration for all of our projects and create a well-rounded approach to build upon.
+
+<i>Note: the full article is attached</i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

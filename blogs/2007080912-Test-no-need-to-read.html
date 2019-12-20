@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Test, no need to read | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Test, no need to read</h1>
+          <p class="lead">
+            Josh Anderson
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            August 9, 2007
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <!-- Start of Brightcove Player -->
+<div style="display:none">
+Education News of the week.; education news; Special report on financing your college education.; education news; FInancial Aid; student loans; Ten Things You Don't Know about Summer School; How far can dissertation research take you? Check out how far its taken Pete Cronin, a doctoral student at Teachers College Columbia University.; dissertation research; education; Pep and Squeek review ET; <a href="http://link.brightcove.com/services/link/bcpid1125869405">http://link.brightcove.com/services/link/bcpid1125869405</a><a href="http://www.brightcove.com/channel.jsp?channel=1079000717">http://www.brightcove.com/channel.jsp?channel=1079000717</a>
+</div>
+<script src="http://admin.brightcove.com/js/experience_util.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+//Josh's mods
+var pH = 219;
+var pW = 153;
+
+function onTemplateLoaded (message) {
+// nothing now
+}
+
+function resizePlayer (dir) {
+
+pH = (dir == 4) ? int(pH + 1) : pH;
+pH = (dir == 3) ? int(pH - 1) : pH;
+pW = (dir == 2) ? int(pW + 1) : pW;
+pW = (dir == 1) ? int(pW - 1) : pW;  
+
+callFlash("setSize", pW, pH);
+
+}
+
+function getIt(t_id) {
+title_id = t_id;
+	callFlash("addEventListener", "titleLoad", "onTitleLoad"); 
+	callFlash("getTitleById", title_id);
+}
+
+function getTitleById_Result(evt) {
+if (evt == undefined) {
+	callFlash("fetchTitleById", title_id);
+} else {
+	callFlash("loadTitleById", title_id);
+}
+}
+function fetchTitleById_Result (evt) {
+  callFlash("loadTitleById", title_id);
+}
+function titleLoad(evt) {
+  callFlash("loadTitleById", evt.parameters.title.id);
+}
+
+//end Josh's mods
+
+ // By use of this code snippet, I agree to the Brightcove Publisher T and C 
+ // found at http://corp.brightcove.com/legal/terms_publisher.cfm. 
+
+ var config = new Array();
+
+config["autoStart"] = false; 
+ config["preloadBackColor"] = "#FFFFFF"; //background color while loading the player
+
+
+config["width"] = 219;
+config["height"] = 200;
+
+ config["playerId"] = 1125869405;
+ createExperience(config, 8);
+</script>
+
+<a href="javascript:getIt(1078597866);">Pep & Squeek</a> | <a href="javascript:getIt(1078635427)">10 things you didn't know about sex ed</a><br>
+Let's try to resize the player:<br>
+Height: <a href="javascript:resizePlayer(1);">-</a> | <a href="javascript:resizePlayer(2);">+</a>
+Width: <a href="javascript:resizePlayer(3);">-</a> | <a href="javascript:resizePlayer(4);">+</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

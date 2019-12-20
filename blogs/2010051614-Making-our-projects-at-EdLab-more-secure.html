@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Making our projects at EdLab more secure | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Making our projects at EdLab more secure</h1>
+          <p class="lead">
+            Weiqi Ma
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 16, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I have been taking a course about software and network security this semester and really interested in security issues regarding projects at EdLab. So there are some questions we might want to ask ourselves:
+
+1. Is there any misconfigured web server at EdLab?
+
+As far as I know, there are actually a lot of web servers running at EdLab, ranging from Apache Server to the Microsoft IIS server. Are we sure all those web servers are properly configured without any kind of potential security vulnerabilities? If not, it would raise a few potential security problems, since misconfiguration of web servers could result in huge security vulnerabilities. 
+
+2. Is there any security problem with the network setup at EdLab?
+
+The servers hosting sensitive data or projects at EdLab are only accessible from inside the Teachers College Network. However, it does not guarantee that attackers from outside could not get what they want. In fact, it is pretty easy to log on a host that is supposed to be inaccessible from the outside network using the SSH port forwarding service.
+
+3. Is the password well protected by each user at EdLab?
+
+Password management could be a big problem sometimes. I don't know about others but I often tend to choose my password as something easy to remember for me, which probably means it is easy to guess or brute forced by attackers. Therefore, picking an appropriate password is very important to protecting both your own account and sensitive data at EdLab. And it's better not to write down your password somewhere in case of password being stolen by others.
+
+4. Are our projects well designed and implemented considering the security issues?
+
+In order to develop a secure software product, we could build a threat model to identify and mitigate all potential threats in our projects. 
+
+A threat model is a description of a set of security aspects, by which one can define a set of attacks to consider. It is the core element of secure software development process, in that it determines potential security design issues, drives the security analysis and testing process.
+
+And above all, the best thing about threat modeling is that you can identify and mitigate potential security issues at the early stage of the development process. Hence, the security problems can be fixed at a relatively low cost.
+
+Threat modeling is easy to do using Microsoft Threat Analysis & Modeling tool, which provides general guideline and comprehensive automatic evaluation tools to simplify the threat modeling process. And amazingly, you don't have to be a security expert to use this tool. You don't even have to know much about programming. All you need to know are the business requirements and application architecture of your project. Then, you can leave the rest to this fantastic tool to produce a feature-rich threat model. Try it <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=59888078-9DAF-4E96-B7D1-944703479451&displaylang=en">here</a>.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

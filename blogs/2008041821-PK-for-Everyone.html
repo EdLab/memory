@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>PK for Everyone | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">PK for Everyone</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 18, 2008
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I just found a great site <a href="http://darwin-online.org.uk/manuscriptsBrowse.html">Darwin Online</a>, which touts 90,000+ pages of manuscripts, sketches, and field notes from that guy with that funny idea.
+
+It's definitely worth a look, but something else occurred to me... When looking at the site, I still wanted the PK like suggestion tools.  I wanted to know what was popular, what others like me looked at, etc.
+
+I think it's possible to build a generic tool to do something like this.  The key is to have javascript (js) widgets that you can drop into a page (like Google Analytics).  Then, the js hits our server and passes the url and the unique cookie of the user viewing the page.  This would allow our servers to maintain usage data WITHIN sites to power suggestion tools.  This could be done to analyze many sites at once, while providing links only within sites.  (This way, one company wouldn't have to promote another).
+
+A second js widget queries our servers when the page renders.  It tells our server that a user with cookie id X is viewing url Y from company Z.  Our server then returns a list of "suggested links" from Z, which display nicely one the page, alongside the other content.
+
+What this means, is that Darwin Online (a big archive) could suggest meaningful content to users based of usage patterns without having to build a system. All they would have to do is copy and paste some javascript into their pages (again, just like everyone does for Google Analytics).  This would give the power of PK to any other archive!
+
+It's an interesting idea I think.  Instead of pushing everyone to use our archival system because it offers the best user experience, we offer the same user experience to other archives.  If the widgets were powerful, we could offer a very interesting service.  And maybe that's the real future of libraries, not storing content, but providing the best means of accessing it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

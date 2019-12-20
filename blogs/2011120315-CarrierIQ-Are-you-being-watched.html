@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CarrierIQ... Are you being watched? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">CarrierIQ... Are you being watched?</h1>
+          <p class="lead">
+            Alex Park
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 3, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            If you pay attention to the technology blogosphere, you may have run across the name "Carrier IQ." As you can see from their <a href="http://www.carrieriq.com/">official website</a>, they are a company which provides wireless carriers with solutions to collecting usage data to help them with important decision making in running their business. Up to this point, it may be a little annoying that the carriers are collecting usage data from you with or without your consent, but doesn't seem too harmless. Until a Systems Administrator from Conneticut, Trevor Eckhart, released <a href="https://vialogues.com/vialogues/play/2217">this video</a> (now on vialogues).
+
+As you can see in the video, (skip to around 9:00 for the highlights) the software cannot be terminated manually by the user, does not give the user a privacy notice, nor is it removable by the user. Also, as Eckhart shows in this video, it collects data on <b>everything</b> you do, including keystrokes.
+
+This raises a serious issue of privacy, especially as the application never explicitly asks the user for permissions to log usage data. Very quickly after the release of these videos, the company has been hit by a <a href="http://www.pcmag.com/article2/0,2817,2397156,00.asp">Senate probe</a> and an overwhelming outpouring of criticism.
+
+Now, I should make it <b>very clear</b> that there is no concrete evidence that any of this logged data is sent back to CIQ or the carriers. The LogCat log that Eckhart shows in the video is just a debug log for the Android platform. Security experts have agreed with Carrier IQ that they're not recording keystrokes and keeping them for themselves.
+
+So, what can we take away from this? First, it is very clear that the internet can fan a fire very quickly, even when it isn't based on concrete evidence. As a firm that develops software (and collects usage data to improve our products!), we should be very careful to avoid giving off the impression that we collect non-anonymous data without permissions, as it could seriously dent our reputation. In addition, especially after Anonymous and Lulzsec, we should be mindful of the unavoidable leakage of data and act accordingly, such as changing your password routinely (something I don't do either, but really should do).
+
+If you're still worried, however, you can go <a href="http://gizmodo.com/5864116/these-are-the-phones-were-pretty-sure-dont-have-carrier-iq?tag=carrieriq">here</a> to see a list of phones that don't seem to have Carrier IQ loaded on them.
+
+<iframe src="https://vialogues.com/vialogues/play_embedded/2217/?width=540" width="540" height="700" style="border:hidden;overflow:visible;"></iframe>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

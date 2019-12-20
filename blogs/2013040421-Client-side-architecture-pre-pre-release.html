@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Client side architecture: pre pre release | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Client side architecture: pre pre release</h1>
+          <p class="lead">
+            Sharath Gururaj
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 4, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            private please
+
+Hi Team,
+
+I have a version of the new client side architecture. Since it involves some new technologies, This post is meant to list out the technologies involved so that developers can read up on it (if you arent already familiar) and help improve/give feedback on the architecture.
+
+The architecture is designed to meet the requirements of <a href="http://edlab.tc.columbia.edu/index.php?q=node/9049">this post</a>
+
+The key technologies used are:
+<ul>
+<li> <a href="http://requirejs.org/">RequireJS</a> for loading javascript (and even html, css) files as required, which allows us to split up code into multiple files, specify dependencies between files, and load files in the browser lazily.  Consider it the import statement of javascript.
+<li> <a href="http://angularjs.org/">Angular JS</a> While I must admit that  angular presents a rather steep learning curve, It offers payoffs if we do things the right way. We can start off slow by adopting key features like angular modules and then incorporate other features.
+<li><a href="">Jasmine</a> The tests will be written in jasmine. Its lightweight and has good support. Also, the test cases read like a story so its easy to tell what test case is failing.
+<li> <a href="">Karma</a> A test runner. Basically, watches for changes for files and reruns test cases in browsers, leading to instantaneous feedback. We're talking milliseconds, not seconds or minutes. The experience is quite amazing.
+</ul>
+I recommend brushing up your javascript knowledge by reading any of the good javascript books available, it is simple, but in its simplicity lies a lot of power and opportunities for subtle bugs.
+
+Briefly, The architecture uses a stub html to kick things off. There is a main entry point js file which uses requirejs and angular modules and routes to load a particular view. The code asynchronously fetches html template, fills in the data and renders it to the view.
+
+In the coming days, we can start rolling out the framework and work together to  improve it further.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

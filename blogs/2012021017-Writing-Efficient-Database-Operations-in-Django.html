@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Writing Efficient Database Operations in Django | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Writing Efficient Database Operations in Django</h1>
+          <p class="lead">
+            Stephen Pratt
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 10, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            The next Vialogues release will see some huge boosts to performance. These are on top of <a href="http://edlab.tc.columbia.edu/index.php?q=node/6878">Jing's optimizations</a> from a few months ago. The basis of the application-oriented improvements are twofold. First, we're reducing the amount of data being accessed and moved around on a regular basis, making an effort to only use what the site's functionality demands. Second, and perhaps a little less intuitively, we're being smarter about the way in which we access data. Django is designed to make efficient database operations quick and easy, but it's important to know what's going on under the cover when developing for performance. Here's a rundown on the list of things we've done to grease the wheels on Vialogues.
+
+
+<b>1. Don't ask for what you already have.</b>
+This is a simple design flaw that's just as easy to fix as it is to commit. Often times, it's necessary to obtain information about foreign keys in database entries. Typically, when you're doing this, it's because you would like to know all there is to know about the tuple that the foreign key represents. Django realizes this, and performs its database operations accordingly. For instance, say you've got a Django model Employee with a foreign key attribute to another model Department. This code:
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_employee = Employee.objects.get(/*access info*/)</b>
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_department = the_employee.department</b>
+
+Will perform two database queries when evaluated. The first will ask for all the columns in the Employee table for the row that satisfies our access info. The second will then ask for all the columns in the Department table for the row whose primary key matches the foreign key 'department' given by the first operation's return tuple. The value the_department now represents an instance of the Department model. But what if we don't want all the columns from the Department table? What if we're just interested in its primary key? Then that whole second operation is unnecessary, after all, we used the primary key to get the_department in the first place. Doing something like this:
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_dept_id = the_employee.department.pk</b>
+
+is therefore wasteful, requiring two database operations for what could be done in one. Fortunately Django keeps a hidden field around for every foreign key attribute in models for precisely this reason. If I just want the Department foreign key for a given employee, then I can use
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_dept_id = the_employee.department_id</b>
+
+The [fk]_id attribute tells Django you want the actual foreign key value, and not the database entry it represents. This is incredibly useful for serialization tasks.
+
+
+<b>2. Be careful with RawQuerySets</b>
+For those times when Django's built-in database functions just don't cut it, sometimes its nice to be able to execute custom database queries. There's nothing inherently wrong with this, but it's very important to be cognizant that when you do it, Django isn't going to hold your hand anymore. A lot of its built-in optimizations disappear when raw queries are introduced. For instance, standard QuerySets generally have a count() function that efficiently determines the number of rows contained therein. RawQuerySets have no such feature. As such, you have to perform the count yourself. There are a lot of bad ways to do this. Here's two:
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">sum([1 for row in raw_query_set])</b>
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">len(list(raw_query_set))</b>
+
+The first one forms a list comprehension of ones by iterating over the raw_query_set. This list is then summed, yielding the overall count of members in the set. Unfortunately, this means iterating over the raw_query_set in the first place, building a list from that, and then iterating over that list to take the sum. This is suboptimal, but the next statement is even worse. The second statement loads the entire raw_query_set into memory in order to turn it into a list, then asks for the length of the result. If you really need the cardinality of a raw_query_set, a better option is typically to use a database connection to perform the same raw query and use the rows returned value like so
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">from django.db import connection
+cursor = connection.cursor()
+rows_returned = cursor.execute(raw_query)</b>
+
+Obviously, when you're doing this you need to be careful to sanitize your query, but if you're dealing with raw queries, then you've probably already dealt with that.
+
+
+<b>3. Seriously, be careful with RawQuerySets</b>
+Yet another pitfall when it comes to dealing with RawQuerySets is that of result slicing. Say we form a standard QuerySet but we only want the first four results. The the pythonic way to deal with this is
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">fab_four = the_query_set[:4]</b>
+
+And Django abides. Assuming you haven't evaluated any other part of the_query_set already, then Django will modify the query it performs to explicitly grab rows 0 through 4, making sure it grabs and loads only what you need into memory. But what if we leave Django's cozy little nest and brave the world of raw queries? What happens if we do this?
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">fab_four = raw_query_set[:4]</b>
+
+Bad things. Django no longer has the power to choose which query to execute, so instead of putting the limits in itself, it executes the raw query exactly. When you ask for a slice of the result, it loads the entire result set into memory as a list and performs the slice. Again, the solution comes down to being smart about the raw queries you perform. If you only want the first four results, be sure to specify that in your query appropriately.
+
+
+<b>4. Iterators can help when datasets get large</b>
+Frequently, the first thing you'll want to do with a QuerySet after retrieving it is iterate over it. 
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_query_set = Employee.objects.all()
+for row in the_query_set:
+	#do stuff</b>
+
+To comply, Django will execute the query, load the results into memory, and iterate and operate as necessary. If you ever need to access the_query_set again, it's still right there in memory for you, so you can work with it without having to perform the query twice. However, if all you need to do is iterate over the query_set once, it may help to use the built-in iterator() function. 
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">the_query_set = Employee.objects.iterator()
+for row in the_query_set:
+	#do stuff</b>
+
+The difference here is subtle, as python usually handles for loops by forming an iterator anyway with __iter__(). Using iterator() tells Django not to bother loading the_query_set into memory, because you're not going to need it again. If you expect the_query_set to be large, this could save some time and memory overhead.
+
+
+<b>5. Take only what you need</b>
+A common thread running through all these points is that it's good practice to be smart about what you ask the database for and the way you operate on that data in your code. These principles would seem to indicate that asking the database for more lots of data and then trimming it down in your code isn't typically a good plan. Say you know your code is only ever going to need an Employee's name and age. The statement
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">names_and_cake_days = Employee.objects.values('name', 'birthday')</b>
+
+Is more efficient than the full select and returns a ValuesQuerySet which yields rows as dictionaries of the form
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">{'name':name, 'birthday':birthday}</b>
+
+A caveat is that this is only a small performance boost and can limit the extensibility of your code. If someone wants to modify your code to account for an employee's favorite color later on so that the party planning committee knows what kind of candles to buy, then they have to add that information to your values() function before its available. Use this only when you expect the data contained in values() to be substantially less than the total data in each row.
+
+Also useful is the values_list() function. It returns the data in the form of a list of tuples. If you want a list of all the employees in your table do this:
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">all_the_names = Employees.objects.values_list('name', flat=True) #flat gives us a list of names instead of 1-tuples</b>
+
+not this
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">all_the_names = [e.name for e in Employees.objects.iterator()]</b>
+
+This keeps us from having to iterate over our ResultSet, which can be terribly expensive for large datasets. What if we want to map these names to birthdays?
+
+<b style="font-weight:normal; font-family:'Courier New', Courier, monospace;">names_and_cake_days = Employee.objects.values_list('name', 'birthday')
+happy_happy_oh_my_friend = dict(names_and_cake_days)</b>
+
+Splendid.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

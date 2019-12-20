@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Some (Hopefully) Useful Metrics on TCR Emails | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Some (Hopefully) Useful Metrics on TCR Emails</h1>
+          <p class="lead">
+            Shane Chin
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 9, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            ** KEEP PRIVATE
+
+The basic idea behind the method of email validation I have been using is to match the email with regular expression, and then "ask" the server if the email is valid or not. For the 38,766 emails that have been checked, below are some of the return codes received. In general only 250 means that the email would be received by the user, while other response codes are some sort of error.
+
+
+0     - Unverifiable Emails, Server Timeouts, & Other Poor Responses
+250 - Valid Email
+550 - Email not found, or rejected for policy reasons
+551 - The recipient is not local to the server
+553 - The email address has exceeded it's storage allocation
+451 - The receiving server has a server fault
+421 - The service is not available on this server
+554 - "The transaction failed, Blame it on the weather."
+450 - Mailbox unavailable, possibly locked?
+452 - The server itself has insufficient system storage
+501 - Invalid Request
+503 - Invalid Request
+511 - Unknown
+530 - Access Denied
+571 - Unknown
+555 - Unknown
+454 - Unknown
+552 - Exceeded storage allocation
+459 - Unknown
+500 - Invalid Request
+
+
+
+Response 0:      3920/ 38766 = 10% are not emails or had a server timeout.
+Response 250:  24068 / 38766    =  62 % are valid
+Response 550: 9385 / 38766  = 24% "Strong Invalid"
+
+Which accounts for 96% of the emails. The other 4% are some subset of the other error messages listed above, but are all generally unfavorable responses.
+
+4063 / 38766 = 10.4% of emails are from hotmail accounts
+
+of those:
+
+2,876 / 4,063  = 70 percent are valid.
+
+894/ 38766 = 2% are from gmail accounts
+
+866 / 894  = 96% of those are valid
+
+3,736 / 38766 = 9.6 % are aol accounts
+
+2330 / 3736 = 62.3% of those are valid
+
+
+I'm going out on a limb here, but most people I know in my age demographic use gmail, and I assume most people in general use gmail. Even if the emails are indeed valid, if they aren't checked there is no real point. Therefore I believe the next step is to send an "Are you still alive?" email, asking users to click on a link. This will give you a better conservative estimate for actual readership, since you get a lower bound on those people that not only have valid emails, but actually read the TCR emails they do receive. 
+
+Another problem with this metric is that the more emails you send the more likely you are to get labeled as a spammer by email hosts (actual email spam generally uses this methodology, but tests at a faster rate) . Although this hasn't happened yet, it creates a gap where this method might fail to work in the future. 
+
+If anyone would like to know anything else about our email base let me know!
+
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Host A Free Wordpress Blog With Amazon EC2 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Host A Free Wordpress Blog With Amazon EC2</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 28, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            During the Thanksgiving weekend I took on a small project in setting up a <a href="http://blog.eugenezhou.info" target="_blank">Wordpress blog</a> for my son Eugene. The blog is hosted with <a href="http://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a> (Elastic Compute Cloud) and <a href="http://aws.amazon.com/route53/" target="_blank">Route 53</a> services. Basically EC2 is Amazon's web hosting service with MySQL support. And Route 53 is a Domain Name Service (DNS). Amazon is very nice to provide these services for free in the first year when the usage is within the free tier, and at very low costs for just how much bandwidth is actually consumed when it's beyond the free threshold. So it's a perfect solution for small businesses which are still in the development stage. In my case, I purchased a .info domain for $1.99 a year from Godaddy.com and use Amazon's Route 53 to host the domain.
+
+I am not highly knowledgeable in Linux server and domain setup. But it was surprisingly not that difficult to get the EC2 virtual server running at the elastic IP address that Amazon provided, install the PHP and MySQL running environments, and install the Wordpress CMS. There are many tutorials and knowledge sharing you can find in Google. The most helpful two that I referred to are: <a href="http://www.alexkorn.com/blog/2011/03/getting-php-mysql-running-amazon-ec2/">Alexkorn</a> and <a href="http://www.ilovefreesoftware.com/23/webware/how-to-setup-free-wordpress-blog-on-amazon-ec2-free-tier.html">I Love Free Software</a>.
+
+The aforementioned "I Love Free Software" used a template of Wordpress that is shared to all Amazon EC2 users to install the CMS conveniently if you don't want to spend the time to setup everything from scratch. But I setup everything from scratch myself because I want to control what are installed on my virtual server.
+
+The difficult part was connecting the Amazon IP with the domain name I bought from Godaddy. There was minimum tutorials or documentation found online on either Amazon or Godaddy, as Route 53 is relatively new. Also, I spent some time to figure out how to use Putty, Aptana, and WinSCP with Amazon EC2. By Saturday night I have got everything straight so that I can develop the Wordpress instance in the same working environment as the one I do EdLab works. 
+
+If anyone is interested I am glad to share my experience. My next project idea is to setup the Amazon CloudFront service (the one we use to host Vialogues videos) so as to use videos in Wordpress. Wordpress doesn't allow uploading videos to its media library by default. But I think it would be very fun to upload both videos and pictures using the Wordpress publishing app on iPhone and Android.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

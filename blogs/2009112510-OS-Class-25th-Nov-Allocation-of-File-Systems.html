@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>OS Class - 25th Nov (Allocation of File Systems) | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">OS Class - 25th Nov (Allocation of File Systems)</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 25, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Allocation
+-> Contiguous
+->Linked
+  Random Access Slow
+  Locality is a big problem
+-> Reliability
+
+File Allocation Table (FAT)
+- Make copies of the FAT as if it gets corrupted then we loose all the data.
+
+Indexed [INODE]
+- Fixed size Inode
+- but what if the file is large then we have to add a level of indirection. All the addresses have indexed entries and have to be pointed  
+
+Observation: Most files are "small"
+
+Every file has a corresponding inode to itself.
+A 8 page level inode could be able to address how big a file?
+ given the fact that the block size is 1024bytes
+each indirection level gives 256
+so the inode has 5 level of pages pointing directly to the data blocks.
+then the next level of page in inode pointing to a indirection block which points to the data
+then next level of page pointing to indirection which again points to indirection and then to the data,
+the next level of page pointing to the indirection which again points to indirection iturn to indirection to indirection and then again to the data.
+
+so roughly 256*256*256*1024 ~ 16GB
+
+
+
+Free Space 
+------------
+->Bit vector
+  1 bit/block
+ 1-used, 0 - free
+|10001........|
+-> FAT - Free space manageement is already done
+-> Linked List 
+-> Group
+-> Counting - a free block points to another free block.
+
+EXT3<-EXT2<-FFS (Fast File System) or nothing but UNIX FILE SYSTEM <-SSFS - System V FS.
+
+Boot,Superblock, Inode List, data Blocks 
+here inode - 64 B and Data block is 512B
+
+Directories
+- Special Files
+-16B
+=1st- 2B - INODE#
+-14B - Filename
+   filenames of upto 14 characters
+
+Inode has few things
+ - Index Table (39B)
+ - 0-9 entries are direct.
+ - 10 Single Indirect
+ - 11 Double Indirect
+ - 12 triple indirect.
+- Permissions asscociated with the file
+-(for the rest 27Bytes) stores the UID, GID, Size, Last access, number of hard links,etc 
+
+What is a superblock
+- # Number of blocks
+- # of inodes
+- # free blocks
+- # free block list in the linked tradition 
+- Grouped which have pointer to the other three blocks.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

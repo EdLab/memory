@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>The Performance Improvement on Vialogues | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">The Performance Improvement on Vialogues</h1>
+          <p class="lead">
+            kiraluo163
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 2, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I've spent about a month working on the technique to improve the performance of Vialogues. Fortunately, big progress has been made. There are several techniques I'm using to decrease the running time of web application, and I will be pretty glad to share with all of you.
+
+<b>1. Efficiency improvement based on Python programming tip</b>:
+There are quite a lot of blocks of code which is not written in the most efficient way. We can take advantage of the python built-in functions and technique to make it more efficient but not undermine the logic. For example, in plenty of cases, a list is defined by a "for loop" iteration to "append" new element in the end of loop, but you can rewrite it by means of "list comprehension" to decrease the running time. Even if it is inevitable to call "for loop", but it can be also improved on the efficiency if you are trying to avoid using of "dot": by making the simple definition such as "append=somelist.append", in the for loop, you don't need to call the reference of list to append the element in the end of list. In other word, you can use append(x) instead of somelist.append(x).
+
+<b>2.Optimization on the query language</b>:
+Query is executed in a lot of places for selecting the needed result in database. It will also cost you a lot of time if you don't carefully write it, because the Vialogues database is pretty large, and it will keep being expanded in the future. For some important functions like "search" and "browse", query will be first executed to get the video or discussion list which is ready to be return as parameters of html template. Obvious performance improvement can be seen when you are implementing the query opimization on a huge database. The technique I mainly use is for table-joining and selecting distinct turple. 
+
+<b>3. Reducing the connection with Amazon and utube Resource</b>:
+A surprising truth is discovered that over 80% of running time is spent on linking the media resources which is for loading the pictures and videos on one page. The functions which cost large running time are normally using expensive "serializable" function to get videos and discussions' parameters. The function also cause the connection with resources module to get the media uri. However, not every result video requires the complete parameter group return. Most of the videos are not needed to get its icon and video uri. To solve this case, I tailor the serializable function to flexibly send the media parameters. 
+
+After I finished these three points, it is very pleased to find the running time is decreased by 40% on average. For browse function, the running time is decreased from 1400ms to 700ms.
+
+Thank you Pranav and Yudan for giving me constructive suggestions!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>How Recommendation System Works | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">How Recommendation System Works</h1>
+          <p class="lead">
+            Pengfei Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 31, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            There are two major methods in designing a recommendation system: content-based method and collaborative filtering method. I would like to introduce some basic mechanism of the algorithms and introduce how these methods are been used in commercial products.
+
+First, let's talk about content-based method. There is a nice paper, <a href="http://www.springerlink.com/content/qq35wt68l6774261/">"Content-Based Recommendation Systems,"</a> which talks about different content-based algorithms. It is a nice overview and gives the basic idea of each algorithms and their usage in practice. Content-based method means that we get features from the content of item, in many cases they are words which describe the item. For commercial products, <a href="http://www.pandora.com/">Pandora</a> maybe using content-based method, but amazingly all features are scored by human beings, see <a href="http://computer.howstuffworks.com/internet/basics/pandora.htm">how Pandora works here</a>; <a href="http://www.imdb.com/">IMDb</a> maybe also using content-based method because it is full of content of movies.
+
+The other method I want to talk about is collaborative filtering method. The main idea of this method is to find a group of people who share the same interest with you. These people could be determined by the similar ratings on items. Let's call these people the neighborhood of the current user. If an item is liked by most people in this neighborhood, then it is very possible to be liked by the current user. This is collaborative filtering method. Netflix is using collaborative filtering method, see <a href="http://electronics.howstuffworks.com/netflix.htm">how Netflix work here</a>. I guess if a recommendation system involves rating on items then it is probably using collaborative filtering method.
+
+There is another kind of collaborative filtering method called item-to-item collaborative filtering method. It was developed by Amazon. As we know there is a huge inventory of items on Amazon, so the traditional recommendation algorithm will not work well because of time complexities. As such, Amazon developed its own algorithm called item-to-item collaborative filtering. The paper describing this algorithm is "Amazon.com Recommendations Item-to-Item Collaborative Filtering" published on IEEE, it's not free online, but you can get it from Columbia University's Library. The main idea of this algorithm is that, instead of finding neighborhood users who share the same interest on items with the active user, it finds the items been purchased together with the current item. Among these items, you can find the similar ones by <a href="http://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> and calculate the statistics on what percentage of people buy each one. To my understanding, this approach is incrementally maintainable, which makes it easy to rebuild index in the offline part. The online part need less time than the original collaborative filtering method because the system do not need to compare the active user with all users in the database to find the similar neighborhood.
+
+I hope this could give you some idea of how recommendation system works. There are also some other kinds of <a href="http://www.youtube.com/watch?v=G7IvNePZfKo">recommendation systems</a>. During my exploring I also found this website  <a href="http://www.howstuffworks.com/">"howstuffworks"</a> really interesting and useful. 
+
+Hope you enjoy: )
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

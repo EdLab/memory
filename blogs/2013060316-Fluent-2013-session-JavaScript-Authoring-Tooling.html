@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Fluent 2013 session - JavaScript Authoring Tooling | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Fluent 2013 session - JavaScript Authoring Tooling</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 3, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            In this session, <a href="http://www.paulirish.com/">Paul Irish</a> introduced a few tools and techniques he's been using for JavaScript developing. 
+
+The first tool introduced by Paul is SASS (Syntactically Awesome Stylesheets). SASS is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance and more. It's translated to well-formatted, standard CSS using the command line tool or a web-framework plugin. 
+
+Per the above definition, SASS is pretty close to LESS, the tool EdLab developers have been using. However, SASS does provide some unique features that makes it stand out. SASS users can choose to install an additional manager called COMPASS, which is a library that provides the basic SASS mixing definition, which is useful to most users.
+
+Besides, SASS has a powerful directive @extend which allows a mixing to be inherited or overridden. This important OO features make it possible for developers to write even more organized code. 
+
+What's else, SASS has a special 'respond-to' technique. It's mainly used for so-called "media query" (to apply styling to specific  browser types). This is similar to the switch syntax as in a normal programming language. 
+
+e.g.
+
+<code>
+=respond-to($name)
+
+  @if $name == small-screen
+    @media only screen and (min-width: 320px)
+      @content
+
+  @if $name == large-screen
+    @media only screen and (min-width: 800px)
+      @content
+</code>
+
+
+The next thing Paul recommended was Bower. Bower is a package manager for the web. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat. Bower runs over Git, and is package-agnostic.
+
+Bower command examples:
+<code>
+# Using the dependencies listed in the current directory's bower.json
+bower install
+# Using a local or remote package
+bower install <package>
+# Using a specific Git-tagged version from a remote package
+bower install <package>#<version>
+</code>
+
+Here's the list of available packages that are managed by Bower.
+<a href="http://sindresorhus.com/bower-components/" target="_blank">http://sindresorhus.com/bower-components/</a>
+
+Paul continued to demonstrate a few interesting JavaScript developing tools using Chrome Canary. The Canary build is less stable, but it's used to test even more cutting-edge features than our normal Chrome. Below are the tools that are worth learning:
+<ol>
+<li>continuous repaint mode 
+<li>fps meter & memory consumption
+<li>show paint rects & layer border
+<li>object allocation tracking
+<li>layout thrashing details
+</ol>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

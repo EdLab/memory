@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>What&#39;s been going on? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">What&#39;s been going on?</h1>
+          <p class="lead">
+            Dan Torop
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 22, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            What's been going on with the residency?  I've explored the building a bit and written a few programs...  The programs, with luck, work together to be the pieces of the piece.
+
+The programs are:
+
+<ul>
+<li><em>least_popular_popular</em> looks at the <a href="http://library.tc.columbia.edu/">Gottesman Libraries homepage</a> and records the popular searches listed at the bottom of the page.  I have a compilation of several weeks worth of these, which serve as fodder for compositions.  Rather than looking at the most popular of these ("math textbook"), I've enjoyed the weird outliers which, luckily, are the majority.</li>
+
+<li><em>lpp/analyse</em> collates the collected popular searches and comes up with a list of them ordered by unpopularity.</li>
+
+<li><em>compose</em> takes the analyzed least popular popular searches and notates them for performance.  It groups them into verses and suggests that certain words should be repeated by other voices after an initial voice speaks them.</li>
+
+<li><em>versify</em> takes the output of <em>compose</em> and actually speaks it.  This is the heart of the program.  It creates a number of performers, each with his or her own voice, and assigns them to read lines as notated by <em>compose</em>.  Meantime it displays what it is performing.</li>
+</ul>
+
+There are, of course, a lot of subtleties.  I spent a lot of time a couple weeks ago working out the position, speaking speed, and volume levels of the performers, as well as what synthesized voices could best take the lead.  The week before, I spent a lot of time figuring out what words should be repeated by <em>compose</em>.  This tuning makes things more interesting.
+
+There's also, of course, the super-nerdy bits.  I spent yesterday making the code run on OS X (rather than only on Linux) so that it could be presented easily on EdLab's equipment.  I've spent far too much time with UNIX-y tools of few letters ("git", "sox", "sdl", "zsh", "ssh", "vim", "sort", "uniq", "flac", "ruby", "riff", "rsdl", "port", "emacs", "magit", "arctic", "ffmpeg", "hpricot", "festival").
+
+So what needs to happen now?  Once I do a bit more tuning (I want to change the notation system yet again), I'll hope to have something nice–if a bit dry–to show on Friday (2PM, do stop by!).  I'd be really curious how it strikes people.
+
+In the final three weeks of the residency, I want to find other things for <em>versify</em> to speak besides the least popular popular searches.  I hope to lurk some in the library stacks, looking for sources.  This will mean that I'll have to extend <em>compose</em>'s compositional abilities to work with these different sorts of writing.  But with luck I'll pass beyond hyper-nerdy code-immersion, and into a semi-nerdy library-immersion.
+
+There's also that thing they call "interaction".  Right now the program pretty much just talks to you, and aside from going over to the online library catalog and doing lots of searches for a phrase, there isn't that much way for a viewer/listener to alter what it does.  This is fine for now, but as I try to figure how to show it, I'll hope to come back to the i-word.
+
+That's what has been Going On.  It's been good to work away upstairs, and I look forward to any thoughts/advice this Friday, as well as getting more of a sense of what the other residents have been up to.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

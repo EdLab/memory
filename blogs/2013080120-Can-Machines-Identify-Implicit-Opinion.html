@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Can Machines Identify Implicit Opinion? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Can Machines Identify Implicit Opinion?</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            August 1, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img class='nlt-image' src="https://cdn.tc-library.org/NewLearningTimes/survey_f854fa0abb874ed7860a2b2b838e56f7.jpg" alt='article.title'><br />
+
+<p><b>Title:</b> A Pattern Matching Based Model for Implicit Opinion Question Identi?cation (2013)<br></p>
+<p><b>Authors:</b> Hadi Amiria, Zheng-Jun Zha, & Tat-Seng Chua</p>
+<p><b>Source:</b> <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI13/paper/view/6324/7059">AAAI 2013 Conference Proceedings</a></p>
+
+<p><b>Research Question:</b>
+Can we use machine learning to expand the lexicon of opinion words and identify more subtle opinions?</p>
+
+<p><b>Study Design:</b>
+People ask all kinds of questions online and usually it is easy to tell opinion questions (i.e., "what is the greatest song of all time?") from objective questions (i.e., "how many calories are in a banana?"). <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI13/paper/view/6324/7059">A Pattern Matching Based Model for Implicit Opinion Question Identification</a> studied a mining technique to identify less obvious opinion questions on the <a href="http://answers.yahoo.com">Yahoo! Answers</a> platform by expanding the vocabulary we use to identify these questions. The authors used a classifier, which is a machine learning algorithm that can identify particular words through classification and also "learn" from gathered data to identify new examples. In this case, the authors used the classifier to look for new words that indicate implicit opinion. Current opinion lexicons, while trained to identify common qualifiers like "best" (i.e., "which city has the best falafel?"), do not include new or slang words like "must-see" and "nerdy."  The authors found that a high percentage of the opinion questions on Yahoo! Answers contained at least one strong opinion word. In order to identify implicit opinions, the authors attempted to enlarge the opinion words lexicon through machine learning and identify opinion patterns in the data.</p>
+
+<p>The authors considered a large dataset, with over 4 million questions from different domains on Yahoo! Answers. To mine new opinion words, the authors assumed a word could be replaced with an existing opinion word in the database without changing the meaning of the question. Their aim was to find word candidates that could be interchangeable with existing opinion words. They measured the interchangeability of the words by examining co-occurrence and overlap with neighboring words. High similarity scores were assigned to words that either frequently co-occur or rarely co-occur but have high semantic association. For example, "suggest" and "recommend" are largely interchangeable, but usually don’t appear in the same sentence. When words like this rarely co-occur, but rate highly in a similarity semantic vector matrix, they are considered to be interchangeable. The authors first checked words against the existing database and then either identified the word as an unknown opinion word or discarded it. Based on the appearance of opinion words, the authors were able to classify questions as explicit, implicit, or non-opinion.</p>
+
+<p><b>Findings:</b>
+The results were consistent across all Yahoo! Answers categories and the results represent a great improvement in the performance of subjectivity prediction in community questions answering datasets. On average, the system identified opinion words and patterns with 75.5% accuracy for opinion question identification and 79.0% accuracy for implicit opinion patterns.</p>
+
+<p><b>Moving Forward:</b>
+This research and <a href="https://newlearningtimes.com/cms/article/743">other</a> <a href="https://newlearningtimes.com/cms/article/667">recent</a> examples of opinion mining, seem to indicate a trend of automating text analysis. This kind of subtle opinion identification could be put to work auto-verifying tasks that require objectivity, like the creation of research surveys. Software development for text analysis still faces many challenges, like the detection of implicit affection in text, as in the case of irony or sarcasm. This study used simple sequential pattern and lexicon analyses, but perhaps more sophisticated methods could benchmark the current method and expand our notions about the ability of computers to analyze human text.</p>
+
+<i>Image</i>: Surveying the Track at BCIT by Hugo Chisholm via <a href=" http://www.flickr.com/photos/91162368@N00/3477675012/">Flickr</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>AWS IoT Workshop Sept. 27-28, 2016 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">AWS IoT Workshop Sept. 27-28, 2016</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 28, 2016
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            On Sept. 27 and 28, I participated the AWS IoT Workshop at the <a href="https://aws.amazon.com/start-ups/loft/ny-loft/" targe="_blank">AWS Pop-up Loft</a> in SoHo, New York, NY. During the 1.5-day event, I took a 101 course about the AWS services provided for Internet of Things (IoT), then hands-on tutorials to create my very first Amazon <a href="https://www.amazon.com/Dash-Buttons/b?ie=UTF8&node=10667898011" target="_blank">Dash Button</a> and <a href="https://www.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E" target="_blank">Alexa Echo</a> apps. The workshop went very well and I learned a lot on the technical aspects of IoT.
+
+Thanks to the convenient features built into the <a href="https://aws.amazon.com/iot/" target="_blank">AWS IoT gateway</a>, creating the Dash Button app and Alexa app was surprisingly easy. Anyone who has basic programming experiences should be able to do it within an hour or two, if necessary support is provided. I plan to give a D&R on creating AWS IoT apps once I have a good grasp on the skills myself. You're welcome to drop by my desk if you have interest in learning more about my workshop or discussing IoT ideas. I'm looking forward to hearing great ideas applicable in our context such as the Smith Learning Theater so as to try/discuss them in the D&R.
+
+Finally, I'm appending my notes during the 101 course here, in case you are interested in some resources I learned.
+
+<h2><a href="https://aws.amazon.com/iot/sdk/" target="_blank">IoT Device SDK</a></h2>
+
+<ul>
+<li>C-sdk (embedded c)</li>
+<li>js-sdk</li>
+<li>arduino Yun</li>
+<li>java</li>
+<li>python</li>
+<li>mobile sdk</li>
+<li>android ios</li>
+</ul>
+
+<h2>Device Gateway</h2>
+
+<ul>
+<li>Enables devices to securely and efficiently communicate with AWS IoT</li>
+<li>Devices and apps connect over <a href="http://mqtt.org/" target="_blank">MQTT</a>, WebSockets, and HTTP 1.1</li>
+<li>Powerful pub/sub message broker with long-lived bi-directional messages</li>
+<li>MQTT vs HTTP<ul>
+    <li>Why not HTTP - large footprint, NO. of conns, data size</li>
+    <li>Why MQTT<ul>
+        <li>OASIS protocol v.3.1.1</li>
+        <li>Lightweight, pub-sub, transport protocol designed for connected devices</li>
+        <li>Need to build, maintain, and scale MQTT</li>
+    </ul></li>
+</ul></li>
+</ul>
+
+<h2>Message Broker: managed service</h2>
+
+<h2>Authentication & Authorization</h2>
+
+<ul>
+<li>AWS Auth + https</li>
+<li>MQTT + mutual auth tls<ul>
+        <li>Certificates on both AWS server and device, which mutually trust<ul>
+            <li>Certs generated by AWS by default trust VeriSign, etc.</li>
+            <li>Can use self-generated certs</li>
+            <li>Can push certs to device</li>
+        </ul></li>
+    <li>Websockets wss://</li>
+</ul></li>
+</ul>
+
+<h2>Rules Engine</h2>
+
+<ul>
+    <li>SQL statement to define topic filter with JSON support<ul>
+        <li>Example: bee hive<ul>
+            <li>Temperature too high or too low -> notify bee keeper or trigger auto climate control</li>
+        </ul></li>
+        <li>`SELECT DATA FROM TOPIC WHERE FILTER THEN ACTION`</li>
+        <li>ACTIONS: JSON</li>
+    </ul></li>
+    <li>rules engine connects aws iot to external endpoints and aws services<ul>
+        <li>AWS services (direct integration)</li>
+        <li>rest of aws (via Kinesis, lambda, s3, etc)</li>
+        <li>external endpoints (via lamdba and sns)</li>
+    </ul></li>
+    <li>Use a local gateway to work with devices connected in the same place, then to cloud</li>
+</ul>
+
+<h2>Device Shadow (Thing Shadow)</h2>
+
+Shadow - less known state of the device
+
+<ul>
+    <li>Intermitted connections</li>
+    <li>Persistent device state (JSON)</li>
+    <li>Desired vs reported => Delta</li>
+    <li>RESTful API<ul>
+        <li>UPDATE</li>
+        <li>DELTA</li>
+        <li>GET</li>
+        <li>DELETE</li>
+    </ul></li>
+
+Example Shadow payload
+
+<code>
+{
+    'state': {
+        'desired': {
+            'lights': {
+                'color': 'red',
+                'engine': 'on'
+            }
+        },
+        'reported': {
+            'lights': {
+                'color': 'green',
+                'engine': 'on'
+            }
+        },
+        'delta': {
+            'lights': {
+                'color': 'red'
+            }
+        }
+    },
+    'version': 10
+}
+</code>
+
+
+<h2>Device Registry</h2>
+
+static attrs associated to thing
+<ul>
+<li>firmware version</li>
+<li>serial NO.</li>
+<li>device type</li>
+<li>device group</li>
+<li>device description</li>
+<li>sensor descrption</li>
+</ul>
+
+<h2>Device Management</h2>
+
+<ul>
+<li>able to update global or within a region</li>
+<li>rules engine keeps state of updates and tracks progress in dynamodb table</li>
+</ul>
+
+
+<h2>Data Analysis</h2>
+
+<ul>
+<li>Past<ul>
+    <li>retrospective analysis and reporting</li>
+    <li>redshift / rds / s3 / emr/ quicksight</li>
+</ul></li>
+<li>Present<ul>
+    <li>real-time processing and dashboards</li>
+    <li>kinesis / lamdba / dynamodb / ec2 / elastic search</li>
+</ul></li>
+<li>Prediction<ul>
+    <li>to enable smart applications</li>
+    <li>amazon machine learning</li>
+</ul></li>
+
+</ul>
+
+<h2>Pricing</h2>
+
+<ul>
+    <li>Pay as you go, no min</li>
+    <li>$5 per million msgs</li>
+    <li>msgs are free delivered to aws services</li>
+    <li>250K msgs free for 12 months</li>
+</ul>
+
+
+<h2>Companies using AWS IoT</h2>
+
+<ul>
+<li>John Deere</li>
+<li>Phillips Healthcare</li>
+<li>SONOS</li>
+<li>British Gas</li>
+</ul>
+
+<h2>Official AWS IoT kits</h2>
+
+<a href="https://software.intel.com/en-us/iot/cloud-analytics/aws" target="_blank">Intel IoT Developer Kit</a>
+
+<a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=aws+iot+developer+kit" target="_blank">Search on Amazon</a>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

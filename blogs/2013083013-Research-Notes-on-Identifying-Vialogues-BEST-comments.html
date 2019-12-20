@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Research Notes on Identifying Vialogues &#34;BEST&#34; comments | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Research Notes on Identifying Vialogues &#34;BEST&#34; comments</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            August 30, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            [[Keep PRIVATE please]]
+
+The research team has been working on identifying <i>BEST</i> comments from our collections. There are so many interesting things we are learning from our data and attempt to make our video discussion experience better. 
+
+Why? and How? 
+
+We hypothesize that <i>BEST</i> comments are associated with the videos and will increase users' engagement and learning. 
+
+So, to begin with, we have to define what is qualified as <b>BEST</b>. 
+We look at a range of parameters, mainly including 3 aspects: 
+a) comment syntactics
+b) comment semantics
+c) user behaviors (interactions) 
+
+For each aspect, we consider a bunch of variables, from comment quantities to the meanings of the comments, i.e. # of comments, # of words per sentences, informativeness (novel words compared to the entire conversation), sentiments,  cognitive words, etc., 
+
+So, assuming all these variables combined will denote the video views and comments counts. We are currently testing our featured Vialogues compared to the rest of our Vialogues corpus. We built a model which so far can approximately tell whether the Vialogues is influential or not. 
+
+<blockquote>
+video views = 45.5 
+             +0.02comment_length -0.19word count -0.03word/sentence +5.96position +22.77informativeness +0.42social -0.78 affect* - 0.47cogmech + 0.22percept + 1.69bio - 0.65relativ +9.36sentiment_score** +3.27v.comment_count*** +0.01 v.duration.sec.
+Signif. codes:  0 ‘***' 0.001 ‘**' 0.01 ‘*' 
+</blockquote>
+
+If you know a bit of statistics, you would know what this model looks like....pretty intuitive, and makes sense. 
+
+Let me explain it to you. <b>If we do not consider whatsoever variables, eventually for a given time, the prediction for Vialogue views will be 45.5. In short, more sentiments and more comments predict good video views. Also noted, informativeness is highly appreciated. </b>
+
+To visualize what are those good and not so good Vialogues' comments based on the model constructed above, I measured the Cook's distance value and plot the influential chart. 
+<a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/influence-vialogues_7c00e9710ed842f08af69bed8c4b2b68.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/influence-vialogues_7c00e9710ed842f08af69bed8c4b2b68.png" width="100%"></a> 
+
+<b>positive influential vialogues:</b>
+<a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/3293_81353d6f3be24f829224a2caac6a27be.png"><img src ="https://d2ba1wehz8pq9c.cloudfront.net/Others/3293_81353d6f3be24f829224a2caac6a27be.png" width="30%"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/3578_af3d2b2357c1403daf1021c8fcbc11ec.png" width="30%"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/3578_af3d2b2357c1403daf1021c8fcbc11ec.png" width="30%"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/8391_13aca54fc74840b7bbf7e8c5050bd612.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/8391_13aca54fc74840b7bbf7e8c5050bd612.png" width="30%"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/8460_e3973dd6cfa946a6a8e7cfd01cc6fa4d.png"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/8460_e3973dd6cfa946a6a8e7cfd01cc6fa4d.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/8460_e3973dd6cfa946a6a8e7cfd01cc6fa4d.png" width="30%"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/721_a30590790bd2446087e6fbecc31e96e3.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/721_a30590790bd2446087e6fbecc31e96e3.png" width="30%"> </a>
+
+<b>negative influential vialogues:</b>
+<a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/2698_9909d914b7214ec795d4437c292794fb.png"><img src="	https://d2ba1wehz8pq9c.cloudfront.net/Others/2698_9909d914b7214ec795d4437c292794fb.png" width="30%"> </a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/4842_263d2fe886924f9ba5ff7658caa539eb.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/4842_263d2fe886924f9ba5ff7658caa539eb.png" width="30%"></a><a href="https://d2ba1wehz8pq9c.cloudfront.net/Others/6150_484fd6b82d0643b28eacd5845ff2af7e.png"><img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/6150_484fd6b82d0643b28eacd5845ff2af7e.png" width="30%"> </a>
+
+Look at each Vialogue's comments distribution, these cases indicate that <b>influential ones do not have to have a whole lot comments, but the diversity and intensity matter. On the other hand, none influential ones tend to have heavy conversation at the very beginning and flat out. </b>
+
+*note1: Influence is a reference index of how the comments affect to video views with other Vialogues.
+*note2: java source code and R scripts to crawl and calculate each parameter values are available upon requests. (of course, EdLab internally)
+
+
+  
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

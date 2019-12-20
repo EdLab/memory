@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>iPhone and Android Application Development | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">iPhone and Android Application Development</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 23, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Application delegate is a good place to put global state information.
+
+All tabbed UIViewControllers should return YES from autorotate method
+
+ITUNES
+---------
+Marketing is key: banner ads,admob.com, flurry.com, frequent app, updates, lite version, giving away review copies, asking for iphone site reviews.
+
+Start Early  - approval with Apple takes time
+
+CLASS
+--------
+Application that helps you take stock prices tickerpicker
+
+1) Ui Navigation class for getting the table view
+3 Main classes
+- UITabBarController
+- UINavigationController
+- UITableViewController
+plus some custom view drawing
+
+Frameworks Available: 
+Non - UI Framework - starts with NS like NSString
+Graphic Framework - UI Kit - starts with UI like UIKit
+
+Reference book for Objective C - Orielly (Learning Cocoa - 3rd edition) also a nutshell book.
+
+receiver object = [Object msg: Param part2: param]
+		   message sending to the object
+
+a lot of the key classes are controllers - any class that handles the communication between the model and the view
+view - all the buttons and window
+model - data you store on the disk
+
+This is called the ModelViewController paradigm
+
+UITabBarController - hierarchy tab bar controller 
+hanging of each tab is a view.
+
+	Tab bar view controller manages the view. drag it into the xib file and then set up the tab bar views	write custom view controller and use viewwillcontroller.
+
+UINavigationController.
+   Handles new detail views sliding in and out (aka table view row selections)
+   works like a stack - push view controllers on, pop them off
+  push a detail view controller on and the back button will take care of itself
+
+UITableViewController
+  - Typically the data source delegate and all around go to guy for table views
+  - subclass to get app specific functionality
+  - don't subclass UItableview generally
+  hook called tableview delegate
+
+UITableViewController
+  - setup as data source and delegate in IB
+  - DataSource - how many rows how many sections, editing/reordering rows and all the important
+    - tableview:cellforrowatindexpath:
+      (an object that has a row and a section) so we can track
+- Delegate handles selection , editing and more.
+
+
+Custom Drawing 
+  - Use coregraphics (quick, simple) or OpenGL(faster)
+  - Subclass UIView
+  - Override - drawRect
+
+View is generally generic and most of the functionality is drawn in the Controller
+
+each viewcontroller should be in different xib files
+MainWindow.xib - top level xib 
+
+
+TickerPicker Application
+----------------------------------
+Main view controllers:
+
+Tab bar controller 
+1) Tab bar
+2) My View - 
+3) 2 - Navigation controller- UINavigationSontroller
+4) Selected WebView Help Delegate (nfo) Weviewhelpdelegate
+
+if there is a custom tab button image than it should be 30 x 30 pixels
+
+Application Delegate - is asscebile globally. UIApplication give me the Application Delegate (for storing central repository) to which all the view controllers can use and track states.
+
+
+NSMutable Array stores all the array objects and it's use to display the data in the table views
+ - NSDictionary has bool (string, NSMutableArray(index for the next table) set some objects like 
+
+dict=[[[NSMutableDictionary alloc] init] autorelease];
+[dict setobject:@"SP500" forKey:@"name"];
+[watchlist addObject:
+
+reportAppOpenToAdMob: - third party API for tracking the use of your application by the users and check for ads (statistics)
+NSXML class is available
+#if defined (TICKERPICKER)
+[self performSelectorInBackground:@selector reportAppOpenToAdMob];
+[FlurryAPI startSession: @"HJSMYEVPFC3J7MSMALLS"];
+#
+
+for getting the data from the network : 
+------------------------------------------------------------
+   URL Requests: 
+   URL Connection: 
+   Socket 
+
+Try to make sure that we get the data back from the internet
+
+for portrait mode we use different font size and for landscape mode we have different font size.
+
+for landscape to portrait - shouldAutoRotateTo
+  -(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation) fromInterfaceOrientation()
+   have a fakescale reference (420, 100) - Portrait
+   after adjusting we need to set the view to display
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

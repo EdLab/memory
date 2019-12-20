@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Trends in Ed: Parameter-free Educational Data Mining | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Trends in Ed: Parameter-free Educational Data Mining</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 22, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            In Romero & Ventura's (2007) paper, the cycle of applying data mining in educational systems, educators, academics responsible/administrators and students are the three stakeholders (refer to figure 1 in the paper), which interact with the educational systems. Based on student usage and interaction data, students can benefit from past similar learners' learning paths and experiences; educators can have timely evaluation of the effectiveness on the learning process and adaptively constructing instructional plans accordingly; academics responsible and administrators can have measures to better organize institutional resources and so forth. There are many data mining tools that provide mining algorithms, filtering and visualization techniques which are general-purpose tools, such as Clementine (SPSS) and Weka (Weka) etc. However, most of them are not specifically targeted for pedagogical purposes. Hence, several educational data mining tools have been developed to discover mined knowledge and make decisions in such context (examples will be discussed in next section). These tools require educators to be familiar with or actively participate in the data mining process: data collection, data transformation (processing) and data analysis. For example, indicating specific data filtration and attribute derivation or data transformation etc. In addition, it is unwieldy for educators who do not have extensive knowledge in data mining to use these tools (ZaÃane, Xin, & Han, 1998). 
+
+The meaning of parameter-free data mining algorithms:
+Mostow (2004) has identified some dimensions of designing an educational data mining tool which includes considering the content to display, the interface to display it, and the architecture to implement the tool. These dimensions can be further addressed and summarized to explain the meaning of a parameter-free algorithmic approach Educational Data Mining (EDM) system. 
+
+1) Mining student data requires intensive familiarity with how the educational systems work and understanding what and how data logged (Mostow et al., 2005; Merceron & Yacef, 2005). A parameter-rich algorithms such as the algorithms adapted in the general-purpose data mining tool (such as Weka) usually does not support data collection strategy. Depending on the desired goals, the miners have to identify a range of parameters and transform the attributes of the dataset to the data mining tool applicable formats (such as ARFF in Weka). On the other hand, a parameter-free data mining algorithm takes into account all three phases of data mining process comprehensively by providing flexible data collection and data processing support. 
+
+2) The display of the data mining results needs to be meaningful and useful for all three EDM stakeholders: students, educators and academic responsible/administrators. However, to reach such goal, miners usually take a great deal of advanced refinement in manipulating the range of parameters from the dataset with the parameter-rich algorithms. Hence, the opposite approach, a parameter-free algorithm supplies a more straightforward procedure to present the analysis, such as a diagnostic overview.
+
+In summary, from a design point of view, a parameter-free algorithm represents a simplified process of the data collection and data transformation. In addition, it relaxes the procedure for data analysis. 
+
+<b>parameter-rich vs. parameter-free algorithmic approach examples:</b>
+
+<b>TADA-Ed </b>(Tool for Advanced Data Analysis in Education) is a data mining tool dedicated to teachers for visualizing and mining students' on-line exercise work from a web-based tutoring tool (Merceron & Yacef, 2005). To explore a specific phenomenon of interest, teachers (the miners) have to firstly configure an administration menu, which contains all the facilities including filters (for selecting a subset of the data from the database) and data preprocessing. In the configurations, teachers are obligated to specify the subset of the tables or even create new attributes for data transformation. After preprocessing the data, data mining algorithms can be applied to generate results such as graph visualizations, clusters, decision trees and association rules etc. The process of applying classification or clustering algorithms requires the miners to have a specific knowledge goal in mind, in terms of the attributes, to help them narrow down the exploratory analysis. Meanwhile, to apply association rule algorithm to find associations between attributes on a dataset, the miner has to perform a series of refinement on the datasets or even use different methods to reach the particular goal.
+
+<b>Session Browser</b> (Mostow, 2004) is a tool that resides in automated Reading Tutor, which derives the tree structure from the temporal relationships among the events stored in the database. Session Browser has the query language based generic architecture, which enables the miners with power, flexibility and minimal effort to adapt to the tool and exploit the massive educational data without heavy configurations.
+
+<b>Discuss how one might modify or replace the parameter-rich algorithm to make it easier to use in an educational context.</b>
+
+Our goal is to understand how students acquire knowledge. It is essential to have the student model which contains the descriptions of student knowledge or behaviors, or even misconceptions. These parameters feasibility and accuracy become crucial to represent the inferences about student knowledge. However, none of past work has been able to report the accuracy of the learned parameters (Pardos & Heffernan, 2010). These parameters would be later on transformed into corresponding attributes dependent on the data mining algorithms selected to use. Thus, to <b>improve the parameters accuracy of the student model </b> will be the first step to simplify the data mining process, from identifying the attributes to devise a more comprehensive mining system.
+
+Despite a parameter-rich algorithm results in cumbersome data mining process, it still requires intensive data mining knowledge for educators to perform analysis. An alternative to reduce the difficulties is to consider a common set of standards to store data during data collection, such as DataShop logging format (DataShop). DataShop is a central repository for data and a suite of tools to analyze that data. It provides an array of exploratory analysis and visualization tools available through a web-based interface. The uniform data format not only can take advantage of the pre-defined semantic codes but also allows researchers to reproduce and perform secondary analysis easily (Koedinger et al., 2008). By <b>conforming the standards in the educational data collection </b> may enable the efficiency and sustainability.
+
+DataShop, PSLC, https://pslcdatashop.web.cmu.edu/ (last accessed July, 2011)
+
+Koedinger, K., Cunningham, K., Skogsholm A., Leber, B. An open repository and analysis tools for fine-grained, longitudinal learner data. Proc. 1st Int'l Conf. on Edu. Data Mining (2008), 157-166.
+
+Merceron, A., & Yacef, K. (2005). Tada-ed for educational data mining. Interactive Multimedia Electronic Journal of Computer-Enhanced Learning, 7(1), 267—287.
+
+Mostow, J. (2004), Some useful design tactics for mining ITS data, in J. Mostow & P. Tedesco, eds, ‘Proc. ITS 2004 Log Analysis Workshop', pp. 20—28.
+
+Mostow, J., Beck, J., Cen, H., Cuneo, A., Gouvea, E., & Heiner, C. (2005). An educational data mining tool to browse tutor—student interactions: Time will tell! In Proceedings of the workshop on educational data mining (pp. 15—22).
+
+Pardos, Z. & Heffernan, N. (2010) Navigating the parameter space of Bayesian Knowledge Tracing models: Visualizations of the convergence of the Expectation Maximization algorithm.  Proceedings of the 3rd International Conference on Educational Data Mining. EDM 2010 Pittsburgh, Pennsylvania, USA,  pp. 161-170 http://educationaldatamining.org/EDM2010/uploads/proc/edm2010_submission_13.pdf
+
+Romero, C., & Ventura, S. (2007). Educational data mining: A survey from 1995 to 2005. Expert Systems with Applications, 33(1), 135—146.
+
+ZaÃ¯ane, O., Xin, M., & Han, J. (1998). Discovering web access patterns and trends by applying OLAP and data mining technology on web logs. In Advances in digital libraries (pp. 19—29). 
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

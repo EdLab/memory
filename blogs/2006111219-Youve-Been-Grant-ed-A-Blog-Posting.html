@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>You&#39;ve Been Grant-ed A Blog Posting | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">You&#39;ve Been Grant-ed A Blog Posting</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 12, 2006
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Check out <a href="http://findory.com">Findory</a>, a site dedicated to giving personalized news.  Of course, that's kind of boring (we've even discussed building something similar on our blog a while back).  But Findory also includes an open API.  With the API we could easily show related news (or video, podcasts and blogs) from any of our sites.  And by easy, I mean including a simple framework in just a few minutes (using my new XML library of course)!
+
+This could be an especially relevant tool for the new personalized TCRBooks site (yes, I'm pushing hard to re-brand it!).  Imagine reading a review, seeing a bit about the author and the reviewer in the right column followed by the News-Buzz-O-Meter!  Or something far less silly which highlights the press the book has received thus far.
+
+API's like this could also be fun for creating new tools to analyze demographic data.  For an example, suppose I have 100 people list their 10 favorite sites.  And, since it's the season, we'll have them describe themselves as democrat, republican or independent.  Assuming (just for example's sake) that we believe there is a link between political leaning and site interest, we've just categorized ~1,000 sites.  But given overlap of choices this is really far less, and 1000 datapoints is still very little for this type of research! <i>(Keep reading)</i><!--break-->
+
+Unless... Now link to the Findory API (for example) and find the 10 sites most closely clustered to <i>each</i> of the 1,000 sites and label them by adding a discounted (dem, rep, ind) vector.  E.g. <i>d</i> * (1,0,0) for DailyKos.com.  Now I've fuzzy labeled 10,000 sites.  Then feed that data back in (keeping the same discounting factor), using EM (expectation maximization) to re-evaluate and we can continue to grow and grow our base dataset.  
+
+So where does this get interesting?  So far, we're not doing anything new, but now lets tie in the Mechanical Turk!  I don't like using surveys (or that little "Was this Link Helpful?" box), so lets use honest signaling and bias to actual use.  So, viewing a page we think is related once could be anything, but view it twice is a good sign of useful content.  Three times is a sure thing!  So we'll sites by the interests of the user and the recorded site views using a fuzzy predicate with exponential growth: think (e^n-1)/(e^n)
+
+Ok, this is still really boring. So where does it get really interesting?  Lets try and tackle the really big problem: identifying the categories in the first place.  I knew <i>a priori</i> about democrats, republicans and independents, but as McFarlyn and Klopfer reminded us, developing systems designed to identify categories is a yet unsolved problem.  We still have trouble getting systems to define content when given the categories and copious training data!
+
+So lets set out to define a series of reasonable heuristics and match them with the mechanical turk and EM from site stats akin to Findory to see if we can't start categorizing academic content.  Start by developing a set of "rules of thumb" (for this example, we'll try and identify academic topics):
+
+<ul>
+<li>Journal Titles (not necessarily article titles) capture fields.  Those words uncommon in the colloquial lexicon appearing in titles (say <i>neurobiology, socioinformatics, etc</i> are more likely to be such terms</li>
+<li>the same is likely true of university course titles, and certainly from program listings</li>
+<li>"keywords" from articles also are</li>
+<li>those words in academic cv's or bios uncommon in <i>all</i>bios are too.  here we're using a different training set - the set of all bios of all fields instead of colloquial text</li>
+<li>obviously many things i didn't think of in the last 30 seconds</li>
+</ul>
+
+Start with an initial list of topics (pay a few art history majors to create an initial list of a few hundred or few thousand terms) and grow those with our heuristics.  Now it's time to create a large set of heuristics about how these terms exist in academic papers:
+
+<ul>
+<li>by section of paper (title vs abstract vs ...)</li>
+<li>bounded by frequency</li>
+<li>font type?</li>
+<li>...</li>
+</ul>
+
+Notice how these heuristics all have associated values?  (Which section of the paper? What frequencies? What font type?)  We need to assign these values as well as weight the entire heuristic (maybe the first is 0 because it's not good).  Call the former Y and the latter X.  We'll determine Y by starting with our initial data and assigning values, then maximize the probability of our data by assigning X values.  Then we'll repeat, but this time incorporating the mechanical turk by having others verify or reject topics (maybe even add new ones).  This will reweight the Y values which will then feed the next iteration of maximizing the probability of the data by reweighting X, <i>ad infinitum</i>
+
+Ok, this is way outside of what we do.  But the McFarlyn and Klopfer's of the world need this, and may find limited success in the approach of "we'll hire grad students."  This topic is extremely specialized in CS and needs the support of very experienced CS researchers (and/or future researchers).  But it's also a fun problem to solve, so perhaps the EdLab's role can be one of facilitator.  By defining an ambitious and clear research goal, we may be able to draw the support of the Columbia CS department as well as the visionaries like McFarlyn and Klopfer.  TSI has been talking about persuing grants (if for no other reasons than experience and to get the grant ball rolling), but this could easily be a grant proposal in the waiting...
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

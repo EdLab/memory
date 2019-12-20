@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Some Insights About News Recommendation | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Some Insights About News Recommendation</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 21, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="https://d2ba1wehz8pq9c.cloudfront.net/NewLearningTimes/newspaper_boy1_3f3e285f8ffb4c7fb69f4538a9875fb9.jpg">
+
+Inspired by a recent New Learning Times (NLT) meeting, I want to share a couple of studies and results with you about <i>personalized news</i>. 
+
+Since we want to provide personalized educational news down the road, I thought it might be useful to learn from previous experiences of this model. 
+
+1. <b>Personal user interest profiles</b> are more important for the news article recommendation process than <i>public trends</i>.
+
+Qi Gao, Fabian Abel, Geert-Jan Houben, Ke Tao (2011) <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6040504&tag=1">Interweaving Trend and User Modeling for Personalized News Recommendation</a>, published in <a href="http://wi-iat-2011.org/">Web Intelligence and Intelligent Agent Technology (WI-IAT), 2011 IEEE/WIC/ACM International Conference</a>
+
+2. Utilize click behavior for news recommendation as users are more likely to be influenced by local news trend. As such, a combination of user model for recommendation could include <b>genuine interests</b> based on past click history and current interests (clicks). This can be demonstrated to improve the quality of news recommendations and attract more <b>frequent visits</b>.
+
+Jahui Liu, Peter Dolan, Elin RÃ¸nby Pedersen (2010)
+<a href="http://dl.acm.org/citation.cfm?id=1719976">Personalized News Recommendation Based on Click Behavior</a>, Proceedings of the <a href="http://iuiconf.org/">15th international conference on Intelligent user interfaces</a>
+
+3. Users prefer <b>transparency</b> and <b>control</b> in their systems, and generate more <i>trust</i> to the recommenders. (That's the general effect of open user modeling. If you want to learn more, please refer to my thesis section 2.1.2 page 30 <a href="http://d-scholarship.pitt.edu/13439/">here</a>). In news recommendation, such ability to edit user profiles may also harm the system performance.  (Though Google News is doing it now). 
+
+Ahn J.W., Brusilovsky, B., Brady, J., He, D. & Syn S.(2007)
+<a href="http://dl.acm.org/citation.cfm?id=1242575">Open user profiles for adaptive news systems: help or harm?</a>, Proceeding <a href="http://www.www2007.org/">WWW '07 </a>Proceedings of the 16th international conference on World Wide Web
+
+4. Given a hierarchy of newly-published news articles, news groups that the user might prefer are differentiated using the <b>long-term</b> profile, and then in each selected news group, a list of news items are chosen based on the <b>short-term</b> user profile. 
+
+Lei Li, Li Zheng, Tao Li (2011)
+<a href="">LOGO: a long-short user interest integration in personalized news recommendation</a>, In <a href="http://recsys.acm.org/">RecSys '11</a> Proceedings of the fifth ACM conference on Recommender systems
+
+There are a couple more but those are more algorithmic and specifically deal with improving the recommendation precisions. I'd love to talk about those, but i'm afraid I'll bore you with formulas. 
+
+So, lets summarize these couple studies. It looks pretty clear that, user profiles (users' interests), is key. However, the recommendation algorithm should be able to detect long and short term interests. And sure, if the server and algorithm is powerful enough, it will allow users to easily "modify" their interests at anytime with no harm to the recommendation. 
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+body {
+  padding-top: 56px;
+}
+
+.content {
+  min-height: calc(100vh - 176px);
+}
+
+img {
+  padding-bottom: 20px;
+  display: block;
+}
+.home img {
+  height: 150px;
+  object-fit: cover;
+}
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link > a {
+  color: black;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.margin-top {
+  margin-top: 60px;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+.card-body {
+  padding: 0.2em 1.25em 1em 1.25em;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Where Do I Work - A prototype | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Where Do I Work - A prototype</h1>
+          <p class="lead">
+            Shrenik Sadalgi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            December 9, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <b>Abstract</b>
+‘Where Should I Work' is a tool that helps a student (graduate or undergraduate) search for companies and organizations they could work for after finishing school. The tool assists the student by recommending companies that work on areas that match the student's interests, academic background and past work experience.
+
+<b>Motivation</b>
+Imagine you are about to graduate and would like to seek employment in the industry you always wanted to work in. What would you do - talk with the representatives of companies at the school's job fair? Or, talk to them when they visit school for recruitment? Given the plethora of companies that work in the various fields all around the world, is it not a compromise to restrict your-self to opportunities within the school's boundaries? During my undergraduate studies, I was one of those students who did not know where I wanted to work, and just randomly applied to all the companies that visited my school and started working wherever I got a job. This was primarily due to the comfort of decision-making — where you allow a company to choose you and not vice-versa, and some amount of ignorance in being unaware of the companies working in my areas of interest. Over the years I have realized that one should favor sticking to their interests and nurturing them further, as compared to change the interest itself based on opportunities that come by. This tool enables an individual in this decision making by recommending companies that they should work for by matching company profiles with the interests, academic background and past work experience of the individual.
+
+<b>Problem Definition & Audience</b>
+There is the dearth of a tool (online) that suggests a workplace for an individual based on their interests, academic backgrounds, past work experience, and geography. On-line job search websites (such as Monster.com) only match open positions in their databases with the position that you apply for. Companies feed the database with very specific job information from one end, and the user feeds in very specific information on the other end. This is the typical solution we see in job search websites. <p>
+
+This tool will use a different approach. It does not help you find jobs. It just helps you intelligently find companies that work in an area that you might be interested in. Finding an opening in that company could then either be a matter of going through their website and checking for open positions, or following through with consultants or job-search websites. A large number of people simply want to work for big companies like Microsoft and Google that work on almost everything under the sun. This tool will help even this bias and help make a more informed decision by providing information about smaller but equally exciting opportunities — for example a start-up in the same neighborhood that you live in but had no clue about. This tool could be used by graduate and undergraduate students, individuals in-between jobs, and almost anyone who would like information about professional companies that they could pursue their career interests with. This project is aimed at being a usable tool / web application over the next few months, and hence, at this stage of writing this report, it is only a prototype or a proof-of-concept. Some of the features that I talk about may not have been implemented yet.
+
+<b>Relevance to EdLab</b>
+EdLab's mission is to develop tools that truly meet individual and societal needs. EdLab addresses these challenges directly by pioneering new forms of educational tools, processes, and institutions. <a href="http://160.39.76.141/netposse/web_login.php">NetPosse</a> is a tool developed by EdLab that helps incoming students network with other students and professors based on their academic backgrounds and interests. This application could be easily integrated with NetPosse so that NetPosse becomes a student's best friend in guiding them at the start of school — by helping them make new friends, and at the end of school - by helping them find their dream company to work for. 
+
+As a thought, and a possible extension to this application, we could as well answer the question — What Should I Do after school? The application shows suggestions such as — Work at XYZ, Get a graduate degree in XYZ at ABC, Do some research at EdLab!
+
+You can check out the basic prototype <a href="http://shrenik.homeip.net/recommender/www/">here</a> (hosted from my laptop, so it may not be accessible at all times)
+
+For those of you who cannot access the prototype, here are some screen shots
+
+Figure - 1 - Home Page
+<img src="http://edlab.tc.columbia.edu/files/1.png" width="450px"/>
+
+Figure - 2 - Entering Information
+<img src="http://edlab.tc.columbia.edu/files/2.png" width="450px"/>
+
+Figure - 3 - Results
+<img src="http://edlab.tc.columbia.edu/files/3.png" width="450px"/>
+
+<b>Improvements to the Prototype</b>
+-	The application is still very buggy. It should extract better keywords from a resume and the corpus of company information has some discrepancies like duplicate entries for some companies.
+-	Users should be able to rate the relevancy of the recommendations and help the system learn as more users use the system. The resumes should also be stored for reference
+-	Companies or representatives of companies could also enter information about their company (such as new start-ups) into the system to help them get some visibility
+-	The system should include financial statistics of a company into the recommendation process to recommend companies that are doing well and probably recruiting as a result of that
+-	Users should be able to view feedback (statistics) on their resume based on the resume's that have been collected by the system so far
+-	Information from previously stored resumes should be used by the process too. A resume contains important information about a user's profile and the companies that they have worked for
+-	Results should also be sorted based on factors like location, industry, number of job openings etc
+-	This kind of a system has potential in the education sector and hopefully should soon become a full-fledged question/answer and company recommendation tool for graduates and undergraduates who need to decide what to do after they graduate — Where Should I Work, or What Do I Do After School? 
+
+Let me know your comments!
+
+Thanks,
+Shrenik
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

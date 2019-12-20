@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Javascript&#39;s Amazing Closures | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Javascript&#39;s Amazing Closures</h1>
+          <p class="lead">
+            Santosh Kumar
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 3, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            While working on mSchool today, we ran into this feature where we wanted to show some kind of a notification on the page for a fleeting amount of time to signal to the user that their stuff was being saved. Think of it, like Gmail, which shows the "saved" thing, every once in a while to let you know your draft is being saved. How would you implement it?
+
+On the surface, it looks pretty straight-forward but when you get to actually coding it out, you realize it's not. Here's how the rough algorithm would look:
+
+  - Wait for the user to start typing something
+  - Wait for them to stop
+  - If some amount of time has elapsed (say half a second) show the "saved" message and actually save it.
+
+The tricky part is, how would you know someone has "stopped" typing. Javascript has a "keyup" event that you can hook into, whenever a key is released and you could hook into that. But... that is not the same as what we think of someone "stopping" typing. For example, if I type the words "hey there" -- I have fired about 9 keyups (one for each letter).
+
+Here's one solution around this. 
+<ol>
+<li>Take a timestamp whenever someone does a "keyup".
+<li>Create a deferred function, i.e. a function that will run after sometime (say 2 seconds). This function will do the actual saving.
+<li>Whenever the deferred function runs, check to see if the timestamp from Step 1 is less than what you would think of as "not stopping" (say 1 second). That is, it's common sense to assume that if someone takes less than one second between the typing of two characters, they haven't actually stopped typing.
+</ol>
+Most languages, would have a really hard time capturing this, but Javascript does a pretty good job of wrangling this out. 
+
+Anways, less talk, more code..
+
+<code>
+function stoppedTyping() {
+  deferredFunction = setTimeout(function() {
+    var firedTooSoon = (Date.now() - Session.get('lastSaveTime')) > 1 * 1000;
+    if(firedTooSoon) {
+      console.error(arTimeout(deferredFunction);
+    } else {
+      alert("hey there");
+    }
+  }, 1000);
+}
+
+$("#field-input").keyup(stoppedTyping);
+
+</code>
+
+The fact that this just works, is awesome! That *deferredFunction* is actually in scope inside the anonymous function in setTimeout, is really really amazing and a testament to what Javascript got absolutely right, stealing closures from <a href="http://www.scheme.com/tspl4/" target="_blank">Scheme</a>.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

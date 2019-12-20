@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Some Details of NLT Mobile Development | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Some Details of NLT Mobile Development</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            November 18, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            KEEP PRIVATE
+
+It's been a few weeks since the launch of NLT. During this period, we have been hearing about people's user experience and their feedback. We kept making improvements based on the feedback to make NLT more usable, more robust and faster. Our improvement work has been done on both the mobile and web frontends. Although the two frontends share quite a few visual elements, the site architecture, template structure and the underlying JavaScript controllers are very different. The web frontend was developed in a style similar to that of Vialogues, Pundit and Survey Sidekick. The mobile frontend, on the other hand, underwent a process of iterative redesigning and re-implementing of multiple components before reaching its current state as a mobile app.
+
+Before talking more details about the mobile frontend, let's first take a look at how the two frontends are organized and represented in the project. From the very beginning, our idea has been defining and developing the two frontends separately. The rationale was that they were going to be very different. It's not only about the page layout or UI elements but also about the architecture and the logic in rendering and transporting data. Although they do share something in common, we felt it might cause confusion if we used one single template for some parts but used separate templates for some others. Therefore we decided to use separate sets of assets for the two frontends. These assets include html templates, JavaScripts, CSS sheets and images. The file layout is just an extension of what we've been using for web products. Under each template and static resource folder, there's a subfolder called "iPhone" where the mobile assets are kept.
+
+One distinct thing about the mobile frontend development is that it uses more templates and more complicated plugins than the web frontend. This is dictated by our methodology in developing it. We are using JQuery Mobile as the basic framework for the mobile frontend. Many of a site's behaviors are changed under the JQuery Mobile framework. Besides, we also planned our own features that were unique to the mobile frontend.
+
+Below are the major concerns in designing NLT mobile frontend and the solutions we used.
+
+I. UI requirements and corresponding solutions:
+1) Pages slide in --- load pages via AJAX and insert them into DOM dynamically
+2) Responsive design under all device gesture --- objects should recalibrate on rotation or page resize events
+3) Keep loaded data between visits on the same page --- caching
+
+The above mentioned designs were implemented by using JQuery Mobile tags and attributes in the related pages and also by managing scripts inclusion in a way that is compatible with JQuery Mobile.
+
+
+II. Special JQuery Mobile properties and corresponding solutions:
+1) Enriched page events --- prepare/destroy page data, render page elements at proper events
+2) Headers don't change on AJAX page load --- (i) separate context between pages that execute similar tasks;  (ii) update status indicators proactively on frontend
+3) Enhanced markup for mobile device --- fire re-markup on html injection
+
+The above-mentioned designs require that page initialization and manipulation be defined in the right events handler. It also requires encapsulating page-specific JavaScript code in a plugin and instantiating the plugin always with an object that is identified by the page id (article id). In addition, site-wide plugins are needed to keep track of user and article status. 
+
+
+III. Performance Optimization Concerns and corresponding solutions
+1) Reduce full article page loading --- update article page components using AJAX and html replacing
+2) Reduce data transmission in updating article page --- acquire article data and mark up using pre-fetched article template
+3) Reduce data transmission in showing login, signup and purchase forms --- acquire empty form templates once and populate with data when needed
+4) Process e-commerce user transaction history --- acquire only when user views purchase form and only once
+
+The above-mentioned designs require that multiple plugins be defined. Each of these plugins are capable of loading and storing the empty form template specific to its objective, populating form with user data, setting up events listeners, validating user input, submitting data and processing responses and carrying out callbacks that are to be executed on transaction success.
+ 
+
+From the above lists, it can be seen that far more plugins are used in NLT mobile than in its web version. This generally serves the idea of requesting small units of data and logic incrementally and only when needed. Corresponding to each of the plugins, a backend API handler is defined as well. As on a single page, different parts are processed separately, it is required separate, smaller templates are defined. These templates are served to the frontend the first time they are needed. Once on the frontend, they get stored for subsequent usage during the plugin's lifetime. Also defined on the backend are API handlers that serve pieces of user-specific data. By acquiring the data, the frontend plugins populate it into the templates stored in its namespace and injects the whole generated html module into the existing page. 
+ 
+NLT mobile, at its earlier phases, used to have architecture similar to that of a web product even though it was built upon JQuery Mobile.  Over the recent months, during which a lot of restructuring and re-implementing were carried out, it has gradually grown to be a more authentic mobile app. Many of its parts now function in a way more similar to that of a native app like Roomer, although it's made out of web technologies including HTML5, JavaScript and CSS.
+
+The experience we gained in developing and improving NLT mobile is the most important thing that is going to help us build more fancy mobile apps in the coming days.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

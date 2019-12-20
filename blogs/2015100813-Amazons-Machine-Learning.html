@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Amazon&#39;s Machine Learning | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Amazon&#39;s Machine Learning</h1>
+          <p class="lead">
+            tzaffi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 8, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Since Amazon launched their cloud computing business AWS ("Amazon Web Services") in 2006 they have been striving to <em>broaden</em> and <em>deepen</em> their offerings.  By <em>broadening</em> I mean allowing greater and greater access to the cloud whether that is geographically, or from an ever increasing range of devices. By <em>deepening</em> I mean allowing for a greater complexity of services provided. This has been part of their strategy to become the premier cloud computing company. It's safe to say (for better or for worse) that Amazon has succeeded in their strategy. 
+
+This year's re:Invent conference is highlighting the depth of Amazon's offerings in the Machine Learning and Business Intelligence space. In April, they launched <a href="https://aws.amazon.com/machine-learning/">Amazon Machine Learning</a> and yesterday they launched <a href="https://aws.amazon.com/quicksight/">Amazon QuickSight</a>. The conference is also hilighting the area of <a href="http://deeplearning.net/">Deep Learning</a> with several sessions devoted to the topic, though Amazon has yet to provide its own Deep Learning service. Amazon is clearly trying to position itself as the place to go when you want access to analytics but don't have sufficient resources to create your own data analytics pipeline.
+
+Wednesday, I attended two sessions on the Amazon Machine Learning offering. In the first session, Amazon attempted to enable participants to create their own personalized restaurant recommendation website (like a cross between Yelp and Netflix) from scratch. Though ultimately the workshop was not sufficiently organized to succeed in its objective, we got really close to creating a fully functioning demo. The second session hilighted an application that could listen to a Twitter feed and automatically decide whether or not a particular tweet deserved further attention from customer service personnel. Amazon is streamlining the machine learning process by not only providing the hardware needed to run intensive computations, but by also providing algorithms, analytics tuning, and a service for running the discriminator and taking action  on the fly. They even provide "<a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAAahUKEwjkwYjV37PIAhXEn4AKHWO1AZ0&url=https%3A%2F%2Fwww.mturk.com%2Fmturk%2Fwelcome&usg=AFQjCNEJZyDOfrU99WCAXsl1nZ2fySk_HQ&sig2=6k4p9O0S8exjyHe9d_UfaQ&bvm=bv.104615367,d.eXY">mechanical turks</a>" for intelligent sample labeling. This reason that Mechanical Turks are necessary is that Artificial Intelligence -by definition- attempts to simulate Human intelligence, and this can't be done if you don't put real people in the process.
+
+For example, to create an automatic Twitter feed router one would:
+<ul>
+<li> Collect a large set of tweets that the learning algorithms will train on
+<li> Using Amazon Mechanical Turk, have each tweet individually categorized by a real person
+<li> Using Amazon Machine Learning and the categorized tweets, compute a model which will use be used to process future tweets
+<li> Using the Amazon Machine Learning console, fine tune the model's predictions to find the best balance of false negatives and positives for the particular application (in this case, a false negative is much worst than a false positive because a false negative implies a customer issue that is never addressed)
+<li>Using Amazon Lambda, create a predictor which will follow the live Twitter feed, evaluate each tweet to see if it needs to be routed to customer service, and if so, send the tweet by text message to an appropriate agent
+</ul>
+
+Amazon is demonstrating the future of intelligent computing. It's exciting, it's scary, and it's highly applicable for our very own Data Dashboard
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

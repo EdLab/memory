@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>LearnSphere. Inspiration for Data Dashboard and mSchool. Collaboration? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">LearnSphere. Inspiration for Data Dashboard and mSchool. Collaboration?</h1>
+          <p class="lead">
+            tzaffi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 29, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Today, Hui Soo pointed out an interesting project that we should seriously consider as we design and build out mSchool and Data Dashboard. 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/moocviz_b8e7c00581fb49a98d0a95c9eeb3596c.png">
+
+The project is called <a href="http://learnsphere.org/index.html">LearnSphere</a> and an article at <a href="http://hechingerreport.org/carnegie-mellon-project-revives-failed-inbloom-dream-to-store-and-analyze-student-data/">the Hechinger report</a> describes it as a data scrubbed and secure version of the doomed <a href="http://www.bloomberg.com/bw/articles/2014-05-01/inbloom-shuts-down-amid-privacy-fears-over-student-data-tracking">inBloom</a> initiative. But LearnSphere seems to have been carefully designed in more dimensions than just privacy concerns.
+<!--break-->
+So what was that cool teaser visual all about?
+
+This is a proof of concept of the type of research and analysis that the LearnSphere ecosystem is supposed to enable. It shows the connection between student online activity on a MOOC and their success in their course and their online interactions with other students. Here, an associated project called <a href="http://moocdb.csail.mit.edu/">MOOCdb</a> which is kind of like the Data Dashboard of EdX, is being used to generate the data that drives the visualization. The visualization is created on their <a href="http://moocviz.csail.mit.edu/visualizations/23">MOOCviz</a> site and exposes the visualization creation process. Scroll down and click on the various icons to see how data stored on the MOOCdb data warehouse is culled with a data extraction script (Python and SQL), exported to a local file, aggregated for statistical purposes (Python), converted to public data (JSON), transformed into the visualization script (HTML and D3.js) which is then displayed.
+
+I suspect that the MOOCviz platform is either based on JupyterHub (just like our new Data Dashboard) or is closely related.
+
+To learn more about the data science behind MOOCdb check out <a href="http://groups.csail.mit.edu/EVO-DesignOpt/groupWebSite/uploads/Site/EdTR_Dec2_2013.pdf">MOOCdb:
+Developing Standards and Systems to support MOOC
+Data Science</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

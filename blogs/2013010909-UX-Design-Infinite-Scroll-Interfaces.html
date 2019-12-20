@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>UX Design: Infinite Scroll Interfaces | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">UX Design: Infinite Scroll Interfaces</h1>
+          <p class="lead">
+            Nara Kasbergen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 9, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I've never been a fan of websites that implement an "infinite scroll" interface, but I've always had a hard time articulating exactly what I dislike about it. I always assumed that I'm just too much of a control freak and that it bothers me that a website loads more information without me giving it permission to. But then this morning I saw one of my friends tweet <a href="http://www.usabilitypost.com/2013/01/07/when-infinite-scroll-doesnt-work/">this article</a>, which does a great job of explaining why and in what cases infinite scroll does/doesn't work and essentially puts into words what I sensed intuitively but had difficulty expressing.
+
+To quickly summarize the article:
+<ul><li>Infinite scroll is a <strong>good idea</strong> for sites that are purely designed for <strong>consumption of information</strong> (eg. Twitter, Facebook), because "more search results at a faster rate ... boost user engagement."</li>
+<li>Infinite scroll is a <strong>bad idea</strong> for sites/interfaces that require a <strong>more complex interaction</strong> (eg. Etsy's "Search" interface), because "the user is searching for something in particular within the list of results" and "the user isn't just linearly consuming the data, they're mapping the information in their mind". A paginated interface is likely a better idea.</li></ul>
+
+In the context of NLT, I think this is interesting since the way we have set up our site is a little bit of a hybrid of a paginated interface and infinite scroll -- because the user controls when more data is loaded, but it's loaded on the same page below the old data rather than on a new page. However, in terms of the level of complexity of the user's interaction with the data, we do seem to be in the second group, on par with the Etsy "Search" interface, because all a user is given is an image and a headline (and a content stream name and an author name which likely have little meaning for them at this point), and then they're asked to decide whether or not that's something they'd like to read, and if so, click.
+
+On a related note, one thing I've noticed about websites switching to infinite scroll interfaces after not having them before is that I don't think they always realize the ramifications of doing so. Over half a year ago I pointed out to my friends that when Facebook switched the news feed and all other pages to infinite scroll, they didn't remove their footer or find a new location for that content -- so all of those footer links are currently inaccessible. I checked today, and they still don't seem to have noticed or fixed it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

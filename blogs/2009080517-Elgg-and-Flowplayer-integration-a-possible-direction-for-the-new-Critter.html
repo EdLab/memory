@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Elgg and Flowplayer integration - a possible direction for the  new Critter | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Elgg and Flowplayer integration - a possible direction for the  new Critter</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            August 5, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            To extend the social networking platform discussion by Faisal (<a href="http://edlab.tc.columbia.edu/index.php?q=node/3082" target="_blank">click here</a>), Jo (<a href="http://edlab.tc.columbia.edu/index.php?q=node/2762" target="_blank">click here</a>), and others, I'm blogging about an integration of <a href="http://elgg.org/" target="_blank">Elgg</a> and an open source Flash-Javascript video player called <a href="http://flowplayer.org" target="_blank">Flowplayer</a>.
+
+The proposal for AERA 2010 helped the Critter team theorize the future directions for Critter: to be a combination of three booming technologies: social networking, video sharing, and video annotation. Each of these three features should be well developed so as to support highly effective social reflective learning around web-based videos.
+
+We identify Elgg to be a possible solution for the social networking aspect of Critter. The biggest differences between Elgg and other more developed content/course management systems (CMS) such as Joomla, Wordpress, and Moodle are that: a) Elgg specifically focuses on social networking; and b) Elgg is more open-ended so that website designers can implement multimedia and <a href="http://en.wikipedia.org/wiki/Rich_Internet_application" target="_blank">Rich Internet Application</a> (RIA) projects in a more flexible manner. Due to these reasons, the Critter team is considering building the new Critter based on Elgg because it saves the trouble of developing a the social networking features from scratch, yet it still possible to customize the webpages based on our needs.
+
+Critter already implements the video sharing and video annotation features. But we still need to improve these features based on a well-developed video technology, which turns out to be the open source Flowplayer tool. Flowplayer excels most other existing video players in that it well integrates Javascript with Flash. Developers can add Javascript and Flash plugins flexibly and conveniently to the Flowplayer. For example, we can develop our own video annotation and discussion plugins in either Flash or Javascript, and place those plugins beside or on top of Flowplayer with just a few lines of Javascript.
+
+As an example, I have successfully placed a running snail Flash on top of the Flowplayer. And our Flowplayer is inserted into the Elgg module:
+
+http://jay.tc.columbia.edu/elgg/html/
+
+<img src="http://52mijing.net/download/snail-flow.jpg" width="560">
+
+This is just a simple example showing what we can do with these technologies. Personally, I believe this is the way that Critter should take. Because although both Elgg and Flowplayer are new and have many bugs, we can customize them so that they will fully suit our needs.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

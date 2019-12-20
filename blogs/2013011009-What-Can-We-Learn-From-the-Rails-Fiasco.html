@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>What Can We Learn From the Rails Fiasco? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">What Can We Learn From the Rails Fiasco?</h1>
+          <p class="lead">
+            Nara Kasbergen
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 10, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Yesterday morning, a friend of mine tweeted <a href="https://groups.google.com/forum/m/#!topic/rubyonrails-security/61bkgvnSGTQ/discussion">this link</a> to a Ruby on Rails news blast about a huge security vulnerability they had discovered in their code. For those of you who aren't techies, Rails is a web application framework for the Ruby programming language -- similar to the way Django is a web application framework for the Python programming language, which is what we use for most of our projects here at EdLab. But in another universe, we might be using Rails, and we'd be confronted with this gaping security problem.
+
+By the time the news blast went out, several patches had already been released, but it'll take a while for those to trickle down to everyone, and web applications that are no longer actively being maintained will likely never be patched at all. This leaves the web full of security vulnerabilities that can be easily exploited. It took only a day for <a href="https://community.rapid7.com/community/metasploit/blog/2013/01/09/serialization-mischief-in-ruby-land-cve-2013-0156?x=1">the Metasploit Project to develop an exploit</a>, which <a href="http://news.ycombinator.com/item?id=5035023">prompted a discussion among a group of Hacker News users</a> in anticipation of "a point-and-click exploit that will run arbitrary code on vulnerable servers". To quote one of the posters who managed to sum up the problem very well:
+
+<blockquote><em>If you have a vulnerable application</em> anywhere, on any port <em>it will be found and compromised. This is a spray-and-pray vulnerability.</em> It costs attackers nothing to try, attempts don't crash servers, and so people will try <em>everywhere</em>.</blockquote>
+
+When you put it so plainly, I don't think you have to be an engineer to understand that this is bad, really bad. This doesn't just potentially cause problems for engineers and IT security, but for <em>anyone</em> who's ever signed up for a website that's built on Rails, because hackers can now easily gain access to the password and account information on that website.
+
+Reading through the HN post, I've found some useful takeaways both for individuals and for systems/engineers:
+
+<strong>For individuals:</strong>
+* Avoid using the same password for every website.
+* Going along with the above, it may be worth switching to a password management application like 1Password, LastPass, etc.
+* Now is a good time to go through and <a href="https://accounts.google.com/IssuedAuthSubTokens">remove any 3rd-party websites whom you've given access to your Google account</a>
+* Now is a good time to go through and <a href="https://twitter.com/settings/applications">remove any 3rd-party websites whom you've given access to your Twitter account</a>
+
+<strong>For systems/engineers:</strong>
+* Keep all your applications up-to-date
+* Always have a "Big Red Button" (to quote the HN poster, '<em>funny shorthand for "Immediately drop what you're doing, pull out the In Case [$#*!] Happens folder, and have the relevant people immediately execute on the emergency plan."</em>')
+* Have a solid set of test suites, so that if you do need to patch on-the-fly in an emergency, you will immediately know which parts of your code might have been broken by the patch
+
+Can anyone think of other good takeaways?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

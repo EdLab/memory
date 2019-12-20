@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Problems Detecting WordPress MU in Plugins with PHP&#39;s __FILE__ | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Problems Detecting WordPress MU in Plugins with PHP&#39;s __FILE__</h1>
+          <p class="lead">
+            Eric Buth
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 5, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I'm a fan of symlink-type deployment scripts such as <a href="http://www.capify.org/index.php/Capistrano">Capistrano</a>, which is in heavy use in <a href="http://pressible.org">Pressible</a>. It's not perfect, but it's how we deploy most of our non-MU code (plugins, themes, etc.). The basic premise of these scripts is that code is copied from your SCM system into a staging directory, and once everything checks out, a symlink is replaced to make the new code active. Any web server pointed at said code will then always be accessing a path that includes at least one symlink.
+
+If you are using such a script, problems can arise in PHP when using the magical constant <code>__FILE__</code>, which reports the absolute path to the current file. <code>__FILE__</code> will actually contain the "true" location of the file regardless of whether or not it was accessed via a symlink. (There is some discussion about whether or not this is a bug or a feature of PHP.)
+
+For many applications in WordPress this isn't terribly consequential. The important exception is plugins that need to detect whether or not they are running as a site-wide plugin under WordPress MU. One common method of doing that is the following (taken from the <a href="http://wordpress.org/extend/plugins/wp-recaptcha/">WP reCAPTCHA</a> plugin):
+
+<pre>if (basename(dirname(__FILE__)) == "mu-plugins")</pre>
+
+The plugin expects wp_recaptcha.php to be at the root level of your mu-plugins directory and therefore that <code>dirname(__FILE__)</code> will return the MU-identifying information. The problem is that if wp_recaptcha.php is a symlink to a deploy location, this method becomes unreliable. For instance, we might have deployed our version of the plugin to <code>/deploy/wp_recaptcha/current/wp_recaptcha.php</code>
+
+The solution is to avoid using <code>__FILE__</code> for this purpose until it is "fixed". A workaround that we came up with is to use the following conditional instead:
+
+<pre>if(is_dir(WP_CONTENT_DIR . '/mu-plugins'))</pre>
+
+After determining that MU is running the plugin, you can check if it is installed site-wide with the following additional check:
+
+<pre>if(is_file(WP_CONTENT_DIR . '/mu-plugins/wp_recaptcha.php'))</pre>
+
+If you know of a simpler or faster way we'd be very interested in hearing about it, as we perform this check at the beginning of almost all of the plugins we use. Much of this may not be necessary once MU is phased out in WordPress 3.0, so this is probably good enough for the time being; still, I'd rather not have to check two files at startup if at all possible.
+
+Our fork of the WP reCAPTCHA plugin that contains this fix is over at <a href="http://github.com/edlab/wp-recaptcha">GitHub</a> and has since been pulled into <a href="http://github.com/blaenk/wp-recaptcha/">the repository of record</a>. <a href="http://github.com/blaenk">Blaenk Denum</a>, the developer managing the plugin, has said he's working on refactoring the whole thing, so again this is just a temporary fix.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

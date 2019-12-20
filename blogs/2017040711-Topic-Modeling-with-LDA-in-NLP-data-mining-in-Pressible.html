@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Topic Modeling with LDA in NLP: data mining in Pressible  | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Topic Modeling with LDA in NLP: data mining in Pressible </h1>
+          <p class="lead">
+            xk2120
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 7, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p class="p1">Topic modeling is usually used in text mining to discover the main topics of documents based on the statistical analysis of the vocabularies and their related topics.   </p><p class="p2"><span class="s1"></span></p><p class="p2"><img src="https://cdn.tc-library.org/EdLab-blog/20170407115140-hudk4051_l5_nlp_3_lda_pdf_2017_04_07_09_21_46_png_47320a325e0888010b905b2418e36522.png" style /><span class="s1"></span><br /></p><p class="p2">(Graphic concept illustration: Charles Lang, HUDK4051 Learning Analytics lecture notes @Teachers College, Columbia University)</p><p class="p2"><br /><span class="s1"></span></p><p class="p2"><span class="s1"></span></p><p class="p2">A topic is the probability distribution over words. We could characterize a document with the list of topics based on the vocabularies it used and the probability distribution of individual topics. This method converts the text information into word frequency vector, building the numeric foundation for data modeling (Lang, 2017). However, it oversimplifies the complexity of text mining because it does not take the word sequence into consideration, causing confusing to determine the major topic while there are multiple topics in the same document. </p><p class="p2"><span class="s1"></span></p><p class="p2"><span class="s1"></span></p><p class="p2">Latent Dirichlet Allocation (LDA) is the text mining method developed by David Blei (Computer Science Professor at Columbia University), Andrew Ng (co-founder of Coursera), and Michael Jordan (advisor of David Blei and Andrew Ng). As an unsupervised learning (no prior label for data structure) method, LDA is a Bayes Hierarchy Model and make “documents-topics-words” as the Bayes Chain (Blei et al., 2003). <span class="s1"></span></p><p class="p2"><span class="s1"></span></p><p class="p2">The generative process of LDA:</p><ol><li>take a topic from a document；</li><li>take a word from the chosen topic from 1；</li><li>repeat 1 and 2 until every single word was matched with a topic in the document. </li></ol><p class="p1"><span class="s1">The major topic of the document was inferred from the distributions of “document-topic” and “topic-word”. LDA could be further extended with Variational Bayesian, expectation–maximization algorithm, and Gibbs sampling. </span></p><p class="p1"><span class="s1">An example for LDA: Pressible</span></p><p><span class="s1">I applied LDA Topic modeling to analysis the data on the school blogging system Pressible. The following procedures were processed:<br /></span></p><ol><li>Construct database for Pressible project;</li><li>Clean data with removal of repeated messages;</li><li>Pre-process data with stemming, removal of stop words;</li><li>Generate hyperparameters and Dirichlet Distribution to construct data frames with LDA.</li></ol><p class="p1"><span class="s1"><br /></span></p><p class="p1"><span class="s1">Result: </span></p><p class="p2"><img src="https://cdn.tc-library.org/EdLab-blog/20170407115244-sample_png_a6ced44f9a9868683645bffca75648ef.png" style /><span class="s1"></span><br /></p><p class="p2">“Music” “creativity” “education” and “think” are the most popular topics in this sample dataset of Pressible. The numbers are the IDs of users in Pressible. The size of the circles represents the engagement rate of the topics and users (for example, the more active users such as ID:1489 occupied a larger circle). The color represents the co-occurrence of the topics and the users. The IDs in blue are more likely to talk about the topics in “education” and “think”. <br />Reference:</p><p class="p2"><span style="-webkit-tap-highlight-color: rgba(204, 204, 204, 0.498039); text-size-adjust: 100%;">Blei, D. M., Ng, A. Y., &amp; Jordan, M. I. (2003). Latent dirichlet allocation. </span><span style="font-size: 13px; -webkit-tap-highlight-color: rgba(204, 204, 204, 0.498039);">Journal of machine Learning research</span><span style="-webkit-tap-highlight-color: rgba(204, 204, 204, 0.498039); text-size-adjust: 100%;">, </span><span style="font-size: 13px; -webkit-tap-highlight-color: rgba(204, 204, 204, 0.498039);">3</span><span style="-webkit-tap-highlight-color: rgba(204, 204, 204, 0.498039); text-size-adjust: 100%;">(Jan), 993-1022.</span><br /></p><div><span style="text-indent: -0.1px;">Lang, C. (2017) HUDK 4051: Learning Analytics: Process and Theory. Columbia University. New York.</span></div><p></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

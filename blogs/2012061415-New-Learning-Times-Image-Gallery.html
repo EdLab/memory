@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>New Learning Times Image Gallery | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">New Learning Times Image Gallery</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 14, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            One important component for the New Learning Times (NLT) mobile site is the image gallery. It is intended to show in the top of both the home page and article page.
+
+Below are the major challenges that faced us when working on the plugin,
+<ol>
+<li>Support mobile UI features including tap and swipe gestures.</li>
+<li>Auto-resize to fit screen whenever page is loaded, re-sized or when window is rotated.</li>
+<li>Be able to work smoothly with the JQuery mobile framework.</li>
+</ol>
+Initially we searched and tried some image gallery products that exist on the internet, including PhotoSwipe and Mobile Photo Album. It turned out that they didn't provide the exact effect we were looking for. Besides, they rely on a normal HTTP page framework and couldn't function well under the JQuery Mobile framework we are using.
+
+Considering the above as well as the fact that we hoped to have complete control over the gallery, we set out to build our own image gallery plugin.
+
+Unlike the previous JavaScript utilities we built that were defined as an ordinary class, for the new gallery plugin we followed the JQuery plugin standard in the hope that the plugin will be 100% compatible with JQuery and easily migratable.
+
+One important issue we handled in implementing the plugin was tap and swipe detecting. JQuery Mobile provides a simple tap event but it is not enough. We finally resorted to the touchSwipe plugin. The best thing about this plugin is that it gives very detailed measures for each single swipe gesture. This is pretty precious to us because we want to keep moving the gallery image wherever the user's finger goes. More importantly, we need to judge user's intent by how much his finger moves on the screen. Only when the swiped distance passes a certain threshold will the gallery window transit to the next image. If the swipe was not long enough, then its considered a canceled action and the current image will bounce back. 
+
+What's also worth mentioning about the swipe event is the way we slide the image. In our previous work, we used JQuery's 'animate' method that renders the effect
+by changing the 'left' value of a subject incrementally. In our new plugin, we used the new css3 properties 'transition-duration' and 'transform'. The two directives specify an animation process in terms of its temporal and spatial property. This is really a simple and concise way of defining animation and is found to have a faster speed than the 'animate' method. 
+
+The next important thing about the image gallery is the floating design. As we expect NLT to work on multiple models of mobile devices, the plugin should be able to build the gallery and deploy it properly under any given screen size. In our code, what's really measured is not even the screen size but instead the size of the content area that is assigned by JQuery mobile. This value, unfortunately, is usually not available until a small while after the plugin container is inserted into the DOM tree. Our solution was to use a timer and make the resizing function to keep invoking itself until when a meaningful size is available. Once the container size is determined, all the other elements in the plugin will re-size accordingly as we used percentage for their sizes and designed the DOM structure very carefully. The issue of device rotate is addressed by re-deploying the plugin whenever the screen rotate event is captured.
+
+Another challenge we overcame was to merge the plugin into the JQuery mobile framework, especially when the page is loaded via AJAX. When a page is loaded via AJAX, it is impossible to invoke the plugin in the usual way we do. We moved all the plugin definition and triggering code inside the specific page container where they are used. Besides, in order for our styling to work effectively with JQuery mobile, we tweaked the code so that it is always applied at the proper moment. 
+
+The above are all the major exploring and findings made during the implementation of our image gallery. There are still some other aspects that are not covered in this post. I would say thank-you to those who gave help, suggestions or attention during the design and implementation of the plugin.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Using Django Debug Toolbar | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Using Django Debug Toolbar</h1>
+          <p class="lead">
+            Yudan Li
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 25, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            We finished NLT CMS recently but somehow found the site to be slow. This first appeared weird to us because the site wasn't that big and basically we followed the methodology as we did for other Django products. 
+
+Our initial assumption of the cause was the database server being crowded. This is actually a most popular reason for decreased site performance and we did fix speed problems by distributing databases to multiple servers. However, the speed of CMS didn't improve apparently even after we moved its database to a new server. 
+
+The second approach we attempted was create a new virtual box for hosting the sites' code base. We were happy to see that this actually raised the speed to some extent. However, the performance was not stable. A percentage of site visits still encounter very slow loading. What's worse, as the site was tested more, the problem grew more severe. 
+
+The above two failed attempts indicated that the problem was caused by some other reasons and it could not be completely fixed by renewing the hardware.
+
+By that time, we still didn't think the issue was caused by the site's code because the CMS was built upon the standard Django admin module and it wasn't a big site. 
+
+Then we resorted to New Relic, the famous application performance monitor. We set up the monitors so that both the CMS site performance and the server instance performance were observed. The monitoring results indicated that for those slow site rendering, the server spent a large amount of time in database operation, which was consistent with our initial assumption. However, it was still unknown what specific aspect of database operation caused the problem. Was it the hardware, the network or the queries?
+
+The last thing we tried was Django debug toolbar, which turned out to be a pretty powerful tool for debugging. It has a few unbeatable features that make debugging easy and insightful. 
+
+First, the debug tool bar, once installed, appears on each individual page of the site and gives all details about the backend activity for that page. Second, it collects debugging information from a lot of places which otherwise needs to be viewed separately, including request vars, logging messages and http headers. This actually saves us a lot of time. Third, it shows details of all sql queries that were executed for the current page. It shows the time that was spent on the queries. It even gives the call stack to show how the queries were invoked.
+
+So pretty much the debug tool bar gives every piece of information that a developer can desire for debugging a web page.
+
+The monitoring output finally indicate that there were several complex sql queries and they were executed a few times on some of our pages.
+
+We used memory cache and moved some of the database query to memory query. We also modified that default django behavior in order to save time.
+
+Now we see a stable performance gain in the page loading. However, some pages are still not ideal in terms of speed. Actually, the speed of a site is determined by the combination of all the above-mentioned factors as well as many other factors. And with the new debugging tool, we believe a final solution can be reached soon.
+
+ 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

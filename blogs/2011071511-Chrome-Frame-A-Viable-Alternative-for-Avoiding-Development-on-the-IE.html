@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Chrome Frame - A Viable Alternative for Avoiding Development on the IE? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Chrome Frame - A Viable Alternative for Avoiding Development on the IE?</h1>
+          <p class="lead">
+            Alex Park
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 15, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Developers! Do you hate developing for IE? Well, I hate it. It's so inconsistent and standard-INcompliant (thesaurus.com tells me that's not a word) that you have to write an entire set of CSS rules just to make it work on IE. Also, since the world is not perfect, developers make mistakes. However, when those mistakes are made, IE is far less forgiving, usually choosing to throw out a bunch of code from display rather than attempting to understand what the developers meant. The other browsers are a lot more forgiving, however, so these problems usually need to be debugged only on the IE. To make things worse, IE 8 and below has nothing that resembles Firebug or Inspector in terms of functionality, which makes debugging that much harder. (continued)<!--break-->
+
+So why do developers support it? Well, it's because it is still the most widely used browser in the world. According to <a href="http://en.wikipedia.org/wiki/Browser_market_share">Wikipedia</a>, IE still has more than 40% market share in the world. (I'm also ashamed to report that a scary amount of people in Korea still use IE 6, which has been touted as the devil multiple times) This means developers have to continue developing for IE for the foreseeable future. The good news is, IE 9 made huge strides in following standards, so developing for IE 9 is much easier than developing for any other IEs of the past. So why don't we just develop for IE 9 only? Because Microsoft made IE 9 available only for its Windows 7 users.
+
+So, I was excited when I heard about <b><a href=" http://code.google.com/chrome/chromeframe/">Chrome Frame</a></b>.  It came out in the days of (now discontinued) Google Wave, when it wouldn't work in IE 6. Basically, it injects Chrome's rendering and javascript engine into IE, making IE act like, well, Chrome! It would sure make developing for IE a lot easier, well, because you dont' have to anymore.
+
+Of course, all good things in this world have a flip side. Since this is a plugin, some experts (most notably Microsoft) have claimed that this makes the browser less secure (although this is not the biggest of your concerns if you are using IE 6). Also, the user has to download a plugin for Chrome Frame to work, which may or may not be annoying.
+
+What are your thoughts? Would this be a good way for developers to stop developing for IE without dropping "support" for it?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

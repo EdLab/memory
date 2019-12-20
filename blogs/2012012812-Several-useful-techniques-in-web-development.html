@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Several useful techniques in web development | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Several useful techniques in web development</h1>
+          <p class="lead">
+            kiraluo163
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 28, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            I learned some interesting techniques while working on the Survey Sidekick project, and I would love to share with you guys. I hope these will be useful and helpful to you:
+
+
+In PHP development, I found several techniques:
+
+1. Calling magic: 
+If a class implements __call(), then if an object of that class is called with a method that doesn't exist __call() is called instead.
+
+Example: (found in Survey SideKick\Models\AppModel.php.__call) 
+/*
+    function __call($method_name, $method_args) {
+        return call_user_func_array( Array($this->dbms, $method_name), $method_args );
+        
+    }
+*/
+
+2. Managing magic quotes(a big hole in PHP)
+
+In PHP, the magic_quotes state could be turned on. When magic_quotes are on, all ' (single-quote), " (double quote), \ (backslash) and  NUL's are escaped with a backslash automatically. The fact that the Magic Quotes settings can be turned on and off is a major problem. If it were either always on or always off, the 
+problem would not be as severe.So it is crucial for application developers to know whether magic_quotes_gpc or magic_quotes_runtime are 
+turned on when coding.
+
+In Survey Sidekick\lib\Controller.main, it lists a good way to check magic_quotes state:
+
+# if the system admin has turned on magic quotes, disable them
+/*
+if( get_magic_quotes_gpc() ) {
+            $_REQUEST = stripslashes_deep($_REQUEST);
+            $_POST    = stripslashes_deep($_POST);
+            $_GET     = stripslashes_deep($_GET);
+            $_COOKIE  = stripslashes_deep($_COOKIE);
+        }
+*/
+
+3. Yet Another Framework(Yaf)
+The Yet Another Framework(Yaf) extension is a PHP framework, used for developing web application, It provides OO interfaces to PHPer 
+for developing web application.
+
+####################################
+One interesting technique I found in django part:
+#####################################
+Cross Site Request Forgery protection (CSRF):
+
+The CSRF middleware and template tag provides easy-to-use protection against "Cross Site Request Forgeries". This type of attack occurs when a malicious Web site contains a link, a form button or some javascript that is intended to perform some action on your Web site, using the credentials of a logged-in user who visits the malicious site in their browser. A related type of attack, ‘login CSRF', where an attacking site tricks a user's browser into logging into a site with someone else's credentials, is also covered.
+
+In django you can you csrf token to implement that technique:
+
+In any template that uses a POST form, use the csrf_token tag inside the <form> element if the form is for an internal URL, e.g.:
+<form action="." method="post">{% csrf_token %}
+
+For the details, you can take a look at the django website:https://docs.djangoproject.com/en/dev/ref/contrib/csrf/
+
+
+Hope those will be helpful during your development!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

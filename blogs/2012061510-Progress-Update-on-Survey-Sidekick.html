@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Progress Update on Survey Sidekick | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Progress Update on Survey Sidekick</h1>
+          <p class="lead">
+            kiraluo163
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 15, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hi EdLabbers,
+
+In the past three weeks, I've been working closely with Daniel and Manav to implement the new UI design for Survey Sidekick. This is a very exciting moment as the page is getting more and more beautiful and user friendly. Below are some things I would love to share with you guys about the progress I've made on for Survey Sidekick.
+
+1. Replace "Prototype" with "jquery". In the legacy version of Suvey Sidekick, the total front-end APIs were written by means of "prototype," which is an old library for javascript front-end coding. Although it is possible to create all of the front-end pluggin and achieve all of the effects under the "prototype" platform, we still need to replace it with "jquery", because all other EdLab products' front-end are written by "jquery" syntax, and "prototype" syntax is not compatible to "jquery" which will be difficult for the future customization on Survey SideKick's front-end. Besides, a lot of cool pluggins and module effects are updated much faster on jquery, which turns out to be a trend in the future front-end design.
+
+2. Implemented the new design on survey editing pages, which is the most significant part of this project and also consumed the most time when it came to coding and design. It is always good to get started from the toughest part. Fortunately, those things are almost done. I already finished implementing new UI for all of those pages except the question-editing module, which our team spent a lot of time on discussing and brainstorming. Question-editing is a key module during survey-editing process, which contains a lot of functions and UI elements. It is not difficult to achieve the functions by means of python and javascript, but it is difficult to filling all of the HTML elements of that module into a single page in a natural and beautiful way on the front-end design. Fortunately, we've come up with an effective solution, and I'm implementing this one, and hopefully this will be finished soon. Basically I already finished the layout for the front-end module. We really welcome all of you to come observe and give us some suggestions. 
+
+3. Boosted the performance of the question-editing box. In the legacy version of Survey Sidekick, the actions inside of the question-editing box is a very slow horse, which has a lot of spaces to be improved. The reason for this to be so slow is that every action on the question-editing box will have to call the ajax request and fetch the data from back-end to refresh the page. This kind of frequent communication between back and front will cause a burden on the server and sometimes cause the big delay and thus question-editing module respond slowly. The solution I came up with to tackle that problem is to eliminate the times to refreshing all of the data on the front-end in the biggest extent, and instead create a group of API on the front-end to update the target data we are interested without communicating with backend. For example, if we add, delete or edit a fix response on a "likert" question, the change will instantly and consistently be made on the skip logic module through calling front-end API instead of refreshing whole page while the back-end database is also real-time updated. This solution will save a lot of time on the operation of this module, and also reduce the task burden when you try to save and close the question-edit module.
+
+4. Finished the Cron script to check the pending message that is waiting to be sent by email to target respondents of the survey. This script will automatically check the survey launch date, close date, and people's response, and thus update the pending message queue in the backend. I already finished and tested the functions, and the next step is to set up a local mail server for Survey Sidekick to send email.
+
+ 
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

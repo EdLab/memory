@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>How is Your Code Doing ? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">How is Your Code Doing ?</h1>
+          <p class="lead">
+            avichalbadaya
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            September 26, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Majority of software projects does performance analysis at the final stage , when we have the application ready. Developers and managers tend to forget that performance should be taken as a feature development and not as an end result. Even at the end, we mostly focus on how application as whole is doing and troubleshooting measures might not even involve any code changes. I have experienced that even code changes could improve the performance of application in multiple folds . This blog is specific to performance analysis of Python code. There are various python as well as linux packages available to check the performance of your code . Here are couple of them which I found useful .
+ 
+<b>Linux utilities : </b>
+
+1. Perf - https://perf.wiki.kernel.org/index.php/Tutorial
+
+Usage :
+perf stat python yourprogram.py
+ 
+output :
+Performance counter stats for 'python myprogram.py':
+9.526617 task-clock # 0.957 CPUs utilized 
+2 context-switches # 0.210 K/sec 
+0 CPU-migrations # 0.000 K/sec 
+988 page-faults # 0.104 M/sec 
+<not supported> cycles 
+<not supported> stalled-cycles-frontend 
+<not supported> stalled-cycles-backend 
+<not supported> instructions 
+<not supported> branches 
+<not supported> branch-misses
+0.009957910 seconds time elapsed
+ 
+2. time - http://www.lehman.cuny.edu/cgi-bin/man-cgi?time+1
+
+Usage:
+$ time python yourprogram.py
+
+output:
+real 0m1.028s
+user 0m0.001s
+sys 0m0.003s
+real - Total time taken by your program to run ( start to finish)
+user- The amount of CPU time spent in user-mode code (outside the kernel) within the process .
+sys- refers to the amount of cpu time spent inside kernel specific functions
+ 
+<b>Python Utilities:</b>
+
+1. line_profiler - http://pythonhosted.org/line_profiler/
+It is used for line by line profiling the python code. 
+ 
+2. memory_profiler - https://pypi.python.org/pypi/memory_profiler
+Profiles Memory consumption of a process .
+ 
+3. objgraph - https://pypi.python.org/pypi/objgraph
+Figure out the memory leaks in your program
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

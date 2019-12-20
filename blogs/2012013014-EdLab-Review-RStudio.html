@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>EdLab Review: RStudio | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">EdLab Review: RStudio</h1>
+          <p class="lead">
+            zhou
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            January 30, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p><img src="http://rstudio.org/images/logo.png" /></p>
+
+<a href="http://rstudio.org/" target="_blank">RStudio</a> is an open source integrated development environment (IDE) for the <a href="http://cran.r-project.org/index.html" target="_blank">R</a> statistics software. If you don't know about R, R is an open source programming language and software environment for statistical computing and graphics. R is widely used by researchers and enterprises in statistical analysis and data mining.
+
+I had been playing with R in the past two weeks in <a href="http://edlab.tc.columbia.edu/index.php?q=node/7183">a data analysis project for Vialogues</a>. As a long-time user (>5 years) of SPSS, I found R highly powerful and flexible being a open-source software. However, I also felt frustrating in learning R because it would take some time to grasp all the functions and syntaxes. In SPSS you can simply import the data, click a few menu items, set the parameters, and click “run” to do a t-test or regression. But in R, you have to do ten times more things. Few established statistical procedures are built into R. You have to write pretty complex scripts even for tasks as simple as importing the data and creating bar graphs. And it's especially frustrating in trying to figure out what functions to use to do seemingly simple tasks and guessing what are wrong with your scripts if your desired outcome is not seen.
+
+It is said the best thing about R is it was designed and created by statisticians who made R extremely professional. But the worst thing about R is also it was created by statisticians who made R too hardcore. I'm feeling exactly the same. So you see how glad I was to discover RStudio today because it provides a neat graphic user interface to use R more easily.
+
+<b>Pros:</b>
+I downloaded and installed RStudio in 5 minutes and created a new project based on my existing R project. RStudio picked up my existing data with no problem and executed my scripts producing the same results as using R alone. RStudio makes some operations much more user-friendly than using R alone. It centralizes many windows involved in using R including the main R console, file editor/data viewer, workspace/history monitor, and file/plots/package navigator. So I no longer have to switch between many applications such as R, text editor, Finder, Terminal, etc. RStudio provides instant code hint in writing R scripts. And I find it very handy to monitor and change project variables in RStudio which otherwise have to be done by writing scripts.
+
+<a href="http://edlab.tc.columbia.edu/files/Screen shot 2012-01-30 at 1.57.01 PM.png"><img src="http://edlab.tc.columbia.edu/files/Screen shot 2012-01-30 at 1.57.01 PM.png" width="550" /></a>
+
+RStudio does more than providing a GUI for single users to use R. It also provides the option to install on a web server so that the researchers from the same institution/corporate can reach the same customized, powerful data processing environment. What's more, version control is also built in RStudio so that it supports larger projects involving multiple researchers. I saw some people have installed RStudio with Amazon EC2 service and here's <a href="http://toreopsahl.com/2011/10/17/securely-using-r-and-rstudio-on-amazons-ec2/" target="_blank">a great tutorial</a>.
+
+<b>Cons:</b>
+As a new project, RStudio still hasn't made data processing jobs as easy as using SPSS. I feel lots of new features can be added to RStudio such as:
+
+- Importing data from Excel/CSV/XML files in addition to TXT files (TXT is the data format officially supported by R)
+
+- Exporting variable values into external files
+
+- Interactive helper for executing typical statistical procedures such as t-tests, regression, etc. In R/RStudio typically you have to write lines of codes in order to run analyses such as:
+
+> anova( object, ... )
+(run ANOVA on one or more data objects)
+
+or 
+
+> lm(formula, data, subset, weights, na.action, method = "qr", model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, contrasts = NULL, offset, ...)
+(run linear model)
+
+If you don't know the function name, syntax, or parameters you have to spend the time to search and understand the R documentations, which is quite annoying. So it is preferable to allow the user to navigate to or search for a task, compute required params step by step, and run the operation without writing codes. At this point of time such interactive helper is not implemented yet in RStudio.
+
+To summarize, RStudio does a nice job in interpreting the basic R operations with a user-friendly GUI. It would be most valuable by enabling typical statistical operations in its features. These new features can be optional by installing additional add-ons based on user need. And it's ideal to allow user to add their own custom operations in addition to a base of operations.
+
+<b>EdLab Relevance:</b>
+The Data Dashboard project! We can install RStudio Server on an EdLab server and develop packages for R to run customized analysis for different EdLab products. Then on the Data Dashboard the project admins can conduct all kinds of analysis and produce nice tables and graphs. For people who have difficulty in finding free SPSS licenses, R could also be a nice alternative to use.
+
+<b>Our Takeaway:</b>
+RStudio can make lots of researchers (especially students and corporations) to switch from the intimidatingly priced stats software such as MatLab, SPSS, and Stata to the open source R. Both R and RStudio are free. So why not give them a try?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

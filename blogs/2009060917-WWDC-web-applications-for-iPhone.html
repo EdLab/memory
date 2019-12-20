@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>WWDC web applications for iPhone | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">WWDC web applications for iPhone</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 9, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            CSS property
+<div style="Webkit-user-select" action=none>
+
+changing tap highlight behavior
+- give user feedback about their interaction
+- css property
+- custom color
+  
+
+Navigation and sharing
+- Links
+   Open in a nw page 
+   Copying to paste board
+- Images
+  Saving to photo library
+  "webkit-touch-callout:none"
+
+Text Sizing
+- Override Default
+   "webkit-text-size-adjust:none" - gives actual size of the web page
+
+Initial display of a big website on a smaller 
+980 pixels and then scale it down to lower(Window and Viewport)
+ Window = Viewport (visible area on the page in a desktop)
+but in iPhone Window < ViewPort (window is the size of the visible area on the screen but Viewport is the total width of the window so when scaling and scrolling its the view port which is moved)
+
+<meta name="viewport" width="1024">
+For webapps we want the content to be the actual size of the device
+<meta name="viewport" content="width=device-width">
+
+<b>Home screen Icons </b>
+ - 57 by 57 pixel pngs
+ - Apple picture - apple-touch-icon.png <link rel=:apple-touch-icon" href="/touchicon.png">
+
+We can get a icon for the picture for the webapp.
+
+Transitioning from websites to web apps
+- Full Screen
+   No Address Bar (web apps always launch in portrait). All the links open in the Safari on iPhone. Even if they are in the same domain. Use XMLhttprequest to load more data.
+  Custom status bar
+  custom start screen
+  <meta name="apple-mobile-web-capable" content="yes">
+Can be queried:
+  <script>window.navigator.stanalone</script>
+Three styles of status bar on iPhone
+  - Solid Back
+  - <meta name="apple-mobile-web-app-status-bar-style" content="black">
+Black Transclucent
+<meta name="apple-mobile-web-app-status-bar-style" content="black-transclucent">
+
+Custom Start up image 
+ - Image should be 320 x 460 pixel png file (that accounts for status bar)
+ - this is specified by the link tag
+ <link rel="apple-touch-startup-image" href="/startup-image.png">
+
+Screen Scaling Best practice:
+Optimizing viewport scaling - behavior
+- initial-scale
+- minimum-scale
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=2.0">
+
+- Application Screen scaling best practices
+- High Performance Graphics
+
+There are a bunch of API and functions in JavaScript which are a part of HTML 5 standard and can be used for making use of GeoLocation Services, Compass and the same way cocoa is derived.
+
+CSS Advanced Visual Effects - Session
+
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Session Notes: Amazon Web Services - Security Overview | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Session Notes: Amazon Web Services - Security Overview</h1>
+          <p class="lead">
+            tzaffi
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 10, 2014
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Hi Everyone,</p>
+<p>I'm here at the AWS Summit conference at the Jacob Javitz center and am taking notes from a couple of sessions. My first session was on &quot;Understanding AWS Security&quot; by Bill Murray, who's two notches down below Bezos.</p>
+<p>If I had to summarize Murray's argument into a single soundbite it would be:</p>
+<p>The Air Force doesn't build airplanes. Lockheed Martin does.<br />
+  You guys do business, we do security.</p>
+<p>Also, the most intriguing slide from the talk is included here.</p>
+<p align="center"><img src="http://edlab.tc.columbia.edu/files/ShreddedAWSssd.JPG" alt="Post Mortem: Amazon Web Services Solid Drive Disk" name="ShreddedDisk" width="453" height="289" id="ShreddedDisk" /></p>
+
+<p> It shows a shredded solid state drive. Murray explained that no storage ever leaves an Amazon data center alive. It must be destroyed. </p>
+<p>Another cool fact was that not even Murray can enter a data center at will. Even he will need to generate a ticket and get approval from his higher ups (in his case this includes Bezos) if he wants to go visit a data center.</p>
+<p>Well, here are all the nitty gritty details from the session:</p>
+<H3>AWS NY Summit 2014<br />
+  Understanding AWS Security<br />
+  Bill Murray, Sr. Manager, AWS Security Programs</H3>
+<p>Security - different views</p>
+<p>CEO - shareholder value<br />
+  CIO - customer's info security <br />
+  PR - keep company out of the news!!!!!</p>
+<p>Security is a SHARED responsibility. Infrastructure + Application must BOTH be secure. AWS takes care of MOST of the security need.</p>
+<p>AWS Logo: building blocks. This applies to security as well.</p>
+<p>Customer Plug: “Based on our experience, I believe that we can be even more secure in AWS cloud thatn in our own data centers” Tom Soderstrom - CTO - NASA JPL</p>
+<p>AWS Offers: more: Visibility, Audibility ,Control<br />
+  Along 4 dimensions of security: Network, Physical, People, Data</p>
+<p>VISIBILITY: <br />
+  Can you map your network? <br />
+  AWS Control Panel: lets you know whats running, where it's running, who's running it, etc.<br />
+  Trusted Advisor: Cost Optimization, Security suggestions such as &quot;do you really want to keep port 80 open&quot;, Fault Tolerance, Performance</p>
+<p>AUDIBILITY:<br />
+  Audited a ton of different ways a ton of different ways: HIPAA, ISO 27,001, ITAR, FIPS, FISMA, etc. Fed is very anal (sic) about protecting data.</p>
+<p>Security Control Objectives:<br />
+  1. Security Organization<br />
+  2. Amazon User Access<br />
+  3. Logical Security<br />
+  4. Secure Data Handling<br />
+  5. Physical Security and Environmental Safeguards<br />
+  6. Change Management<br />
+  7. Data Integrity, Availability and Redundancy<br />
+  8. Incident Handling</p>
+<p>AWS CLOUDTRAIL - logs every API call made by person or machine. Who does what, when why? Records API calls and delivers to a log file on S3, every 15 minutes.</p>
+<p>LOGS: Obtained, Retained, Analyzed</p>
+<p>There are dozens of 3rd party providers that analyze amazon logs</p>
+<p>Amazon Glacier - $.01 per gig per month. A service to hold on to data FOREVER.</p>
+<p>CONTROL: various levels of security, down to the physical byte.</p>
+<p>Everybody is on an equal footing security wise. From a huge corporation, to a small startup to a single college student -all have access to same services.<br />
+  Can do VPN across various AWS services, or have direct pipes NEVER going through external non-AWS internet.</p>
+<p>LEAST PRIVILEGE PRINCIPLE. Separate networks for corp. vs. customer data. (CORP vs. PRIV). Ticketing system implements this. Only get access for specific reasons.<br />
+  Even Murray can't enter a data center!!!! He needs a ticket approved by Bezos!!!!</p>
+<p>SIMPLE SECURITY CONTROLS. e.g. no storage media leaves data center in tact!!! Whenever drive comes out it's shredded (cf. photo of shredded solid state drive).</p>
+<p>Granular: Bob can only access this data, from his desktop, from 9am to 5pm.</p>
+<p>Can use hard tokens or soft tokens.</p>
+<p>Can ensure that certain machines can't talk to others.</p>
+<p>Amazon DynamoDB: Fine Grained Access Control. Can encrypt data at the granularity of a single data cell.</p>
+<p>MFA DELETE PROTECTION: </p>
+<p>Data stays WHERE you put it. 10 regions - 26 availability zones (AZ)- 51 edge locations: content delivery networks (CDN).</p>
+<p>Cloudfront CDN (Edge locations).</p>
+<p>USE MULTIPLE AZs. Default, data goes into 3 AZs ensuring 3 good copies at all times. AWS constantly queries the md5, looks back to the last non-corrupted state and uses that. that's where you get 11 9's of durability (lose data once in 10,000 years).</p>
+<p>DATA ENCRYPTION<br />
+  Choice: Automated - managed by AWS, Enabled - user manages w/ AWS,  Client-side - totally controlled by the users meaning that AWS wouldn't even be able to see the data if they wanted to.</p>
+<p>AWS CloudHSM (Hardware Security Modules) - he's very proud of it - This is a box that if you attempt open, if you loosen a screw, if you do anything, the data is automatically zeroed!!!!! This was created to make insider threat negligible.</p>
+<p>ENCRYPT YOUR DATA - server side encryption: glacier, redsift, RDS</p>
+<p>60% of organization agrees that CSPs provide better security than they do.</p>
+<p>AWS Marketplace Security Solutions - entire environment that will help you do security.</p>
+</body>
+</html>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

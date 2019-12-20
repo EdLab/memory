@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Survey SideKick work progress review | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Survey SideKick work progress review</h1>
+          <p class="lead">
+            kiraluo163
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 23, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hi Edlabers,
+
+In the past of three weeks, I have been working on implementing the new design on question-editing page and question-editing pop up box, which is the most time-consuming part in the whole project. So far I've already done on the question editing, and I would like to share with you guy about the new design I've already implemented.
+
+1.new design of question-editing page: First, in the new design, there is no need of drag and drop function because it imposes too much redundant work on users. In terms of the function to create the new survey content on the page, we put one button to include all of the node creating actions such as question node, text and head node, and for the question node, there are also several options according to various question types. The menu of three kinds of survey content will automatically roll down if user move the mouse onto the button. The same operation is applied to show the question types menu if you move your mouse onto "new question" which belongs to the menu of three survey nodes. It will offer user more convenience and save them a lot of time, when they are creating a new survey content, compared to the old drag and drop design. Second, the questions or other survey contents after being created will show on the question-editing page in the same way as what user will see when they are take the survey. It is very helpful for user to make a good survey because they are able to see the layout of to-be-created survey when they are editing. Third, each question or other survey content element that is created on the page is also clickable for user to further edit and revise. When user click the element, an correspondent pop-up editing box will be expanded over for user to play with. This design totally illustrates the "buttonless" spirit in the new design, considering "Buttonless" is one of the key selling point.
+
+2. New design of question editing expanded box. You will see this time I use "box" instead of "curtain" . The meaning is quite straightforward: we abandon the movable editing curtain, and replace it with the streamlined expanded box. The editing box is integrated into the question editing page instead of using a separate window. In terms of the content of editing box, there are several big changes. First, we use inline-editing to replace an editing box with frame for text editing. It also make the design more streamlined and user won't be overwhelmed by too many frames and boxes. Second, it is able to delete, create and edit a single fixed response for check box, radio, and Likert question type. It also gives user a lot of convenience and flexibility when they are trying to create a multiple choice.  Third, the skip logic module is totally changed on logic. In the old design, the target question is "skipped" after user finished editing the skip logic which is very confusing and against the way people is thinking, however in the new design, the target question means the question that will be "skipped to" . It totally make senses on the logic side, and also make it much easier for user to make skip logic, because one only need to choose one target question instead of several to achieve the same logic. Furthermore, the new design also enable user to create and integrate several different kinds of skip logic for one source question.  The skip logic is also editable in the editing box.
+
+3. The strategy to enhance the performance
+According to the feedback from a lot of Edlab fellows, most of the complaints on the old design is about the slow and inefficient  system especially for the case of over 20 questions. To tackle with that problem,  first I abandon the tree structure of the survey model, because the recursively searching on parent and child node of tree will cost a lot of computation and connection with database, which is the main reason why it is so slow. To tackle with that problem, I use the serial data structure to describe survey. Under that case I only need to run one sql query to get all of the node and content of survey instead of running tons of sql query separately. Second I used raw query to replace some django db APIs. In some cases, the django db API is not quite efficient. Take many to many relation for example, there exists the foreign key which is linked to other db model. In django API, the foreign key will be a another whole django db model as an attribute under its own. So when you are trying to select one entry which is related to that foreign key, an extra "select" sql query will be executed first to get the foreign key model, which causes the over-connecting with database. In the backend model of new design, I have optimized the query to fixed that problem. The average running time right now for loading the total survey with 85 questions is only 700ms.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

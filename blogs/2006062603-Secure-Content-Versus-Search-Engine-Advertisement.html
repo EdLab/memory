@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Secure Content Versus Search Engine Advertisement | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Secure Content Versus Search Engine Advertisement</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 26, 2006
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            What began as a response to <a href="http://edlab.tc.columbia.edu/index.php?q=node/633">Gary's questions</a> about Google caching private content has become a full-blown tutorial. The questions that encourage this post center around maintaining control of content while still having the privilege of search engine support (which is essentially free advertising).
+
+For example, how do we let our users find our site with Google, but prevent Google from caching content that should be restricted?  Below is a lengthy response to this and other questions in a few sections.  It should also serve as a quick and dirty tutorial for those of you who need it.<!--break-->
+
+<style type="text/css">
+<!--
+ol.dan {
+   margin: 5px;
+   padding: 0px;
+}
+ol.dan li {
+   margin: 0px;
+   padding: 0px;
+}
+-->
+</style>
+<ol class="dan">
+<li>Google and many other companies or organizations, have computer programs called "Robots" which crawl the web and view content, sometimes caching it.  So, if Google has your content, it is because a robot went out and got it.</li>
+<li>If "John Random" can't access the file, neither can a robot.  The trick here is that the robot looks like an <i>anonymous</i> user (at least at best, they can display odd behaviors on certain sites but even in this case they cannot any view content unavailable to anonymous users.)  So if an article on <a href="http://www.tcrecord.org">TCR</a> requires a password, no spider can view it (unless it has the password of course) and thus cannot cache it.  BUT, what if an article on TCR is available to everyone for a week, and at the end of the week becomes password protected?  This concern directly raises the issue of caching, and is addressed in the next section.</li>
+<li><i>Before</i> viewing any content, Googlebot (and all reputable spiders) look for a file called "robots.txt" on your server.  With this file, one can specify two items (according to the protocol, although Google recognizes others).  These are "user-agent" and "disallow" (the non-standard third from Google is "allow").  <b>User-agent</b> refers to the robot's name (Google's is Googlebot, AltaVista's is Scooter!).  <b>Disallow</b> can specify a file or a full directory, and tells the robot to neither view nor cache this content.  
+
+For extra fun, here is Google's robots.txt file, the file it uses to stop/allow <i>their own and other</i> search services from crawling their site.
+
+<font style="font-family: Courier New; font-size:95%">User-agent: *
+Allow: /searchhistory/
+Disallow: /news?output=xhtml&
+Allow: /news?output=xhtml
+Disallow: /search
+Disallow: /groups
+Disallow: /images
+Disallow: /catalogs
+Disallow: /catalogues
+Disallow: /news
+Disallow: /nwshp
+...</font>
+BUT what if we want users to be able to search for our sites with Google, but not be offered the option of viewing a cached page?</li>
+<li>There is a <a href="http://www.w3.org/Search/9605-Indexing-Workshop/ReportOutcomes/Spidering.txt">newer protocol</a> which uses META tags (little tags in the header of the webpage).  This standard, has essentially the same features as robots.txt, but has been extended to include the following tag:
+<font style="font-family:courier new">&lt;META NAME="ROBOTS" CONTENT="NOARCHIVE"&gt;</font>
+This tag tells the robot to view the page, do any indexing it needs (which allows Google to provide search results from your page) but also tells the robot not to archive the page, which prevents it from offering a "cached" version.  Reputable search engines listen to this tag.  BUT:
+</li>
+<li>Some spiders automatically cache everything and consider this part of their "view" functionality.  So if you let them view it, they cache it; sadly ignoring our new META tag approach.  The most annoying example of this?  <a href="http://www.archive.org/index.php">Internet Archive's Way Back Machine</a>.  If you let this robot in, it will ignore the noarchive meta tag and archive EVERYTHING!!!  Engines such as this must be dealt with by denying them all access in the robots.txt file.  This can be done with the following two lines:
+
+<font style="font-family:courier new">User-agent: ia_archiver
+Disallow: /</font>
+
+Which denies ia_archiver (the name of Internet Archive's robot) any access.
+</li>
+<li>
+At this point, we might ask: How do I prevent my site from being cached but still let users find it from a search engine?  The most conservative approach is to allow only search engines you know, trust, respect to view your site.  This should be a short list and should only include organizations which listen to the noarchive metatag directive.  Thus we can do the following:
+FIRST, include the following meta tag on every page 
+<font style="font-family:courier new">&lt;META NAME="ROBOTS" CONTENT="NOARCHIVE"&gt;</font>
+SECOND, use the following robots.txt file
+
+----
+User-agent: *
+Disallow: /
+User-agent: Googlebot
+Disallow:
+User-agent: Slurp
+Disallow:
+----
+
+The first two lines disallow all robots, the next two remove the disallow rules (and thus grant view privileges) for Google, the next two for Yahoo.  This extremely conservative setup will allow our sites to be indexed only by Google and Yahoo, and will guarentee no legitimate company views our content (and of course, that Google and Yahoo will use but not archive it).  Of course this is a general (and thus often bad) configuration.  In practice, we would want to more explicitly refer to our directory structure where possible; allowing any robot to view most pages but blocking most from certain content.
+</li>
+<li>
+Finally, we need to consider our file structures.  As mentioned earlier, robots.txt can specify directories explicitly and define special permissions for them.  But remember that the directory is parsed from the url!!  So if your backend grabs files from the /secret/files directory, but the url specifies www.mydomain.com?file=danfile2, the spider will not recognize any connection!  In short, the spider looks at the apparent directory structure based on the url, not the actual server structure.  As any good web developer knows, www.mydomain.com/myfolder/dan.html could actually point to a file in the folder /myfiles/directory.  So make sure robots.txt refers to the structure implied by the url!!!  Obviously, this can be both a blessing and a curse.
+</li>
+</ol>
+
+What can we do from here?  Well, I want more!  If I'm running <a href="http://www.tcrecord.org">TCR</a>, I want Google to index my article (but not cache it) so that when someone's search matches the <b>text</b> in my article, they find a link from Google, no cached page; and when they click on the link, they find themselves at a signup or purchase page.  
+
+So why don't the methods listed above work?  They don't work here because if the anonymous user gets a login or purchase page, so will Googlebot.  If the "anonymous" page has a title and abstract and then a link to purchase the article, Google will index that page; but I want Google to index my whole article.  After all, Google has great text searching power, and this may make my article more popular.
+
+So, I want a anonymous user to see only the abstract and a purchase page, Googlebot to see the whole article and for no one to cache it.  The caching was discussed earlier, but what about displaying different information to different users?  Web developers do this every day!  Depending on the user type, the "same page" may show administrator options, or it may not.  So now we have to figure out how to distinguish between Googlebot and John Random.
+  
+Suppose Googlebot runs from a particular IP or IP range (it likely does).  Then we could do an IP check on the backend, and display extra content for Googlebot but not for John Random (of course we will want to make sure there aren't other services or people on this IP which may circumvent our security).  This way, Googlebot indexes my full article (but doesn't cache it) and then provides search results which reflect my true text, but lead John Random to a purchase page - which of course doesn't have the text he was searching for, but promises the article he's about to buy does!
+
+A caveat: You may be asking why not use the agent string to detect Googlebot? (If you don't know what an agent string is, keep reading anyway.)  The simple answer is that it is easy to fake, and thus is not secure in the traditional sense.  The longer answer is a question: How concerned should we be with someone faking the agent string to get our content?  After all, if mostly professors and education enthusiasts use TCR, and most of them can't use their computers, why not use this method?  If the only people skilled enough to get our content for free are not interested in it, have we really had a security breach?
+
+If the EdLab finds this useful, TSI can investigate this further and offer a solution.  If not, I hope the first section is helpful to novices and professionals alike.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

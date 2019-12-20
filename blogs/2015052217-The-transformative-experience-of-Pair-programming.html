@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>The transformative experience of Pair programming | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">The transformative experience of Pair programming</h1>
+          <p class="lead">
+            Santosh Kumar
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 22, 2015
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            ** Public **
+<a href="http://en.wikipedia.org/wiki/Pair_programming">Pair Programming</a> is kind of a <a href="http://programmers.stackexchange.com/questions/7915/should-i-accept-a-job-if-pair-programming-is-required">controversial subject</a> in software programming circles. A lot of people do it <a href="https://thoughtbot.com/">all the time,</a> some people find it to be a threating experience for introverts, while others swear by it. I'm going to suspend judgement for the time being and instead talk about what turned out to be one of the greatest learning experiences of my life. And given that Edlab is a learning organization what better venue to voice my thoughts.
+
+But first, here is a super brief idea of how pair programming works. You have two programmers and they each take turns writing a test and the code to make the test pass. In other words, one tries to play the hacker and the other the good guy (sort of a good cop-bad cop routine). They go through this till they reach a point where they've figured out that they have built something they had initially set out to build. In other words, it's not **completely open ended**, there is a general direction that they both try to move towards.
+
+Now, with that brief introduction out of the way; I was incredibly fortunate to have an amazing first experience with pair programming. And in my opinion, first experiences are kind of this make or break thing, which really sets the tone for whether you are going to like something or hate it.
+
+So, here I was this, somewhat cynical and jaded software programmer, finding myself in SF working at a startup unsure of what to expect. All of my prior experiences had been at working with large companies in NYC working on projects that never finish or finish to everyone's dissatisfaction :). And the first feature, I got to work on was this **SMS integration** thing. 
+
+A user signs up, they get a verification code on their phone, they enter it in and the process is complete. Bada bing bada boom! Simple enough, except that it is not. As I learnt, quite clearly that the whole SMS API integration was a big mess (this was before <a href="https://www.twilio.com/">Twilio</a>). And the guy I was going to pair with on this feature (that would take us three weeks to finish) was this surfer dude out of LA. A guy, who by his own admission, did this whole software programming thing to pay for rent and his surfing trips to Nicaragua etc.
+
+Keep in mind, I had just moved from NYC -- so the last thing I'd expect is somebody who looks long overdue for a haircut with no Bachelor's Degree, to be schooling me on writing software programs. And boy was I wrong!
+
+**We don't write programs for machines, we write them for humans**. This is a quote that gets bandied around quite a bit, but he showed me **how to do this**. We spoke about self-documenting local variable names, often times arguing for minutes on what to **call something**. At first, I found this whole exercise rather wasteful, but he was quick to point out that giving something an intuitive meaningful name invalidates the need for comments. What a neat idea! Your code speaks about itself just by the names you give to things in your code.
+
+A lot of the ideas I learnt about programming in general during those three weeks came from a <a href="http://www.amazon.com/Smalltalk-Best-Practice-Patterns-Kent/dp/013476904X">cult classic</a> on programming, that I had no idea about. I was looking at the O'reilly's of the world to learn programming and here was this book published much before that captured quite beautifully tricks programmers can use to write better programs.
+
+**A failing test is the best thing since sliced bread**. Again, something that would seem totally counter-intuitive. I mean, why celebrate failure, right? As it turns out, there is good failure and bad failure. When you are able to reproduce failure, predictably, that is an awesome thing. That means that, you can now work on fixing it (which would happen when whatever you did to re-create the failure stops re-creating it) and you have this corpus of stuff in your toolkit to ensure that this failure doesn't come back. More importantly, I developed this mind-set that when someone comes up to me and says "Your program doesn't work when I do this, this and this" -- I capture the steps in code, run the code, watch it fail, get some coffee and come back and fix it. The **getting coffee** part is super important :)
+
+**Take time to really learn your tools**. My general thinking was, I just want to get something done and for that I will use Ruby, Git and Javascript. And once I get that thing done, I am done. What I learnt from my pairing sessions with him, was how he would use everything as an opportunity to learn more. I need to store code somewhere, so I will use Git. His thinking was "Does Git have something that would let me do this?" or "What's this awesome little feature of Git that everyone is talking about?". In those three weeks, I went from a Git noob to being comfortable with Git. And more importantly, having learnt Git, which is a really well-designed tool by the way, I learnt what a really well-designed tool is. This idea of learning the general as opposed to the specific is super important, in my opinion.
+
+So yea, I guess I did have a great first experience in Pair Programming!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Best Uses of the Quuppa Location Tracking System | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Best Uses of the Quuppa Location Tracking System</h1>
+          <p class="lead">
+            Alvaro.Ortiz-Vazquez
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 13, 2017
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>This Wednesday, at the Research Team Share-out EdLab Seminar, I will be 
+presenting some of the work the research team and I have done to make the best use of the Quuppa location tracking system. </p><p><br /></p><p>I will focus on a paper we recently wrote titled &quot;Cluster Analysis of Real Time Location Data - An Application of Gaussian Mixture Models&quot; Breaking down the title, we are trying to identify groups or clusters within a snapshot of 2-dimensional (x,y) Quuppa location data by using a statistical concept called Gaussian Mixture Models. In my presentation I will also highlight the motivation of doing such an analysis and the future directions we hope to pursue.<br /></p><p><br /></p><p>The data and results of our analysis can look like the picture below. <img style="width: 505px; height: 505px;" src="https://cdn.tc-library.org/EdLab-blog/20170413163130-realxycontourplot_png_dbf5a6b4eb0dd7739751ffb4801748a4.png" /></p><p><br /></p><p>The points represent individuals wearing the Quuppa tags and the blobby shapes are the results for what we came up with as the groups. This analysis allows us to gain insight into the group locations, shape, and physical size. These phyiscal parameters are useful to visualize this analysis. </p><p><br /></p><p>While in the example above the groups are neatly divided, this is not always the case. Take a look at the example below without the blobby shapes and see if you can identify the size, shape and location of 4 different groups. </p><p><img style="width: 507px; height: 540.429px;" src="https://cdn.tc-library.org/EdLab-blog/20170413163542-plot_png_d40844dffe2c5d79ad8a5154e07e2cd8.png" /></p><p><br /></p><p>Is this similar to what you got? </p><p><br /></p><p><img style="width: 511.367px; height: 511.367px;" src="https://cdn.tc-library.org/EdLab-blog/20170413163620-plot2_png_19e77ce92eca97cd502d70a5fbed3a04.png" /></p><p>As you can see it is not always obvious where a group might exist or who belongs to which group. Likewise to do this work by hand, and mark out the groups for millions of Quuppa data entries would be extremely tedious. Further, our program and analysis also allows us to quickly determine information about group membership (Who is where?) and group membership distribution (How many people are in each group?). </p><p><br /></p><p>These parameters are very useful to analyze social dynamics and activity effectiveness during events such as gallery walks, group activities, or other events which may have participants in different stations or groups. In one application we analyzed data from the D&amp;R Quuppa presentation in January where people moved through different stations featuring virtual reality programs. One interesting result we quickly found was that the activity that most people indicated as their favorite was also the one that people spent the most combined time at. </p><p><br /></p><p>This type of information can be very useful information for creating educational content, organizing events, and understanding their effectiveness; This provides the motivation for our research.</p><p><br /></p><p>Seeing the physical parameters of the groups such as location, size, and shape is interesting, but ultimately we would like to focus on only the group distributions and membership. Narrowing our focus would allow us to speed up the calculations we make.  Group distributions along with group membership throughout time will give help us answer important questions such as &quot;Which group was most popular when?&quot;, &quot;How long did people spend in each group?&quot;,  etc. </p><p><br /></p><p>Currently, we are also constrained by having to identify how many groups we expect there to be. We can estimate this, by looking at how many stations, activities, or tables there are during an event. To avoid this we are also developing an expanded method which will not be constrained.<br /></p><p><br /></p><p>In my opinion this research will be very useful to educators, curators, and event organizers to learn about the effectiveness of their work. I also believe this research with its goal of creating knowledge and information is distinct from similar analysis of location data which focus on surveillance.</p><p><br /></p><p>We are excited to say that our paper was accepted to the <a href="http://educationaldatamining.org/EDM2017/">Educational Data Mining Conference</a> in Wuhan, China.<br /></p><p><br /></p><p>I hope to present more on this topic in an engaging way and also answer any questions you may have at this Wednesday's seminar!<br /></p><p><br /></p><p><br /></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

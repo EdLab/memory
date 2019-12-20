@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Docdel system and first few weeks at EdLab | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Docdel system and first few weeks at EdLab</h1>
+          <p class="lead">
+            Xiaobin Zheng
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 5, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hello everyone,
+
+I'm new guy here at the EdLab and I'm going to tell you about what I have been working on so far here at the lab. During the past few days, Ankit and I have been doing some work on the Docdel system, which provides students and teachers with a new way of requesting and posting study materials. Combined with the ClassWeb system, it is a good place for students and teachers to share materials. However, Docdel relies on some data in the databases of ClassWeb, which is going to be shut down in the near future. 
+
+Our goal now is to build back-end databases for Docdel to let it keep working after ClassWeb is shut down. In addition, we also want to add a function for course session management. This will perform as a similar function to the one currently being used in ClassWeb. With this two changes, the Docdel system would be an independent system that does not need to use resources from other places, namely ClassWeb, and would be much more convenient for teachers to manage course information. 
+
+Here is how the current system works and what session management is like:
+
+-When someone creates or deletes sessions on ClassWeb, session appears/disappears from the Docdel automatically;
+
+-Either a teacher or a student can make a request for readings from Docdel; 
+
+-One can assign readings to a certain session on Docdel and the readings will appear automatically on a ClassWeb session. Readings uploaded directly on ClassWeb won't appear on the Docdel system.
+
+The new system, as described above, needs to allow a teacher creating or deleting sessions to do so directly on Docdel instead of logging into ClassWeb.
+
+What we have done by now are as follows:
+
+-Finding out the specific data used by Docdel from ClassWeb;
+
+-Designing new tables in the databases of Docdel and importing all needed data from ClassWeb;
+
+-Designing the prototype of new UI for session management; 
+
+With Ankit's help, I'm currently working on the new UI and the modification of the system files and I hope that in the next few weeks, we would be able to finish this project. Hope everything goes well with everyone and it's really great to be a member of the EdLab!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

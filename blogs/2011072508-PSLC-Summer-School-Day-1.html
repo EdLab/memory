@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>PSLC Summer School - Day 1 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">PSLC Summer School - Day 1</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            July 25, 2011
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            First day at PSLC has started with a bang, seems like lot of interesting students and mentors are here. Looking forward to the developments, would keep you guys updated. 
+
+
+Classes of EDM Method (Banker & Yacef, 2009)
+- Prediction - lot of emphasis
+- Clustering
+- Relationship Mining: whether students are
+- Discovery with Models
+- Distillation of Data for Human Judgement
+
+
+Prediction:
+Develop a model which can infer a single aspect of the data (predicted variable) from some combination of other aspects of the data (predictor variables)
+
+- Does a student know a skill?
+- Which students are off-task?
+- Which students will fail the class?
+
+KDD Cup : - Top 3 data mining conferences
+Premier 
+Bayesian Knowledge tracing
+
+
+Clustering:
+When we have unstructured data we use clustering, define sets of students or problems that can guide us to get some knowledge about the data.
+
+- find points that naturally group together, splitting full data set into set of clusters
+
+Relationship Mining:
+Discover relationships between variables in a dataset with many variables
+- Association rule mining
+- Correlation mining
+- Sequential pattern mining
+- Causal Data mining 
+
+Discovery with Models:
+- Pre-existing models (developed with EDM prediction methods or clustering or knowledge engineering)
+- Applied to data and used as a component in another analysis.
+
+Distillation of Data for Human Judgment
+- Making compex data understandable by humans to leverage their judgement
+- Text replays are a simple example of this
+
+Knowledge Engineering
+- Creating a model by hand rather than automatically fitting model
+- In one comparison, leads to worse fit to gold-standard labels of construct of interest than data mining (Roll et al, 2005) but similar qualitative performance.
+
+EDM Track schedule
+
+Tuesday 10 am
+- Education data mining with DataShop (Stamper)
+
+Tuesday 11am 
+- Item Response Theory and learning factor analysis
+
+EDM Tools:
+1) DataShop - repository for educational data.
+2) Excel (Add ins)
+   - Data Analysis : Anova
+   - Equation Solver - fit a model 
+(initial knowledge - bayesian knowledge tracing) 
+  - Scatterplots
+3) Free data mining packages
+  - Weka 
+  - RapidMiner
+
+Weka vs RapidMiner
+- Weka easier to use than RapidMiner
+- RapidMiner significantly powerful than RapidMiner
+
+In particular…
+- It is impossible to do key types of model validation for EDM within Weka's GUI
+- RapidMiner can be kludged into owing so (more on this in hands-on session)
+
+4) SPSS
+  - statistical package and therefore can do a wide variety of statistical tests
+ - it can also do some forms of data mining like factor analysis (a relative of clustering)
+
+Difference between statistical packages (like SPSS) and data mining packages like Weka -
+
+5) R 
+- is an open source competitor to SPSS
+- more powerful and flexible than SPSS
+- but much harder to use - I find it easy to accidentally do very, very incorrect things in R
+
+
+IRT Model
+- Associative Model 
+
+DataShop
+- Phil Patt uses data webservices of DataShop to get the data and analyze 
+
+Matlab
+- Beck and Changs Bayes Net Toolkit - Student modeling is built in Matlab
+
+
+Pre-processing
+1) Where does EDM data come from?
+   - Tutor or log files
+   - Surveys/Tests
+   - Recorded / Conversational data
+   - from Sensors or Eye tracking or Facial Recognition (confused/angry), hand sensors, butt sensor (best data captured way)
+
+Common Approach
+- Flat Data file 
+ (even if you store your data in databases, most data mining techniques require a flat file)
+
+some useful features to distill for educational software
+- Type of interface widget
+- "Pknow" : the probability that the student knew the skill before answering (using Bayesia knowledge-tracing or PFA or your favorite approach)
+- Assessment of progress student is making towards correct answer (how many fewer constraints violated)
+- Whether this action is the first time a student attempts a given problem step
+- "Optoprac": How many 
+- "timeSD" : time taken in terms of standard deviations above (+) or below (-) average for this skill across all actions and students
+- "time2SD": sum of timeSD for the last 3 action or 5 or 4 
+- Action type counts or percents
+   : Total number of actions so fat
+   : No of actions on this skill, divided by optoproac
+   : no. of actions in last n actions
+
+logistical regression models
+Code available
+Ryan Baker has code available for EDM
+- http://users.wpi.edu/~rsbaker/edmtools.html
+- Distilling datashop data
+- Bayesian knowledge tracing
+
+
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

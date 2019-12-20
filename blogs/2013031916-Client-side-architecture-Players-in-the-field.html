@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Client side architecture: Players in the field | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Client side architecture: Players in the field</h1>
+          <p class="lead">
+            Sharath Gururaj
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 19, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            private please
+Hello,
+
+In this blog, I'd like to do a roundup of various tools and frameworks that are available for use on the client side (i.e., javascript)
+
+Since javascript as a language is very simple and offers very little structure, A bewildering array of open source tools and frameworks have sprung up, resulting in a veritable jungle. 
+
+Quick distinction: Tool vs Framework: A tool offers a set of commo functionality, like jquery or underscore.js but it does not impose any opinions on how your code should be organized. Our code drives the tools. A framework on the other hand is opinionated, and forces us to do things in a particular way. Example Angular, Backbone etc. The framework drives our code. 
+
+So! here is a brief roundup of the players of the field.
+
+Javascript alternative (!)
+<ul><li>Coffeescript is an extension to javascript which compiles to javascript. It supports nice scala like functional programming constructs and is definitely more readable than java, but its an additional layer.</ul>
+IDEs
+<ul>
+<li>Eclipse web page editor has a reasonable autocomplete and syntax checking mechanism for HTML and javascript. which along with a chrome debug plugin is quite complete (see below)
+<li> Webstorm: The super awesome html/webpage editor which is the IDE for js just like eclipse is the IDE for java.
+</ul>
+Utility tools: 
+<ul><li>
+Jquery: Needs no introduction. Its power lies in its rich selector methods and its cross browser support.
+<li> Underscore: Super boosts the functional programming nature of javascript. with a collection of 80 odd methods like forEach, map, reduce etc
+<li>Prototye.js Uses prototypal inheritance to simulate Class like behaviour in javascript.
+<li>RequireJS: The newest and most interesting. Implements an asynchronous module definition version of the commonjs "require" specification. Allows us to split source code into multiple files and lazily fetch the files when it is required. 
+</ul>
+Frameworks:
+<ul>
+<li>Angular.js The newest kid on the block, created by the head of testability team in Google, so testable from the ground up. Also does some neat tricks with watching changes in 'scope' variables and updating views automatically. But it has a very steep learning curve. Buzz words: Dependency injection, run-time compilation (lol),  directives, deferred Promises etc. Its a different paradigm of programming that we need to get used to. It may seem all magic at first, or we would go "why the heck would someone do it <i>that</i> way"
+<li>Backbone.js uses a traditional MVC architecture and is very opinionated about frontend models being backed by err... backend models, which means that 
+writing anything that deviates from REST verbs can be painful. 
+<li>One other player, knockout.js is worth mentioning because it is lightweight and also uses live binding of models to views (the so called MVVM pattern)
+</ul>
+Anciliary tools: These tools will not be downloaded to the client but run on node.js, helps in organizing our javascript code
+<ul>
+<li>Which brings us to our very first too: Node.js, the server side implementation of javascript. 
+<li>Grunt.js A javascript test runner/"build" tool. It is to node.js in the same way that ANT is to java or make is to c++. It automates task like minification, concatenation and linting
+</ul>
+Test frameworks.
+<ul>
+<li>Jasmine: a BDD style (yippee another buzzword) testing framework. Seems to be pretty popular with test cases being more readable than conventional unit testing frameworks
+<li> Qunit: the super simple unit testing framework built to test jquery. It is conventional unit testing method. Well supported.
+<li>mocha.js Well integrated with node.js so enables us to run fast unit tests in node. But since Node uses the V8 engine, the same engine that powers chrome, so speed advantages are not significant. More importantly, it supports different styles of testing. For example, both unit testing and BDD style testing. In summary, a big framework which needs to be learnt in order to take full advantage of.
+<li>Testacular.js The test runner with balls. (its their catchphrase). It spawns browser processes and autorealoads all tests in browsers so you have realtime feedback about failing tests. It is meant to replace the older JsTestDriver. Created by the angular team
+<li> Chrome dev plugin: A plugin for eclipse to connect to a chrome debugger instance for true javascript debugging, a.k.a JPDA for java
+</ul>
+
+SO my recommendation is as follows:
+<ul>
+<li> Node.js for development and running javascript on console
+<li> grunt .js for minification, Linting etc
+<li> testacular for live test running.
+<li> angular js for a web framework.
+<li> jasmine for a test framework
+<li> requirejs for dependency management
+<li> jquery for general purpose tooling
+<li> Chrome debugger in eclipse (Strong plug here for buying commercial license for webstorm)
+</ul>
+
+Is there other tools that are interesting or can be used by us? What do you think of the above setup.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

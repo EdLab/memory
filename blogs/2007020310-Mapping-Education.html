@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Mapping Education | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Mapping Education</h1>
+          <p class="lead">
+            Dan Mallinger
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 3, 2007
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            For some time now the EdLab has been discussing projects which rely on creating conceptual maps of the field similar to those described by <a href="http://edlab.tc.columbia.edu/index.php?q=node/715">McFarland and Klopfer</a>.  These networks have had two forms (more or less implicitly) in our conversations:
+
+<ol>
+<li>Literally visual maps</li>
+<li>Tools which utilize the conceptual bridges between linguistic phrases</li>
+</ol>
+
+The former has been discussed as a visual aid for students in Doc.Life.  The latter is the deeper structure necessary to infer connections between theories, keywords, and large text.  For example, your Google searches are informed by a network largely influenced by text analysis.  In fact, semantic analysis implicitly creates a network of linguistic phrases.
+
+These "semantic networks" are the backbone of many proposed ideas in the EdLab like the "Syllabus Refresher," as well as ongoing projects like Doc.Life, Meety, and the Survey Creation Tool.  In order to progress, we will need to solve two problems:
+
+<ol>
+<li>Identifying relevant phrases</li>
+<li>Developing a method for identifying possible connections between the phrases</li>
+</ol>
+
+Although we currently have no proposed solutions, we have attempted to create a first step.  If you <a href="http://jamison.tc-library.org/dan">click here</a> you will find an interactive map of relevant keywords in education (over 10,000 of them!).  Some nodes (the green ones) are clickable; clicking them will re-center the map and present new related information.  
+
+The map is structured to begin with "All Education."  Connecting green nodes depict keywords suggested to be either (1) subcategories of the keyword, or (2) related terms.  Clay colored nodes are terminal and represent either (1) synonyms, or (2) out-dated related terms.
+
+You may notice that the graph can become unwieldy and overly dense.  This is a good time to suggest that the interface is sub par; our future conversations should consider possible augmentations.  Because a similar graph will be part of Doc.Life, I would like to begin a discussion around this issue.  We have a number of people trained in instructional design and graphics design, but it's also important to understand the views of everyday users.  I would love to hear everyone's thoughts regarding the site.
+
+So what are the next steps?  One is to positively augment the interface to the interactive map.  The other is to begin solving the problems of identifying relevant keywords and the connections between them.  Again, all of our ongoing projects rely on this technology; it would be prudent to pool our resources in addressing it collaboratively.  I believe the initial set of keywords could be used as training data to extract subsequent phrases from large corpora.  I have worked on such technologies in the past with limited success.  They are extremely tricky!  While I believe machine learning will likely be necessary to a complete solution, designing conceptually effective algorithms will be a daunting task.  Additionally, many of these algorithms have the conceptual solution of minimizing perplexity (and maximizing expectation), which can yield poor results in processing natural language.  We could work around this by creating a less robust solution under the argument that we need limited success, not the type demanded, say, for a NLP conference.  We could also consider hiring computer science students from across the street.  This is the kind of problem that attracts grant money in CS and the kind that graduate students and professors alike work to solve effectively.  This could be an opportunity to work on an academic tool and produce a very publishable paper with folks across the street.
+
+A final step, which I may work on soon, is developing a system to detect and display relevant papers adjacent to certain nodes.  I believe we have developed a primitive solution for this, I will begin testing it later.  Developing more robust solutions should be on our agenda as well.  
+
+Technological Note:
+I have not tested the graph on IE7 or Safari, you may notice some problems.  
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

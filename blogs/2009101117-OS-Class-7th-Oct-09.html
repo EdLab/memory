@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>OS Class 7th Oct, 09 | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">OS Class 7th Oct, 09</h1>
+          <p class="lead">
+            pramnab1
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 11, 2009
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Did not attended the class so writing down notes from the lectures:
+
+Three properties for synchronization
+- Mutually exclusive
+- Forward progress (if no body else in critical section, one process can get into critical section)
+- Bounded writing
+
+problems with using disable interrupts and enabled interrupts for locking and unlocking
+- only 1 lock can be handled
+- this can only help for locking one cpu(no SMP support)
+- cannot be blocking
+- userspace security type issues
+
+Then what do we do for Symmetric Multiprocessor Unit.
+
+FOR SMP
+----------
+Two new hardware instructions to be added:
+1) Compare and Swap (CS)
+2) TS
+
++ Hardware
+ = NEW Instruction
+  - TEST AND SET (TS) tests if the value is set, if not then sets the value [ATOMIC]
+
+
+implement a lock
+lock(x)
+{
+  while (TS(x)); //if not set then sets, if it's set then spins
+}
+unlock(x)
+{
+  x = 0;
+}
+
+lock the bus for the CPU on a SMP.
+
+COMPARE AND SWAP(CS)
+  IF (x != y) SWAP(x,y)
+use case scenario:
+lock(x)
+{
+ key = 1;
+ while (key) {CS(x,key);} // x happens to be zero then swap happens
+}
+unlock(x)
+{
+ x = 0;
+}
+
+These are called spin locks where one gets spinning on the CPU, there are other types of lock which would require
+
+Reason for using Spin lock
+- Don't have to wait long it's ease
+- programming is easier
+- not a long time for contention.
+- then they redesigning the locking mechanism
+
+OS [SMP support for an OS build for uni processor]
+- lock (scheduler)
+- lock (memory)
+- lock  (network)
+- lock (file system)
+pick your locks that the critical section is small as possible.
+
+Different types of lock
+- Spin Locks()
+- Semaphore (COUNTING, BINARY SEMAPHORE)
+  (Locking) DOWN - P - Proberen(test)
+  (Unlocking) UP - V - Verhogen(increment)
+
+COUNTING SEMAPHORE 
+---------------
+Allows more than n guys through
+
+P(s)
+{
+  WHILE(s <= 0);
+   s--;
+}
+
+V(s)
+{
+  s++;
+}
+
+Binary Semaphore
+----------------- 
+Takes two states : - 0 or 1
+  P(s) { WHILE(s <= 0); s = 1;}
+  V(s) {  s = 1; }
+
+making it atomic
+P(S)
+{
+  disable_increment();
+  while (s <= 0) {
+     enable_interrupts();
+// doing so that other instructions can work and guarantee 
+     disable_interrupts();
+  } s--;
+ enable_interrupts();
+}
+
+SMP
+----
+
+P(s)
+{
+ WHILE (TS(s));
+}
+
+V(s)
+{
+  s = 0;
+}
+disable_interrupts should be done for a small portion of time.
+Semaphores 
+- Busy Waiting (like the one above)
+- Blocking/Sleeping (where the process requesting for the block sleeps)
+ example of Blocking semaphore
+   P(s)
+    {
+       s--;
+       if (s < 0) {
+                  Add task to wait_queue;
+                  block;
+        }
+     }
+     V(s)
+      {
+        s++;
+        if (s <= 0) {
+            remove task from wait_queue;
+            wakeup(p);
+         }
+      }
+
+Not spinning any more and waiting in the queue for running when the lock is available. Bunch of guys are not waiting for the CPU.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

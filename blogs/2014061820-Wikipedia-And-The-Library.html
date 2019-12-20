@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Wikipedia And The Library | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Wikipedia And The Library</h1>
+          <p class="lead">
+            Dana Haugh
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 18, 2014
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img class='nlt-image' src="https://cdn.tc-library.org/NewLearningTimes/wiki_34502a805e49433bbf6f16568d02e4c8.jpg" alt='article.title'><br />
+
+<p><b>Title:</b> Towards Linking Libraries and Wikipedia: Automatic Subject Indexing of Library Records With Wikipedia Concepts (2014)</p>
+<p><b>Authors:</b> Arash Joorabchi & Abdulhussain E. Mahdi</p>
+<p><b>Source:</b> <a href="http://jis.sagepub.com/content/40/2/211.abstract">Journal of Information Science</a></p>
+<p><b>Research Question:</b> Is library-Wikipedia integration possible?</p>
+
+<p><b>Study Design:</b> When you have a question on a particular topic, where do you go to find the answer? Although libraries have historically been one of the top resources for information seekers, the invention of search engines like Google and information repositories like Wikipedia have pushed library resources to the very back of the mind. Less than 1% of information searches start on a library website, with the majority (84%) of information-seeking behaviors beginning on search engines. Of those searches that begin on search engines, 62% start on Google, and 60% of informational queries result in relevant Wikipedia articles in high ranking positions. The authors of this study believe that integrating catalog records, like the ones on WorldCat, with Wikipedia articles could be an important step in ensuring the library’s continued use as a local, reliable information source. </p>
+
+<p>In order to implement a mass library-Wikipedia integration, the authors proposed an automatic subject indexing with Wikipedia concept. To test the possibility, they used an open-source toolkit called Wikipedia-Miner for detecting Wikipedia concepts, on topic the researchers were familiar with, that also would occur in the content of library metadata records. Next they needed to distinguish the concepts that were "key" in terms of reflecting the core subject(s) of the items represented in the record. They made this distinction through 15 statistical, positional, and semantic features: position, frequency, length, lexical diversity, average link probability, maximum link probability, average disambiguation confidence, maximum disambiguation confidence, link-based relatedness to other concepts, link-based relatedness to context, category-based relatedness to other concepts, generality, in links, and translations count. After this data was collected, the authors tested a collection of library metadata records manually with the Wikipedia concepts discovered. They randomly selected 100 records (using the same topic as the Wikipedia concepts) from the WorldCat-Million dataset and set to work.</p>
+
+
+
+<p><b>Findings:</b> After running the 100 records through the Wikipedia-Miner, a total of 1,762 candidate concepts were identified, with a minimum of 2 per record and a maximum of 69. All the candidate concepts were manually examined and labeled "key" or "non-key" in respect to their corresponding records. After the analysis, a total of 469 concepts were deemed "key" and 1293 were "non-key" concepts. On average, each record in the dataset had been indexed by 4.7 key concepts on Wikipedia. The files were then stored in an ARFF (attribute-relation file format) and imported into Weka, an open-source software with a collection of machine learning algorithms geared toward data mining tasks, and examined in further experiments.</p>
+
+<p><b>Moving Forward:</b> The idea of integrating library metadata records with Wikipedia concepts would have tremendous benefits to libraries across the world. For those who use Wikipedia as an information source, the ability to automatically see and link to relevant materials at a local library would prove infinitely valuable in their research endeavors. The results of this small experiment prove that with the proper indexing and analysis, a Wikipedia-library integration is possible. Further development of the concept analysis process is critical, as the current manual implementation would be extremely labor-intensive. The authors eventually envision the employment of a Wikipedia bot to analyze and edit articles on a large scale.</p>
+
+<p><i>Image:</i> Giula Forsythe <a href=" https://www.flickr.com/photos/gforsythe/">Flickr</a></p>
+
+<p><i><a href="https://twitter.com/SngHeavenlyMuse">Follow Dana Haugh on Twitter</a></i></p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>IP Ranges in the &#34;Restricted Site Access&#34; Plugin | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">IP Ranges in the &#34;Restricted Site Access&#34; Plugin</h1>
+          <p class="lead">
+            Eric Buth
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            February 24, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            {{unknown}}<br />
+
+A few of the institutional sites that are part of the Pressible system require some degree of gatekeeping, either on account of privacy concerns or because of subscription systems. One of the ways we accomplish this is with IP range whitelists. The vast majority of available plugins that deal with restricting site access based on IPs are focused on blacklist policies with an eye towards keeping out spammers and other nasties.
+
+The one exception I could find was Jacob Goldman's <a href="http://wordpress.org/extend/plugins/restricted-site-access/">Restricted Site Access</a> plugin, but it didn't allow for IP ranges. I ended up making a small modification to the plugin to allow for the specification of <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_blocks">CIDR-type address blocks</a> using PHP's inet_pton method (which converts ip character strings to packed binary strings).
+
+There are two sticky parts to this. The first involves what are called <a href="http://en.wikipedia.org/wiki/IPv6#Dual_IP_stack_implementation">dual-stack addresses</a>, which is how IPv4 addresses are handled in a hybrid IPv4/IPv6 network implementation. All this really means is that you always get the same number of bits for ip addresses (128), but IPv4 addresses are padded with a certain pattern of bits in front. The problem is that the inet_pton function, which returns 32 bits for regular IPv4 addresses, will not strip the leading bit pattern from the address. If you are trying to apply a bitmask from a 32 bit CIDR-type block specification, it will fail.
+
+So, the first step is to strip out the bit prefix of dual-stack addresses:
+
+<pre>
+# save the remote ip
+
+$remote_ip = $_SERVER['REMOTE_ADDR'];
+
+# handle dual-stack addresses
+
+if(strpos($remote_ip, '.'))
+	$remote_ip = str_replace('::ffff:', '', $remote_ip);
+
+# parse the remote ip
+
+$remote_ip = inet_pton($remote_ip);
+
+# iterate through the allow list
+
+foreach(preg_split('/\s+/', $list) as $line){
+
+	# get the ip and mask from the list
+
+	list($ip, $mask) = explode('/', $line . '/128');
+
+	# render the mask as bits, similar to info on the php.net man page discussion for inet_pton
+
+	$mask = str_repeat('f', $mask &gt;&gt; 2);
+
+	switch($mask % 4){
+		case 1:
+			$mask .= '8';
+			break;
+		case 2:
+			$mask .= 'c';
+			break;
+		case 3:
+			$mask .= 'e';
+			break;
+	}
+
+	$mask = pack('H*', $mask);
+
+	# check if the masked versions match
+
+	if((inet_pton($ip) &amp; $mask) == ($remote_ip &amp; $mask))
+		return FALSE;
+}</pre>
+
+http://www.cmurrayconsulting.com/software/wordpress-restricted-site-access/
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

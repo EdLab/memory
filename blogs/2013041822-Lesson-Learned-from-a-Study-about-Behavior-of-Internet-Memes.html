@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Lesson Learned from a Study about Behavior of Internet Memes | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Lesson Learned from a Study about Behavior of Internet Memes</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 18, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/ryan_meme_study_4fe69fdbf59244678416da007dc62a84.png" width="60%">
+
+I'm crawling the newest conference proceedings from the <a href="http://www.icwsm.org/2013/program/accepted-papers/">7th AAAI international conference on weblogs and social media</a>. This is a series of and serious research about social media, Twitter, Facebook, and crowdsourcing, among other platforms. A lot is done by industry research labs, i.e. IBM, Microsoft, and HP, you name it. I usually find very cool stuff there. I talked about one before, <a href="http://edlab.tc.columbia.edu/index.php?q=node/8449 ">Twitter + Emotion</a>. I even learned new ways of using LIWC to interpret sentiments (this might take too long to talk about text analysis here. I plan to create a mSchool course on text analysis. Stay tuned and check back later). 
+
+Let's talk about the behavior of internet memes. It's a full paper from this year ICWSM: <a href=” http://arxiv.org/abs/1304.1712”>Competition and Success in the Meme Pool: a Case Study on Quickmeme.com</a> by Michele Coscia, Harvard Kennedy School. 
+
+Social media has influenced the way we consume information, and even provided data and insights about how people relate to information and culture. For example, tweets have been successfully applied to solve real-world problems: predict depression (super cool! Get paper <a href="http://research.microsoft.com/en-us/um/people/munmund/pubs/icwsm_13.pdf">here</a> ), predict earthquake, product launch, and indicate political opinions, among others. 
+
+This paper studied memes with an empirical approach to understanding meme dynamics and success. Data was obtained from Quickmeme.com. The study's premise is that the evolution of the popularity of a meme is not dependent only on the meme itself, but it is influenced by other memes. The author categorized a set of features of a meme (popularity peak, numbers of competitors and collaborators (i.e. “Socially Awkward Penguin”, “Socially Awesome Penguin”, “Socially Average Penguin”…they are the same penguin, but with different text. Do the variations discount the meme's ratings or vice versa), and observed the weekly ratings of the memes on the site and used decision tree algorithm to describe how the features make the probability of one meme to be successful higher or lower.
+
+Results showed that high popularity peaks of the memes make the number of competitors negatively correlated to the odds of being successful and for those memes without high popularity peaks, the number of competitors is actually positively correlated with success odds (of course!).
+
+In plain English: if the meme has a popularity peak, it will be used frequently only if it is not too similar to many other memes. If, instead, there is no popularity peak, users are likely to stick with whatever it is, and keep the meme on the site, and being used together with other memes, thus competing with them.
+
+Should we throw a couple of our EdLab memes and try? â˜º
+
+This study really gives a very unique perspective to using non-social network analysis approach to analyzing the meme spread and success (do not consider it as a network effect). 
+
+Ps. Don't be surprised as there are a lot serious studies about memes and can be retrieved from this one's related work section. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

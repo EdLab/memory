@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Progress on Docdel system | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Progress on Docdel system</h1>
+          <p class="lead">
+            Xiaobin Zheng
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 18, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            Hui Soo, Ankit and I have been working on the Docdel system this semester. And for now, we've already completed the development of some new functionalities and will start testing it soon. We are looking for feedback on what new functions are needed and how to improve already existing functions.
+
+Currently, there are mainly two new functions in Docdel: session management for faculties and embedding of video in personal files.
+
+1. Session management
+Old Docdel:
+After logging in and selecting "My classes", you could select existing courses and sessions. However, sessions under each course could not be created/modified under Docdel. To add/delete a session, you need to go to ClassWeb and do it there.
+
+New Docdel:
+Instead of going to ClassWeb to do session management, a faculty member can do it on Docdel now. They can create/delete/edit each session, add reserved items to any session they want and could modify the dates for all sessions together at a time. New sessions would be inserted according to the date and assigned a session number automatically. Sessions whose dates have been changed would be reordered among all sessions according to the dates and those files attached to each session would still be kept with them. Samples could be seen in the attachments.
+
+2. Embedding a video as reserved items
+Docdel is an E-reserve system where users could upload files and share files within a class. In original Docdel, one could upload PDF/txt files by specifying the URL where the file is located(For example, from the Teachers College library). With the suggestion of Brian, we added the function of embedding a video using an embed code. So now, we can go to YouTube and copy the embed code of a video, paste them when we want to add it, and the video will show up in the reserved item list. This embedded video could be assigned to a certain session or to a certain personal folder in the same way as other type of files do.
+
+3. Underlying database changes
+Old Docdel relies on the data coming from databases in ClassWeb such as course information, session information, and registration information, among others. Since we want to make Docdel a self-contained system, we don't want to fetch data from databases in ClassWeb. We designed relational tables in Docdel to model those information and insert data using feed files coming directly from Teachers College so that Docdel would not rely on ClassWeb any more, either functionalities or underlying databases. And we would also update information directly using feed files in future.
+
+Above is the main progress on the Docdel system. We will present it soon and collecting feedback accordingly but in the meantime we welcome any idea about how to further improve Docdel. Thanks.
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

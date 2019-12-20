@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Problem Solving in Research | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Problem Solving in Research</h1>
+          <p class="lead">
+            Yang Yang
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 3, 2014
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            My current research is evaluating topic coherence of discussions and their corresponding videos. Both YouTube and Vialogue discussions are related to the posted videos. However, discussions on YouTube's platform is a forum discussion while Vialogue enables moderated time-stamped discussions. We are trying to research whether on average, the same piece of educational video on the two platforms result in different levels of topic coherence. I am now in the process of solving this problem, and I am fascinated by the approaches. 
+
+<b>1) Learn and discover, not reinvent the wheel</b>
+In the past week, I have read extensively on topic modeling, text analysis and topic coherence measures. Topic model is a statistical model that summarizes topics in a set of documents with machine learning and natural language processing. Despite that, I have used several relevant R packages before to (e.g. tm, wordcloud, topicmodels), evaluate the topic coherence for YouTube and Vialogues respectively. It requires rapidly absorbing new knowledge and effective learning from experts. 
+<p>
+<b>2) Tailor the measurement</b> 
+Measurement of topic coherence (using PMI pointwise mutual information) was initially designed to evaluate the performance of topic models as it is not rare for any current available models to generate “junk topics”, which refers to topics that contain only meaningless information. In our Vialogues research, we decided to leverage UCIscore and UMass score to compare the coherence aspect of discussion quality for YouTube and Vialogue. As discussed above, topic coherence only points us to the right direction, but we still need to make necessary innovative modification to solve our problem. 
+<p>
+<b>3) Implement, aka, Write Code</B>
+Once we are clear of the details of the PMI algorithm for discussion coherence evaluation, it comes to the essential part: coding. The dataset provided is already beautiful enough, but coding is still needed to format raw data and a clean dataset. With all the materials ready, then it is time to code the algorithm. Yesterday, I successfully obtained Vialogues and YouTube discussion coherence scores for one video entry. Prototype, or pilot trials is a critical stage for coding, which means the logic methodology designer has been programmed. 
+
+Goal for this week: scale all the coding to 723 documents, solve this problem. Many articles talk about “making sense of data”. Nowadays, this problem solving process written above is exactly one of the many examples of making sense of real world data. 
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

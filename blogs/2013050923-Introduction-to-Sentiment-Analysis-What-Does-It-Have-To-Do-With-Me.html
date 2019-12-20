@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Introduction to Sentiment Analysis - What Does It Have To Do With Me? | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">Introduction to Sentiment Analysis - What Does It Have To Do With Me?</h1>
+          <p class="lead">
+            Sharon Hsiao
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            May 9, 2013
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <img src="https://d2ba1wehz8pq9c.cloudfront.net/Others/steelers_d10670f779d14585ae2745db07d9b237.png" width="70%">
+I asked myself this question sometime ago "<b>why is it (sentiment analysis) related to me?</b>" I had doubts about understanding crowds' emotions and feelings but could it do any good for me? Not anymore. Numerous studies show great success in public opinions mining as I've mentioned before with product reviews, presidential election party polarity, etc., 
+
+There are several approaches to extract the sentiments:
+<b>Lexicon-Â­based Sentiment Classification</b>
+<b>Rule-Â­based</b>: i.e. <a href="http://www.tweetfeel.com/">http://www.tweetfeel.com/</a>
+<b>Machine learning</b>: use Hashtags, emoticons...
+
+Common approach is the lexicon-based sentiment classification. The basic idea is to classify the words by polarity. 
+<blockquote>
+Love <-Â­â€> hate
+Thumb up <-Â­â€> down
+Positive <-Â­â€> negative
+Positive: <font color=green>love, best, cool, great, good, amazing</font>
+Negative: <font color=red>hate, worst, sucks, awful, nightmare</font>
+</blockquote>
+
+There are several open source dictionaries for doing sentiment analysis. (Except LIWC)
+<li><a href="http://www.cs.uic.edu/~liub/FBS/sentiment-Â­analysis.html">Opinion Lexicon</a> by UIC</li>
+<li><a href="http://www.wjh.harvard.edu/~inquirer/">General Inquirer</a> by Harvard 
+<li><a href="http://mpqa.cs.piJ.edu">MPQA</a></li>
+<li><a href="http://sentiwordnet.isti.cnr.it">SentiWordNet</a> </li>
+<li>LIWC (Linguistic Inquiry and Word Count)</li>
+
+Of course there are challenges and limitations such as implicit sentiments are difficult to detect (i.e. sarcasm), cross language issues, fuzzy, confusing abbreviations (i.e. sweeeeeeet, awwwwwesome) etc. 
+
+If you missed the 2009 SuperBowl between the Pittsburgh Steelers and Arizona Cardinals, check this out <a href="http://www.nytimes.com/interactive/2009/02/02/sports/20090202_superbowl_twitter.html?_r=0">Twitter Chatter During the Super Bowl</a>. It animates the whole game not only by the scores, but also incorporates crowds' sentiment nationwide. I remember the 4th quarter, almost toward the end, when James Harrison intercepted and ran 100 yards to give the Steelers the lead at the point but suddenly the Cardinals fought back. That was only two minutes toward the end, (about crashing all Pittsburghers' souls), before Santonio Holmes scored the winning touchdown to give the Steelers the victory. This few seconds animated visualization with scores + sentiment and fully expresses the game intensity and emotions. This year's Australian Open's Women's final between Li Na and Victoria Azeranka was also a good example to demonstrate social sentiments, but that's for another post :)  The point is, I could have enjoyed the game by itself. Why do I need sentiment analysis? If for some reasons, you can't watch the game, recapping the scores on the paper is just not going to cut it. That's not satisfying or entertaining enough anymore. (I'm sure sports enthusiasts will understand me). 
+
+So, what are the research values, other than predicting polarity, trends, emotions?
+
+I tested it on our NLT-Research Digest collection. I found a tendency that, the more critical we are on our takeaways, the more views we received regardless of if we tweeted the article or not. (Although it's not a significant correlation, it's interesting to see readers' reaction.) So the Development & Research team is geared up to try this mini-experiment, to give the future digests a more harsh whip :)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

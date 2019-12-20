@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>mSchool Recommendation System | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">mSchool Recommendation System</h1>
+          <p class="lead">
+            Manav Malhotra
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            March 21, 2012
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            private please
+
+I've been taking a tour of the collaborative filtering (CF) world as we start to design our recommendation system for the mSchool. We're hoping that by providing a user with relevant information across our applications, we'll strengthen the mSchool ecosystem. For example, based on what you've viewed in Vialogues, we can recommend relevant mSchool courses via Pundit or projects in Research Broker. 
+
+CF seems to be the most successful approach to building a recommendation system. It is based on the assumption that if user A and user B have similar behavior (either via rating items or viewing content) at the intersection of their consumption (to use Venn diagram speak), they will have similar tastes in the union of their consumption as well. And the larger their intersection, the stronger the recommendation.
+
+There are two broad categories of techniques: memory-based and model-based. Memory-based CF uses the user-item database to generate a recommendation. There are various measures (euclidean distance, cosine distance, correlation, etc) used to determine user-user or item-item similarity. These techniques are generally easy to implement but performance takes a hit when the data is sparse. This will likely be the case as a user probably won't look at more than a percent of the total content offered. Additionally, the computational resources required to recommend this way scale with the size of the data set, which could cause a significant delay for the user. New users also have a difficult time getting useful information out of this method, as they have little data to use for the matching algorithm.
+
+Model-based CF is built on an algorithm trained by data, allowing it to decipher complex relationships. Bayesian classifiers and clustering algorithms are two common types. These methods are better at dealing with the sparsity and scalability problems, but many of the techniques come at the expense of accuracy when using dimensionality reduction. 
+
+Introducing content-based filtering as a part of the overall recommendation system is also something that seems particularly useful in the context of the mSchool. This approach considers a user's interests alone and uses the characteristics of the items they have previously viewed to recommend others. Many content-based filtering techniques are similar to model-based CF in structure.
+
+As with most things in life, it seems the best way to approach the problem is a balance of the methods. A hybrid makes the system more difficult to implement, but the methods compliment each other's weaknesses, especially on the performance side. Our system should also be designed such that all current and future EdLab apps can fold nicely into it. What I'm hoping to drawing up now is a standard way for us to categorize all of our content, either with a semantic space, simple tags, or something more structured before we start testing which similarity and clustering methods would be most accurate.
+
+This is an incredibly broad overview and doesn't do justice to the diverse set of techniques that have been developed over the last few years. Select resources to fill in some of the details are attached below. If you'd like to know more about specific techniques and how they might be applied or if you're interested in working on this, let me know! 
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

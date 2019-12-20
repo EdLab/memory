@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>What Can We Learn from Virginia Tech’s Library Tour?  | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">What Can We Learn from Virginia Tech’s Library Tour? </h1>
+          <p class="lead">
+            jvazquez
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            April 26, 2016
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            The Newman Library tour is a staple of Virginia Tech’s offerings. In fact, it’s a requirement for freshman taking <i>Introduction to Writing</i> to not only take the tour but to also pass a quiz related to it. In the beginning, it was an hour-long guided tour led by librarians. As the size of the freshman class surged, self-directed tours became more practical. The new incarnation of the tour found QR-coded stations that played snippets of an audio tour with occasional videos. But that wasn't good enough. 
+
+Before long, the engineering and education team at the library realized they had to update their tour once again. Making students scan so many QR codes proved cumbersome and the team had little flexibility in making changes in the tour over time. 
+
+Their solution came in the form of teeny little boulder-looking devices (I guess “rocks” is the word I’m looking for, but they just look like boulders to me!) called iBeacons. 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Vialogues/screen-shot-2016-04-26-at-44019-pm_0130d2618baa4eb9a6ac75dcec6dc687.png"/>
+<font size="1"><i>Lil boulders, amirite?</i></font>
+
+These are Bluetooth Low Energy (BLE) devices that broadcast unique identifiers, repeatedly. They work in conjunction with mobile apps that listen for these broadcasts and then perform some type of action when specific iBeacons are recognized. 
+
+The idea was to station these beacons around the library so that when patrons walked by them with iPads running a special library-created tour app, it would trigger a relevant video (also created by the library) to start playing. The tour included a sign-in process and quiz to verify that students had indeed taken it. 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Vialogues/screen-shot-2016-04-26-at-44139-pm_61e5d13f9f314b7480318124020dfb9a.png"/>
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Vialogues/screen-shot-2016-04-26-at-44824-pm_626ffca042f847969c11273ba63b225d.png"/>
+
+Their process was organized and logical: first, they devised user roles; then defined requirements; then designed the interface while simultaneously defining the learning objectives; finally, they created the actual learning content (videos and quizzes). 
+
+What I appreciated the most from this report was how candid the authors were. They were not shy in saying what their roadblocks were, admitting, for instance, that it’s quite difficult to get any work done when you’re collaborating across teams since everyone has other (perhaps higher priority) projects going on. I particularly enjoyed their obvious dismay with the color naming conventions of the beacons, as displayed here: 
+
+<img src="https://d2ba1wehz8pq9c.cloudfront.net/Vialogues/screen-shot-2016-04-26-at-44158-pm_23f01d81f2f84633b337375c88960a54.png"/>
+
+Where “color” represents the ridiculous names the company gave the beacons, and “real color” tells it like it is. 
+
+<b>TL;DR</b>
+It might be worthwhile to think about adopting location-sensing technology like the <a href="http://estimote.com/" target="_blank">Estimote beacons</a> if providing a low-key, self-directed tour experience is in our library’s cards. 
+
+Source: <a href="http://journal.code4lib.org/articles/11338" target="_blank">Creation of a Library Tour Application for Mobile Equipment using iBeacon Technology</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

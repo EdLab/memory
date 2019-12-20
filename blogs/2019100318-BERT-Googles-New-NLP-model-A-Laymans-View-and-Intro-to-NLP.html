@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>BERT - Google&#39;s New NLP model: A Layman&#39;s View and Intro to NLP | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">BERT - Google&#39;s New NLP model: A Layman&#39;s View and Intro to NLP</h1>
+          <p class="lead">
+            ameya.karnad
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            October 3, 2019
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            <p>Note: This post is part of an ongoing project on Autotaggging [1] TCR content that is being done by the research team.</p><p><br /></p><h3><strong>Previous posts in the series</strong></h3><p>1- A case for Autotagging - Does Machine learning know better about your work than you? <a href="https://edlab.tc.columbia.edu/blog/23122-A-case-for-Autotagging-Does-Machine-learning-know-better-about-your-work-than-you" target="_blank">Link</a> [2]</p><p><br /></p><p><img src="https://miro.medium.com/max/3840/1*3ADXegcYCkaYH5JeoYbi2Q.jpeg" alt="Image result for bert algorithm" /></p><p><br /></p><p><br /></p><h2><strong>NLP - Natural Language Processing</strong></h2><p>Natural Language Processing [3] is a field of Computer Science which deals with the interactions between computers and human (natural) languages, particularly on how to process large amounts of text data.</p><p><br /></p><p>Let us look at a small crossection of models for NLP</p><p><br /></p><h2><strong>Bag of Words Models</strong></h2><p><br /></p><p>Bag of words [4] is a simplifying represenation in NLP. Each of the text can be represented as a bag of words, disregarding context, grammar and word order</p><p><br /></p><p>Example 1: "EdLab is a research, design, and development unit at Teachers College, Columbia University"</p><p>Bag of words: {"EdLab" : 1, "is" : 1, "a" : 1, "research" : 1, "design" : 1, "and" : 1, "development" : 1, "unit" : 1, "at" : 1, "Teachers" : 1, "College" : 1, "Columbia" : 1, "University" : 1}</p><p><br /></p><p>Example 2: "John went to the river bank today, and he visited the bank to withdraw his salary on his way back"</p><p>Bag of words: {"John" : 1, "went" : 1, "to" : 2, "the" : 2, "river" : 1, "bank" : 2, "today" : 1, "and" : 1, "he" : 1, "visited" : 1, "withdraw" : 1, "his" : 2, "salary" : 1, "on" : 1, "way" : 1, "back" : 1 }</p><p><br /></p><p>Things to notice:</p><p>·      The bag of words model keeps the multiplicity of the words intact</p><p>·      The model does not care about the context of the model. The word 'bank' in "river bank" and the financial institution bank both considered as the same word</p><p><br /></p><p><br /></p><h2><strong>Word2Vec</strong></h2><p><br /></p><p>In simple terms, Word2vec [5] is a set of <span style="color:rgb(34, 34, 34)">related models which take</span> large text data as input and represents the words in form of vectors[6](sequence of numbers with direction) based on the context of the word.  It can identify the context of how the word was used in the text. <span style="color:rgba(0, 0, 0, 0.84)">The location of a word relative to another word gives relationship between them.</span></p><p><br /></p><p>For example, it can understand the context of the words "King", "Queen", "Man" and "Woman" such that</p><p><br /></p><p>King - Man + Woman = Queen</p><p><br /></p><p><img src="https://miro.medium.com/max/1014/1*dm9dudL37B6JG8saeR3zIw.png" data-align="center" style="display:block;margin:auto" /></p><p>										The algorithm represents the words vectors and identifies the context of the words.[7]</p><p><br /></p><p>·      One thing to consider is that the model still regards the 'bank' in "river bank" amd "financial bank" as the same and incorrectly builds around both context</p><p><br /></p><p><br /></p><h2><strong>BERT Algorithm </strong></h2><p><br /></p><p>BERT [8] (Bidirectional Encoder Representations from Transformers) is a recent paper published by data scientists and researchers at Google. The key innovative part of BERT is that it takes content of words into consideration from both the direction (words present before a word and words present after a word) while building/training the Data Science Algorithm</p><p><br /></p><p>The algorithm runs in 2 steps</p><p><br /></p><p>Let us consider an example to understand the method better. Take the sentences.</p><p><br /></p><p>"<em>The man goes to the store. He buys a Gallon of Milk</em>"</p><p><br /></p><p><strong>STEP 1 : Masking Words</strong></p><p><br /></p><p>Before running the algorithm , 15% of the words in each sequence are masked (hidden). The model then attempls to predict the original value of the masked word based on the context provided by the rest of the words in the sequence (both direction).</p><p><br /></p><p>Lets look at the example </p><p><br /></p><p>Sentence<em>: "The man goes to the [Mask1]. He buys a [Mask2] of Milk</em>"</p><p>The algorithm then predicts [Mask1] as "Store" and [Mask2] as "Gallon"</p><p><br /></p><p>This enables the algorithm to learn the relationships between words of a sentence</p><p><br /></p><p><strong>STEP 2 : Predicting sentence</strong></p><p><br /></p><p>The second step, the models helps to understand the relations between sentences. It learns whether sentence B comes after sentence A or not </p><p><br /></p><p>Lets look at 2 examples </p><p><br /></p><p>Sentence A<em>: "The man goes to the </em>Store<em> </em></p><p>Sentence<em> </em>B<em>: "He buys a Gallon of Milk</em>"</p><p>Label : IsNextSentence</p><p><br /></p><p>Sentence A<em>: "The man goes to the </em>Store<em> </em></p><p>Sentence<em> </em>B<em>: "Penguins are Flightless</em>"</p><p>Label : NotNextSentence</p><p><br /></p><p>As we can see. it is highly likely that in the first example sentence B can come after sentence A, but it is highly unlikely that the case in example 2 is possible. This allows BERT to learn what sentence can follow another sentence</p><p><br /></p><p>This NLP training is done on a large corpus of data by the Algorithm. BERT uses the entire corpus of wikipedia for building the model. Google has provided BERT in a pretrained form so it is like the user is getting readymade food in a frozen form which they can cook for themselves. </p><p><br /></p><p><strong>What NEXT??</strong></p><p><br /></p><p>Different user, based on their various problem statements and different dataset, have to tune BERT according to their problem. The readymade frozen food by BERT has to be cooked as per as the needs of the user. </p><p><br /></p><h2><strong>Testing BERT</strong></h2><p><br /></p><p>I decided to try running BERT in my system and on the cloud, and here is my story. </p><p> </p><p>The dataset I decided to try was Yelp review dataset which had text reviews of users and whether it was a positive or a negative review. So the task was to feed the reviews as input to the algorithm and classify whether it was a positive review or a negative review. This task is called as binary classification  A sample of the dataset is given below</p><p><br /></p><p><br /></p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20191003172412-picture1_png_1b3af80b8ce5839a50781ad6d0808fb0.png" /></p><p>              The first column indicates if the review was positive(1) or negative(0), and the second column shows the review text</p><p> </p><p>First I created the features out of the text, and then tuned the BERT model for the binary classification. The entire execution of the code took about 9 hours on cloud (I did not execute the code on the laptop as the estimated time of completion was ~150 hours <span class="ql-emojiblot" data-name="joy">﻿<span contenteditable="false"><span class="ap ap-joy">😂</span></span>﻿</span>).</p><p><br /></p><p>The Evaluation results were </p><p><img src="https://img.tc-library.org/w800/EdLab-blog/20191003173325-picture2_png_fd8ccd73bd6b539ed37bb0c62ce2751b.png" style="display:block;margin:auto" width="378" height="148.35908141962423" data-align="center" /> The results say that, out of 19000 positive reviews, the machine was able to recognise  18185 correctly and out the remaining 19000  negative reviews, the machine was able to recognise 18172 correctly as negative - about 96 % in both cases (check [9] for meaning of TP, TN, FP and FN)</p><p><br /></p><p><br /></p><h2><strong>Why people in industry are using BERT</strong> </h2><p><br /></p><ul><li>Unlike previous models, we do not have to train the machine from scratch and BERT does half of the job (Remember frozen food)</li><li>The user can use BERT and tune it to work for their own use cases (Binary classification, multi class classification etc)</li><li> As BERT is trained on Wikipedia Data corpus, we may not require large amount of data to tune it</li></ul><p> </p><h2><strong> Where does BERT come in our TCR research as Edlab?</strong></h2><p><br /></p><ul><li>We plan to user BERT in the same way, by tuning it to our requirements and help us tag TCR content.</li><li>For the tuning part, we plan to feed it other sources and tag as training data and then give the TCR content for which we get tags as output.</li><li>We are still looking for content with tags to train and tune BERT</li></ul><p> </p><p><br /></p><p>I have tried to make the explaination simpler for a wider audience If you are interested in knowing more about the technical details of the algorithm, I strongly recommend you to check out this <a href="https://www.youtube.com/watch?v=BhlOGGzC0Q0" target="_blank">video</a> [10] </p><p><br /></p><h2> </h2><h2><strong>References/Clarifications</strong></h2><p><br /></p><p>1 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Tag_(metadata)" target="_blank">https://en.wikipedia.org/wiki/Tag_(metadata)</a></p><p>2 - Edlab - <a href="https://edlab.tc.columbia.edu/blog/23122-A-case-for-Autotagging-Does-Machine-learning-know-better-about-your-work-than-you" target="_blank">https://edlab.tc.columbia.edu/blog/23122-A-case-for-Autotagging-Does-Machine-learning-know-better-about-your-work-than-you</a></p><p>3 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank">https://en.wikipedia.org/wiki/Natural_language_processing</a></p><p>4 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank">https://en.wikipedia.org/wiki/Bag-of-words_model</a></p><p>5 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Word2vec" target="_blank">https://en.wikipedia.org/wiki/Word2vec</a></p><p>6 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Euclidean_vector" target="_blank">https://en.wikipedia.org/wiki/Euclidean_vector</a></p><p>7 - Medium - <a href="https://medium.com/arvind-internet/applying-word2vec-on-our-catalog-data-2d74dfee419d" target="_blank">https://medium.com/arvind-internet/applying-word2vec-on-our-catalog-data-2d74dfee419d</a></p><p>8 - BERT - <a href="https://arxiv.org/pdf/1810.04805.pdf" target="_blank">https://arxiv.org/pdf/1810.04805.pdf</a></p><p>9 - Wikipedia - <a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank">https://en.wikipedia.org/wiki/Confusion_matrix</a></p><p>10 - Youtube - <a href="https://www.youtube.com/watch?v=BhlOGGzC0Q0" target="_blank">https://www.youtube.com/watch?v=BhlOGGzC0Q0</a></p><p><br /></p><p>Other resources refered </p><p><br /></p><p><a href="https://medium.com/synapse-dev/understanding-bert-transformer-attention-isnt-all-you-need-5839ebd396db" target="_blank">https://medium.com/synapse-dev/understanding-bert-transformer-attention-isnt-all-you-need-5839ebd396db</a></p><p><a href="https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04" target="_blank">https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04</a></p><p>Main from : <a href="https://medium.com/syncedreview/best-nlp-model-ever-google-bert-sets-new-standards-in-11-language-tasks-4a2a189bc155" target="_blank" style="background-color:rgb(255, 255, 255)">https://medium.com/syncedreview/best-nlp-model-ever-google-bert-sets-new-standards-in-11-language-tasks-4a2a189bc155</a></p><p><br /></p><p><br /></p><p>P. S. I have also skipped a lot of intermediatory stuff while explaining Bag of words and Word2vec, as I was trying to generalise it.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

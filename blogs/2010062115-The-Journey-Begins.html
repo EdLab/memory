@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>The Journey Begins | EdLab Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Custom styles for this template -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EdLab Archive</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../profiles">Profiles</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../events">Events</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container content">
+      <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+          <div class="back-link">
+            <a href="./"> &lt; back to list</a>
+          </div>
+          <!-- Title -->
+          <h1 class="mt-4">The Journey Begins</h1>
+          <p class="lead">
+            Jimmy OHiggins
+          </p>
+          <hr />
+
+          <!-- Date/Time -->
+          <p>
+            June 21, 2010
+          </p>
+
+          <hr />
+
+          <!-- Post Content -->
+
+          <p>
+            The journey to create better authoring tools for Pressible, that is.
+
+I am currently working on a Wordpress plugin codenamed Rec Tags Redux. It's top-secret official name will be unveiled at release. The purpose of this plugin is ultimately to modify the "Post Tags" box in the "New Post" page so that it recommends tags for your post based on a) the actual content of the post and b) the existing tags in your Wordpress database (if they appear in your post).
+
+In the long run, this may encourage people to use tags more often (and more correctly) since many Pressible users are unfortunately oblivious or apathetic towards the whole tagging system. On the other hand, users may hate getting recommendations so much that they might vengefully attempt SQL injections to destroy our servers. We'll probably get something in between.
+
+DONE:
+
+So far, I have the bare bones of the plugin working:
+<ul>
+	<li>Word frequency counter to determine the most common words in the post</li>
+	<li>Retrieval of tags from database and checking for a match in post content.</li>
+</ul>
+TO DO:
+
+This is the big section:
+<ul>
+	<li>Greatly improve word frequency counter so it effectively becomes a "phrase frequency" counter, able to find and count phrases that are arbitrarily long. This is important because many tags are in fact phrases and not single words. For example, we probably want to count the frequency of the phrase "Social Media" more than the frequencies of the words "Social" and "Media".</li>
+	<li>Add trimming and explosion to database tags (Now that sounds ridiculous... trimming and explosion). Trimming is essentially removing unnecessary white space, plurals, and slight variations on words (for example, we want an instance of the word "download" in the post to register as a hit when being matched to a "downloads" tag). Explosion separates a phrase into its constituent words, therefore it's an effective reversal of the "phrase frequency" counter functionality. This is important because if we have a tag "Adobe Photoshop," we want that to match an instance of "Photoshop" in the post. For more information about this, consult the images below.</li>
+	<li>Add the functionality of associating a given tag with the post being written/edited (so far RTR just "recommends" in plain text).</li>
+	<li>Actually attain the lofty goals described above.</li>
+</ul>
+Reference Images:
+
+[caption id="attachment_365" align="alignright" width="150" caption="explosion"]<a href="https://img.tc-library.org/pressible/16/files/2010/06/explosion.png"><img class="size-thumbnail wp-image-365 " title="explosion" src="http://development.pressible.org/files/2010/06/explosion-150x150.png" alt="" width="150" height="150" /></a>[/caption]
+
+[caption id="attachment_364" align="aligncenter" width="150" caption="trimming"]<a href="http://development.pressible.org/files/2010/06/trim_c.jpg"><img class="size-thumbnail wp-image-364 " title="trimming" src="http://development.pressible.org/files/2010/06/trim_c-150x150.jpg" alt="" width="150" height="150" /></a>[/caption]
+
+<strong>Final Note </strong>
+
+<strong> </strong>This plugin is based on CyberNet's <a href="http://cybernetnews.com/recommended-tags-for-wordpress/">Recommended Tags</a> plugin which is currently out of date and incompatible with Wordpress 3.0. This revision aims to fix its predecessor and surpass its greatness.
+
+Peace,
+
+jimmy
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          Copyright &copy; EdLab 2019 <script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script>
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

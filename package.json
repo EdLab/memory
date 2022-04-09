@@ -23,7 +23,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "ejs": "^3.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "p-queue": "^6.2.1",
     "voca": "^1.4.0"
   }
